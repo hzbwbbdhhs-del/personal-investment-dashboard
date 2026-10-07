@@ -231,8 +231,10 @@ function applyMarketPayload(payload) {
 
 async function refreshMarketData() {
   try {
-    let response = await fetch(`/market-data.json?ts=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) response = await fetch("/api/market", { cache: "no-store" });
+    // Use a relative path so this also works when hosted below a GitHub Pages
+    // project path such as /personal-investment-dashboard/.
+    let response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) response = await fetch("./api/market", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     applyMarketPayload(await response.json());
   } catch (error) {
