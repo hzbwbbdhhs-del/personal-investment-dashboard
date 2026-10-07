@@ -20,6 +20,9 @@
 }
 
 * { box-sizing: border-box; }
+.positive { color: var(--green); }
+.negative { color: var(--coral); }
+.neutral { color: var(--ink); }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-size: 15px; }
 button, input, select, textarea { font: inherit; }

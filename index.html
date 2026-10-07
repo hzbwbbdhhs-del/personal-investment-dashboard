@@ -116,10 +116,10 @@
 
         <section class="section-panel" id="section-holdings" data-panel>
           <div class="section-heading"><div><div class="section-kicker">HOLDINGS / 持仓与定投</div><h2>每一笔都能追溯到来源。</h2></div><button class="primary-button" id="addHoldingButtonSecondary">＋ 新增一笔</button></div>
-          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>已载入 2026-10-07 基金持仓快照。</strong><span>支付宝 61 项来自录屏逐帧核对；直销 10 项沿用 2026-10-03 记录。代码、份额和直销端持有收益仍待补充。</span></div></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>基金净值每天北京时间22:00自动更新。</strong><span>按最新已公布单位净值显示日涨跌；份额未确认时，收益金额按记录持仓市值估算。QDII 净值可能晚于海外市场交易日公布。</span></div></div>
           <article class="content-card table-card">
-            <div class="content-card-head"><div><div class="section-kicker">PORTFOLIO LEDGER / 组合台账</div><h3>持仓清单</h3></div><div class="table-actions"><button class="ghost-button" id="clearHoldingsButton">恢复初始估算</button></div></div>
-            <div class="table-scroll"><table><thead><tr><th>资产 / 代码</th><th>分类</th><th>市值</th><th>成本 / 份额</th><th>月定投</th><th>数据状态</th><th></th></tr></thead><tbody id="holdingsTableBody"></tbody></table></div>
+            <div class="content-card-head"><div><div class="section-kicker">PORTFOLIO LEDGER / 组合台账</div><h3>持仓清单</h3><small id="fundDailySummary">正在读取基金净值…</small></div><div class="table-actions"><button class="ghost-button" id="clearHoldingsButton">恢复初始估算</button></div></div>
+            <div class="table-scroll"><table><thead><tr><th>资产 / 代码</th><th>分类</th><th>市值</th><th>最新日收益</th><th>成本 / 份额</th><th>月定投</th><th>数据状态</th><th></th></tr></thead><tbody id="holdingsTableBody"></tbody></table></div>
             <div class="empty-state" id="holdingsEmpty" hidden>还没有记录，点击“新增一笔”开始录入。</div>
           </article>
           <div class="grid-two lower-grid"><article class="content-card contribution-card"><div class="content-card-head"><div><div class="section-kicker">DCA / 定投节奏</div><h3>定投计划</h3></div><span class="tag pending">待补充</span></div><div class="contribution-empty"><div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>当前已载入持仓金额；补充定投金额、扣款日和标的后，这里会显示年度投入路径。</span><button class="outline-button" data-open-modal="holding">补充定投计划</button></div></article><article class="content-card source-card"><div class="content-card-head"><div><div class="section-kicker">CONFIDENCE / 数据可信度</div><h3>这页数据怎么来的</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>持仓快照</span><strong>71 项 / 49.83 万元</strong></div><div><span class="confidence-key inferred"></span><span>推导字段</span><strong>支付宝成本由市值 - 持有收益估算</strong></div><div><span class="confidence-key pending-key"></span><span>待确认</span><strong>基金代码、份额、定投</strong></div><div><span class="confidence-key api-key"></span><span>接口数据</span><strong>行情与宏观指标</strong></div></div></article></div>
@@ -168,7 +168,7 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="./portfolio-data.js?v=20261007-market"></script>
-    <script src="./app.js?v=20261007-market"></script>
+    <script src="./portfolio-data.js?v=20261007-funds"></script>
+    <script src="./app.js?v=20261007-funds"></script>
   </body>
 </html>

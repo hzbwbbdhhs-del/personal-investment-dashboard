@@ -109,10 +109,12 @@ function importedHoldings() {
       cost: income == null ? "" : Number((value - Number(income)).toFixed(2)),
       shares: "",
       monthly: "",
-      status: record["渠道"] === "支付宝" ? "用户已确认" : "待确认",
+      status: ["支付宝", "直销"].includes(record["渠道"]) ? "用户已确认" : "待确认",
       note: record["渠道"] === "支付宝"
         ? `支付宝录屏逐帧核对 · ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}`
-        : `基金公司直销记录 · ${record["数据日期"] || "日期待补充"} · 持有收益未提供`,
+        : record["渠道"] === "直销"
+          ? `基金公司直销记录 · 用户确认最新持仓 · ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}`
+          : `基金公司直销记录 · ${record["数据日期"] || "日期待补充"} · 持有收益未提供`,
     };
   });
 }
@@ -127,7 +129,14 @@ let holdings = loadHoldings();
 function loadHoldings() {
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey));
-    return Array.isArray(saved) ? saved : structuredClone(initialHoldings);
+    if (!Array.isArray(saved)) return structuredClone(initialHoldings);
+    return saved.map((item) => item.channel === "直销"
+      ? {
+          ...item,
+          status: "用户已确认",
+          note: `基金公司直销记录 · 用户确认最新持仓 · ${item.date || "日期待补充"} · 持有收益 ${item.note?.includes("持有收益") ? (item.note.split("持有收益").pop()?.trim() || "待补充") : "待补充"}`,
+        }
+      : item);
   } catch {
     return structuredClone(initialHoldings);
   }
@@ -155,6 +164,7 @@ function renderHoldings() {
       <td><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small></td>
       <td>${escapeHtml(item.category)}</td>
       <td><strong>${formatCurrency(item.value)}</strong><small>${item.note ? escapeHtml(item.note) : ""}</small></td>
+      <td>${renderDailyReturn(item)}</td>
       <td>${formatCurrency(item.cost)}<small>${item.shares ? `${Number(item.shares).toLocaleString("zh-CN")} 份` : "份额待补充"}</small></td>
       <td>${formatCurrency(item.monthly)}</td>
       <td><span class="status-label ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td>
@@ -171,6 +181,43 @@ function renderHoldings() {
   updatePortfolioSummary();
 }
 
+let fundData = {};
+function dailyReturnFor(item) {
+  const fund = fundData[item.code];
+  if (!fund || fund.status !== "available" || fund.dailyChangePct == null) return null;
+  const exact = Number(item.shares) > 0 && fund.dailyChange != null;
+  const amount = exact ? Number(item.shares) * fund.dailyChange : Number(item.value || 0) * fund.dailyChangePct / 100;
+  return { fund, exact, amount };
+}
+
+function renderDailyReturn(item) {
+  const result = dailyReturnFor(item);
+  if (!result) return `<strong>—</strong><small>等待基金净值</small>`;
+  const { fund, exact, amount } = result;
+  const sign = amount > 0 ? "+" : "";
+  const rateSign = fund.dailyChangePct > 0 ? "+" : "";
+  const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
+  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small>${fund.latestDate} · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
+}
+
+async function refreshFundData() {
+  try {
+    const response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    fundData = payload.funds || {};
+    renderHoldings();
+    const available = Object.values(fundData).filter((fund) => fund.status === "available");
+    const totalDaily = holdings.reduce((sum, item) => sum + (dailyReturnFor(item)?.amount || 0), 0);
+    const sign = totalDaily > 0 ? "+" : "";
+    const summary = $("#fundDailySummary");
+    if (summary) summary.textContent = available.length ? `组合估算日收益 ${sign}${formatCurrency(totalDaily)} · ${available.length}/${Object.keys(fundData).length} 只已取数` : "暂未取得基金净值";
+  } catch {
+    const summary = $("#fundDailySummary");
+    if (summary) summary.textContent = "基金净值暂不可用";
+  }
+}
+
 function updatePortfolioSummary() {
   const totals = Object.fromEntries(categoryNames.map((name) => [name, 0]));
   holdings.forEach((item) => { totals[item.category] = (totals[item.category] || 0) + Number(item.value || 0); });
@@ -181,7 +228,7 @@ function updatePortfolioSummary() {
   const baselineNode = $("#baselineAsset"); if (baselineNode) baselineNode.textContent = formattedTotal;
   const countNode = $("#assetFreshness"); if (countNode) countNode.textContent = `${holdings.length} 项`;
   const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = "2026-10-07 支付宝 + 直销快照";
-  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = "支付宝 61 项来自录屏逐帧核对；直销 10 项沿用 2026-10-03，直销持有收益仍待补充。";
+  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = "支付宝 61 项来自录屏逐帧核对；直销 10 项已由用户确认是最新持仓，直销持有收益仍待补充。";
   categoryNames.forEach((name) => {
     const id = { "债券 / 现金": "bond", "纳指 100": "ndx", "标普 500": "spx", "主动 QDII": "active", "其他": "other" }[name];
     const node = $(`#allocation-${id}`); if (node) node.textContent = `${percent(name).toFixed(1)}%`;
@@ -337,7 +384,7 @@ $("#addHoldingButtonSecondary")?.addEventListener("click", openModal);
 $("#closeModalButton")?.addEventListener("click", closeModal);
 $("#cancelModalButton")?.addEventListener("click", closeModal);
 $("#holdingModal")?.addEventListener("click", (event) => { if (event.target.id === "holdingModal") closeModal(); });
-$("#refreshButton")?.addEventListener("click", async () => { await refreshMarketData(); showToast("市场数据已刷新"); });
+$("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData()]); showToast("市场与基金数据已刷新"); });
 $("#clearHoldingsButton")?.addEventListener("click", () => { holdings = structuredClone(initialHoldings); saveHoldings(); renderHoldings(); showToast("已恢复初始估算"); });
 $("#exportDataButton")?.addEventListener("click", exportData);
 $("#addQdiiButton")?.addEventListener("click", () => { activateSection("holdings"); openModal(); $("select[name=category]").value = "主动 QDII"; });
@@ -357,3 +404,5 @@ document.addEventListener("keydown", (event) => { if (event.key === "Escape" && 
 renderHoldings();
 refreshMarketData();
 window.setInterval(refreshMarketData, 60 * 1000);
+refreshFundData();
+window.setInterval(refreshFundData, 60 * 60 * 1000);
