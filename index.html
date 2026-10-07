@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20261008-area-popup-v2" />
   </head>
   <body>
     <div class="app-shell">
@@ -179,7 +179,7 @@
     <div class="modal-backdrop" id="marketChartModal" hidden>
       <div class="modal market-chart-modal" role="dialog" aria-modal="true" aria-labelledby="marketChartTitle">
         <div class="modal-head"><div><div class="section-kicker">MARKET CHART / 行情图表</div><h2 id="marketChartTitle">纳斯达克 100</h2></div><button class="close-button" id="closeMarketChartButton" aria-label="关闭图表">×</button></div>
-        <div class="chart-controls"><div class="chart-symbol-tabs" role="group" aria-label="选择指标"><button type="button" data-chart-symbol="NDX">纳指100</button><button type="button" data-chart-symbol="SPX">标普500</button><button type="button" data-chart-symbol="VIX">VIX</button><button type="button" data-chart-symbol="VXN">VXN</button><button type="button" data-chart-symbol="US10Y">10年美债</button><button type="button" data-chart-symbol="USDCNY">美元/人民币</button></div><div class="chart-interval-tabs" role="group" aria-label="选择图表周期"><button type="button" data-chart-interval="1">1分钟</button><button type="button" data-chart-interval="5">5分钟</button><button type="button" data-chart-interval="15">15分钟</button><button type="button" data-chart-interval="60">1小时</button><button type="button" data-chart-interval="D" class="active">日线</button><button type="button" data-chart-interval="W">周线</button></div></div>
+        <div class="chart-controls"><div class="chart-symbol-tabs" role="group" aria-label="选择指标"><button type="button" data-chart-symbol="NDX">QQQ · 纳指参考</button><button type="button" data-chart-symbol="SPX">SPY · 标普参考</button><button type="button" data-chart-symbol="VIX">VIX</button><button type="button" data-chart-symbol="VXN">VXN</button><button type="button" data-chart-symbol="US10Y">10年美债</button><button type="button" data-chart-symbol="USDCNY">美元/人民币</button></div></div>
         <div class="chart-frame" id="marketChartFrame" aria-live="polite"><div class="chart-loading">正在加载图表…</div></div>
         <div class="chart-footer"><span id="chartDisclosure">图表由 TradingView 提供。分时数据可能有延迟或受市场数据权限限制。</span><a id="openFullChartLink" href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer">在 TradingView 打开 ↗</a></div>
       </div>
@@ -198,6 +198,6 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261008-today-returns"></script>
+    <script src="./app.js?v=20261008-area-popup-v2"></script>
   </body>
 </html>

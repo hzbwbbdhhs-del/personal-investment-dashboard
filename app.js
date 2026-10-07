@@ -295,7 +295,6 @@ const chartAssets = {
   USDCNY: { title: "美元兑人民币", symbol: "FX_IDC:USDCNY" },
 };
 let activeChartSymbol = "NDX";
-let activeChartInterval = "D";
 let lastChartTrigger = null;
 let tradingViewQuotesLoaded = false;
 
@@ -365,29 +364,35 @@ function renderTradingViewChart() {
   chart.className = "tradingview-widget-container__widget";
   widget.append(chart);
   const script = document.createElement("script");
-  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
   script.async = true;
   script.textContent = JSON.stringify({
-    allow_symbol_change: false,
-    calendar: false,
-    details: false,
-    hide_side_toolbar: true,
-    hide_top_toolbar: true,
-    hide_legend: false,
-    hide_volume: true,
-    hotlist: false,
-    interval: activeChartInterval,
+    symbols: [[asset.title, `${asset.symbol}|1D`]],
+    chartOnly: false,
+    width: "100%",
+    height: "100%",
     locale: "zh_CN",
-    save_image: false,
-    style: "3",
-    symbol: asset.symbol,
-    theme: "light",
-    timezone: "Asia/Shanghai",
-    backgroundColor: "#fbfaf6",
-    gridColor: "rgba(46, 46, 46, 0.06)",
-    withdateranges: true,
+    colorTheme: "light",
     autosize: true,
+    showVolume: false,
+    showMA: false,
+    hideDateRanges: false,
+    hideMarketStatus: false,
+    hideSymbolLogo: false,
+    scalePosition: "right",
+    scaleMode: "Normal",
+    valuesTracking: "1",
+    changeMode: "price-and-percent",
+    chartType: "area",
+    lineWidth: 2,
+    lineType: 0,
+    upColor: "#198f77",
+    downColor: "#ed4052",
+    dateRanges: ["1d|1", "5d|5", "1m|30", "6m|1D", "12m|1D", "60m|1W", "all|1M"],
   });
+  script.onerror = () => {
+    frame.textContent = "TradingView 图表暂时无法加载，请检查网络或浏览器拦截设置后重试。";
+  };
   widget.append(script);
   frame.append(widget);
   $("#marketChartTitle").textContent = asset.title;
@@ -398,17 +403,11 @@ function renderTradingViewChart() {
     button.classList.toggle("active", selected);
     button.setAttribute("aria-pressed", String(selected));
   });
-  $$(`[data-chart-interval]`).forEach((button) => {
-    const selected = button.dataset.chartInterval === activeChartInterval;
-    button.classList.toggle("active", selected);
-    button.setAttribute("aria-pressed", String(selected));
-  });
 }
 
 function openMarketChart(symbolKey, trigger = null) {
   if (!chartAssets[symbolKey]) return;
   activeChartSymbol = symbolKey;
-  activeChartInterval = "D";
   lastChartTrigger = trigger;
   $("#marketChartModal").hidden = false;
   document.body.style.overflow = "hidden";
@@ -555,7 +554,6 @@ $$(`[data-section]`).forEach((button) => button.addEventListener("click", () => 
 $$(`[data-section-target]`).forEach((button) => button.addEventListener("click", () => activateSection(button.dataset.sectionTarget)));
 $$(`[data-chart]`).forEach((button) => button.addEventListener("click", () => openMarketChart(button.dataset.chart, button)));
 $$(`[data-chart-symbol]`).forEach((button) => button.addEventListener("click", () => { activeChartSymbol = button.dataset.chartSymbol; renderTradingViewChart(); }));
-$$(`[data-chart-interval]`).forEach((button) => button.addEventListener("click", () => { activeChartInterval = button.dataset.chartInterval; renderTradingViewChart(); }));
 $("#closeMarketChartButton")?.addEventListener("click", closeMarketChart);
 $("#marketChartModal")?.addEventListener("click", (event) => { if (event.target.id === "marketChartModal") closeMarketChart(); });
 $$(`[data-open-modal="holding"]`).forEach((button) => button.addEventListener("click", openModal));
