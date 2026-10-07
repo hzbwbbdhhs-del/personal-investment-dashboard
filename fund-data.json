@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-07T13:30:37.334Z",
+  "updatedAt": "2026-10-07T13:41:57.225Z",
   "source": "东方财富公开基金历史净值接口",
   "note": "日收益率为基金单位净值日变化；未提供份额时，仪表盘按记录持仓市值估算金额。QDII净值可能晚于海外市场交易日公布。",
   "count": 63,
@@ -152,13 +152,13 @@
     "017731": {
       "code": "017731",
       "name": "嘉实全球产业升级股票(QDII)C",
-      "status": "available",
-      "latestDate": "2026-09-29",
-      "nav": 4.0561,
-      "previousDate": "2026-09-28",
-      "previousNav": 4.0141,
-      "dailyChange": 0.042,
-      "dailyChangePct": 1.05,
+      "status": "unavailable",
+      "latestDate": null,
+      "nav": null,
+      "previousDate": null,
+      "previousNav": null,
+      "dailyChange": null,
+      "dailyChangePct": null,
       "source": "https://fund.eastmoney.com/017731.html"
     },
     "017730": {
