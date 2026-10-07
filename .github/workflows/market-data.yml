@@ -1,0 +1,26 @@
+name: refresh-market-data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Refresh free FRED snapshot
+        run: node scripts/fetch-market-data.mjs
+      - name: Commit refreshed snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add market-data.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh market data snapshot"
+          git push
