@@ -1,0 +1,142 @@
+{
+  "status": "daily",
+  "updatedAt": "2026-10-07T12:17:00.010152+00:00",
+  "market": {
+    "NDX": {
+      "label": "纳斯达克100",
+      "value": 31224.69,
+      "changePct": 0.4770494947297696,
+      "drawdownPct": 0.0,
+      "peak": 31224.69,
+      "updatedAt": "2026-10-06",
+      "source": "FRED公开CSV:NASDAQ100",
+      "status": "daily"
+    },
+    "SPX": {
+      "label": "标普500",
+      "value": 7818.93,
+      "changePct": 0.5785990390985339,
+      "drawdownPct": 0.0,
+      "peak": 7818.93,
+      "updatedAt": "2026-10-06",
+      "source": "FRED公开CSV:SP500",
+      "status": "daily"
+    },
+    "VIX": {
+      "label": "VIX",
+      "value": 15.52,
+      "changePct": 1.3716525146962708,
+      "drawdownPct": -81.23110412383602,
+      "peak": 82.69,
+      "updatedAt": "2026-10-05",
+      "source": "FRED公开CSV:VIXCLS",
+      "status": "daily"
+    },
+    "VXN": {
+      "label": "VXN",
+      "value": 21.7,
+      "changePct": 2.358490566037736,
+      "drawdownPct": -73.09027777777779,
+      "peak": 80.64,
+      "updatedAt": "2026-10-05",
+      "source": "FRED公开CSV:VXNCLS",
+      "status": "daily"
+    },
+    "US10Y": {
+      "label": "美国10年期国债收益率",
+      "value": 5.31,
+      "changePct": 0.568181818181806,
+      "drawdownPct": -66.47727272727273,
+      "peak": 15.84,
+      "updatedAt": "2026-10-05",
+      "source": "FRED公开CSV:DGS10",
+      "status": "daily"
+    },
+    "USDCNY": {
+      "label": "USD/CNY",
+      "value": 6.7038,
+      "changePct": 0.0,
+      "drawdownPct": -23.305380452813786,
+      "peak": 8.7409,
+      "updatedAt": "2026-10-02",
+      "source": "FRED公开CSV:DEXCHUS",
+      "status": "daily"
+    }
+  },
+  "macro": {
+    "FEDFUNDS": {
+      "label": "联邦基金有效利率",
+      "value": 3.88,
+      "changePct": 0.0,
+      "drawdownPct": -82.64758497316636,
+      "peak": 22.36,
+      "updatedAt": "2026-10-05",
+      "source": "FRED公开CSV:DFF",
+      "status": "daily"
+    },
+    "CPI": {
+      "label": "CPI",
+      "value": 334.131,
+      "changePct": 0.39601818438582137,
+      "drawdownPct": 0.0,
+      "peak": 334.131,
+      "updatedAt": "2026-08-01",
+      "source": "FRED公开CSV:CPIAUCSL",
+      "status": "daily"
+    },
+    "PCE": {
+      "label": "PCE",
+      "value": 131.579,
+      "changePct": 0.3102796328484819,
+      "drawdownPct": 0.0,
+      "peak": 131.579,
+      "updatedAt": "2026-08-01",
+      "source": "FRED公开CSV:PCEPI",
+      "status": "daily"
+    },
+    "UNRATE": {
+      "label": "失业率",
+      "value": 4.2,
+      "changePct": 2.4390243902439157,
+      "drawdownPct": -71.62162162162163,
+      "peak": 14.8,
+      "updatedAt": "2026-09-01",
+      "source": "FRED公开CSV:UNRATE",
+      "status": "daily"
+    },
+    "PAYEMS": {
+      "label": "非农就业",
+      "value": 159044.0,
+      "changePct": 0.01823727321321888,
+      "drawdownPct": 0.0,
+      "peak": 159044.0,
+      "updatedAt": "2026-09-01",
+      "source": "FRED公开CSV:PAYEMS",
+      "status": "daily"
+    },
+    "US10Y": {
+      "label": "美国10年期国债收益率",
+      "value": 5.31,
+      "changePct": 0.568181818181806,
+      "drawdownPct": -66.47727272727273,
+      "peak": 15.84,
+      "updatedAt": "2026-10-05",
+      "source": "FRED公开CSV:DGS10",
+      "status": "daily"
+    }
+  },
+  "temperature": {
+    "status": "daily",
+    "band": 0,
+    "label": "正常",
+    "action": "维持原定投，不追涨",
+    "color": "green",
+    "drawdownPct": 0,
+    "reasons": [
+      "NDX 从历史高点回撤 0.00%"
+    ],
+    "updatedAt": "2026-10-06"
+  },
+  "refreshSeconds": 1800,
+  "source": "FRED公开CSV（无API Key）"
+}
