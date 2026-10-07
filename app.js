@@ -106,14 +106,14 @@ function importedHoldings() {
       date: record["数据日期"] || "",
       category: classifyHolding(record["基金名称"] || ""),
       value,
-      cost: income == null ? "" : Number((value - Number(income)).toFixed(2)),
-      shares: "",
+      cost: record["持有成本_元"] != null ? Number(record["持有成本_元"]) : income == null ? "" : Number((value - Number(income)).toFixed(2)),
+      shares: record["持有份額_份"] == null ? "" : Number(record["持有份額_份"]),
       monthly: "",
       status: ["支付宝", "直销"].includes(record["渠道"]) ? "用户已确认" : "待确认",
       note: record["渠道"] === "支付宝"
         ? `支付宝录屏逐帧核对 · ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}`
         : record["渠道"] === "直销"
-          ? `基金公司直销记录 · 用户确认最新持仓 · ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}`
+          ? `基金公司直销记录 · 用户确认最新持仓 ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}${record["持有收益日期"] ? `（截至 ${record["持有收益日期"]}）` : ""}${record["昨日收益_元"] == null ? "" : ` · 截图昨日收益 ${formatCurrency(record["昨日收益_元"])}${record["昨日收益日期"] ? `（${record["昨日收益日期"]}）` : "（日期未显示）"}`}`
           : `基金公司直销记录 · ${record["数据日期"] || "日期待补充"} · 持有收益未提供`,
     };
   });
@@ -130,13 +130,12 @@ function loadHoldings() {
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey));
     if (!Array.isArray(saved)) return structuredClone(initialHoldings);
-    return saved.map((item) => item.channel === "直销"
-      ? {
-          ...item,
-          status: "用户已确认",
-          note: `基金公司直销记录 · 用户确认最新持仓 · ${item.date || "日期待补充"} · 持有收益 ${item.note?.includes("持有收益") ? (item.note.split("持有收益").pop()?.trim() || "待补充") : "待补充"}`,
-        }
-      : item);
+    const importedById = new Map(initialHoldings.map((item) => [item.id, item]));
+    return saved.map((item) => {
+      const imported = importedById.get(item.id);
+      if (!imported) return item;
+      return { ...item, value: imported.value, cost: imported.cost, shares: imported.shares, date: imported.date, code: imported.code, category: imported.category, status: imported.status, note: imported.note };
+    });
   } catch {
     return structuredClone(initialHoldings);
   }
@@ -228,7 +227,7 @@ function updatePortfolioSummary() {
   const baselineNode = $("#baselineAsset"); if (baselineNode) baselineNode.textContent = formattedTotal;
   const countNode = $("#assetFreshness"); if (countNode) countNode.textContent = `${holdings.length} 项`;
   const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = "2026-10-07 支付宝 + 直销快照";
-  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = "支付宝 61 项来自录屏逐帧核对；直销 10 项已由用户确认是最新持仓，直销持有收益仍待补充。";
+  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = "支付宝 61 项来自录屏逐帧核对；直销 10 项持仓已确认，6 只已录入截图收益（9月29–30日），4 只收益待补。";
   categoryNames.forEach((name) => {
     const id = { "债券 / 现金": "bond", "纳指 100": "ndx", "标普 500": "spx", "主动 QDII": "active", "其他": "other" }[name];
     const node = $(`#allocation-${id}`); if (node) node.textContent = `${percent(name).toFixed(1)}%`;
