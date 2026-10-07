@@ -216,7 +216,12 @@ function applyMarketPayload(payload) {
   write("drawdown-ndx", ndx.drawdownPct == null ? "—" : `${formatMetric(ndx.drawdownPct)}%`); write("drawdown-spx", spx.drawdownPct == null ? "—" : `${formatMetric(spx.drawdownPct)}%`);
   ["NDX", "SPX", "VIX", "VXN", "US10Y", "USDCNY"].forEach((key) => updateMetricStatus(key, get(key).status));
   const mode = $("#dataModeLabel"); if (mode) mode.textContent = payload.status === "live" ? "实时数据" : payload.status === "daily" ? "免费日线" : payload.status === "error" ? "接口异常" : "等待密钥";
-  const note = $("#marketFootnote"); if (note) note.textContent = payload.status === "live" ? `已接入服务端快照，最近刷新 ${new Date(payload.updatedAt).toLocaleString("zh-CN")}` : payload.status === "daily" ? `已接入 Yahoo Finance 免费日线，最新观测日由各指标单独决定；不是盘中实时。` : "市场接口暂时没有返回数据；页面不会把占位值当成行情。";
+  const note = $("#marketFootnote");
+  if (note) {
+    if (payload.status === "live") note.textContent = `已接入服务端快照，最近刷新 ${new Date(payload.updatedAt).toLocaleString("zh-CN")}`;
+    else if (payload.status === "daily") note.textContent = `已接入 FRED 免费公开日线快照，自动定时更新；最新观测日由各指标单独决定，不代表盘中实时。`;
+    else note.textContent = "市场接口暂时没有返回数据；页面不会把占位值当成行情。";
+  }
   const macro = payload.macro || {};
   write("macro-fed", ["live", "daily"].includes(macro.FEDFUNDS?.status) ? `${formatMetric(macro.FEDFUNDS.value)} · ${macro.FEDFUNDS.updatedAt || "已更新"}` : "待更新");
   write("macro-inflation", ["live", "daily"].includes(macro.CPI?.status) || ["live", "daily"].includes(macro.PCE?.status) ? "已更新" : "待更新");
@@ -226,12 +231,13 @@ function applyMarketPayload(payload) {
 
 async function refreshMarketData() {
   try {
-    const response = await fetch("/api/market", { cache: "no-store" });
+    let response = await fetch(`/market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) response = await fetch("/api/market", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     applyMarketPayload(await response.json());
   } catch (error) {
     const mode = $("#dataModeLabel"); if (mode) mode.textContent = "接口不可用";
-    const note = $("#marketFootnote"); if (note) note.textContent = "本地接口暂时不可用，当前页面只保留估算和占位信息。";
+    const note = $("#marketFootnote"); if (note) note.textContent = "公开数据快照暂时不可用，当前页面只保留持仓信息和占位提示。";
   }
 }
 
