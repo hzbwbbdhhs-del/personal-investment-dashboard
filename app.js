@@ -164,7 +164,7 @@ function renderHoldings() {
       <td>${escapeHtml(item.category)}</td>
       <td><strong>${formatCurrency(item.value)}</strong><small>${item.note ? escapeHtml(item.note) : ""}</small></td>
       <td>${renderDailyReturn(item)}</td>
-      <td>${formatCurrency(item.cost)}<small>${item.shares ? `${Number(item.shares).toLocaleString("zh-CN")} 份` : "份额待补充"}</small></td>
+      <td>${formatCurrency(item.cost)}</td>
       <td>${formatCurrency(item.monthly)}</td>
       <td><span class="status-label ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td>
       <td><button class="table-delete" data-delete-id="${item.id}" aria-label="删除 ${escapeHtml(item.name)}">删除</button></td>
