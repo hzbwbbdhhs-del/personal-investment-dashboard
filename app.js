@@ -107,7 +107,7 @@ function importedHoldings() {
       category: classifyHolding(record["基金名称"] || ""),
       value,
       cost: record["持有成本_元"] != null ? Number(record["持有成本_元"]) : income == null ? "" : Number((value - Number(income)).toFixed(2)),
-      shares: record["持有份額_份"] == null ? "" : Number(record["持有份額_份"]),
+      shares: record["持有份额_份"] == null ? "" : Number(record["持有份额_份"]),
       monthly: "",
       status: ["支付宝", "直销"].includes(record["渠道"]) ? "用户已确认" : "待确认",
       note: record["渠道"] === "支付宝"
