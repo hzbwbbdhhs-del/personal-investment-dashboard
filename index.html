@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102332" />
+    <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
+    <title>我的投资仪表盘</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <div class="brand-name">个人投资仪表盘</div>
+            <div class="brand-subtitle">LONG VIEW / 01</div>
+          </div>
+        </div>
+        <div class="side-note">
+          <span class="pulse-dot"></span>
+          <span>只在重大变化时提醒</span>
+        </div>
+        <nav class="nav-list">
+          <button class="nav-item active" data-section="overview"><span class="nav-index">01</span><span>总览</span></button>
+          <button class="nav-item" data-section="holdings"><span class="nav-index">02</span><span>持仓与定投</span></button>
+          <button class="nav-item" data-section="market"><span class="nav-index">03</span><span>市场与宏观</span></button>
+          <button class="nav-item" data-section="qdii"><span class="nav-index">04</span><span>QDII 状态</span></button>
+          <button class="nav-item" data-section="settings"><span class="nav-index">05</span><span>数据设置</span></button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="mini-label">BASELINE</div>
+          <div class="baseline-value" id="baselineAsset">¥ 498,331</div>
+          <div class="muted">已导入持仓快照</div>
+          <div class="sidebar-stamp">更新时间<br /><strong>2026.10.07</strong></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="topbar-copy">
+            <div class="eyebrow">WEDNESDAY / 2026.10.07</div>
+            <h1>把波动放在视野里，<em>把节奏留给自己。</em></h1>
+            <p>资产、定投和宏观信号集中在一个安静的观察窗里。</p>
+          </div>
+          <div class="topbar-actions">
+            <div class="data-mode-badge"><span class="status-dot yellow"></span><span id="dataModeLabel">持仓已导入</span></div>
+            <button class="icon-button" id="refreshButton" title="刷新本地数据" aria-label="刷新本地数据">↻</button>
+            <button class="primary-button" id="addHoldingButton">＋ 录入持仓</button>
+          </div>
+        </header>
+
+        <section class="section-panel active" id="section-overview" data-panel>
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">OVERVIEW / 资产总览</div>
+              <h2>先看组合，再看噪声。</h2>
+            </div>
+            <div class="section-meta"><span class="status-dot green"></span> 组合结构可用　<span class="divider-dot">·</span>　<span id="overviewDataStatus">市场温度待更新</span></div>
+          </div>
+
+          <div class="hero-grid">
+            <article class="hero-card total-card">
+              <div class="card-label-row"><span class="card-label">当前总资产</span><span class="tag verified">已导入</span></div>
+              <div class="hero-number" id="totalAssets">¥ 498,331</div>
+              <div class="hero-foot"><span id="assetSourceLabel">2026-10-07 支付宝 + 直销快照</span><span id="assetFreshness">71 项</span></div>
+              <div class="hero-rule"></div>
+              <div class="hero-microcopy" id="assetMicrocopy">已导入 71 条基金记录。支付宝金额来自录屏逐帧核对；直销数据沿用 2026-10-03，持有收益待补充。</div>
+            </article>
+            <article class="hero-card allocation-card">
+              <div class="card-label-row"><span class="card-label">资产分布</span><span class="tag verified">持仓快照</span></div>
+              <div class="allocation-body">
+                <div class="donut-wrap"><div class="donut" id="allocationDonut" aria-label="资产分类占比"><div class="donut-center"><strong id="allocationCenterValue">62.3%</strong><span id="allocationCenterLabel">债券 / 现金</span></div></div></div>
+                <div class="legend-list">
+                  <div><span class="legend-swatch swatch-bond"></span><span>债券 / 现金</span><strong id="allocation-bond">62.3%</strong></div>
+                  <div><span class="legend-swatch swatch-ndx"></span><span>纳指 100</span><strong id="allocation-ndx">7.3%</strong></div>
+                  <div><span class="legend-swatch swatch-spx"></span><span>标普 500</span><strong id="allocation-spx">2.4%</strong></div>
+                  <div><span class="legend-swatch swatch-active"></span><span>主动 QDII</span><strong id="allocation-active">26.5%</strong></div>
+                  <div><span class="legend-swatch swatch-other"></span><span>其他</span><strong id="allocation-other">1.5%</strong></div>
+                </div>
+              </div>
+            </article>
+            <article class="hero-card signal-card">
+              <div class="card-label-row"><span class="card-label">当前操作信号</span><span class="tag pending" id="signalTag">待接入行情</span></div>
+              <div class="signal-status"><div class="signal-icon" id="signalIcon">⌁</div><div><strong id="signalTitle">等待市场数据</strong><span id="signalDetail">NDX 回撤数据接入后自动判档</span></div></div>
+              <div class="signal-scale"><div class="scale-line"><span class="scale-fill" id="signalFill"></span></div><div class="scale-labels"><span>正常</span><span>略加</span><span>提高</span><span>加倍</span><span>明显加仓</span></div></div>
+              <button class="text-button" data-section-target="market">查看分档规则 <span>↗</span></button>
+            </article>
+          </div>
+
+          <div class="grid-two">
+            <article class="content-card watchlist-card">
+              <div class="content-card-head"><div><div class="section-kicker">WATCHLIST / 关注指标</div><h3>市场温度</h3></div><span class="tag pending" id="temperatureTag">等待数据</span></div>
+              <div class="market-mini-grid">
+                <div class="market-mini"><div class="mini-top"><span>NDX</span><span class="state-pill yellow" data-status-for="NDX">待接入</span></div><strong id="metric-ndx">—</strong><span id="metric-ndx-caption">纳指 100 · 回撤 —</span><svg class="sparkline spark-yellow" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,35 C18,31 20,25 38,28 S58,18 75,24 S93,13 106,18 S128,12 160,8" /></svg></div>
+                <div class="market-mini"><div class="mini-top"><span>SPX</span><span class="state-pill yellow" data-status-for="SPX">待接入</span></div><strong id="metric-spx">—</strong><span id="metric-spx-caption">标普 500 · 回撤 —</span><svg class="sparkline spark-green" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,38 C17,33 28,37 42,29 S61,25 78,28 S95,17 110,19 S131,14 160,10" /></svg></div>
+                <div class="market-mini"><div class="mini-top"><span>VIX / VXN</span><span class="state-pill yellow" data-status-for="VIX">待接入</span></div><strong id="metric-vol">— / —</strong><span>恐慌与科技波动</span><svg class="sparkline spark-coral" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,36 C15,26 25,34 36,18 S55,31 68,22 S83,12 96,25 S115,15 127,20 S142,10 160,15" /></svg></div>
+                <div class="market-mini"><div class="mini-top"><span>US10Y / USD-CNY</span><span class="state-pill yellow" data-status-for="US10Y">待接入</span></div><strong id="metric-rates">— / —</strong><span>利率与汇率</span><svg class="sparkline spark-blue" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 C14,22 23,30 39,26 S58,12 72,20 S96,26 112,16 S136,22 160,12" /></svg></div>
+              </div>
+              <div class="card-footnote" id="marketFootnote">当前页面展示的是界面演示值槽位，尚未调用实时行情 API。</div>
+            </article>
+
+            <article class="content-card action-card">
+              <div class="content-card-head"><div><div class="section-kicker">NEXT ACTION / 下一步</div><h3>把不确定项变成可确认项</h3></div><span class="tag estimate">4 项</span></div>
+              <div class="action-list">
+                <button class="action-row" data-section-target="holdings"><span class="action-number">01</span><span><strong>补充基金代码、份额与成本</strong><small>金额已载入，明细字段仍待补齐</small></span><span class="action-arrow">↗</span></button>
+                <button class="action-row" data-section-target="holdings"><span class="action-number">02</span><span><strong>补充定投金额与扣款日</strong><small>长期定投节奏还未录入</small></span><span class="action-arrow">↗</span></button>
+                <button class="action-row" data-section-target="qdii"><span class="action-number">03</span><span><strong>核对 QDII 渠道与限购公告</strong><small>直销与代销渠道要分开看</small></span><span class="action-arrow">↗</span></button>
+                <button class="action-row" data-section-target="settings"><span class="action-number">04</span><span><strong>选择行情与宏观数据源</strong><small>建议由服务端代理 API Key</small></span><span class="action-arrow">↗</span></button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-panel" id="section-holdings" data-panel>
+          <div class="section-heading"><div><div class="section-kicker">HOLDINGS / 持仓与定投</div><h2>每一笔都能追溯到来源。</h2></div><button class="primary-button" id="addHoldingButtonSecondary">＋ 新增一笔</button></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>已载入 2026-10-07 基金持仓快照。</strong><span>支付宝 61 项来自录屏逐帧核对；直销 10 项沿用 2026-10-03 记录。代码、份额和直销端持有收益仍待补充。</span></div></div>
+          <article class="content-card table-card">
+            <div class="content-card-head"><div><div class="section-kicker">PORTFOLIO LEDGER / 组合台账</div><h3>持仓清单</h3></div><div class="table-actions"><button class="ghost-button" id="clearHoldingsButton">恢复初始估算</button></div></div>
+            <div class="table-scroll"><table><thead><tr><th>资产 / 代码</th><th>分类</th><th>市值</th><th>成本 / 份额</th><th>月定投</th><th>数据状态</th><th></th></tr></thead><tbody id="holdingsTableBody"></tbody></table></div>
+            <div class="empty-state" id="holdingsEmpty" hidden>还没有记录，点击“新增一笔”开始录入。</div>
+          </article>
+          <div class="grid-two lower-grid"><article class="content-card contribution-card"><div class="content-card-head"><div><div class="section-kicker">DCA / 定投节奏</div><h3>定投计划</h3></div><span class="tag pending">待补充</span></div><div class="contribution-empty"><div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>当前已载入持仓金额；补充定投金额、扣款日和标的后，这里会显示年度投入路径。</span><button class="outline-button" data-open-modal="holding">补充定投计划</button></div></article><article class="content-card source-card"><div class="content-card-head"><div><div class="section-kicker">CONFIDENCE / 数据可信度</div><h3>这页数据怎么来的</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>持仓快照</span><strong>71 项 / 49.83 万元</strong></div><div><span class="confidence-key inferred"></span><span>推导字段</span><strong>支付宝成本由市值 - 持有收益估算</strong></div><div><span class="confidence-key pending-key"></span><span>待确认</span><strong>基金代码、份额、定投</strong></div><div><span class="confidence-key api-key"></span><span>接口数据</span><strong>行情与宏观指标</strong></div></div></article></div>
+        </section>
+
+        <section class="section-panel" id="section-market" data-panel>
+          <div class="section-heading"><div><div class="section-kicker">MARKET & MACRO / 市场与宏观</div><h2>规则先写好，波动来时少临场。</h2></div><div class="section-meta"><span class="status-dot yellow" id="marketStatusDot"></span> 规则已配置　<span class="divider-dot">·</span>　<span id="marketSectionStatus">市场温度待更新</span></div></div>
+          <div class="indicator-grid">
+            <div class="indicator-card"><div class="indicator-head"><span>NDX</span><span class="state-pill yellow" data-status-for="NDX">待接入</span></div><strong id="indicator-ndx">—</strong><small>纳指 100</small><div class="indicator-bar"><span style="width:42%"></span></div><div class="indicator-foot"><span>从高点回撤</span><b id="drawdown-ndx">—</b></div></div>
+            <div class="indicator-card"><div class="indicator-head"><span>SPX</span><span class="state-pill yellow" data-status-for="SPX">待接入</span></div><strong id="indicator-spx">—</strong><small>标普 500</small><div class="indicator-bar blue"><span style="width:64%"></span></div><div class="indicator-foot"><span>从高点回撤</span><b id="drawdown-spx">—</b></div></div>
+            <div class="indicator-card"><div class="indicator-head"><span>VIX</span><span class="state-pill yellow" data-status-for="VIX">待接入</span></div><strong id="indicator-vix">—</strong><small>市场波动率</small><div class="indicator-bar coral"><span style="width:28%"></span></div><div class="indicator-foot"><span>恐慌阈值</span><b>≥ 25</b></div></div>
+            <div class="indicator-card"><div class="indicator-head"><span>VXN</span><span class="state-pill yellow" data-status-for="VXN">待接入</span></div><strong id="indicator-vxn">—</strong><small>纳指波动率</small><div class="indicator-bar purple"><span style="width:35%"></span></div><div class="indicator-foot"><span>科技阈值</span><b>≥ 30</b></div></div>
+            <div class="indicator-card"><div class="indicator-head"><span>US10Y</span><span class="state-pill yellow" data-status-for="US10Y">待接入</span></div><strong id="indicator-us10y">—</strong><small>美国 10 年期</small><div class="indicator-bar teal"><span style="width:51%"></span></div><div class="indicator-foot"><span>利率</span><b>—</b></div></div>
+            <div class="indicator-card"><div class="indicator-head"><span>USD/CNY</span><span class="state-pill yellow" data-status-for="USDCNY">待接入</span></div><strong id="indicator-usdcny">—</strong><small>美元兑人民币</small><div class="indicator-bar orange"><span style="width:45%"></span></div><div class="indicator-foot"><span>汇率</span><b>—</b></div></div>
+          </div>
+          <div class="grid-two market-lower"><article class="content-card rule-card"><div class="content-card-head"><div><div class="section-kicker">RULES / 加仓分档</div><h3>纳指回撤观察尺</h3></div><span class="tag estimate">用户规则</span></div><div class="rule-table"><div class="rule-row header"><span>回撤区间</span><span>动作建议</span><span>状态</span></div><div class="rule-row"><span>0–5%</span><strong>维持计划</strong><span class="rule-chip green-chip">正常</span></div><div class="rule-row"><span>5–10%</span><strong>略加</strong><span class="rule-chip yellow-chip">小幅加码</span></div><div class="rule-row"><span>10–15%</span><strong>提高投入</strong><span class="rule-chip orange-chip">提高</span></div><div class="rule-row"><span>15–20%</span><strong>加倍</strong><span class="rule-chip coral-chip">加倍</span></div><div class="rule-row"><span>20%以上</span><strong>明显加仓</strong><span class="rule-chip red-chip">强信号</span></div></div><div class="rule-note">提醒逻辑可叠加 VIX / VXN 与 EPS 方向；若基本面持续恶化，不机械越跌越买。</div></article><article class="content-card macro-card"><div class="content-card-head"><div><div class="section-kicker">MACRO / 宏观时间线</div><h3>政策与数据日历</h3></div><span class="tag pending">接口待接入</span></div><div class="macro-timeline"><div><span class="timeline-dot purple-dot"></span><div><strong>美联储政策利率</strong><small>目标区间、会议声明、点阵图 / 官员路径</small></div><em id="macro-fed">待更新</em></div><div><span class="timeline-dot coral-dot"></span><div><strong>通胀</strong><small>CPI、核心 CPI、PCE、核心 PCE</small></div><em id="macro-inflation">待更新</em></div><div><span class="timeline-dot blue-dot"></span><div><strong>就业</strong><small>非农、失业率、时薪、初请失业金</small></div><em id="macro-jobs">待更新</em></div><div><span class="timeline-dot green-dot"></span><div><strong>盈利与资本开支</strong><small>EPS 修正方向、AI 资本开支回报</small></div><em>待接入</em></div></div></article></div>
+        </section>
+
+        <section class="section-panel" id="section-qdii" data-panel>
+          <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>限购、暂停和恢复，按渠道分开看。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 公告监测源待接入</div></div>
+          <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>状态监测需要基金公司公告或代销渠道页面。</strong><span>同一只基金在直销、支付宝等代销渠道的可购状态可能不同；网站会保留公告时间和来源。</span></div></div>
+          <article class="content-card table-card"><div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>关注清单</h3></div><button class="ghost-button" id="addQdiiButton">＋ 添加基金</button></div><div class="table-scroll"><table><thead><tr><th>基金 / 代码</th><th>定位</th><th>基金公司直销</th><th>支付宝等代销</th><th>公告时间</th><th>来源</th></tr></thead><tbody><tr><td><strong>摩根国际债券人民币对冲累计</strong><small>968050</small></td><td>人民币对冲 / 全球投资级债券</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr><tr><td><strong>易方达香港精选债券对冲人民币</strong><small>968118</small></td><td>人民币对冲 / 全球债券</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr><tr><td><strong>易方达中短期美元债</strong><small>007360 / 007361</small></td><td>1–3 年美元债</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr><tr><td><strong>中银美元债</strong><small>002286 / 019893</small></td><td>美元债 / 未固定对冲</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr></tbody></table></div><div class="card-footnote">这里保留了上一轮筛选中提到的关注对象，但没有把历史状态当成今天的实时结论。</div></article>
+          <div class="channel-grid"><div class="channel-card direct"><span class="channel-icon">D</span><div><strong>基金公司直销</strong><small>优先读取官方公告、交易规则、限额页面</small></div><span class="channel-state">待接入</span></div><div class="channel-card alipay"><span class="channel-icon">A</span><div><strong>支付宝等代销</strong><small>记录代销端是否同步、何时恢复</small></div><span class="channel-state">待接入</span></div></div>
+        </section>
+
+        <section class="section-panel" id="section-settings" data-panel>
+          <div class="section-heading"><div><div class="section-kicker">DATA SETTINGS / 数据设置</div><h2>先把数据链路摆清楚。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 本地优先　·　密钥不放在浏览器</div></div>
+          <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag pending">市场日线已接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>Yahoo Finance 免费日线；盘中实时行情可后续升级</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED、BLS、BEA、Treasury 等</small></div><span class="connector-status">等待密钥</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>基金公司官方源 + 代销渠道页面</small></div><span class="connector-status">未配置</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>阈值触发、状态变化、数据源异常</small></div><span class="connector-status">本地规则已开</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 推荐结构</div><h3>适合后续部署</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>本地界面</strong><small>浏览器 + localStorage</small></div><i>→</i><div><span>02</span><strong>服务端代理</strong><small>Vercel Functions / Worker</small></div><i>→</i><div><span>03</span><strong>定时刷新</strong><small>Cron / Scheduled Worker</small></div></div><div class="architecture-note">密钥放在服务端环境变量；浏览器只读取经过整理的数据快照，避免泄露和跨域问题。</div></article></div>
+          <article class="content-card api-table-card"><div class="content-card-head"><div><div class="section-kicker">API NOTES / 接口说明</div><h3>哪些数据可能需要密钥或付费</h3></div><span class="tag estimate">以供应商当前条款为准</span></div><div class="api-grid"><div class="api-row"><span class="api-type public">公开</span><div><strong>部分 Treasury / BLS 公共数据</strong><small>可能无需密钥，但有频率、历史范围或实时延迟限制。</small></div><span class="api-cost">通常免费</span></div><div class="api-row"><span class="api-type key">Key</span><div><strong>FRED、BEA、部分行情服务</strong><small>通常需要申请 API Key；免费档不等于无限制或实时权限。</small></div><span class="api-cost">免费档 + 限额</span></div><div class="api-row"><span class="api-type paid">Paid</span><div><strong>实时美股指数、期权或高频行情</strong><small>实时权限、商业使用、历史深度数据往往进入付费套餐。</small></div><span class="api-cost">可能收费</span></div><div class="api-row"><span class="api-type source">源</span><div><strong>基金限购与申购状态</strong><small>优先读取基金公司公告和代销页面；自动抓取要考虑稳定性和条款。</small></div><span class="api-cost">需维护</span></div></div></article>
+          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>只在重大变化时提醒</strong><small>默认开启：小幅波动不打扰，只提示阈值跨越、限购状态改变或数据源异常。</small></span></label><button class="outline-button" id="exportDataButton">导出本地数据</button></div>
+        </section>
+
+        <footer class="app-footer"><span>个人投资仪表盘 · 本地优先版本</span><span>估算数据不构成投资建议</span></footer>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="holdingModal" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-head"><div><div class="section-kicker">LEDGER ENTRY / 台账录入</div><h2 id="modalTitle">新增持仓</h2></div><button class="close-button" id="closeModalButton" aria-label="关闭">×</button></div>
+        <form id="holdingForm">
+          <div class="form-grid"><label>资产名称<input name="name" required placeholder="例如：纳斯达克100定投" /></label><label>代码 / 标识<input name="code" placeholder="例如：513100" /></label><label>分类<select name="category"><option>债券 / 现金</option><option>纳指 100</option><option>标普 500</option><option>主动 QDII</option><option>其他</option></select></label><label>当前市值<input name="value" type="number" min="0" step="0.01" placeholder="人民币" /></label><label>成本金额<input name="cost" type="number" min="0" step="0.01" placeholder="可暂不填" /></label><label>份额<input name="shares" type="number" min="0" step="0.0001" placeholder="可暂不填" /></label><label>每月定投<input name="monthly" type="number" min="0" step="0.01" placeholder="人民币" /></label><label>数据状态<select name="status"><option>用户已确认</option><option>估算</option><option>待确认</option></select></label></div>
+          <label class="full-field">备注<textarea name="note" rows="3" placeholder="例如：支付宝代销、人民币对冲份额、公告链接或核对时间"></textarea></label>
+          <div class="form-actions"><button type="button" class="ghost-button" id="cancelModalButton">取消</button><button type="submit" class="primary-button">保存到本地</button></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./portfolio-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
