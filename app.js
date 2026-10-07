@@ -249,6 +249,87 @@ function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
 }
 
+const chartAssets = {
+  NDX: { title: "纳斯达克 100（QQQ参考）", symbol: "NASDAQ:QQQ", directSymbol: "NASDAQ:NDX", note: "图中使用 QQQ ETF 作为纳指100参考走势；ETF价格不等于指数点位。" },
+  SPX: { title: "标普 500（SPY参考）", symbol: "AMEX:SPY", directSymbol: "SP:SPX", note: "图中使用 SPY ETF 作为标普500参考走势；ETF价格不等于指数点位。" },
+  VIX: { title: "VIX 恐慌指数", symbol: "CBOE:VIX" },
+  VXN: { title: "VXN 纳指波动率", symbol: "CBOE:VXN" },
+  US10Y: { title: "美国 10 年期国债收益率", symbol: "TVC:US10Y" },
+  USDCNY: { title: "美元兑人民币", symbol: "FX_IDC:USDCNY" },
+};
+let activeChartSymbol = "NDX";
+let activeChartInterval = "D";
+let lastChartTrigger = null;
+
+function renderTradingViewChart() {
+  const frame = $("#marketChartFrame");
+  const asset = chartAssets[activeChartSymbol];
+  if (!frame || !asset) return;
+  frame.replaceChildren();
+  const widget = document.createElement("div");
+  widget.className = "tradingview-widget-container";
+  const chart = document.createElement("div");
+  chart.className = "tradingview-widget-container__widget";
+  widget.append(chart);
+  const script = document.createElement("script");
+  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+  script.async = true;
+  script.textContent = JSON.stringify({
+    allow_symbol_change: false,
+    calendar: false,
+    details: false,
+    hide_side_toolbar: true,
+    hide_top_toolbar: true,
+    hide_legend: false,
+    hide_volume: true,
+    hotlist: false,
+    interval: activeChartInterval,
+    locale: "zh_CN",
+    save_image: false,
+    style: "1",
+    symbol: asset.symbol,
+    theme: "light",
+    timezone: "Asia/Shanghai",
+    backgroundColor: "#fbfaf6",
+    gridColor: "rgba(46, 46, 46, 0.06)",
+    withdateranges: true,
+    autosize: true,
+  });
+  widget.append(script);
+  frame.append(widget);
+  $("#marketChartTitle").textContent = asset.title;
+  $("#chartDisclosure").textContent = asset.note || "图表由 TradingView 提供。分时数据可能有延迟或受市场数据权限限制。";
+  $("#openFullChartLink").href = `https://www.tradingview.com/chart/?symbol=${encodeURIComponent(asset.directSymbol || asset.symbol)}`;
+  $$(`[data-chart-symbol]`).forEach((button) => {
+    const selected = button.dataset.chartSymbol === activeChartSymbol;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+  $$(`[data-chart-interval]`).forEach((button) => {
+    const selected = button.dataset.chartInterval === activeChartInterval;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+}
+
+function openMarketChart(symbolKey, trigger = null) {
+  if (!chartAssets[symbolKey]) return;
+  activeChartSymbol = symbolKey;
+  activeChartInterval = "D";
+  lastChartTrigger = trigger;
+  $("#marketChartModal").hidden = false;
+  document.body.style.overflow = "hidden";
+  renderTradingViewChart();
+  $("#closeMarketChartButton").focus();
+}
+
+function closeMarketChart() {
+  $("#marketChartModal").hidden = true;
+  $("#marketChartFrame").replaceChildren();
+  document.body.style.overflow = "";
+  lastChartTrigger?.focus();
+}
+
 function activateSection(sectionName) {
   $$(`[data-section]`).forEach((button) => button.classList.toggle("active", button.dataset.section === sectionName));
   $$(`[data-panel]`).forEach((panel) => panel.classList.toggle("active", panel.id === `section-${sectionName}`));
@@ -378,6 +459,11 @@ function exportData() {
 
 $$(`[data-section]`).forEach((button) => button.addEventListener("click", () => activateSection(button.dataset.section)));
 $$(`[data-section-target]`).forEach((button) => button.addEventListener("click", () => activateSection(button.dataset.sectionTarget)));
+$$(`[data-chart]`).forEach((button) => button.addEventListener("click", () => openMarketChart(button.dataset.chart, button)));
+$$(`[data-chart-symbol]`).forEach((button) => button.addEventListener("click", () => { activeChartSymbol = button.dataset.chartSymbol; renderTradingViewChart(); }));
+$$(`[data-chart-interval]`).forEach((button) => button.addEventListener("click", () => { activeChartInterval = button.dataset.chartInterval; renderTradingViewChart(); }));
+$("#closeMarketChartButton")?.addEventListener("click", closeMarketChart);
+$("#marketChartModal")?.addEventListener("click", (event) => { if (event.target.id === "marketChartModal") closeMarketChart(); });
 $$(`[data-open-modal="holding"]`).forEach((button) => button.addEventListener("click", openModal));
 $("#addHoldingButton")?.addEventListener("click", openModal);
 $("#addHoldingButtonSecondary")?.addEventListener("click", openModal);
@@ -400,7 +486,11 @@ $("#holdingForm")?.addEventListener("submit", (event) => {
   showToast("已保存到本地台账");
 });
 
-document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !$("#holdingModal").hidden) closeModal(); });
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (!$("#marketChartModal").hidden) closeMarketChart();
+  else if (!$("#holdingModal").hidden) closeModal();
+});
 renderHoldings();
 refreshMarketData();
 window.setInterval(refreshMarketData, 60 * 1000);
