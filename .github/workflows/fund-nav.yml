@@ -1,0 +1,26 @@
+name: refresh-fund-nav
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch public fund NAVs
+        run: node scripts/fetch-fund-data.mjs
+      - name: Commit refreshed fund data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fund-data.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh fund NAV and daily returns"
+          git push
