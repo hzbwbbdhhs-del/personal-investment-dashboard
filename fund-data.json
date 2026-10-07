@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-07T13:41:57.225Z",
+  "updatedAt": "2026-10-07T14:04:55.709Z",
   "source": "东方财富公开基金历史净值接口",
   "note": "日收益率为基金单位净值日变化；未提供份额时，仪表盘按记录持仓市值估算金额。QDII净值可能晚于海外市场交易日公布。",
   "count": 63,
@@ -56,13 +56,13 @@
     "539002": {
       "code": "539002",
       "name": "建信新兴市场优选混合(QDII)A",
-      "status": "available",
-      "latestDate": "2026-09-29",
-      "nav": 2.503,
-      "previousDate": "2026-09-28",
-      "previousNav": 2.477,
-      "dailyChange": 0.026,
-      "dailyChangePct": 1.05,
+      "status": "unavailable",
+      "latestDate": null,
+      "nav": null,
+      "previousDate": null,
+      "previousNav": null,
+      "dailyChange": null,
+      "dailyChangePct": null,
       "source": "https://fund.eastmoney.com/539002.html"
     },
     "539003": {
@@ -80,13 +80,13 @@
     "003949": {
       "code": "003949",
       "name": "兴全稳泰债券A",
-      "status": "available",
-      "latestDate": "2026-09-30",
-      "nav": 1.2436,
-      "previousDate": "2026-09-29",
-      "previousNav": 1.2438,
-      "dailyChange": -0.0002,
-      "dailyChangePct": -0.02,
+      "status": "unavailable",
+      "latestDate": null,
+      "nav": null,
+      "previousDate": null,
+      "previousNav": null,
+      "dailyChange": null,
+      "dailyChangePct": null,
       "source": "https://fund.eastmoney.com/003949.html"
     },
     "003376": {
@@ -152,13 +152,13 @@
     "017731": {
       "code": "017731",
       "name": "嘉实全球产业升级股票(QDII)C",
-      "status": "unavailable",
-      "latestDate": null,
-      "nav": null,
-      "previousDate": null,
-      "previousNav": null,
-      "dailyChange": null,
-      "dailyChangePct": null,
+      "status": "available",
+      "latestDate": "2026-09-29",
+      "nav": 4.0561,
+      "previousDate": "2026-09-28",
+      "previousNav": 4.0141,
+      "dailyChange": 0.042,
+      "dailyChangePct": 1.05,
       "source": "https://fund.eastmoney.com/017731.html"
     },
     "017730": {
