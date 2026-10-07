@@ -141,6 +141,12 @@
 
         <section class="section-panel" id="section-market" data-panel>
           <div class="section-heading"><div><div class="section-kicker">MARKET & MACRO / 市场与宏观</div><h2>规则先写好，波动来时少临场。</h2></div><div class="section-meta"><span class="status-dot yellow" id="marketStatusDot"></span> 规则已配置　<span class="divider-dot">·</span>　<span id="marketSectionStatus">市场温度待更新</span></div></div>
+          <article class="content-card tradingview-quotes-card" aria-label="TradingView 行情参考">
+            <div class="content-card-head"><div><div class="section-kicker">TRADINGVIEW / 指数走势</div><h3>折线走势与时间区间</h3></div><span class="tag estimate">第三方图表</span></div>
+            <div id="tradingviewMarketQuotes" class="tradingview-quotes-frame" aria-live="polite">打开本页后加载 TradingView 行情…</div>
+            <p class="card-footnote">QQQ / SPY 折线是 ETF 盘中参考，不是指数点位；“纳指100 / 标普500 · 日线”是指数日线。各市场数据可能延迟或受嵌入权限限制；市场温度仍按 FRED 日线快照计算。</p>
+            <a class="tradingview-attribution" href="https://www.tradingview.com/markets/" target="_blank" rel="noopener noreferrer">行情图表由 TradingView 提供 ↗</a>
+          </article>
           <div class="indicator-grid">
             <button class="indicator-card chart-trigger" type="button" data-chart="NDX" aria-label="查看纳斯达克100走势图"><span class="indicator-head"><span>NDX</span><span class="state-pill yellow" data-status-for="NDX">待接入</span></span><strong id="indicator-ndx">—</strong><small>纳指 100</small><span class="indicator-bar"><span style="width:42%"></span></span><span class="indicator-foot"><span>从高点回撤</span><b id="drawdown-ndx">—</b></span><span class="indicator-chart-link">看日线 / 分时 ↗</span></button>
             <button class="indicator-card chart-trigger" type="button" data-chart="SPX" aria-label="查看标普500走势图"><span class="indicator-head"><span>SPX</span><span class="state-pill yellow" data-status-for="SPX">待接入</span></span><strong id="indicator-spx">—</strong><small>标普 500</small><span class="indicator-bar blue"><span style="width:64%"></span></span><span class="indicator-foot"><span>从高点回撤</span><b id="drawdown-spx">—</b></span><span class="indicator-chart-link">看日线 / 分时 ↗</span></button>

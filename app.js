@@ -287,8 +287,8 @@ function escapeHtml(value) {
 }
 
 const chartAssets = {
-  NDX: { title: "纳斯达克 100（QQQ参考）", symbol: "NASDAQ:QQQ", directSymbol: "NASDAQ:NDX", note: "图中使用 QQQ ETF 作为纳指100参考走势；ETF价格不等于指数点位。" },
-  SPX: { title: "标普 500（SPY参考）", symbol: "AMEX:SPY", directSymbol: "SP:SPX", note: "图中使用 SPY ETF 作为标普500参考走势；ETF价格不等于指数点位。" },
+  NDX: { title: "QQQ · 纳指100 ETF盘中参考", symbol: "NASDAQ:QQQ", directSymbol: "NASDAQ:NDX", note: "图中是 QQQ ETF 的走势，不是纳指100指数点位；纳指100日线点位和市场温度仍按 FRED 计算。" },
+  SPX: { title: "SPY · 标普500 ETF盘中参考", symbol: "AMEX:SPY", directSymbol: "SP:SPX", note: "图中是 SPY ETF 的走势，不是标普500指数点位；标普500日线点位仍按 FRED 显示。" },
   VIX: { title: "VIX 恐慌指数", symbol: "CBOE:VIX" },
   VXN: { title: "VXN 纳指波动率", symbol: "CBOE:VXN" },
   US10Y: { title: "美国 10 年期国债收益率", symbol: "TVC:US10Y" },
@@ -297,6 +297,62 @@ const chartAssets = {
 let activeChartSymbol = "NDX";
 let activeChartInterval = "D";
 let lastChartTrigger = null;
+let tradingViewQuotesLoaded = false;
+
+function loadTradingViewQuotes() {
+  if (tradingViewQuotesLoaded) return;
+  const frame = $("#tradingviewMarketQuotes");
+  if (!frame) return;
+  tradingViewQuotesLoaded = true;
+  frame.replaceChildren();
+  const widget = document.createElement("div");
+  widget.className = "tradingview-widget-container";
+  const quotes = document.createElement("div");
+  quotes.className = "tradingview-widget-container__widget";
+  widget.append(quotes);
+  const script = document.createElement("script");
+  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+  script.async = true;
+  script.textContent = JSON.stringify({
+    symbols: [
+      ["QQQ · 纳指参考", "NASDAQ:QQQ|1D"],
+      ["纳指100 · 日线", "FRED:NDQ100|1D"],
+      ["SPY · 标普参考", "AMEX:SPY|1D"],
+      ["标普500 · 日线", "FRED:SP500|1D"],
+      ["VIX", "CBOE:VIX|1D"],
+      ["VXN", "CBOE:VXN|1D"],
+      ["10年美债", "TVC:US10Y|1D"],
+      ["美元/人民币", "FX_IDC:USDCNY|1D"],
+    ],
+    chartOnly: false,
+    width: "100%",
+    height: "100%",
+    locale: "zh_CN",
+    colorTheme: "light",
+    autosize: true,
+    showVolume: false,
+    showMA: false,
+    hideDateRanges: false,
+    hideMarketStatus: false,
+    hideSymbolLogo: false,
+    scalePosition: "right",
+    scaleMode: "Normal",
+    valuesTracking: "1",
+    changeMode: "price-and-percent",
+    chartType: "area",
+    lineWidth: 2,
+    lineType: 0,
+    upColor: "#198f77",
+    downColor: "#ed4052",
+    dateRanges: ["1d|1", "5d|5", "1m|30", "6m|1D", "12m|1D", "60m|1W", "all|1M"],
+  });
+  script.onerror = () => {
+    tradingViewQuotesLoaded = false;
+    frame.textContent = "TradingView 图表暂时无法加载。请检查网络或浏览器拦截设置后重新进入本页。";
+  };
+  widget.append(script);
+  frame.append(widget);
+}
 
 function renderTradingViewChart() {
   const frame = $("#marketChartFrame");
@@ -323,7 +379,7 @@ function renderTradingViewChart() {
     interval: activeChartInterval,
     locale: "zh_CN",
     save_image: false,
-    style: "1",
+    style: "3",
     symbol: asset.symbol,
     theme: "light",
     timezone: "Asia/Shanghai",
@@ -370,6 +426,7 @@ function closeMarketChart() {
 function activateSection(sectionName) {
   $$(`[data-section]`).forEach((button) => button.classList.toggle("active", button.dataset.section === sectionName));
   $$(`[data-panel]`).forEach((panel) => panel.classList.toggle("active", panel.id === `section-${sectionName}`));
+  if (sectionName === "market") loadTradingViewQuotes();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
