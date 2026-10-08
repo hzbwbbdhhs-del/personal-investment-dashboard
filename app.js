@@ -209,7 +209,20 @@ function renderTodayReturns() {
   const marketValue = available.reduce((sum, row) => sum + Number(row.item.value || 0), 0);
   const exactCount = available.filter(({ result }) => result.exact).length;
   const dates = [...new Set(available.map(({ result }) => result.fund.latestDate).filter(Boolean))].sort();
-  const dateRange = dates.length > 1 ? `${dates[0]} 至 ${dates.at(-1)}` : dates[0] || "日期待确认";
+  const latestDate = dates.at(-1) || "";
+  const dateCounts = available.reduce((counts, { result }) => {
+    const date = result.fund.latestDate || "日期待确认";
+    counts.set(date, (counts.get(date) || 0) + 1);
+    return counts;
+  }, new Map());
+  const displayNavDate = (date) => {
+    const matched = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
+    return matched ? `${Number(matched[2])}月${Number(matched[3])}日` : "日期待确认";
+  };
+  const dateBreakdown = [...dateCounts.entries()]
+    .sort(([left], [right]) => right.localeCompare(left))
+    .map(([date, count]) => `${displayNavDate(date)}（${count}笔）`)
+    .join(" · ");
   const sign = total > 0 ? "+" : "";
   const totalNode = $("#todayReturnTotal");
   if (totalNode) {
@@ -219,9 +232,9 @@ function renderTodayReturns() {
   const coverage = $("#todayReturnCoverage");
   if (coverage) coverage.textContent = `${available.length}/${holdings.length} 笔已取数`;
   const status = $("#todayReturnStatus");
-  if (status) status.textContent = available.length ? `净值日期 ${dateRange}` : "基金净值暂不可用";
+  if (status) status.textContent = available.length ? `最新净值 ${displayNavDate(latestDate)} · ${dateBreakdown}` : "基金净值暂不可用";
   const dateNode = $("#todayReturnDate");
-  if (dateNode) dateNode.textContent = available.length ? dateRange : "等待数据";
+  if (dateNode) dateNode.textContent = available.length ? dateBreakdown : "等待数据";
   const rateNode = $("#todayReturnRate");
   if (rateNode) {
     const rate = marketValue ? total / marketValue * 100 : null;
@@ -232,11 +245,18 @@ function renderTodayReturns() {
   const empty = $("#todayReturnsEmpty");
   if (empty) empty.hidden = rows.length > 0;
   body.innerHTML = rows.sort((a, b) => Math.abs(b.result?.amount || 0) - Math.abs(a.result?.amount || 0)).map(({ item, result }) => {
-    const name = `<strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small>`;
-    if (!result) return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td>—</td><td>—</td><td>等待基金净值</td></tr>`;
+    const nameBase = `<strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small>`;
+    if (!result) {
+      const name = `${nameBase}<span class="mobile-nav-date unavailable">日期未获取</span>`;
+      return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td>—</td><td>—</td><td class="nav-date-column"><span class="nav-date-chip unavailable">日期未获取</span></td><td>—</td></tr>`;
+    }
     const { fund, exact, amount } = result;
     const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td>${escapeHtml(fund.latestDate || "日期待确认")} · ${exact ? "按份额" : "估算"}</td></tr>`;
+    const isLatestDate = fund.latestDate === latestDate;
+    const dateClass = isLatestDate ? "current" : "lagged";
+    const dateNote = isLatestDate ? "当前最新日期" : "较最新日期滞后";
+    const name = `${nameBase}<span class="mobile-nav-date ${dateClass}">${displayNavDate(fund.latestDate)}净值</span>`;
+    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td class="nav-date-cell nav-date-column"><span class="nav-date-chip ${dateClass}">${displayNavDate(fund.latestDate)}净值</span><small>${escapeHtml(fund.latestDate || "日期待确认")} · ${dateNote}</small></td><td><strong>${exact ? "按份额精算" : "按持仓市值估算"}</strong></td></tr>`;
   }).join("");
 }
 

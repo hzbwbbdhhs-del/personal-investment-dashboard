@@ -135,7 +135,7 @@
           </div>
           <article class="content-card table-card" style="margin-top:14px">
             <div class="content-card-head"><div><div class="section-kicker">BY HOLDING / 持仓明细</div><h3>各基金最新日收益</h3><small>按变动金额绝对值排序；每只基金标注自己的净值日期。</small></div></div>
-            <div class="table-scroll"><table><thead><tr><th>基金 / 渠道</th><th>分类</th><th>持仓市值</th><th>日收益</th><th>日涨幅</th><th>净值日期 / 口径</th></tr></thead><tbody id="todayReturnsTableBody"></tbody></table></div>
+            <div class="table-scroll"><table><thead><tr><th>基金 / 渠道</th><th>分类</th><th>持仓市值</th><th>日收益</th><th>日涨幅</th><th class="nav-date-column">净值日期</th><th>计算口径</th></tr></thead><tbody id="todayReturnsTableBody"></tbody></table></div>
             <div class="empty-state" id="todayReturnsEmpty" hidden>暂时没有可用的基金净值数据。</div>
           </article>
         </section>
@@ -206,7 +206,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261008-daily-restore"></script>
+    <script src="./app.js?v=20261008-nav-date-labels"></script>
     <script src="./qdii-ui.js?v=20261008-qdii-channels"></script>
   </body>
 </html>
