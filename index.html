@@ -25,10 +25,11 @@
         </div>
         <nav class="nav-list">
           <button class="nav-item active" data-section="overview"><span class="nav-index">01</span><span>总览</span></button>
-          <button class="nav-item" data-section="holdings"><span class="nav-index">02</span><span>持仓与定投</span></button>
-          <button class="nav-item" data-section="market"><span class="nav-index">03</span><span>市场与宏观</span></button>
-          <button class="nav-item" data-section="qdii"><span class="nav-index">04</span><span>QDII 状态</span></button>
-          <button class="nav-item" data-section="settings"><span class="nav-index">05</span><span>数据设置</span></button>
+          <button class="nav-item" data-section="today-returns"><span class="nav-index">02</span><span>今日收益</span></button>
+          <button class="nav-item" data-section="holdings"><span class="nav-index">03</span><span>持仓与定投</span></button>
+          <button class="nav-item" data-section="market"><span class="nav-index">04</span><span>市场与宏观</span></button>
+          <button class="nav-item" data-section="qdii"><span class="nav-index">05</span><span>QDII 状态</span></button>
+          <button class="nav-item" data-section="settings"><span class="nav-index">06</span><span>数据设置</span></button>
         </nav>
         <div class="sidebar-footer">
           <div class="mini-label">BASELINE</div>
@@ -125,6 +126,20 @@
           <div class="grid-two lower-grid"><article class="content-card contribution-card"><div class="content-card-head"><div><div class="section-kicker">DCA / 定投节奏</div><h3>定投计划</h3></div><span class="tag pending">待补充</span></div><div class="contribution-empty"><div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>当前已载入持仓金额；补充定投金额、扣款日和标的后，这里会显示年度投入路径。</span><button class="outline-button" data-open-modal="holding">补充定投计划</button></div></article><article class="content-card source-card"><div class="content-card-head"><div><div class="section-kicker">CONFIDENCE / 数据可信度</div><h3>这页数据怎么来的</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>持仓快照</span><strong>71 项 / 49.83 万元</strong></div><div><span class="confidence-key inferred"></span><span>推导字段</span><strong>支付宝成本由市值 - 持有收益估算</strong></div><div><span class="confidence-key pending-key"></span><span>待确认</span><strong>基金代码、份额、定投</strong></div><div><span class="confidence-key api-key"></span><span>接口数据</span><strong>行情与宏观指标</strong></div></div></article></div>
         </section>
 
+        <section class="section-panel" id="section-today-returns" data-panel>
+          <div class="section-heading"><div><div class="section-kicker">TODAY'S RETURNS / 今日收益</div><h2>逐笔查看最新公布的基金收益。</h2></div><div class="section-meta"><span class="status-dot yellow"></span><span id="todayReturnStatus">等待基金净值</span></div></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>这不是同一交易日的实时账户收益。</strong><span>各只基金净值公布日可能不同；QDII 净值通常滞后。合计仅为各基金最新可得单日变动的混合日期估算，不能当作“今天实际赚了多少”。</span></div></div>
+          <div class="grid-two">
+            <article class="hero-card total-card"><div class="card-label-row"><span class="card-label">最新净值日变动合计</span><span class="tag estimate">估算</span></div><div class="hero-number" id="todayReturnTotal">—</div><div class="hero-foot"><span>按持仓市值及份额计算</span><span id="todayReturnCoverage">—</span></div><div class="hero-rule"></div><div class="hero-microcopy">每只基金以下方标注的净值日期为准；当前持仓金额仍是已录入快照，不是自动同步的实时账户市值。</div></article>
+            <article class="content-card"><div class="content-card-head"><div><div class="section-kicker">RETURN DETAILS / 统计口径</div><h3>日期与覆盖情况</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>净值日期范围</span><strong id="todayReturnDate">等待数据</strong></div><div><span class="confidence-key inferred"></span><span>组合估算涨幅</span><strong id="todayReturnRate">—</strong></div><div><span class="confidence-key api-key"></span><span>收益算法</span><strong id="todayReturnMethod">份额 × 单位净值变化；缺份额时估算</strong></div></div></article>
+          </div>
+          <article class="content-card table-card" style="margin-top:14px">
+            <div class="content-card-head"><div><div class="section-kicker">BY HOLDING / 持仓明细</div><h3>各基金最新日收益</h3><small>按变动金额绝对值排序；每只基金标注自己的净值日期。</small></div></div>
+            <div class="table-scroll"><table><thead><tr><th>基金 / 渠道</th><th>分类</th><th>持仓市值</th><th>日收益</th><th>日涨幅</th><th>净值日期 / 口径</th></tr></thead><tbody id="todayReturnsTableBody"></tbody></table></div>
+            <div class="empty-state" id="todayReturnsEmpty" hidden>暂时没有可用的基金净值数据。</div>
+          </article>
+        </section>
+
         <section class="section-panel" id="section-market" data-panel>
           <div class="section-heading"><div><div class="section-kicker">MARKET & MACRO / 市场与宏观</div><h2>规则先写好，波动来时少临场。</h2></div><div class="section-meta"><span class="status-dot yellow" id="marketStatusDot"></span> 规则已配置　<span class="divider-dot">·</span>　<span id="marketSectionStatus">市场温度待更新</span></div></div>
           <div class="indicator-grid">
@@ -146,16 +161,16 @@
 
         <section class="section-panel" id="section-qdii" data-panel>
           <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>纳指、标普和主动 QDII 申购核对。</h2></div><div class="section-meta" id="qdiiUpdatedAt">正在读取公开页面快照…</div></div>
-          <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>当前没有覆盖全市场、可保证最新的支付宝限额接口；下表不可作为下单额度。</strong><span>基金公司公告、天天基金页面和支付宝实际下单额度是不同口径。公开页面快照只作线索；未核对最新公告或支付宝下单页的基金，一律标为“当前额度未核实”。快照采集时间不等于公告生效时间。</span></div></div>
+          <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>直销看基金公司官网公告；支付宝代销看适用的代销公告及支付宝实际下单页。</strong><span>已找到的公告按发布日列示，仍须留意后续调整；写“各代销机构”不等于已核实支付宝此刻可买额度。第三方快照只作线索，不可代替两种渠道的核验。</span></div></div>
           <article class="content-card table-card qdii-table-card">
             <div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>QDII 核对清单 <span id="qdiiCount" class="qdii-count">—</span></h3></div><button class="ghost-button" id="qdiiRefreshButton" type="button">↻ 检查云端快照</button></div>
             <div class="qdii-controls"><div class="qdii-categories" role="group" aria-label="QDII 分类"><button type="button" data-qdii-category="all" class="active">全部</button><button type="button" data-qdii-category="nasdaq100">纳斯达克100</button><button type="button" data-qdii-category="sp500">标普500</button><button type="button" data-qdii-category="active">主动型 QDII</button></div><label class="qdii-search-label">搜索基金或代码<input id="qdiiSearch" type="search" placeholder="名称 / 6 位代码" /></label><label class="qdii-filter-label"><input id="qdiiHeldOnly" type="checkbox" /> 只看我的持仓</label><select id="qdiiStatusFilter" aria-label="筛选申购状态"><option value="all">全部申购状态</option><option value="限大额">限大额</option><option value="暂停申购">暂停申购</option><option value="开放申购">开放申购</option></select></div>
             <p class="qdii-scope" id="qdiiScope">覆盖范围加载中…</p>
-            <div class="table-scroll"><table class="qdii-table"><thead><tr><th>基金 / 代码</th><th>类别</th><th>第三方页面状态</th><th>当前可买额度</th><th>基金公司公告 / 渠道</th><th>核对来源</th></tr></thead><tbody id="qdiiRows"><tr><td colspan="6">正在读取公开页面快照…</td></tr></tbody></table></div>
+            <div class="table-scroll"><table class="qdii-table"><thead><tr><th>基金 / 代码</th><th>类别</th><th>基金公司直销</th><th>支付宝代销</th><th>第三方页面参考</th><th>公告与核对来源</th></tr></thead><tbody id="qdiiRows"><tr><td colspan="6">正在读取公开页面快照…</td></tr></tbody></table></div>
             <div class="qdii-table-footer"><span id="qdiiShown">—</span><button type="button" class="ghost-button" id="qdiiMoreButton" hidden>显示更多</button></div>
             <div class="card-footnote">同一基金的 A/C 等份额分别列示，额度可能按基金账户或份额合并计算；“开放申购”只表示当前表未显示限制，不保证其他渠道不限购。单笔能否买入请以实际下单页及基金公司公告为准。</div>
           </article>
-          <div class="channel-grid"><div class="channel-card direct"><span class="channel-icon">D</span><div><strong>基金公司直销</strong><small>点击每只基金的“公告”核对最新官方规则；本页暂不声称已自动核验直销额度。</small></div><span class="channel-state">逐只核验</span></div><div class="channel-card alipay"><span class="channel-icon">A</span><div><strong>支付宝代销</strong><small>支付宝的可购状态可能不同于天天基金，需以支付宝基金详情和下单页为准。</small></div><span class="channel-state">未接入</span></div></div>
+          <div class="channel-grid"><div class="channel-card direct"><span class="channel-icon">D</span><div><strong>基金公司直销</strong><small>已对部分主流基金核对基金公司官网公告；未完成官方核验的基金会明确显示“待核实”。</small></div><span class="channel-state">部分核验</span></div><div class="channel-card alipay"><span class="channel-icon">A</span><div><strong>支付宝代销</strong><small>优先展示基金公告中适用于“各代销机构”的规则；支付宝详情和实际下单页仍需复核。</small></div><span class="channel-state">部分核验</span></div></div>
         </section>
 
         <section class="section-panel" id="section-settings" data-panel>
@@ -191,7 +206,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261008-area-popup-v2"></script>
-    <script src="./qdii-ui.js?v=20261008-qdii-source-audit"></script>
+    <script src="./app.js?v=20261008-daily-restore"></script>
+    <script src="./qdii-ui.js?v=20261008-qdii-channels"></script>
   </body>
 </html>

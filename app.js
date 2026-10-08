@@ -208,7 +208,8 @@ function renderTodayReturns() {
   const total = available.reduce((sum, row) => sum + row.result.amount, 0);
   const marketValue = available.reduce((sum, row) => sum + Number(row.item.value || 0), 0);
   const exactCount = available.filter(({ result }) => result.exact).length;
-  const latestDate = available.map(({ result }) => result.fund.latestDate).filter(Boolean).sort().at(-1);
+  const dates = [...new Set(available.map(({ result }) => result.fund.latestDate).filter(Boolean))].sort();
+  const dateRange = dates.length > 1 ? `${dates[0]} 至 ${dates.at(-1)}` : dates[0] || "日期待确认";
   const sign = total > 0 ? "+" : "";
   const totalNode = $("#todayReturnTotal");
   if (totalNode) {
@@ -218,22 +219,24 @@ function renderTodayReturns() {
   const coverage = $("#todayReturnCoverage");
   if (coverage) coverage.textContent = `${available.length}/${holdings.length} 笔已取数`;
   const status = $("#todayReturnStatus");
-  if (status) status.textContent = available.length ? `净值更新至 ${latestDate || "日期待确认"}` : "基金净值暂不可用";
+  if (status) status.textContent = available.length ? `净值日期 ${dateRange}` : "基金净值暂不可用";
   const dateNode = $("#todayReturnDate");
-  if (dateNode) dateNode.textContent = latestDate || "等待数据";
+  if (dateNode) dateNode.textContent = available.length ? dateRange : "等待数据";
   const rateNode = $("#todayReturnRate");
-  if (rateNode) rateNode.textContent = marketValue ? `${(total / marketValue * 100 > 0 ? "+" : "")}${(total / marketValue * 100).toFixed(2)}% · 估算` : "—";
+  if (rateNode) {
+    const rate = marketValue ? total / marketValue * 100 : null;
+    rateNode.textContent = rate == null ? "—" : `${rate > 0 ? "+" : ""}${rate.toFixed(2)}% · 混合日期估算`;
+  }
   const methodNode = $("#todayReturnMethod");
   if (methodNode) methodNode.textContent = available.length ? `${exactCount} 笔按份额，其余按市值估算` : "等待净值和持仓数据";
   const empty = $("#todayReturnsEmpty");
   if (empty) empty.hidden = rows.length > 0;
   body.innerHTML = rows.sort((a, b) => Math.abs(b.result?.amount || 0) - Math.abs(a.result?.amount || 0)).map(({ item, result }) => {
-    if (!result) return `<tr><td><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small></td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td>—</td><td>—</td><td>等待基金净值</td></tr>`;
+    const name = `<strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small>`;
+    if (!result) return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td>—</td><td>—</td><td>等待基金净值</td></tr>`;
     const { fund, exact, amount } = result;
-    const amountSign = amount > 0 ? "+" : "";
-    const rateSign = fund.dailyChangePct > 0 ? "+" : "";
     const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-    return `<tr><td><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "")} · ${escapeHtml(item.channel || "渠道待补充")}</small></td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td><strong class="${amountClass}">${amountSign}${formatCurrency(amount)}</strong></td><td>${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%</td><td>${escapeHtml(fund.latestDate || "日期待确认")} · ${exact ? "按份额" : "估算"}</td></tr>`;
+    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td>${escapeHtml(fund.latestDate || "日期待确认")} · ${exact ? "按份额" : "估算"}</td></tr>`;
   }).join("");
 }
 

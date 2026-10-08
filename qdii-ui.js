@@ -4,27 +4,56 @@ const qdiiView = { payload: null, category: "all", shown: 30 };
 const qdiiNotices = {
   "000834": {
     date: "2026-06-03",
-    text: "公告：直销 ¥100/日；各代销 ¥10/日",
+    direct: "¥100/日",
+    agency: "各代销机构 ¥10/日",
     url: "https://www.dcfund.com.cn/plat_files/upload/ann_upload/20260602/202606021780401593666.pdf",
   },
   "008971": {
     date: "2026-06-03",
-    text: "公告：直销 ¥100/日；各代销 ¥10/日",
+    direct: "¥100/日",
+    agency: "各代销机构 ¥10/日",
     url: "https://www.dcfund.com.cn/plat_files/upload/ann_upload/20260602/202606021780401593666.pdf",
+  },
+  "096001": {
+    date: "2026-01-23",
+    direct: "¥500/日",
+    agency: "各代销机构 ¥50/日",
+    url: "https://www.dcfund.com.cn/plat_files/upload/ann_upload/20260122/202601221769072007404.pdf",
+  },
+  "008401": {
+    date: "2026-01-23",
+    direct: "¥500/日",
+    agency: "各代销机构 ¥50/日",
+    url: "https://www.dcfund.com.cn/plat_files/upload/ann_upload/20260122/202601221769072007404.pdf",
   },
   "019547": {
     date: "2026-09-01",
-    text: "公告：基金公司直销 ¥10/日；代销待核",
+    direct: "¥10/日",
+    agency: null,
     url: "https://static.cmfchina.com/web/noticedetails/226000/index.html",
   },
   "019548": {
     date: "2026-09-01",
-    text: "公告：基金公司直销 ¥10/日；代销待核",
+    direct: "¥10/日",
+    agency: null,
     url: "https://static.cmfchina.com/web/noticedetails/226000/index.html",
   },
   "270042": {
     date: "2026-09-30",
-    text: "公告：人民币份额继续暂停申购",
+    direct: "暂停申购",
+    agency: "暂停申购",
+    url: "https://www.gffunds.com.cn/jjgg/zdsj/202609/P020260930313803993540.pdf",
+  },
+  "006479": {
+    date: "2026-09-30",
+    direct: "暂停申购",
+    agency: "暂停申购",
+    url: "https://www.gffunds.com.cn/jjgg/zdsj/202609/P020260930313803993540.pdf",
+  },
+  "021778": {
+    date: "2026-09-30",
+    direct: "暂停申购",
+    agency: "暂停申购",
     url: "https://www.gffunds.com.cn/jjgg/zdsj/202609/P020260930313803993540.pdf",
   },
 };
@@ -65,12 +94,18 @@ function renderQdiiLimits() {
       : "第三方页面：" + fund.status;
     const held = heldCodes.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : "";
     const code = qdiiEscape(fund.code);
+    const direct = notice?.direct
+      ? '<strong>' + qdiiEscape(notice.direct) + '</strong><small>基金公司公告 · ' + notice.date + '</small>'
+      : '<strong>待核实</strong><small>尚未逐只核对基金官网</small>';
+    const alipay = notice?.agency
+      ? '<strong>' + qdiiEscape(notice.agency) + '</strong><small>公告口径；支付宝下单页待复核</small>'
+      : '<strong>待核实</strong><small>未找到可确认支付宝的适用公告</small>';
     return '<tr><td><strong>' + qdiiEscape(fund.name) + held + '</strong><small>' + code + '</small></td>'
       + '<td>' + (categoryLabel[fund.category] || "—") + '</td>'
-      + '<td><span class="qdii-state ' + (isRecent ? stateClass(fund.status) : "unknown") + '">' + (isRecent ? qdiiEscape(fund.status) : "快照过期") + '</span></td>'
-      + '<td><strong>未核实</strong><small>' + qdiiEscape(thirdPartyHint) + '</small></td>'
-      + '<td>' + (notice ? qdiiEscape(notice.text) + '<small>公告 ' + notice.date + '；支付宝下单页待核</small>' : '暂无逐只核对公告<small>直销、支付宝均待核</small>') + '</td>'
-      + '<td>' + (notice ? '<a href="' + notice.url + '" target="_blank" rel="noopener noreferrer">基金公司公告 ↗</a><small>历史公告，非实时承诺</small>' : '')
+      + '<td>' + direct + '</td>'
+      + '<td>' + alipay + '</td>'
+      + '<td><span class="qdii-state ' + (isRecent ? stateClass(fund.status) : "unknown") + '">' + (isRecent ? qdiiEscape(fund.status) : "快照过期") + '</span><small>' + qdiiEscape(thirdPartyHint) + '</small></td>'
+      + '<td>' + (notice ? '<a href="' + notice.url + '" target="_blank" rel="noopener noreferrer">基金公司公告 ↗</a><small>公告 ' + notice.date + '；继续检查后续公告</small>' : '<strong>未找到已核公告</strong><small>当前不展示推测额度</small>')
       + '<a href="https://fundf10.eastmoney.com/jjfl_' + code + '.html" target="_blank" rel="noopener noreferrer">第三方页面 ↗</a></td></tr>';
   }).join("");
   qdii$("#qdiiRows").innerHTML = html || '<tr><td colspan="6">没有符合条件的基金。可清空搜索或切换筛选条件。</td></tr>';
@@ -118,7 +153,7 @@ qdii$("#refreshButton")?.addEventListener("click", refreshQdiiLimits);
 const fundConnector = qdii$(".fund-logo")?.parentElement;
 if (fundConnector) {
   fundConnector.querySelector("strong").textContent = "基金：净值与 QDII 限额";
-  fundConnector.querySelector("small").textContent = "净值另行更新；QDII 为第三方参考，未核实最新支付宝额度";
+  fundConnector.querySelector("small").textContent = "QDII 分开显示基金公司直销、代销公告与支付宝待核状态";
   fundConnector.querySelector(".connector-status").textContent = "部分接入";
 }
 refreshQdiiLimits();
