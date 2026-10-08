@@ -1,0 +1,27 @@
+name: refresh-qdii-limits
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch public QDII purchase limits
+        run: node scripts/fetch-qdii-limits.mjs
+      - name: Commit refreshed limits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add qdii-limits.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh QDII purchase limits"
+          git pull --rebase origin main
+          git push

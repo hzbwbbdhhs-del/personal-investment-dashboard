@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261008-area-popup-v2" />
+    <link rel="stylesheet" href="./styles.css?v=20261008-qdii-limits" />
   </head>
   <body>
     <div class="app-shell">
@@ -159,10 +159,17 @@
         </section>
 
         <section class="section-panel" id="section-qdii" data-panel>
-          <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>限购、暂停和恢复，按渠道分开看。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 公告监测源待接入</div></div>
-          <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>状态监测需要基金公司公告或代销渠道页面。</strong><span>同一只基金在直销、支付宝等代销渠道的可购状态可能不同；网站会保留公告时间和来源。</span></div></div>
-          <article class="content-card table-card"><div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>关注清单</h3></div><button class="ghost-button" id="addQdiiButton">＋ 添加基金</button></div><div class="table-scroll"><table><thead><tr><th>基金 / 代码</th><th>定位</th><th>基金公司直销</th><th>支付宝等代销</th><th>公告时间</th><th>来源</th></tr></thead><tbody><tr><td><strong>摩根国际债券人民币对冲累计</strong><small>968050</small></td><td>人民币对冲 / 全球投资级债券</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr><tr><td><strong>易方达香港精选债券对冲人民币</strong><small>968118</small></td><td>人民币对冲 / 全球债券</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr><tr><td><strong>易方达中短期美元债</strong><small>007360 / 007361</small></td><td>1–3 年美元债</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr><tr><td><strong>中银美元债</strong><small>002286 / 019893</small></td><td>美元债 / 未固定对冲</td><td><span class="status-label pending-label">待核验</span></td><td><span class="status-label pending-label">待核验</span></td><td>—</td><td>未配置</td></tr></tbody></table></div><div class="card-footnote">这里保留了上一轮筛选中提到的关注对象，但没有把历史状态当成今天的实时结论。</div></article>
-          <div class="channel-grid"><div class="channel-card direct"><span class="channel-icon">D</span><div><strong>基金公司直销</strong><small>优先读取官方公告、交易规则、限额页面</small></div><span class="channel-state">待接入</span></div><div class="channel-card alipay"><span class="channel-icon">A</span><div><strong>支付宝等代销</strong><small>记录代销端是否同步、何时恢复</small></div><span class="channel-state">待接入</span></div></div>
+          <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>纳指、标普和主动 QDII 限额。</h2></div><div class="section-meta" id="qdiiUpdatedAt">正在读取限额快照…</div></div>
+          <div class="notice-banner purple-notice"><span class="notice-icon">i</span><div><strong>这是天天基金公开页面的场外人民币份额限额，不是支付宝或直销额度。</strong><span>云端每小时尝试更新；基金公司公告和实际下单页面优先。节假日暂停可能是临时状态；公告时间尚未逐只自动核验。</span></div></div>
+          <article class="content-card table-card qdii-table-card">
+            <div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>QDII 限购清单 <span id="qdiiCount" class="qdii-count">—</span></h3></div><button class="ghost-button" id="qdiiRefreshButton" type="button">↻ 刷新快照</button></div>
+            <div class="qdii-controls"><div class="qdii-categories" role="group" aria-label="QDII 分类"><button type="button" data-qdii-category="all" class="active">全部</button><button type="button" data-qdii-category="nasdaq100">纳斯达克100</button><button type="button" data-qdii-category="sp500">标普500</button><button type="button" data-qdii-category="active">主动型 QDII</button></div><label class="qdii-search-label">搜索基金或代码<input id="qdiiSearch" type="search" placeholder="名称 / 6 位代码" /></label><label class="qdii-filter-label"><input id="qdiiHeldOnly" type="checkbox" /> 只看我的持仓</label><select id="qdiiStatusFilter" aria-label="筛选申购状态"><option value="all">全部申购状态</option><option value="限大额">限大额</option><option value="暂停申购">暂停申购</option><option value="开放申购">开放申购</option></select></div>
+            <p class="qdii-scope" id="qdiiScope">覆盖范围加载中…</p>
+            <div class="table-scroll"><table class="qdii-table"><thead><tr><th>基金 / 代码</th><th>类别</th><th>天天基金申购状态</th><th>单日限额</th><th>直销 / 支付宝</th><th>核对来源</th></tr></thead><tbody id="qdiiRows"><tr><td colspan="6">正在读取最新快照…</td></tr></tbody></table></div>
+            <div class="qdii-table-footer"><span id="qdiiShown">—</span><button type="button" class="ghost-button" id="qdiiMoreButton" hidden>显示更多</button></div>
+            <div class="card-footnote">同一基金的 A/C 等份额分别列示，额度可能按基金账户或份额合并计算；“开放申购”只表示当前表未显示限制，不保证其他渠道不限购。单笔能否买入请以实际下单页及基金公司公告为准。</div>
+          </article>
+          <div class="channel-grid"><div class="channel-card direct"><span class="channel-icon">D</span><div><strong>基金公司直销</strong><small>点击每只基金的“公告”核对最新官方规则；本页暂不声称已自动核验直销额度。</small></div><span class="channel-state">逐只核验</span></div><div class="channel-card alipay"><span class="channel-icon">A</span><div><strong>支付宝代销</strong><small>支付宝的可购状态可能不同于天天基金，需以支付宝基金详情和下单页为准。</small></div><span class="channel-state">未接入</span></div></div>
         </section>
 
         <section class="section-panel" id="section-settings" data-panel>
@@ -199,5 +206,6 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
     <script src="./app.js?v=20261008-area-popup-v2"></script>
+    <script src="./qdii-ui.js?v=20261008-qdii-limits"></script>
   </body>
 </html>

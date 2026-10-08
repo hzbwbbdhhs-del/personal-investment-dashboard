@@ -1,0 +1,2369 @@
+{
+  "status": "available",
+  "updatedAt": "2026-10-08T12:45:24.556Z",
+  "sourceDataDates": [
+    "2026-10-08",
+    "2026-09-30"
+  ],
+  "source": "天天基金公开申购状态表",
+  "sourceUrl": "https://fund.eastmoney.com/Data/Fund_JJJZ_Data.aspx?t=8&page=1,50000&js=reData&sort=fcode,asc",
+  "channel": "天天基金页面参考；非支付宝、非基金公司直销",
+  "scope": "人民币场外份额；纳指100、标普500及股票/混合类主动QDII；不含美元份额、场内交易、债券/商品QDII。A/C等份额分别列示。",
+  "counts": {
+    "nasdaq100": 41,
+    "sp500": 19,
+    "active": 201
+  },
+  "funds": [
+    {
+      "code": "000041",
+      "name": "华夏全球股票(QDII)(人民币)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_000041.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_000041.html"
+    },
+    {
+      "code": "000043",
+      "name": "嘉实美国成长股票人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_000043.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_000043.html"
+    },
+    {
+      "code": "000834",
+      "name": "大成纳斯达克100ETF联接(QDII)A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_000834.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_000834.html"
+    },
+    {
+      "code": "000934",
+      "name": "国富大中华精选混合",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_000934.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_000934.html"
+    },
+    {
+      "code": "000988",
+      "name": "嘉实全球互联网股票人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_000988.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_000988.html"
+    },
+    {
+      "code": "001668",
+      "name": "汇添富全球移动互联混合(QDII)人民币A",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_001668.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_001668.html"
+    },
+    {
+      "code": "001691",
+      "name": "南方香港成长灵活配置混合",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_001691.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_001691.html"
+    },
+    {
+      "code": "001984",
+      "name": "摩根中国生物医药混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_001984.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_001984.html"
+    },
+    {
+      "code": "002230",
+      "name": "华夏大中华混合(QDII)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_002230.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_002230.html"
+    },
+    {
+      "code": "002379",
+      "name": "工银香港中小盘人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_002379.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_002379.html"
+    },
+    {
+      "code": "002891",
+      "name": "华夏移动互联混合人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_002891.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_002891.html"
+    },
+    {
+      "code": "003243",
+      "name": "摩根中国世纪混合(QDII)人民币",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_003243.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_003243.html"
+    },
+    {
+      "code": "003629",
+      "name": "摩根全球多元配置(QDII-FOF)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_003629.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_003629.html"
+    },
+    {
+      "code": "004877",
+      "name": "汇添富全球医疗混合(QDII)人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 200000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_004877.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_004877.html"
+    },
+    {
+      "code": "005243",
+      "name": "融通中国概念债券(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_005243.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_005243.html"
+    },
+    {
+      "code": "005534",
+      "name": "华夏新时代混合人民币(QDII)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_005534.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_005534.html"
+    },
+    {
+      "code": "005698",
+      "name": "华夏全球科技先锋混合(QDII)A(人民币)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 5000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_005698.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_005698.html"
+    },
+    {
+      "code": "005699",
+      "name": "工银新经济混合(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_005699.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_005699.html"
+    },
+    {
+      "code": "006075",
+      "name": "博时标普500ETF联接C",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006075.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006075.html"
+    },
+    {
+      "code": "006105",
+      "name": "宏利印度股票(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006105.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006105.html"
+    },
+    {
+      "code": "006282",
+      "name": "摩根欧洲动力策略股票(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006282.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006282.html"
+    },
+    {
+      "code": "006308",
+      "name": "汇添富全球消费混合(QDII)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006308.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006308.html"
+    },
+    {
+      "code": "006309",
+      "name": "汇添富全球消费混合(QDII)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006309.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006309.html"
+    },
+    {
+      "code": "006373",
+      "name": "国富全球科技互联混合(QDII)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006373.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006373.html"
+    },
+    {
+      "code": "006445",
+      "name": "华夏海外聚享混合发起式(QDII-FOF)A人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006445.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006445.html"
+    },
+    {
+      "code": "006448",
+      "name": "华夏海外聚享混合发起式(QDII-FOF)C人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006448.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006448.html"
+    },
+    {
+      "code": "006479",
+      "name": "广发纳斯达克100ETF联接人民币(QDII)C",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006479.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006479.html"
+    },
+    {
+      "code": "006555",
+      "name": "浦银全球智能科技(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_006555.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_006555.html"
+    },
+    {
+      "code": "007280",
+      "name": "摩根日本精选股票(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_007280.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_007280.html"
+    },
+    {
+      "code": "007455",
+      "name": "富国蓝筹精选股票(QDII)人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_007455.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_007455.html"
+    },
+    {
+      "code": "007721",
+      "name": "天弘标普500发起(QDII-FOF)A",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_007721.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_007721.html"
+    },
+    {
+      "code": "007722",
+      "name": "天弘标普500发起(QDII-FOF)C",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_007722.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_007722.html"
+    },
+    {
+      "code": "007729",
+      "name": "招商普盛全球配置(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_007729.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_007729.html"
+    },
+    {
+      "code": "008253",
+      "name": "华宝致远混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008253.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008253.html"
+    },
+    {
+      "code": "008254",
+      "name": "华宝致远混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008254.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008254.html"
+    },
+    {
+      "code": "008284",
+      "name": "易方达全球医药行业混合发起式(QDII)A(人民币)",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008284.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008284.html"
+    },
+    {
+      "code": "008320",
+      "name": "鹏华全球中短债(QDII)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008320.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008320.html"
+    },
+    {
+      "code": "008401",
+      "name": "大成标普500等权重指数(QDII)C人民币",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008401.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008401.html"
+    },
+    {
+      "code": "008763",
+      "name": "天弘越南市场股票发起(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008763.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008763.html"
+    },
+    {
+      "code": "008764",
+      "name": "天弘越南市场股票发起(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008764.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008764.html"
+    },
+    {
+      "code": "008971",
+      "name": "大成纳斯达克100ETF联接(QDII)C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_008971.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_008971.html"
+    },
+    {
+      "code": "009108",
+      "name": "富国红利精选混合(QDII)人民币",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_009108.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_009108.html"
+    },
+    {
+      "code": "010644",
+      "name": "富国全球健康生活主题混合(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_010644.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_010644.html"
+    },
+    {
+      "code": "011420",
+      "name": "广发全球科技三个月定开混合(QDII)人民币A",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_011420.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_011420.html"
+    },
+    {
+      "code": "011422",
+      "name": "广发全球科技三个月定开混合(QDII)人民币C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_011422.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_011422.html"
+    },
+    {
+      "code": "011583",
+      "name": "大成港股精选混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_011583.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_011583.html"
+    },
+    {
+      "code": "011584",
+      "name": "大成港股精选混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_011584.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_011584.html"
+    },
+    {
+      "code": "012060",
+      "name": "富国全球消费精选混合(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012060.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012060.html"
+    },
+    {
+      "code": "012062",
+      "name": "富国全球消费精选混合(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012062.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012062.html"
+    },
+    {
+      "code": "012208",
+      "name": "华夏港股前沿经济混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012208.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012208.html"
+    },
+    {
+      "code": "012209",
+      "name": "华夏港股前沿经济混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012209.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012209.html"
+    },
+    {
+      "code": "012379",
+      "name": "创金合信港股互联网3个月持有期混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012379.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012379.html"
+    },
+    {
+      "code": "012380",
+      "name": "创金合信港股互联网3个月持有期混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012380.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012380.html"
+    },
+    {
+      "code": "012535",
+      "name": "万家全球成长一年持有期混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012535.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012535.html"
+    },
+    {
+      "code": "012536",
+      "name": "万家全球成长一年持有期混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012536.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012536.html"
+    },
+    {
+      "code": "012584",
+      "name": "南方中国新兴经济9个月持有期混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012584.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012584.html"
+    },
+    {
+      "code": "012585",
+      "name": "南方中国新兴经济9个月持有期混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012585.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012585.html"
+    },
+    {
+      "code": "012752",
+      "name": "建信纳斯达克100指数(QDII)C人民币",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012752.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012752.html"
+    },
+    {
+      "code": "012860",
+      "name": "易方达标普500指数人民币C",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012860.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012860.html"
+    },
+    {
+      "code": "012870",
+      "name": "易方达纳斯达克100ETF联接(QDII-LOF)C(人民币)",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012870.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012870.html"
+    },
+    {
+      "code": "012920",
+      "name": "易方达全球成长精选混合(QDII)人民币A",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012920.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012920.html"
+    },
+    {
+      "code": "012922",
+      "name": "易方达全球成长精选混合(QDII)人民币C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_012922.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_012922.html"
+    },
+    {
+      "code": "013328",
+      "name": "嘉实全球价值股票(QDII)人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_013328.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_013328.html"
+    },
+    {
+      "code": "013363",
+      "name": "大成中国优势混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_013363.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_013363.html"
+    },
+    {
+      "code": "013364",
+      "name": "大成中国优势混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_013364.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_013364.html"
+    },
+    {
+      "code": "014002",
+      "name": "浦银全球智能科技(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_014002.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_014002.html"
+    },
+    {
+      "code": "014127",
+      "name": "融通核心价值混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_014127.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_014127.html"
+    },
+    {
+      "code": "014978",
+      "name": "华安纳斯达克100ETF联接(QDII)C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 5,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_014978.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_014978.html"
+    },
+    {
+      "code": "015202",
+      "name": "汇添富全球移动互联混合(QDII)人民币C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015202.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015202.html"
+    },
+    {
+      "code": "015203",
+      "name": "汇添富全球移动互联混合(QDII)人民币D",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015203.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015203.html"
+    },
+    {
+      "code": "015204",
+      "name": "银华全球新能源车量化优选股票(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015204.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015204.html"
+    },
+    {
+      "code": "015205",
+      "name": "银华全球新能源车量化优选股票(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015205.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015205.html"
+    },
+    {
+      "code": "015299",
+      "name": "华夏纳斯达克100ETF发起式联接(QDII)A",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015299.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015299.html"
+    },
+    {
+      "code": "015300",
+      "name": "华夏纳斯达克100ETF发起式联接(QDII)C",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015300.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015300.html"
+    },
+    {
+      "code": "015884",
+      "name": "中欧港股数字经济混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015884.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015884.html"
+    },
+    {
+      "code": "015885",
+      "name": "中欧港股数字经济混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_015885.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_015885.html"
+    },
+    {
+      "code": "016055",
+      "name": "博时纳斯达克100ETF发起式联接(QDII)A人民币",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016055.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016055.html"
+    },
+    {
+      "code": "016057",
+      "name": "博时纳斯达克100ETF发起式联接(QDII)C人民币",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016057.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016057.html"
+    },
+    {
+      "code": "016199",
+      "name": "汇添富全球汽车产业升级混合(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016199.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016199.html"
+    },
+    {
+      "code": "016202",
+      "name": "汇添富全球汽车产业升级混合(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016202.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016202.html"
+    },
+    {
+      "code": "016452",
+      "name": "南方纳斯达克100指数发起(QDII)A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016452.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016452.html"
+    },
+    {
+      "code": "016453",
+      "name": "南方纳斯达克100指数发起(QDII)C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016453.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016453.html"
+    },
+    {
+      "code": "016532",
+      "name": "嘉实纳斯达克100ETF发起联接(QDII)A人民币",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016532.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016532.html"
+    },
+    {
+      "code": "016533",
+      "name": "嘉实纳斯达克100ETF发起联接(QDII)C人民币",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016533.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016533.html"
+    },
+    {
+      "code": "016664",
+      "name": "天弘全球高端制造混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016664.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016664.html"
+    },
+    {
+      "code": "016665",
+      "name": "天弘全球高端制造混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016665.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016665.html"
+    },
+    {
+      "code": "016668",
+      "name": "景顺长城全球半导体芯片股票C(QDII-LOF)(人民币)",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016668.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016668.html"
+    },
+    {
+      "code": "016701",
+      "name": "银华海外数字经济量化选股混合发起式(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016701.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016701.html"
+    },
+    {
+      "code": "016702",
+      "name": "银华海外数字经济量化选股混合发起式(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016702.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016702.html"
+    },
+    {
+      "code": "016742",
+      "name": "华安大中华升级股票(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016742.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016742.html"
+    },
+    {
+      "code": "016823",
+      "name": "天弘全球新能源汽车股票(QDII-LOF)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016823.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016823.html"
+    },
+    {
+      "code": "016988",
+      "name": "景顺长城大中华混合(QDII)C人民币",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_016988.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_016988.html"
+    },
+    {
+      "code": "017028",
+      "name": "国泰标普500ETF发起联接(QDII)A人民币",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017028.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017028.html"
+    },
+    {
+      "code": "017030",
+      "name": "国泰标普500ETF发起联接(QDII)C人民币",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017030.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017030.html"
+    },
+    {
+      "code": "017071",
+      "name": "申万菱信全球新能源股票型发起式(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017071.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017071.html"
+    },
+    {
+      "code": "017072",
+      "name": "申万菱信全球新能源股票型发起式(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017072.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017072.html"
+    },
+    {
+      "code": "017144",
+      "name": "华宝海外新能源汽车股票发起式(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017144.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017144.html"
+    },
+    {
+      "code": "017145",
+      "name": "华宝海外新能源汽车股票发起式(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017145.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017145.html"
+    },
+    {
+      "code": "017204",
+      "name": "华宝海外科技股票(QDII-LOF)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 20,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017204.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017204.html"
+    },
+    {
+      "code": "017429",
+      "name": "嘉实全球创新龙头股票(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017429.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017429.html"
+    },
+    {
+      "code": "017431",
+      "name": "嘉实全球创新龙头股票(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017431.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017431.html"
+    },
+    {
+      "code": "017436",
+      "name": "华宝纳斯达克精选股票发起式(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017436.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017436.html"
+    },
+    {
+      "code": "017437",
+      "name": "华宝纳斯达克精选股票发起式(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017437.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017437.html"
+    },
+    {
+      "code": "017641",
+      "name": "摩根标普500指数(QDII)人民币A",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017641.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017641.html"
+    },
+    {
+      "code": "017642",
+      "name": "摩根标普500指数(QDII)美钞",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017642.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017642.html"
+    },
+    {
+      "code": "017643",
+      "name": "摩根标普500指数(QDII)美汇",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017643.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017643.html"
+    },
+    {
+      "code": "017653",
+      "name": "创金合信全球芯片产业股票发起(QDII)A",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017653.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017653.html"
+    },
+    {
+      "code": "017654",
+      "name": "创金合信全球芯片产业股票发起(QDII)C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017654.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017654.html"
+    },
+    {
+      "code": "017730",
+      "name": "嘉实全球产业升级股票发起式(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017730.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017730.html"
+    },
+    {
+      "code": "017731",
+      "name": "嘉实全球产业升级股票发起式(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017731.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017731.html"
+    },
+    {
+      "code": "017873",
+      "name": "汇添富香港优势精选混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 20000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_017873.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_017873.html"
+    },
+    {
+      "code": "018036",
+      "name": "长城全球新能源车股票发起式(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018036.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018036.html"
+    },
+    {
+      "code": "018043",
+      "name": "天弘纳斯达克100指数发起(QDII)A",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018043.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018043.html"
+    },
+    {
+      "code": "018044",
+      "name": "天弘纳斯达克100指数发起(QDII)C",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018044.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018044.html"
+    },
+    {
+      "code": "018064",
+      "name": "华夏标普500ETF发起式联接(QDII)A(人民币)",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018064.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018064.html"
+    },
+    {
+      "code": "018065",
+      "name": "华夏标普500ETF发起式联接(QDII)C",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018065.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018065.html"
+    },
+    {
+      "code": "018147",
+      "name": "建信新兴市场混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018147.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018147.html"
+    },
+    {
+      "code": "018155",
+      "name": "创金合信全球医药生物股票发起(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018155.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018155.html"
+    },
+    {
+      "code": "018156",
+      "name": "创金合信全球医药生物股票发起(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018156.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018156.html"
+    },
+    {
+      "code": "018229",
+      "name": "易方达全球优质企业混合(QDII)A(人民币份额)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018229.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018229.html"
+    },
+    {
+      "code": "018230",
+      "name": "易方达全球优质企业混合(QDII)C(人民币份额)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018230.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018230.html"
+    },
+    {
+      "code": "018738",
+      "name": "博时标普500ETF联接E(人民币)",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018738.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018738.html"
+    },
+    {
+      "code": "018966",
+      "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币A",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018966.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018966.html"
+    },
+    {
+      "code": "018967",
+      "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币C",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_018967.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_018967.html"
+    },
+    {
+      "code": "019035",
+      "name": "易方达全球医药行业混合发起式(QDII)C(人民币)",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019035.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019035.html"
+    },
+    {
+      "code": "019075",
+      "name": "嘉实全球产业精选混合发起式(QDII)人民币",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019075.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019075.html"
+    },
+    {
+      "code": "019155",
+      "name": "易方达全球配置混合(QDII)A(人民币)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019155.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019155.html"
+    },
+    {
+      "code": "019156",
+      "name": "易方达全球配置混合(QDII)C(人民币)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019156.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019156.html"
+    },
+    {
+      "code": "019172",
+      "name": "摩根纳斯达克100指数(QDII)人民币A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019172.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019172.html"
+    },
+    {
+      "code": "019173",
+      "name": "摩根纳斯达克100指数(QDII)人民币C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019173.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019173.html"
+    },
+    {
+      "code": "019230",
+      "name": "广发全球稳健配置混合(QDII)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 600000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019230.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019230.html"
+    },
+    {
+      "code": "019231",
+      "name": "广发全球稳健配置混合(QDII)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 600000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019231.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019231.html"
+    },
+    {
+      "code": "019265",
+      "name": "南方港股数字经济混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019265.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019265.html"
+    },
+    {
+      "code": "019266",
+      "name": "南方港股数字经济混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019266.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019266.html"
+    },
+    {
+      "code": "019305",
+      "name": "摩根标普500指数(QDII)人民币C",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019305.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019305.html"
+    },
+    {
+      "code": "019415",
+      "name": "南方港股医药行业混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019415.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019415.html"
+    },
+    {
+      "code": "019416",
+      "name": "南方港股医药行业混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019416.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019416.html"
+    },
+    {
+      "code": "019441",
+      "name": "万家纳斯达克100指数发起式(QDII)A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019441.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019441.html"
+    },
+    {
+      "code": "019442",
+      "name": "万家纳斯达克100指数发起式(QDII)C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019442.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019442.html"
+    },
+    {
+      "code": "019449",
+      "name": "摩根日本精选股票(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019449.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019449.html"
+    },
+    {
+      "code": "019450",
+      "name": "摩根欧洲动力策略股票(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019450.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019450.html"
+    },
+    {
+      "code": "019512",
+      "name": "摩根全球多元配置(QDII-FOF)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019512.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019512.html"
+    },
+    {
+      "code": "019518",
+      "name": "富国全球债券(QDII)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019518.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019518.html"
+    },
+    {
+      "code": "019524",
+      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 5,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019524.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019524.html"
+    },
+    {
+      "code": "019525",
+      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 5,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019525.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019525.html"
+    },
+    {
+      "code": "019547",
+      "name": "招商纳斯达克100ETF发起式联接(QDII)A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019547.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019547.html"
+    },
+    {
+      "code": "019548",
+      "name": "招商纳斯达克100ETF发起式联接(QDII)C",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019548.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019548.html"
+    },
+    {
+      "code": "019573",
+      "name": "摩根中国生物医药混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019573.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019573.html"
+    },
+    {
+      "code": "019578",
+      "name": "摩根全球天然资源混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019578.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019578.html"
+    },
+    {
+      "code": "019641",
+      "name": "摩根亚太优势混合(QDII)C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019641.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019641.html"
+    },
+    {
+      "code": "019736",
+      "name": "宝盈纳斯达克100指数发起(QDII)A人民币",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019736.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019736.html"
+    },
+    {
+      "code": "019737",
+      "name": "宝盈纳斯达克100指数发起(QDII)C人民币",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_019737.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_019737.html"
+    },
+    {
+      "code": "020571",
+      "name": "融通中国概念债券(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_020571.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_020571.html"
+    },
+    {
+      "code": "021000",
+      "name": "南方纳斯达克100指数发起(QDII)I",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021000.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021000.html"
+    },
+    {
+      "code": "021277",
+      "name": "广发全球精选股票(QDII)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021277.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021277.html"
+    },
+    {
+      "code": "021662",
+      "name": "国富亚洲机会股票(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021662.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021662.html"
+    },
+    {
+      "code": "021773",
+      "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币E",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021773.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021773.html"
+    },
+    {
+      "code": "021778",
+      "name": "广发纳指100ETF联接(QDII)人民币F",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021778.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021778.html"
+    },
+    {
+      "code": "021838",
+      "name": "嘉实纳斯达克100ETF发起联接(QDII)I人民币",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021838.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021838.html"
+    },
+    {
+      "code": "021842",
+      "name": "国富全球科技互联混合(QDII)人民币C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_021842.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_021842.html"
+    },
+    {
+      "code": "022170",
+      "name": "富国全球消费精选混合(QDII)人民币E",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022170.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022170.html"
+    },
+    {
+      "code": "022184",
+      "name": "富国全球科技互联网股票(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022184.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022184.html"
+    },
+    {
+      "code": "022503",
+      "name": "富国全球债券(QDII)人民币E",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022503.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022503.html"
+    },
+    {
+      "code": "022523",
+      "name": "天弘标普500发起(QDII-FOF)D",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022523.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022523.html"
+    },
+    {
+      "code": "022524",
+      "name": "天弘越南市场股票发起(QDII)D",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022524.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022524.html"
+    },
+    {
+      "code": "022525",
+      "name": "天弘纳斯达克100指数发起(QDII)D",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022525.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022525.html"
+    },
+    {
+      "code": "022664",
+      "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)I",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 5,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_022664.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_022664.html"
+    },
+    {
+      "code": "023402",
+      "name": "广发全球精选股票(QDII)人民币F",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_023402.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_023402.html"
+    },
+    {
+      "code": "023422",
+      "name": "建信纳斯达克100指数(QDII)D人民币",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_023422.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_023422.html"
+    },
+    {
+      "code": "023559",
+      "name": "招商普盛全球配置(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_023559.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_023559.html"
+    },
+    {
+      "code": "023591",
+      "name": "南方全球精选配置股票(QDII-FOF)C(人民币)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_023591.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_023591.html"
+    },
+    {
+      "code": "023907",
+      "name": "富国全球健康生活主题混合(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_023907.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_023907.html"
+    },
+    {
+      "code": "024237",
+      "name": "博时纳斯达克100ETF发起式联接(QDII)I人民币",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_024237.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_024237.html"
+    },
+    {
+      "code": "024239",
+      "name": "华夏全球科技先锋混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 5000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_024239.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_024239.html"
+    },
+    {
+      "code": "024846",
+      "name": "富国中国中小盘混合(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_024846.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_024846.html"
+    },
+    {
+      "code": "025070",
+      "name": "东方红医疗创新混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025070.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025070.html"
+    },
+    {
+      "code": "025071",
+      "name": "东方红医疗创新混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025071.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025071.html"
+    },
+    {
+      "code": "025174",
+      "name": "长城港股医疗保健精选混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025174.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025174.html"
+    },
+    {
+      "code": "025175",
+      "name": "长城港股医疗保健精选混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025175.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025175.html"
+    },
+    {
+      "code": "025339",
+      "name": "招商普盛全球配置(QDII)人民币D",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025339.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025339.html"
+    },
+    {
+      "code": "025403",
+      "name": "工银新经济混合(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025403.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025403.html"
+    },
+    {
+      "code": "025587",
+      "name": "光大阳光香港精选混合(QDII)A人民币",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025587.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025587.html"
+    },
+    {
+      "code": "025589",
+      "name": "光大阳光香港精选混合(QDII)C人民币",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025589.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025589.html"
+    },
+    {
+      "code": "025654",
+      "name": "富国医药精选混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025654.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025654.html"
+    },
+    {
+      "code": "025655",
+      "name": "富国医药精选混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025655.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025655.html"
+    },
+    {
+      "code": "025787",
+      "name": "大成港股恒信混合(QDII)",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025787.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025787.html"
+    },
+    {
+      "code": "025852",
+      "name": "富国港股精选混合(QDII)人民币",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_025852.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_025852.html"
+    },
+    {
+      "code": "026015",
+      "name": "宏利印度股票(QDII)C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026015.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026015.html"
+    },
+    {
+      "code": "026228",
+      "name": "富国全球科技互联网股票(QDII)D",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 0,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026228.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026228.html"
+    },
+    {
+      "code": "026246",
+      "name": "汇丰晋信港股精选股票(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026246.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026246.html"
+    },
+    {
+      "code": "026247",
+      "name": "汇丰晋信港股精选股票(QDII)人民币C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026247.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026247.html"
+    },
+    {
+      "code": "026259",
+      "name": "银华医疗创新混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026259.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026259.html"
+    },
+    {
+      "code": "026260",
+      "name": "银华医疗创新混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026260.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026260.html"
+    },
+    {
+      "code": "026291",
+      "name": "中欧港股消费混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026291.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026291.html"
+    },
+    {
+      "code": "026292",
+      "name": "中欧港股消费混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026292.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026292.html"
+    },
+    {
+      "code": "026357",
+      "name": "平安港股医疗优选股票(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026357.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026357.html"
+    },
+    {
+      "code": "026358",
+      "name": "平安港股医疗优选股票(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026358.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026358.html"
+    },
+    {
+      "code": "026442",
+      "name": "国泰海通港股优势精选股票发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026442.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026442.html"
+    },
+    {
+      "code": "026443",
+      "name": "国泰海通港股优势精选股票发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026443.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026443.html"
+    },
+    {
+      "code": "026492",
+      "name": "广发港股优选混合(QDII)",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026492.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026492.html"
+    },
+    {
+      "code": "026703",
+      "name": "长城港股价值优选股票(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026703.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026703.html"
+    },
+    {
+      "code": "026704",
+      "name": "长城港股价值优选股票(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_026704.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_026704.html"
+    },
+    {
+      "code": "027170",
+      "name": "交银环球精选混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027170.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027170.html"
+    },
+    {
+      "code": "027186",
+      "name": "平安启瑞港股甄选混合(QDII)",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027186.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027186.html"
+    },
+    {
+      "code": "027205",
+      "name": "广发优势企业混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027205.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027205.html"
+    },
+    {
+      "code": "027206",
+      "name": "广发优势企业混合(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027206.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027206.html"
+    },
+    {
+      "code": "027379",
+      "name": "中欧港股医药混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027379.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027379.html"
+    },
+    {
+      "code": "027380",
+      "name": "中欧港股医药混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027380.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027380.html"
+    },
+    {
+      "code": "027450",
+      "name": "交银港股消费混合(QDII)A",
+      "category": "active",
+      "status": "封闭期",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027450.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027450.html"
+    },
+    {
+      "code": "027451",
+      "name": "交银港股消费混合(QDII)C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027451.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027451.html"
+    },
+    {
+      "code": "027755",
+      "name": "华宝医药精选混合(QDII)A",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027755.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027755.html"
+    },
+    {
+      "code": "027756",
+      "name": "华宝医药精选混合(QDII)C",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_027756.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_027756.html"
+    },
+    {
+      "code": "028041",
+      "name": "宏利港股数字经济混合发起(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_028041.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_028041.html"
+    },
+    {
+      "code": "028042",
+      "name": "宏利港股数字经济混合发起(QDII)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_028042.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_028042.html"
+    },
+    {
+      "code": "028491",
+      "name": "长盛环球行业混合(QDII)C",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_028491.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_028491.html"
+    },
+    {
+      "code": "029177",
+      "name": "国投瑞银中国价值发现股票(QDII-LOF)C",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_029177.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_029177.html"
+    },
+    {
+      "code": "040018",
+      "name": "华安香港精选股票(QDII)",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_040018.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_040018.html"
+    },
+    {
+      "code": "040021",
+      "name": "华安大中华升级股票(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_040021.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_040021.html"
+    },
+    {
+      "code": "040046",
+      "name": "华安纳斯达克100ETF联接(QDII)A",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 5,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_040046.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_040046.html"
+    },
+    {
+      "code": "050015",
+      "name": "博时大中华亚太精选",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_050015.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_050015.html"
+    },
+    {
+      "code": "050025",
+      "name": "博时标普500ETF联接A",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_050025.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_050025.html"
+    },
+    {
+      "code": "070012",
+      "name": "嘉实海外中国股票混合",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_070012.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_070012.html"
+    },
+    {
+      "code": "080006",
+      "name": "长盛环球行业混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_080006.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_080006.html"
+    },
+    {
+      "code": "096001",
+      "name": "大成标普500等权重指数(QDII)A人民币",
+      "category": "sp500",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_096001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_096001.html"
+    },
+    {
+      "code": "100050",
+      "name": "富国全球债券(QDII)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_100050.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_100050.html"
+    },
+    {
+      "code": "100055",
+      "name": "富国全球科技互联网股票(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_100055.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_100055.html"
+    },
+    {
+      "code": "100061",
+      "name": "富国中国中小盘混合(QDII)人民币A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_100061.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_100061.html"
+    },
+    {
+      "code": "110011",
+      "name": "易方达优质精选混合(QDII)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_110011.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_110011.html"
+    },
+    {
+      "code": "118001",
+      "name": "易方达亚洲精选股票",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_118001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_118001.html"
+    },
+    {
+      "code": "159612",
+      "name": "标普500ETF国泰",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_159612.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_159612.html"
+    },
+    {
+      "code": "160125",
+      "name": "南方香港优选股票",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_160125.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_160125.html"
+    },
+    {
+      "code": "160213",
+      "name": "国泰纳斯达克100指数",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_160213.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_160213.html"
+    },
+    {
+      "code": "160644",
+      "name": "鹏华港美互联股票人民币",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_160644.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_160644.html"
+    },
+    {
+      "code": "161125",
+      "name": "易方达标普500指数人民币A",
+      "category": "sp500",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_161125.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_161125.html"
+    },
+    {
+      "code": "161130",
+      "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(人民币)",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_161130.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_161130.html"
+    },
+    {
+      "code": "161229",
+      "name": "国投中国价值LOF",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_161229.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_161229.html"
+    },
+    {
+      "code": "161620",
+      "name": "融通核心价值混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_161620.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_161620.html"
+    },
+    {
+      "code": "163208",
+      "name": "诺安油气能源",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_163208.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_163208.html"
+    },
+    {
+      "code": "164212",
+      "name": "天弘全球新能源汽车股票(QDII-LOF)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_164212.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_164212.html"
+    },
+    {
+      "code": "164824",
+      "name": "工银印度基金人民币",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 500000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_164824.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_164824.html"
+    },
+    {
+      "code": "202801",
+      "name": "南方全球精选配置股票(QDII-FOF)A(人民币)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_202801.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_202801.html"
+    },
+    {
+      "code": "206006",
+      "name": "鹏华全球中短债(QDII)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_206006.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_206006.html"
+    },
+    {
+      "code": "241001",
+      "name": "华宝海外中国成长混合",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_241001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_241001.html"
+    },
+    {
+      "code": "262001",
+      "name": "景顺长城大中华混合(QDII)A人民币",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_262001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_262001.html"
+    },
+    {
+      "code": "270023",
+      "name": "广发全球精选股票(QDII)人民币A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_270023.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_270023.html"
+    },
+    {
+      "code": "270042",
+      "name": "广发纳斯达克100ETF联接人民币(QDII)A",
+      "category": "nasdaq100",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_270042.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_270042.html"
+    },
+    {
+      "code": "377016",
+      "name": "摩根亚太优势混合(QDII)A",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_377016.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_377016.html"
+    },
+    {
+      "code": "378006",
+      "name": "摩根全球新兴市场混合(QDII)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_378006.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_378006.html"
+    },
+    {
+      "code": "378546",
+      "name": "摩根全球天然资源混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 10000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_378546.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_378546.html"
+    },
+    {
+      "code": "457001",
+      "name": "国富亚洲机会股票(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 1000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_457001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_457001.html"
+    },
+    {
+      "code": "460010",
+      "name": "华泰柏瑞亚洲领导企业混合",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_460010.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_460010.html"
+    },
+    {
+      "code": "470888",
+      "name": "汇添富香港优势精选混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 20000000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_470888.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_470888.html"
+    },
+    {
+      "code": "486001",
+      "name": "工银全球股票(QDII)人民币",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_486001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_486001.html"
+    },
+    {
+      "code": "486002",
+      "name": "工银全球精选股票(QDII)",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 50000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_486002.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_486002.html"
+    },
+    {
+      "code": "501225",
+      "name": "景顺长城全球半导体芯片股票A(QDII-LOF)(人民币)",
+      "category": "active",
+      "status": "暂停申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_501225.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_501225.html"
+    },
+    {
+      "code": "501226",
+      "name": "长城全球新能源车股票发起式(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 2000,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_501226.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_501226.html"
+    },
+    {
+      "code": "501312",
+      "name": "华宝海外科技股票(QDII-LOF)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 20,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_501312.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_501312.html"
+    },
+    {
+      "code": "519601",
+      "name": "海富通中国海外混合",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_519601.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_519601.html"
+    },
+    {
+      "code": "519696",
+      "name": "交银环球精选混合(QDII)A",
+      "category": "active",
+      "status": "开放申购",
+      "quotaCny": null,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_519696.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_519696.html"
+    },
+    {
+      "code": "539001",
+      "name": "建信纳斯达克100指数(QDII)A人民币",
+      "category": "nasdaq100",
+      "status": "限大额",
+      "quotaCny": 10,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_539001.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_539001.html"
+    },
+    {
+      "code": "539002",
+      "name": "建信新兴市场混合(QDII)A",
+      "category": "active",
+      "status": "限大额",
+      "quotaCny": 100,
+      "sourceUrl": "https://fundf10.eastmoney.com/jjfl_539002.html",
+      "announcementUrl": "https://fundf10.eastmoney.com/jjgg_539002.html"
+    }
+  ],
+  "changes": []
+}
