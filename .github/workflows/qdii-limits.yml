@@ -2,8 +2,12 @@ name: refresh-qdii-limits
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/qdii-limits.yml"
+      - "scripts/fetch-qdii-limits.mjs"
   schedule:
-    - cron: "17 * * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
