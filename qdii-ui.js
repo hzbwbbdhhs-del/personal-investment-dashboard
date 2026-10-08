@@ -1,6 +1,33 @@
-// QDII quotas are a timestamped third-party snapshot, not an Alipay or
-// fund-company direct-sale quote.
+// The market-wide list is a third-party snapshot. A scrape timestamp is not
+// an announcement date, and neither source proves the Alipay order-page limit.
 const qdiiView = { payload: null, category: "all", shown: 30 };
+const qdiiNotices = {
+  "000834": {
+    date: "2026-06-03",
+    text: "公告：直销 ¥100/日；各代销 ¥10/日",
+    url: "https://www.dcfund.com.cn/plat_files/upload/ann_upload/20260602/202606021780401593666.pdf",
+  },
+  "008971": {
+    date: "2026-06-03",
+    text: "公告：直销 ¥100/日；各代销 ¥10/日",
+    url: "https://www.dcfund.com.cn/plat_files/upload/ann_upload/20260602/202606021780401593666.pdf",
+  },
+  "019547": {
+    date: "2026-09-01",
+    text: "公告：基金公司直销 ¥10/日；代销待核",
+    url: "https://static.cmfchina.com/web/noticedetails/226000/index.html",
+  },
+  "019548": {
+    date: "2026-09-01",
+    text: "公告：基金公司直销 ¥10/日；代销待核",
+    url: "https://static.cmfchina.com/web/noticedetails/226000/index.html",
+  },
+  "270042": {
+    date: "2026-09-30",
+    text: "公告：人民币份额继续暂停申购",
+    url: "https://www.gffunds.com.cn/jjgg/zdsj/202609/P020260930313803993540.pdf",
+  },
+};
 const qdii$ = (selector) => document.querySelector(selector);
 const qdii$$ = (selector) => [...document.querySelectorAll(selector)];
 
@@ -29,19 +56,22 @@ function renderQdiiLimits() {
   const visible = selected.slice(0, qdiiView.shown);
   const categoryLabel = { nasdaq100: "纳指100", sp500: "标普500", active: "主动型" };
   const stateClass = (value) => value === "开放申购" ? "open" : value === "限大额" ? "limited" : value === "暂停申购" ? "paused" : "unknown";
+  const collectedAt = new Date(payload.updatedAt);
+  const isRecent = Number.isFinite(collectedAt.getTime()) && Date.now() >= collectedAt.getTime() && Date.now() - collectedAt.getTime() <= 90 * 60 * 1000;
   const html = visible.map((fund) => {
-    const quota = fund.status === "暂停申购" ? "不可申购" : fund.status === "限大额"
-      ? fund.quotaCny == null ? "额度未披露" : "¥" + Number(fund.quotaCny).toLocaleString("zh-CN") + "/日"
-      : fund.status === "开放申购" ? "未显示限额" : "—";
+    const notice = qdiiNotices[fund.code];
+    const thirdPartyHint = !isRecent ? "公开页面快照已过期" : fund.status === "限大额" && fund.quotaCny != null
+      ? "第三方参考 ¥" + Number(fund.quotaCny).toLocaleString("zh-CN") + "/日"
+      : "第三方页面：" + fund.status;
     const held = heldCodes.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : "";
     const code = qdiiEscape(fund.code);
     return '<tr><td><strong>' + qdiiEscape(fund.name) + held + '</strong><small>' + code + '</small></td>'
       + '<td>' + (categoryLabel[fund.category] || "—") + '</td>'
-      + '<td><span class="qdii-state ' + stateClass(fund.status) + '">' + qdiiEscape(fund.status) + '</span></td>'
-      + '<td><strong>' + qdiiEscape(quota) + '</strong></td>'
-      + '<td>待逐只核验<small>不可套用天天基金额度</small></td>'
-      + '<td><a href="https://fundf10.eastmoney.com/jjfl_' + code + '.html" target="_blank" rel="noopener noreferrer">交易规则 ↗</a>'
-      + '<small><a href="https://fundf10.eastmoney.com/jjgg_' + code + '.html" target="_blank" rel="noopener noreferrer">基金公告 ↗</a></small></td></tr>';
+      + '<td><span class="qdii-state ' + (isRecent ? stateClass(fund.status) : "unknown") + '">' + (isRecent ? qdiiEscape(fund.status) : "快照过期") + '</span></td>'
+      + '<td><strong>未核实</strong><small>' + qdiiEscape(thirdPartyHint) + '</small></td>'
+      + '<td>' + (notice ? qdiiEscape(notice.text) + '<small>公告 ' + notice.date + '；支付宝下单页待核</small>' : '暂无逐只核对公告<small>直销、支付宝均待核</small>') + '</td>'
+      + '<td>' + (notice ? '<a href="' + notice.url + '" target="_blank" rel="noopener noreferrer">基金公司公告 ↗</a><small>历史公告，非实时承诺</small>' : '')
+      + '<a href="https://fundf10.eastmoney.com/jjfl_' + code + '.html" target="_blank" rel="noopener noreferrer">第三方页面 ↗</a></td></tr>';
   }).join("");
   qdii$("#qdiiRows").innerHTML = html || '<tr><td colspan="6">没有符合条件的基金。可清空搜索或切换筛选条件。</td></tr>';
   qdii$("#qdiiCount").textContent = selected.length + " 只";
@@ -63,10 +93,10 @@ async function refreshQdiiLimits() {
     if (payload.status !== "available" || !Array.isArray(payload.funds) || payload.funds.length < 100) throw new Error("限额快照不完整");
     qdiiView.payload = payload;
     const updated = new Date(payload.updatedAt);
-    const stale = !Number.isFinite(updated.getTime()) || Date.now() - updated.getTime() > 3 * 60 * 60 * 1000;
+    const stale = !Number.isFinite(updated.getTime()) || Date.now() < updated.getTime() || Date.now() - updated.getTime() > 90 * 60 * 1000;
     const time = Number.isFinite(updated.getTime()) ? updated.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }) : "未知";
-    label.textContent = "天天基金快照 " + time + "（北京时间）" + (stale ? " · 超过3小时未更新" : " · 约每小时更新");
-    qdii$("#qdiiScope").textContent = "覆盖 " + (payload.counts?.nasdaq100 || 0) + " 只纳指100、" + (payload.counts?.sp500 || 0) + " 只标普500、" + (payload.counts?.active || 0) + " 只主动型 QDII；人民币场外份额，A/C 类分别计数。来源页面日期 " + (payload.sourceDataDates?.[0] || "未提供") + "；公告发布日期未自动核验。";
+    label.textContent = "第三方快照采集于 " + time + "（北京时间）" + (stale ? " · 已过期，隐藏参考额度" : " · 非实时限额");
+    qdii$("#qdiiScope").textContent = "公开页面筛选出 " + (payload.counts?.nasdaq100 || 0) + " 只纳指100、" + (payload.counts?.sp500 || 0) + " 只标普500、" + (payload.counts?.active || 0) + " 只主动型 QDII；A/C 等份额分别计数，不代表覆盖全市场。快照只记录采集时间，不记录每只基金的公告生效日期。";
     renderQdiiLimits();
   } catch {
     label.textContent = qdiiView.payload ? "限额快照刷新失败，保留上一版" : "限额数据暂时不可用";
@@ -88,7 +118,7 @@ qdii$("#refreshButton")?.addEventListener("click", refreshQdiiLimits);
 const fundConnector = qdii$(".fund-logo")?.parentElement;
 if (fundConnector) {
   fundConnector.querySelector("strong").textContent = "基金：净值与 QDII 限额";
-  fundConnector.querySelector("small").textContent = "净值每日更新；天天基金申购状态约每小时更新；直销和支付宝待核验";
+  fundConnector.querySelector("small").textContent = "净值另行更新；QDII 为第三方参考，未核实最新支付宝额度";
   fundConnector.querySelector(".connector-status").textContent = "部分接入";
 }
 refreshQdiiLimits();
