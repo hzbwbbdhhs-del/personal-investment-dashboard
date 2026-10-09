@@ -289,7 +289,7 @@ async function refreshFundData() {
     if (summary) summary.textContent = available.length ? `组合估算日收益 ${sign}${formatCurrency(totalDaily)} · ${available.length}/${Object.keys(fundData).length} 只已取数` : "暂未取得基金净值";
   } catch {
     const summary = $("#fundDailySummary");
-    if (summary) summary.textContent = "基金净值暂不可用";
+    if (summary && !Object.keys(fundData).length) summary.textContent = "基金净值暂不可用";
   }
 }
 
