@@ -376,7 +376,7 @@ const chartAssets = {
   SPX: { title: "SPY · 标普500 ETF盘中参考", symbol: "AMEX:SPY", directSymbol: "SP:SPX", note: "图中是 SPY ETF 的走势，不是标普500指数点位；标普500日线点位仍按 FRED 显示。" },
   VIX: { title: "VIX 恐慌指数", symbol: "CBOE:VIX" },
   VXN: { title: "VXN 纳指波动率", symbol: "CBOE:VXN" },
-  US10Y: { title: "美国 10 年期国债收益率", symbol: "TVC:US10Y" },
+  US10Y: { title: "美国 10 年期国债收益率（%）", symbol: "TVC:US10Y", note: "纵轴以百分比收益率显示：5.25 表示年化收益率约 5.25%，不是债券价格。图表由 TradingView 提供，可能延迟；卡片数值为 FRED 日线。" },
   USDCNY: { title: "美元兑人民币", symbol: "FX_IDC:USDCNY" },
 };
 let activeChartSymbol = "NDX";
@@ -405,7 +405,7 @@ function loadTradingViewQuotes() {
       ["标普500 · 日线", "FRED:SP500|1D"],
       ["VIX", "CBOE:VIX|1D"],
       ["VXN", "CBOE:VXN|1D"],
-      ["10年美债", "TVC:US10Y|1D"],
+      ["10年美债收益率（%）", "TVC:US10Y|1D"],
       ["美元/人民币", "FX_IDC:USDCNY|1D"],
     ],
     chartOnly: false,
@@ -589,7 +589,7 @@ function applyMarketPayload(payload) {
   write("metric-ndx", formatMetric(ndx.value));
   write("metric-spx", formatMetric(spx.value));
   write("metric-vol", `${formatMetric(vix.value)} / ${formatMetric(vxn.value)}`);
-  write("metric-rates", `${us10y.value == null ? "—" : `${formatMetric(us10y.value)}%`} / ${formatMetric(usdcny.value, 4)}`);
+  write("metric-us10y", us10y.value == null ? "—" : `${formatMetric(us10y.value)}%`);
   write("metric-ndx-caption", `纳指 100 · ${ndx.changePct == null ? "回撤 —" : `${ndx.changePct >= 0 ? "+" : ""}${formatMetric(ndx.changePct)}%`}`);
   write("metric-spx-caption", `标普 500 · ${spx.changePct == null ? "回撤 —" : `${spx.changePct >= 0 ? "+" : ""}${formatMetric(spx.changePct)}%`}`);
   write("indicator-ndx", formatMetric(ndx.value)); write("indicator-spx", formatMetric(spx.value));
