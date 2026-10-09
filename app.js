@@ -227,7 +227,7 @@ function renderDailyReturn(item) {
   const sign = amount > 0 ? "+" : "";
   const rateSign = fund.dailyChangePct > 0 ? "+" : "";
   const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small>${fund.latestDate === chinaDate() ? "今日已更新 · " : ""}${fund.latestDate}净值 · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
+  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small>已更新 · ${fund.latestDate}净值 · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
 }
 
 function renderTodayReturns() {
@@ -249,7 +249,6 @@ function renderTodayReturns() {
     .sort(([left], [right]) => right.localeCompare(left))
     .map(([date, count]) => `${displayChinaDate(date)}（${count}笔）`)
     .join(" · ");
-  const updatedToday = dateCounts.get(chinaDate()) || 0;
   const sign = total > 0 ? "+" : "";
   const totalNode = $("#todayReturnTotal");
   if (totalNode) {
@@ -260,7 +259,7 @@ function renderTodayReturns() {
   if (coverage) coverage.textContent = `${available.length}/${holdings.length} 笔已取数`;
   const status = $("#todayReturnStatus");
   if (status) status.textContent = available.length
-    ? `${updatedToday ? `今日已更新 ${updatedToday} 笔` : "今日尚无净值更新"} · 最新${displayChinaDate(latestDate)}净值 · ${dateBreakdown}`
+    ? `已更新 ${available.length} 笔 · 最新${displayChinaDate(latestDate)}净值 · ${dateBreakdown}`
     : "基金净值暂不可用";
   const dateNode = $("#todayReturnDate");
   if (dateNode) dateNode.textContent = available.length ? dateBreakdown : "等待数据";
@@ -281,11 +280,9 @@ function renderTodayReturns() {
     }
     const { fund, exact, amount } = result;
     const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-    const isToday = fund.latestDate === chinaDate();
-    const isLatestDate = fund.latestDate === latestDate;
-    const dateClass = isToday ? "today" : isLatestDate ? "current" : "lagged";
-    const dateNote = isToday ? "今日已更新" : isLatestDate ? "当前最新公布日期" : "较最新公布日期滞后";
-    const dateLabel = `${isToday ? "今日已更新 · " : ""}${displayChinaDate(fund.latestDate)}净值`;
+    const dateClass = "current";
+    const dateNote = "已获取该日期的净值";
+    const dateLabel = `已更新 · ${displayChinaDate(fund.latestDate)}净值`;
     const name = `${nameBase}<span class="mobile-nav-date ${dateClass}">${dateLabel}</span>`;
     return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(valuationFor(item).value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td class="nav-date-cell nav-date-column"><span class="nav-date-chip ${dateClass}">${dateLabel}</span><small>${escapeHtml(fund.latestDate || "日期待确认")} · ${dateNote}</small></td><td><strong>${exact ? "按份额精算" : "按持仓市值估算"}</strong></td></tr>`;
   }).join("");
