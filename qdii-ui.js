@@ -122,7 +122,17 @@ function renderQdiiLimits() {
 async function refreshQdiiLimits() {
   const label = qdii$("#qdiiUpdatedAt");
   try {
-    const response = await fetch("./qdii-limits.json?ts=" + Date.now(), { cache: "no-store" });
+    let response;
+    if (location.hostname.endsWith("github.io")) {
+      try {
+        response = await fetch("https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/qdii-limits.json?ts=" + Date.now(), { cache: "no-store" });
+        if (!response.ok) throw new Error("HTTP " + response.status);
+      } catch {
+        response = await fetch("./qdii-limits.json?ts=" + Date.now(), { cache: "no-store" });
+      }
+    } else {
+      response = await fetch("./qdii-limits.json?ts=" + Date.now(), { cache: "no-store" });
+    }
     if (!response.ok) throw new Error("HTTP " + response.status);
     const payload = await response.json();
     if (payload.status !== "available" || !Array.isArray(payload.funds) || payload.funds.length < 100) throw new Error("限额快照不完整");

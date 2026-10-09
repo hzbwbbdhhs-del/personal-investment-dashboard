@@ -23,10 +23,12 @@ try {
   // The first run has no previous snapshot to retain.
 }
 const namesByCode = new Map();
+const referenceDates = new Set();
 for (const record of portfolio["持仓"] || []) {
   const code = codeByName[record["基金名称"]] || record["基金代码"];
   if (!/^\d{6}$/.test(code || "")) continue;
   namesByCode.set(code, record["基金名称"] || code);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(record["数据日期"] || "")) referenceDates.add(record["数据日期"]);
 }
 
 async function fetchFund(code, name) {
@@ -45,7 +47,7 @@ async function fetchFund(code, name) {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const payload = await response.json();
       const rows = payload?.Data?.LSJZList || [];
-      const valid = rows.filter((row) => Number.isFinite(Number(row.DWJZ)) && row.FSRQ);
+      const valid = rows.filter((row) => row.DWJZ != null && String(row.DWJZ).trim() !== "" && Number.isFinite(Number(row.DWJZ)) && row.FSRQ);
       if (!valid.length) throw new Error(payload?.ErrMsg || "no published NAV rows");
       const latest = valid[0];
       const previous = valid.find((row) => row.FSRQ !== latest.FSRQ);
@@ -55,6 +57,12 @@ async function fetchFund(code, name) {
       const dailyChangePct = reportedChange !== "" && Number.isFinite(Number(reportedChange))
         ? Number(latest.JZZZL)
         : previousNav ? (nav / previousNav - 1) * 100 : null;
+      const referenceNavs = { ...(previousFunds[code]?.referenceNavs || {}) };
+      for (const date of referenceDates) {
+        if (referenceNavs[date]) continue;
+        const baseline = valid.find((row) => row.FSRQ <= date);
+        if (baseline) referenceNavs[date] = { date: baseline.FSRQ, nav: Number(baseline.DWJZ) };
+      }
       return {
         code,
         name,
@@ -65,6 +73,7 @@ async function fetchFund(code, name) {
         previousNav,
         dailyChange: previousNav == null ? null : Number((nav - previousNav).toFixed(8)),
         dailyChangePct: Number.isFinite(dailyChangePct) ? dailyChangePct : null,
+        referenceNavs,
         source,
       };
     } catch (error) {

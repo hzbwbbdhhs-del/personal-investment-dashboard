@@ -7,6 +7,8 @@ on:
       - ".github/workflows/fund-nav.yml"
       - "scripts/fetch-fund-data.mjs"
   schedule:
+    # 09:02–17:52 Asia/Shanghai, every ten minutes.
+    - cron: "2-59/10 1-9 * * *"
     # 18:02–01:57 Asia/Shanghai, every five minutes.
     - cron: "2-59/5 10-17 * * *"
 

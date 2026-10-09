@@ -2,8 +2,15 @@ name: refresh-market-data
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/market-data.yml"
   schedule:
     - cron: "*/30 * * * *"
+
+concurrency:
+  group: refresh-market-data
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -23,4 +30,5 @@ jobs:
           git add market-data.json
           git diff --cached --quiet && exit 0
           git commit -m "Refresh market data snapshot"
+          git pull --rebase origin main
           git push

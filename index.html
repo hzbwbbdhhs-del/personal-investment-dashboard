@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261008-qdii-source-audit" />
+    <link rel="stylesheet" href="./styles.css?v=20261009-live-valuations" />
   </head>
   <body>
     <div class="app-shell">
@@ -21,7 +21,7 @@
         </div>
         <div class="side-note">
           <span class="pulse-dot"></span>
-          <span>只在重大变化时提醒</span>
+          <span>重大变化信号观察；通知待接入</span>
         </div>
         <nav class="nav-list">
           <button class="nav-item active" data-section="overview"><span class="nav-index">01</span><span>总览</span></button>
@@ -32,17 +32,17 @@
           <button class="nav-item" data-section="settings"><span class="nav-index">06</span><span>数据设置</span></button>
         </nav>
         <div class="sidebar-footer">
-          <div class="mini-label">BASELINE</div>
+          <div class="mini-label">录入持仓基准</div>
           <div class="baseline-value" id="baselineAsset">¥ 498,331</div>
-          <div class="muted">已导入持仓快照</div>
-          <div class="sidebar-stamp">更新时间<br /><strong>2026.10.07</strong></div>
+          <div class="muted">支付宝10月7日 · 直销10月3日快照</div>
+          <div class="sidebar-stamp">最新估值<br /><strong id="sidebarNavDate">等待净值</strong></div>
         </div>
       </aside>
 
       <main class="main-content">
         <header class="topbar">
           <div class="topbar-copy">
-            <div class="eyebrow">WEDNESDAY / 2026.10.07</div>
+            <div class="eyebrow" id="topbarDate">正在读取北京时间…</div>
             <h1>把波动放在视野里，<em>把节奏留给自己。</em></h1>
             <p>资产、定投和宏观信号集中在一个安静的观察窗里。</p>
           </div>
@@ -64,14 +64,14 @@
 
           <div class="hero-grid">
             <article class="hero-card total-card">
-              <div class="card-label-row"><span class="card-label">当前总资产</span><span class="tag verified">已导入</span></div>
+              <div class="card-label-row"><span class="card-label">总资产（最新净值估算）</span><span class="tag estimate" id="assetValueTag">持仓快照</span></div>
               <div class="hero-number" id="totalAssets">¥ 498,331</div>
-              <div class="hero-foot"><span id="assetSourceLabel">2026-10-07 支付宝 + 直销快照</span><span id="assetFreshness">71 项</span></div>
+              <div class="hero-foot"><span id="assetSourceLabel">支付宝10月7日 + 直销10月3日持仓快照</span><span id="assetFreshness">71 项</span></div>
               <div class="hero-rule"></div>
             <div class="hero-microcopy" id="assetMicrocopy">已导入 71 条基金记录。支付宝金额来自录屏逐帧核对；直销 10 只持仓已确认，6 只已录入截图收益，4 只待补。</div>
             </article>
             <article class="hero-card allocation-card">
-              <div class="card-label-row"><span class="card-label">资产分布</span><span class="tag verified">持仓快照</span></div>
+              <div class="card-label-row"><span class="card-label">资产分布</span><span class="tag estimate" id="allocationValueTag">持仓快照</span></div>
               <div class="allocation-body">
                 <div class="donut-wrap"><div class="donut" id="allocationDonut" aria-label="资产分类占比"><div class="donut-center"><strong id="allocationCenterValue">62.3%</strong><span id="allocationCenterLabel">债券 / 现金</span></div></div></div>
                 <div class="legend-list">
@@ -109,7 +109,7 @@
                 <button class="action-row" data-section-target="holdings"><span class="action-number">01</span><span><strong>补充基金代码、份额与成本</strong><small>金额已载入，明细字段仍待补齐</small></span><span class="action-arrow">↗</span></button>
                 <button class="action-row" data-section-target="holdings"><span class="action-number">02</span><span><strong>补充定投金额与扣款日</strong><small>长期定投节奏还未录入</small></span><span class="action-arrow">↗</span></button>
                 <button class="action-row" data-section-target="qdii"><span class="action-number">03</span><span><strong>核对 QDII 渠道与限购公告</strong><small>直销与代销渠道要分开看</small></span><span class="action-arrow">↗</span></button>
-                <button class="action-row" data-section-target="settings"><span class="action-number">04</span><span><strong>选择行情与宏观数据源</strong><small>建议由服务端代理 API Key</small></span><span class="action-arrow">↗</span></button>
+                <button class="action-row" data-section-target="settings"><span class="action-number">04</span><span><strong>补充盘中行情与宏观来源</strong><small>实时指数与点阵图仍待接入</small></span><span class="action-arrow">↗</span></button>
               </div>
             </article>
           </div>
@@ -120,7 +120,7 @@
           <div class="notice-banner"><span class="notice-icon">i</span><div><strong>基金净值每天北京时间22:00自动更新。</strong><span>按最新已公布单位净值显示日涨跌；份额未确认时，收益金额按记录持仓市值估算。QDII 净值可能晚于海外市场交易日公布。</span></div></div>
           <article class="content-card table-card">
             <div class="content-card-head"><div><div class="section-kicker">PORTFOLIO LEDGER / 组合台账</div><h3>持仓清单</h3><small id="fundDailySummary">正在读取基金净值…</small></div><div class="table-actions"><button class="ghost-button" id="clearHoldingsButton">恢复初始估算</button></div></div>
-            <div class="table-scroll"><table><thead><tr><th>资产 / 代码</th><th>分类</th><th>市值</th><th>最新日收益</th><th>持有成本</th><th>月定投</th><th>数据状态</th><th></th></tr></thead><tbody id="holdingsTableBody"></tbody></table></div>
+            <div class="table-scroll"><table><thead><tr><th>资产 / 代码</th><th>分类</th><th>估算市值</th><th>最新日收益</th><th>持有成本</th><th>月定投</th><th>数据状态</th><th></th></tr></thead><tbody id="holdingsTableBody"></tbody></table></div>
             <div class="empty-state" id="holdingsEmpty" hidden>还没有记录，点击“新增一笔”开始录入。</div>
           </article>
           <div class="grid-two lower-grid"><article class="content-card contribution-card"><div class="content-card-head"><div><div class="section-kicker">DCA / 定投节奏</div><h3>定投计划</h3></div><span class="tag pending">待补充</span></div><div class="contribution-empty"><div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>当前已载入持仓金额；补充定投金额、扣款日和标的后，这里会显示年度投入路径。</span><button class="outline-button" data-open-modal="holding">补充定投计划</button></div></article><article class="content-card source-card"><div class="content-card-head"><div><div class="section-kicker">CONFIDENCE / 数据可信度</div><h3>这页数据怎么来的</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>持仓快照</span><strong>71 项 / 49.83 万元</strong></div><div><span class="confidence-key inferred"></span><span>推导字段</span><strong>支付宝成本由市值 - 持有收益估算</strong></div><div><span class="confidence-key pending-key"></span><span>待确认</span><strong>基金代码、份额、定投</strong></div><div><span class="confidence-key api-key"></span><span>接口数据</span><strong>行情与宏观指标</strong></div></div></article></div>
@@ -128,14 +128,14 @@
 
         <section class="section-panel" id="section-today-returns" data-panel>
           <div class="section-heading"><div><div class="section-kicker">TODAY'S RETURNS / 今日收益</div><h2>逐笔查看最新公布的基金收益。</h2></div><div class="section-meta"><span class="status-dot yellow"></span><span id="todayReturnStatus">等待基金净值</span></div></div>
-          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>晚间约每5分钟检查新净值，打开的页面每分钟读取一次。</strong><span>定时任务与数据源可能延迟。各只基金净值公布日可能不同；QDII 净值通常滞后。合计仅为各基金最新可得单日变动的混合日期估算，不能当作“今天实际赚了多少”。</span></div></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>北京时间日间约每10分钟、晚间约每5分钟检查新净值；打开的页面每分钟读取一次。</strong><span>定时任务与数据源可能延迟。各只基金净值公布日可能不同；QDII 净值通常滞后。合计仅为各基金最新可得单日变动的混合日期估算，不能当作“今天实际赚了多少”。</span></div></div>
           <div class="grid-two">
             <article class="hero-card total-card"><div class="card-label-row"><span class="card-label">最新净值日变动合计</span><span class="tag estimate">估算</span></div><div class="hero-number" id="todayReturnTotal">—</div><div class="hero-foot"><span>按持仓市值及份额计算</span><span id="todayReturnCoverage">—</span></div><div class="hero-rule"></div><div class="hero-microcopy">每只基金以下方标注的净值日期为准；当前持仓金额仍是已录入快照，不是自动同步的实时账户市值。</div></article>
             <article class="content-card"><div class="content-card-head"><div><div class="section-kicker">RETURN DETAILS / 统计口径</div><h3>日期与覆盖情况</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>净值日期范围</span><strong id="todayReturnDate">等待数据</strong></div><div><span class="confidence-key inferred"></span><span>组合估算涨幅</span><strong id="todayReturnRate">—</strong></div><div><span class="confidence-key api-key"></span><span>收益算法</span><strong id="todayReturnMethod">份额 × 单位净值变化；缺份额时估算</strong></div></div></article>
           </div>
           <article class="content-card table-card" style="margin-top:14px">
             <div class="content-card-head"><div><div class="section-kicker">BY HOLDING / 持仓明细</div><h3>各基金最新日收益</h3><small>按变动金额绝对值排序；每只基金标注自己的净值日期。</small></div></div>
-            <div class="table-scroll"><table><thead><tr><th>基金 / 渠道</th><th>分类</th><th>持仓市值</th><th>日收益</th><th>日涨幅</th><th class="nav-date-column">净值日期</th><th>计算口径</th></tr></thead><tbody id="todayReturnsTableBody"></tbody></table></div>
+            <div class="table-scroll"><table><thead><tr><th>基金 / 渠道</th><th>分类</th><th>估算市值</th><th>日收益</th><th>日涨幅</th><th class="nav-date-column">净值日期</th><th>计算口径</th></tr></thead><tbody id="todayReturnsTableBody"></tbody></table></div>
             <div class="empty-state" id="todayReturnsEmpty" hidden>暂时没有可用的基金净值数据。</div>
           </article>
         </section>
@@ -156,7 +156,7 @@
             <p class="card-footnote">QQQ / SPY 折线是 ETF 盘中参考，不是指数点位；“纳指100 / 标普500 · 日线”是指数日线。各市场数据可能延迟或受嵌入权限限制；市场温度仍按 FRED 日线快照计算。</p>
             <a class="tradingview-attribution" href="https://www.tradingview.com/markets/" target="_blank" rel="noopener noreferrer">行情图表由 TradingView 提供 ↗</a>
           </article>
-          <div class="grid-two market-lower"><article class="content-card rule-card"><div class="content-card-head"><div><div class="section-kicker">RULES / 加仓分档</div><h3>纳指回撤观察尺</h3></div><span class="tag estimate">用户规则</span></div><div class="rule-table"><div class="rule-row header"><span>回撤区间</span><span>动作建议</span><span>状态</span></div><div class="rule-row"><span>0–5%</span><strong>维持计划</strong><span class="rule-chip green-chip">正常</span></div><div class="rule-row"><span>5–10%</span><strong>略加</strong><span class="rule-chip yellow-chip">小幅加码</span></div><div class="rule-row"><span>10–15%</span><strong>提高投入</strong><span class="rule-chip orange-chip">提高</span></div><div class="rule-row"><span>15–20%</span><strong>加倍</strong><span class="rule-chip coral-chip">加倍</span></div><div class="rule-row"><span>20%以上</span><strong>明显加仓</strong><span class="rule-chip red-chip">强信号</span></div></div><div class="rule-note">提醒逻辑可叠加 VIX / VXN 与 EPS 方向；若基本面持续恶化，不机械越跌越买。</div></article><article class="content-card macro-card"><div class="content-card-head"><div><div class="section-kicker">MACRO / 宏观时间线</div><h3>政策与数据日历</h3></div><span class="tag pending">接口待接入</span></div><div class="macro-timeline"><div><span class="timeline-dot purple-dot"></span><div><strong>美联储政策利率</strong><small>目标区间、会议声明、点阵图 / 官员路径</small></div><em id="macro-fed">待更新</em></div><div><span class="timeline-dot coral-dot"></span><div><strong>通胀</strong><small>CPI、核心 CPI、PCE、核心 PCE</small></div><em id="macro-inflation">待更新</em></div><div><span class="timeline-dot blue-dot"></span><div><strong>就业</strong><small>非农、失业率、时薪、初请失业金</small></div><em id="macro-jobs">待更新</em></div><div><span class="timeline-dot green-dot"></span><div><strong>盈利与资本开支</strong><small>EPS 修正方向、AI 资本开支回报</small></div><em>待接入</em></div></div></article></div>
+          <div class="grid-two market-lower"><article class="content-card rule-card"><div class="content-card-head"><div><div class="section-kicker">RULES / 加仓分档</div><h3>纳指回撤观察尺</h3></div><span class="tag estimate">用户规则</span></div><div class="rule-table"><div class="rule-row header"><span>回撤区间</span><span>动作建议</span><span>状态</span></div><div class="rule-row"><span>0–5%</span><strong>维持计划</strong><span class="rule-chip green-chip">正常</span></div><div class="rule-row"><span>5–10%</span><strong>略加</strong><span class="rule-chip yellow-chip">小幅加码</span></div><div class="rule-row"><span>10–15%</span><strong>提高投入</strong><span class="rule-chip orange-chip">提高</span></div><div class="rule-row"><span>15–20%</span><strong>加倍</strong><span class="rule-chip coral-chip">加倍</span></div><div class="rule-row"><span>20%以上</span><strong>明显加仓</strong><span class="rule-chip red-chip">强信号</span></div></div><div class="rule-note">提醒逻辑可叠加 VIX / VXN 与 EPS 方向；若基本面持续恶化，不机械越跌越买。</div></article><article class="content-card macro-card"><div class="content-card-head"><div><div class="section-kicker">MACRO / 宏观时间线</div><h3>政策与数据日历</h3></div><span class="tag estimate">部分日线接入</span></div><div class="macro-timeline"><div><span class="timeline-dot purple-dot"></span><div><strong>联邦基金有效利率</strong><small>FRED 日线；目标区间、点阵图待接入</small></div><em id="macro-fed">待更新</em></div><div><span class="timeline-dot coral-dot"></span><div><strong>通胀指数</strong><small>CPI / PCE 指数；核心同比待接入</small></div><em id="macro-inflation">待更新</em></div><div><span class="timeline-dot blue-dot"></span><div><strong>就业</strong><small>失业率 / 非农总就业；时薪和初请待接入</small></div><em id="macro-jobs">待更新</em></div><div><span class="timeline-dot green-dot"></span><div><strong>盈利与资本开支</strong><small>EPS 修正方向、AI 资本开支回报</small></div><em>待接入</em></div></div></article></div>
         </section>
 
         <section class="section-panel" id="section-qdii" data-panel>
@@ -175,9 +175,9 @@
 
         <section class="section-panel" id="section-settings" data-panel>
           <div class="section-heading"><div><div class="section-kicker">DATA SETTINGS / 数据设置</div><h2>先把数据链路摆清楚。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 本地优先　·　密钥不放在浏览器</div></div>
-          <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag pending">市场日线已接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>Yahoo Finance 免费日线；盘中实时行情可后续升级</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED、BLS、BEA、Treasury 等</small></div><span class="connector-status">等待密钥</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>基金公司官方源 + 代销渠道页面</small></div><span class="connector-status">未配置</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>阈值触发、状态变化、数据源异常</small></div><span class="connector-status">本地规则已开</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 推荐结构</div><h3>适合后续部署</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>本地界面</strong><small>浏览器 + localStorage</small></div><i>→</i><div><span>02</span><strong>服务端代理</strong><small>Vercel Functions / Worker</small></div><i>→</i><div><span>03</span><strong>定时刷新</strong><small>Cron / Scheduled Worker</small></div></div><div class="architecture-note">密钥放在服务端环境变量；浏览器只读取经过整理的数据快照，避免泄露和跨域问题。</div></article></div>
+          <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag estimate">公开数据部分接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>FRED 免费公开日线；盘中实时指标待接入</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED 公开 CSV；各指标依发布周期更新</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>公开净值自动抓取；限额渠道核验未全覆盖</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>目前只有页面内规则，自动推送未接入</small></div><span class="connector-status">未接入通知</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 当前结构</div><h3>公开快照自动刷新</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>公开数据源</strong><small>基金净值 / FRED / 第三方限额</small></div><i>→</i><div><span>02</span><strong>GitHub 定时抓取</strong><small>5 / 15 / 30 分钟检查</small></div><i>→</i><div><span>03</span><strong>网页读取快照</strong><small>打开时自动更新</small></div></div><div class="architecture-note">买卖、分红、份额与真实余额仍需你提供记录；公开快照不能代替账户同步。</div></article></div>
           <article class="content-card api-table-card"><div class="content-card-head"><div><div class="section-kicker">API NOTES / 接口说明</div><h3>哪些数据可能需要密钥或付费</h3></div><span class="tag estimate">以供应商当前条款为准</span></div><div class="api-grid"><div class="api-row"><span class="api-type public">公开</span><div><strong>部分 Treasury / BLS 公共数据</strong><small>可能无需密钥，但有频率、历史范围或实时延迟限制。</small></div><span class="api-cost">通常免费</span></div><div class="api-row"><span class="api-type key">Key</span><div><strong>FRED、BEA、部分行情服务</strong><small>通常需要申请 API Key；免费档不等于无限制或实时权限。</small></div><span class="api-cost">免费档 + 限额</span></div><div class="api-row"><span class="api-type paid">Paid</span><div><strong>实时美股指数、期权或高频行情</strong><small>实时权限、商业使用、历史深度数据往往进入付费套餐。</small></div><span class="api-cost">可能收费</span></div><div class="api-row"><span class="api-type source">源</span><div><strong>基金限购与申购状态</strong><small>优先读取基金公司公告和代销页面；自动抓取要考虑稳定性和条款。</small></div><span class="api-cost">需维护</span></div></div></article>
-          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>只在重大变化时提醒</strong><small>默认开启：小幅波动不打扰，只提示阈值跨越、限购状态改变或数据源异常。</small></span></label><button class="outline-button" id="exportDataButton">导出本地数据</button></div>
+          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>重大变化提醒偏好</strong><small>当前仅记录页面偏好，尚未接入自动通知；不会主动推送消息。</small></span></label><button class="outline-button" id="exportDataButton">导出本地数据</button></div>
         </section>
 
         <footer class="app-footer"><span>个人投资仪表盘 · 本地优先版本</span><span>估算数据不构成投资建议</span></footer>
@@ -206,7 +206,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261009-nav-auto-refresh"></script>
-    <script src="./qdii-ui.js?v=20261008-qdii-channels"></script>
+    <script src="./app.js?v=20261009-live-valuations"></script>
+    <script src="./qdii-ui.js?v=20261009-live-valuations"></script>
   </body>
 </html>

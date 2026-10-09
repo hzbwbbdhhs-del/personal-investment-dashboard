@@ -150,6 +150,16 @@ function formatCurrency(value) {
   return `¥ ${Number(value).toLocaleString("zh-CN", { maximumFractionDigits: 2 })}`;
 }
 
+function chinaDate() {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date()).map(({ type, value }) => [type, value]));
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function displayChinaDate(date) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
+  return match ? `${Number(match[2])}月${Number(match[3])}日` : "日期待确认";
+}
+
 function statusClass(status) {
   return status === "用户已确认" ? "verified-label" : "pending-label";
 }
@@ -162,7 +172,7 @@ function renderHoldings() {
     <tr>
       <td><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small></td>
       <td>${escapeHtml(item.category)}</td>
-      <td><strong>${formatCurrency(item.value)}</strong><small>${item.note ? escapeHtml(item.note) : ""}</small></td>
+      <td><strong>${formatCurrency(valuationFor(item).value)}</strong><small>${escapeHtml(valuationFor(item).label)}${item.note ? ` · ${escapeHtml(item.note)}` : ""}</small></td>
       <td>${renderDailyReturn(item)}</td>
       <td>${formatCurrency(item.cost)}</td>
       <td>${formatCurrency(item.monthly)}</td>
@@ -183,11 +193,30 @@ function renderHoldings() {
 
 let fundData = {};
 let fundSnapshotUpdatedAt = "";
+let fundRenderDate = "";
+function valuationFor(item) {
+  const snapshotValue = Number(item.value || 0);
+  const fund = fundData[item.code];
+  if (fund?.status === "available" && Number(fund.nav) > 0) {
+    if (Number(item.shares) > 0) {
+      return { value: Number(item.shares) * fund.nav, kind: "shares", date: fund.latestDate, label: `${displayChinaDate(fund.latestDate)}净值 · 按份额` };
+    }
+    const reference = fund.referenceNavs?.[item.date];
+    if (Number(reference?.nav) > 0) {
+      return { value: snapshotValue * fund.nav / reference.nav, kind: "estimated", date: fund.latestDate, label: `${displayChinaDate(fund.latestDate)}净值 · 按录入市值估算` };
+    }
+  }
+  return { value: snapshotValue, kind: "snapshot", date: item.date || "", label: `${displayChinaDate(item.date)}持仓快照 · 未自动估值` };
+}
+
 function dailyReturnFor(item) {
   const fund = fundData[item.code];
   if (!fund || fund.status !== "available" || fund.dailyChangePct == null) return null;
   const exact = Number(item.shares) > 0 && fund.dailyChange != null;
-  const amount = exact ? Number(item.shares) * fund.dailyChange : Number(item.value || 0) * fund.dailyChangePct / 100;
+  const latestValue = valuationFor(item).value;
+  const amount = exact ? Number(item.shares) * fund.dailyChange
+    : fund.dailyChangePct > -100 ? latestValue * fund.dailyChangePct / (100 + fund.dailyChangePct)
+      : Number(item.value || 0) * fund.dailyChangePct / 100;
   return { fund, exact, amount };
 }
 
@@ -198,7 +227,7 @@ function renderDailyReturn(item) {
   const sign = amount > 0 ? "+" : "";
   const rateSign = fund.dailyChangePct > 0 ? "+" : "";
   const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small>${fund.latestDate} · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
+  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small>${fund.latestDate === chinaDate() ? "今日已更新 · " : ""}${fund.latestDate}净值 · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
 }
 
 function renderTodayReturns() {
@@ -207,7 +236,7 @@ function renderTodayReturns() {
   const rows = holdings.map((item) => ({ item, result: dailyReturnFor(item) }));
   const available = rows.filter(({ result }) => result);
   const total = available.reduce((sum, row) => sum + row.result.amount, 0);
-  const marketValue = available.reduce((sum, row) => sum + Number(row.item.value || 0), 0);
+  const marketValue = available.reduce((sum, row) => sum + valuationFor(row.item).value, 0);
   const exactCount = available.filter(({ result }) => result.exact).length;
   const dates = [...new Set(available.map(({ result }) => result.fund.latestDate).filter(Boolean))].sort();
   const latestDate = dates.at(-1) || "";
@@ -216,14 +245,11 @@ function renderTodayReturns() {
     counts.set(date, (counts.get(date) || 0) + 1);
     return counts;
   }, new Map());
-  const displayNavDate = (date) => {
-    const matched = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
-    return matched ? `${Number(matched[2])}月${Number(matched[3])}日` : "日期待确认";
-  };
   const dateBreakdown = [...dateCounts.entries()]
     .sort(([left], [right]) => right.localeCompare(left))
-    .map(([date, count]) => `${displayNavDate(date)}（${count}笔）`)
+    .map(([date, count]) => `${displayChinaDate(date)}（${count}笔）`)
     .join(" · ");
+  const updatedToday = dateCounts.get(chinaDate()) || 0;
   const sign = total > 0 ? "+" : "";
   const totalNode = $("#todayReturnTotal");
   if (totalNode) {
@@ -233,7 +259,9 @@ function renderTodayReturns() {
   const coverage = $("#todayReturnCoverage");
   if (coverage) coverage.textContent = `${available.length}/${holdings.length} 笔已取数`;
   const status = $("#todayReturnStatus");
-  if (status) status.textContent = available.length ? `最新净值 ${displayNavDate(latestDate)} · ${dateBreakdown}` : "基金净值暂不可用";
+  if (status) status.textContent = available.length
+    ? `${updatedToday ? `今日已更新 ${updatedToday} 笔` : "今日尚无净值更新"} · 最新${displayChinaDate(latestDate)}净值 · ${dateBreakdown}`
+    : "基金净值暂不可用";
   const dateNode = $("#todayReturnDate");
   if (dateNode) dateNode.textContent = available.length ? dateBreakdown : "等待数据";
   const rateNode = $("#todayReturnRate");
@@ -249,15 +277,17 @@ function renderTodayReturns() {
     const nameBase = `<strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small>`;
     if (!result) {
       const name = `${nameBase}<span class="mobile-nav-date unavailable">日期未获取</span>`;
-      return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td>—</td><td>—</td><td class="nav-date-column"><span class="nav-date-chip unavailable">日期未获取</span></td><td>—</td></tr>`;
+      return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(valuationFor(item).value)}</td><td>—</td><td>—</td><td class="nav-date-column"><span class="nav-date-chip unavailable">日期未获取</span></td><td>—</td></tr>`;
     }
     const { fund, exact, amount } = result;
     const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
+    const isToday = fund.latestDate === chinaDate();
     const isLatestDate = fund.latestDate === latestDate;
-    const dateClass = isLatestDate ? "current" : "lagged";
-    const dateNote = isLatestDate ? "当前最新日期" : "较最新日期滞后";
-    const name = `${nameBase}<span class="mobile-nav-date ${dateClass}">${displayNavDate(fund.latestDate)}净值</span>`;
-    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(item.value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td class="nav-date-cell nav-date-column"><span class="nav-date-chip ${dateClass}">${displayNavDate(fund.latestDate)}净值</span><small>${escapeHtml(fund.latestDate || "日期待确认")} · ${dateNote}</small></td><td><strong>${exact ? "按份额精算" : "按持仓市值估算"}</strong></td></tr>`;
+    const dateClass = isToday ? "today" : isLatestDate ? "current" : "lagged";
+    const dateNote = isToday ? "今日已更新" : isLatestDate ? "当前最新公布日期" : "较最新公布日期滞后";
+    const dateLabel = `${isToday ? "今日已更新 · " : ""}${displayChinaDate(fund.latestDate)}净值`;
+    const name = `${nameBase}<span class="mobile-nav-date ${dateClass}">${dateLabel}</span>`;
+    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(valuationFor(item).value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td class="nav-date-cell nav-date-column"><span class="nav-date-chip ${dateClass}">${dateLabel}</span><small>${escapeHtml(fund.latestDate || "日期待确认")} · ${dateNote}</small></td><td><strong>${exact ? "按份额精算" : "按持仓市值估算"}</strong></td></tr>`;
   }).join("");
 }
 
@@ -278,8 +308,9 @@ async function refreshFundData() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     if (!payload.funds || !Object.keys(payload.funds).length) throw new Error("Empty fund snapshot");
-    if (fundSnapshotUpdatedAt && payload.updatedAt === fundSnapshotUpdatedAt) return;
+    if (fundSnapshotUpdatedAt && payload.updatedAt === fundSnapshotUpdatedAt && fundRenderDate === chinaDate()) return;
     fundSnapshotUpdatedAt = payload.updatedAt || "";
+    fundRenderDate = chinaDate();
     fundData = payload.funds || {};
     renderHoldings();
     const available = Object.values(fundData).filter((fund) => fund.status === "available");
@@ -295,15 +326,26 @@ async function refreshFundData() {
 
 function updatePortfolioSummary() {
   const totals = Object.fromEntries(categoryNames.map((name) => [name, 0]));
-  holdings.forEach((item) => { totals[item.category] = (totals[item.category] || 0) + Number(item.value || 0); });
+  const valuations = holdings.map((item) => ({ item, valuation: valuationFor(item) }));
+  valuations.forEach(({ item, valuation }) => { totals[item.category] = (totals[item.category] || 0) + valuation.value; });
   const total = Object.values(totals).reduce((sum, value) => sum + value, 0);
   const percent = (name) => total ? totals[name] / total * 100 : 0;
   const formattedTotal = formatCurrency(total);
   const totalNode = $("#totalAssets"); if (totalNode) totalNode.textContent = formattedTotal;
-  const baselineNode = $("#baselineAsset"); if (baselineNode) baselineNode.textContent = formattedTotal;
+  const snapshotTotal = holdings.reduce((sum, item) => sum + Number(item.value || 0), 0);
+  const baselineNode = $("#baselineAsset"); if (baselineNode) baselineNode.textContent = formatCurrency(snapshotTotal);
   const countNode = $("#assetFreshness"); if (countNode) countNode.textContent = `${holdings.length} 项`;
-  const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = "2026-10-07 支付宝 + 直销快照";
-  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = "支付宝 61 项来自录屏逐帧核对；直销 10 项持仓已确认，6 只已录入截图收益（9月29–30日），4 只收益待补。";
+  const refreshed = valuations.filter(({ valuation }) => valuation.kind !== "snapshot");
+  const latestNavDate = refreshed.map(({ valuation }) => valuation.date).sort().at(-1);
+  const dateCounts = new Map();
+  refreshed.forEach(({ valuation }) => dateCounts.set(valuation.date, (dateCounts.get(valuation.date) || 0) + 1));
+  const dateSummary = [...dateCounts.entries()].sort(([a], [b]) => b.localeCompare(a)).map(([date, count]) => `${displayChinaDate(date)} ${count}笔`).join("、");
+  const difference = total - snapshotTotal;
+  const tag = $("#assetValueTag"); if (tag) tag.textContent = refreshed.length ? "净值估算" : "持仓快照";
+  const allocationTag = $("#allocationValueTag"); if (allocationTag) allocationTag.textContent = refreshed.length ? "净值估算" : "持仓快照";
+  const sidebarDate = $("#sidebarNavDate"); if (sidebarDate) sidebarDate.textContent = latestNavDate ? `最晚${displayChinaDate(latestNavDate)}净值` : "等待净值";
+  const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = latestNavDate ? `按各基金最新净值估算 · 最晚${displayChinaDate(latestNavDate)}` : "支付宝10月7日 + 直销10月3日持仓快照";
+  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = `较录入基准${difference >= 0 ? "+" : "-"}${formatCurrency(Math.abs(difference))}；${refreshed.length}/${holdings.length}笔可按净值估值（${dateSummary || "净值待更新"}）。录入基准：支付宝10月7日、直销10月3日；买卖、分红和账户余额未自动同步，不等于实时实盘余额。`;
   categoryNames.forEach((name) => {
     const id = { "债券 / 现金": "bond", "纳指 100": "ndx", "标普 500": "spx", "主动 QDII": "active", "其他": "other" }[name];
     const node = $(`#allocation-${id}`); if (node) node.textContent = `${percent(name).toFixed(1)}%`;
@@ -318,6 +360,11 @@ function updatePortfolioSummary() {
     donut.style.background = `conic-gradient(${stops.join(", ")})`;
     donut.setAttribute("aria-label", categoryNames.map((name) => `${name} ${percent(name).toFixed(1)}%`).join("，"));
   }
+}
+
+function updateCurrentDateLabel() {
+  const node = $("#topbarDate");
+  if (node) node.textContent = new Intl.DateTimeFormat("zh-CN", { timeZone: "Asia/Shanghai", year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date());
 }
 
 function escapeHtml(value) {
@@ -492,9 +539,9 @@ function formatMetric(value, digits = 2) {
   return Number(value).toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
 }
 
-function updateMetricStatus(key, status) {
+function updateMetricStatus(key, status, observedAt) {
   $$(`[data-status-for="${key}"]`).forEach((element) => {
-    element.textContent = status === "live" ? "实时" : status === "daily" ? "日线" : status === "error" ? "异常" : "待接入";
+    element.textContent = status === "live" ? "实时" : status === "daily" ? `${displayChinaDate(observedAt)}日线` : status === "error" ? "异常" : "待接入";
     element.className = `state-pill ${status === "live" ? "green" : status === "error" ? "red" : "yellow"}`;
   });
 }
@@ -519,17 +566,18 @@ function applyTemperature(temperature) {
   }
   const color = temperature.color || "yellow";
   const band = Number(temperature.band || 0);
+  const observed = temperature.updatedAt ? ` · ${displayChinaDate(temperature.updatedAt)}` : "";
   [tag, signalTag].forEach((node) => {
     if (node) {
-      node.textContent = `${temperature.label} · ${temperature.status === "live" ? "实时" : "日线"}`;
+      node.textContent = `${temperature.label} · ${temperature.status === "live" ? "实时" : "日线"}${observed}`;
       node.className = `tag ${color === "green" ? "verified" : "pending"}`;
     }
   });
   if (title) title.textContent = temperature.label;
-  if (detail) detail.textContent = temperature.action;
+  if (detail) detail.textContent = `${temperature.action}${observed ? `；数据至${displayChinaDate(temperature.updatedAt)}` : ""}`;
   if (fill) { fill.style.width = `${Math.max(8, band * 25)}%`; fill.dataset.level = color; }
-  if (overview) overview.textContent = `市场温度：${temperature.label}`;
-  if (marketStatus) marketStatus.textContent = `市场温度：${temperature.label}`;
+  if (overview) overview.textContent = `市场温度：${temperature.label}${observed}`;
+  if (marketStatus) marketStatus.textContent = `市场温度：${temperature.label}${observed}`;
   if (dot) dot.className = `status-dot ${color === "green" ? "green" : color === "red" ? "red" : "yellow"}`;
 }
 
@@ -548,26 +596,37 @@ function applyMarketPayload(payload) {
   write("indicator-vix", formatMetric(vix.value)); write("indicator-vxn", formatMetric(vxn.value));
   write("indicator-us10y", us10y.value == null ? "—" : `${formatMetric(us10y.value)}%`); write("indicator-usdcny", formatMetric(usdcny.value, 4));
   write("drawdown-ndx", ndx.drawdownPct == null ? "—" : `${formatMetric(ndx.drawdownPct)}%`); write("drawdown-spx", spx.drawdownPct == null ? "—" : `${formatMetric(spx.drawdownPct)}%`);
-  ["NDX", "SPX", "VIX", "VXN", "US10Y", "USDCNY"].forEach((key) => updateMetricStatus(key, get(key).status));
+  ["NDX", "SPX", "VIX", "VXN", "US10Y", "USDCNY"].forEach((key) => updateMetricStatus(key, get(key).status, get(key).updatedAt));
   const mode = $("#dataModeLabel"); if (mode) mode.textContent = payload.status === "live" ? "实时数据" : payload.status === "daily" ? "免费日线" : payload.status === "error" ? "接口异常" : "等待密钥";
   const note = $("#marketFootnote");
   if (note) {
     if (payload.status === "live") note.textContent = `已接入服务端快照，最近刷新 ${new Date(payload.updatedAt).toLocaleString("zh-CN")}`;
-    else if (payload.status === "daily") note.textContent = `已接入 FRED 免费公开日线快照，自动定时更新；最新观测日由各指标单独决定，不代表盘中实时。`;
+    else if (payload.status === "daily") note.textContent = `FRED 免费公开日线；云端快照更新于 ${new Date(payload.updatedAt).toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" })}（北京时间）。各指标观察日见标签；不代表盘中实时。`;
     else note.textContent = "市场接口暂时没有返回数据；页面不会把占位值当成行情。";
   }
   const macro = payload.macro || {};
-  write("macro-fed", ["live", "daily"].includes(macro.FEDFUNDS?.status) ? `${formatMetric(macro.FEDFUNDS.value)} · ${macro.FEDFUNDS.updatedAt || "已更新"}` : "待更新");
-  write("macro-inflation", ["live", "daily"].includes(macro.CPI?.status) || ["live", "daily"].includes(macro.PCE?.status) ? "已更新" : "待更新");
-  write("macro-jobs", ["live", "daily"].includes(macro.UNRATE?.status) || ["live", "daily"].includes(macro.PAYEMS?.status) ? "已更新" : "待更新");
+  const writeMacroDetail = (id, value) => { const node = $(`#${id}`)?.previousElementSibling?.querySelector("small"); if (node) node.textContent = value; };
+  write("macro-fed", ["live", "daily"].includes(macro.FEDFUNDS?.status) ? `${formatMetric(macro.FEDFUNDS.value)}% · ${displayChinaDate(macro.FEDFUNDS.updatedAt)}` : "待更新");
+  write("macro-inflation", ["live", "daily"].includes(macro.CPI?.status) ? `CPI ${formatMetric(macro.CPI.value)} · ${displayChinaDate(macro.CPI.updatedAt)}` : "待更新");
+  writeMacroDetail("macro-inflation", ["live", "daily"].includes(macro.PCE?.status) ? `PCE指数 ${formatMetric(macro.PCE.value)}（${displayChinaDate(macro.PCE.updatedAt)}）；核心同比待接入` : "PCE与核心同比待接入");
+  write("macro-jobs", ["live", "daily"].includes(macro.UNRATE?.status) ? `失业率 ${formatMetric(macro.UNRATE.value)}% · ${displayChinaDate(macro.UNRATE.updatedAt)}` : "待更新");
+  writeMacroDetail("macro-jobs", ["live", "daily"].includes(macro.PAYEMS?.status) ? `非农总就业约${formatMetric(macro.PAYEMS.value / 100000, 2)}亿人（${displayChinaDate(macro.PAYEMS.updatedAt)}）；时薪和初请待接入` : "非农、时薪和初请待接入");
   applyTemperature(payload.temperature);
 }
 
 async function refreshMarketData() {
   try {
-    // Use a relative path so this also works when hosted below a GitHub Pages
-    // project path such as /personal-investment-dashboard/.
-    let response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    let response;
+    if (location.hostname.endsWith("github.io")) {
+      try {
+        response = await fetch(`https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      } catch {
+        response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+      }
+    } else {
+      response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    }
     if (!response.ok) response = await fetch("./api/market", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     applyMarketPayload(await response.json());
@@ -600,11 +659,11 @@ $("#addHoldingButtonSecondary")?.addEventListener("click", openModal);
 $("#closeModalButton")?.addEventListener("click", closeModal);
 $("#cancelModalButton")?.addEventListener("click", closeModal);
 $("#holdingModal")?.addEventListener("click", (event) => { if (event.target.id === "holdingModal") closeModal(); });
-$("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData()]); showToast("市场与基金数据已刷新"); });
+$("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData()]); showToast("已检查公开数据；各项观察日以页面标注为准"); });
 $("#clearHoldingsButton")?.addEventListener("click", () => { holdings = structuredClone(initialHoldings); saveHoldings(); renderHoldings(); showToast("已恢复初始估算"); });
 $("#exportDataButton")?.addEventListener("click", exportData);
 $("#addQdiiButton")?.addEventListener("click", () => { activateSection("holdings"); openModal(); $("select[name=category]").value = "主动 QDII"; });
-$("#majorChangeOnly")?.addEventListener("change", (event) => showToast(event.target.checked ? "已开启重大变化提醒" : "已关闭重大变化提醒"));
+$("#majorChangeOnly")?.addEventListener("change", () => showToast("仅记录页面偏好；自动通知尚未接入"));
 $("#holdingForm")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = Object.fromEntries(new FormData(event.currentTarget).entries());
@@ -622,6 +681,8 @@ document.addEventListener("keydown", (event) => {
   else if (!$("#holdingModal").hidden) closeModal();
 });
 renderHoldings();
+updateCurrentDateLabel();
+window.setInterval(updateCurrentDateLabel, 60 * 1000);
 refreshMarketData();
 window.setInterval(refreshMarketData, 60 * 1000);
 refreshFundData();

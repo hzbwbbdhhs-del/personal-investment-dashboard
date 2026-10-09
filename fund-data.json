@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-09T12:23:05.480Z",
+  "updatedAt": "2026-10-09T12:35:23.469Z",
   "source": "东方财富公开基金历史净值接口",
   "note": "日收益率为基金单位净值日变化；未提供份额时，仪表盘按记录持仓市值估算金额。QDII净值可能晚于海外市场交易日公布。",
   "count": 63,
@@ -15,6 +15,16 @@
       "previousNav": 1.3987,
       "dailyChange": 0.0024,
       "dailyChangePct": 0.17,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.3986
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.3986
+        }
+      },
       "source": "https://fund.eastmoney.com/110017.html"
     },
     "160213": {
@@ -27,6 +37,16 @@
       "previousNav": 4.586,
       "dailyChange": 0.047,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 4.586
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 4.586
+        }
+      },
       "source": "https://fund.eastmoney.com/160213.html"
     },
     "270042": {
@@ -39,6 +59,16 @@
       "previousNav": 8.3545,
       "dailyChange": 0.0855,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 8.3545
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 8.3545
+        }
+      },
       "source": "https://fund.eastmoney.com/270042.html"
     },
     "539001": {
@@ -51,6 +81,16 @@
       "previousNav": 3.5278,
       "dailyChange": 0.0325,
       "dailyChangePct": 0.92,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 3.5278
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 3.5278
+        }
+      },
       "source": "https://fund.eastmoney.com/539001.html"
     },
     "539002": {
@@ -63,6 +103,16 @@
       "previousNav": 2.498,
       "dailyChange": -0.03,
       "dailyChangePct": -1.2,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.498
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.498
+        }
+      },
       "source": "https://fund.eastmoney.com/539002.html"
     },
     "539003": {
@@ -75,6 +125,16 @@
       "previousNav": 1.4624,
       "dailyChange": -0.0181,
       "dailyChangePct": -1.24,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.4624
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.4624
+        }
+      },
       "source": "https://fund.eastmoney.com/539003.html"
     },
     "003949": {
@@ -87,6 +147,16 @@
       "previousNav": 1.2439,
       "dailyChange": 0.0002,
       "dailyChangePct": 0.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.2436
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.2436
+        }
+      },
       "source": "https://fund.eastmoney.com/003949.html"
     },
     "003376": {
@@ -99,6 +169,16 @@
       "previousNav": 1.3858,
       "dailyChange": 0.0012,
       "dailyChangePct": 0.09,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.3859
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.3859
+        }
+      },
       "source": "https://fund.eastmoney.com/003376.html"
     },
     "012922": {
@@ -111,6 +191,16 @@
       "previousNav": 3.6685,
       "dailyChange": -0.0588,
       "dailyChangePct": -1.6,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 3.6685
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 3.6685
+        }
+      },
       "source": "https://fund.eastmoney.com/012922.html"
     },
     "001235": {
@@ -123,6 +213,16 @@
       "previousNav": 1.296,
       "dailyChange": 0.0004,
       "dailyChangePct": 0.03,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.2965
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.2965
+        }
+      },
       "source": "https://fund.eastmoney.com/001235.html"
     },
     "006670": {
@@ -135,6 +235,16 @@
       "previousNav": 1.1286,
       "dailyChange": 0.0004,
       "dailyChangePct": 0.04,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.1287
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.1287
+        }
+      },
       "source": "https://fund.eastmoney.com/006670.html"
     },
     "012920": {
@@ -147,6 +257,16 @@
       "previousNav": 3.746,
       "dailyChange": -0.0597,
       "dailyChangePct": -1.59,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 3.746
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 3.746
+        }
+      },
       "source": "https://fund.eastmoney.com/012920.html"
     },
     "017731": {
@@ -159,6 +279,16 @@
       "previousNav": 4.0092,
       "dailyChange": -0.1118,
       "dailyChangePct": -2.79,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 4.0092
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 4.0092
+        }
+      },
       "source": "https://fund.eastmoney.com/017731.html"
     },
     "017730": {
@@ -171,6 +301,16 @@
       "previousNav": 4.097,
       "dailyChange": -0.1137,
       "dailyChangePct": -2.78,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 4.097
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 4.097
+        }
+      },
       "source": "https://fund.eastmoney.com/017730.html"
     },
     "002891": {
@@ -183,6 +323,16 @@
       "previousNav": 2.829,
       "dailyChange": -0.065,
       "dailyChangePct": -2.3,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.829
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.829
+        }
+      },
       "source": "https://fund.eastmoney.com/002891.html"
     },
     "021842": {
@@ -195,6 +345,16 @@
       "previousNav": 7.0995,
       "dailyChange": -0.0589,
       "dailyChangePct": -0.83,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 7.0995
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 7.0995
+        }
+      },
       "source": "https://fund.eastmoney.com/021842.html"
     },
     "004400": {
@@ -207,6 +367,16 @@
       "previousNav": 1.077,
       "dailyChange": 0.0002,
       "dailyChangePct": 0.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.0767
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.0767
+        }
+      },
       "source": "https://fund.eastmoney.com/004400.html"
     },
     "018147": {
@@ -219,6 +389,16 @@
       "previousNav": 2.457,
       "dailyChange": -0.03,
       "dailyChangePct": -1.22,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.457
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.457
+        }
+      },
       "source": "https://fund.eastmoney.com/018147.html"
     },
     "006373": {
@@ -231,6 +411,16 @@
       "previousNav": 7.1598,
       "dailyChange": -0.0587,
       "dailyChangePct": -0.82,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 7.1598
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 7.1598
+        }
+      },
       "source": "https://fund.eastmoney.com/006373.html"
     },
     "019155": {
@@ -243,6 +433,16 @@
       "previousNav": 1.6177,
       "dailyChange": -0.0257,
       "dailyChangePct": -1.59,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6177
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6177
+        }
+      },
       "source": "https://fund.eastmoney.com/019155.html"
     },
     "002910": {
@@ -255,6 +455,16 @@
       "previousNav": 7.8559,
       "dailyChange": 0.1081,
       "dailyChangePct": 1.38,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 7.9474
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 7.9474
+        }
+      },
       "source": "https://fund.eastmoney.com/002910.html"
     },
     "007280": {
@@ -267,6 +477,16 @@
       "previousNav": 2.234,
       "dailyChange": 0.0111,
       "dailyChangePct": 0.5,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.2458
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.2458
+        }
+      },
       "source": "https://fund.eastmoney.com/007280.html"
     },
     "016664": {
@@ -279,30 +499,60 @@
       "previousNav": 2.7995,
       "dailyChange": -0.0894,
       "dailyChangePct": -3.19,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.7995
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.7995
+        }
+      },
       "source": "https://fund.eastmoney.com/016664.html"
     },
     "014002": {
       "code": "014002",
       "name": "浦银全球智能科技股票(QDII)C",
       "status": "available",
-      "latestDate": "2026-09-30",
-      "nav": 3.6454,
-      "previousDate": "2026-09-29",
-      "previousNav": 3.6291,
-      "dailyChange": 0.0163,
-      "dailyChangePct": 0.45,
+      "latestDate": "2026-10-08",
+      "nav": 3.6181,
+      "previousDate": "2026-09-30",
+      "previousNav": 3.6454,
+      "dailyChange": -0.0273,
+      "dailyChangePct": -0.75,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 3.6454
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 3.6454
+        }
+      },
       "source": "https://fund.eastmoney.com/014002.html"
     },
     "006555": {
       "code": "006555",
       "name": "浦银全球智能科技股票(QDII)A",
       "status": "available",
-      "latestDate": "2026-09-30",
-      "nav": 3.7262,
-      "previousDate": "2026-09-29",
-      "previousNav": 3.7095,
-      "dailyChange": 0.0167,
-      "dailyChangePct": 0.45,
+      "latestDate": "2026-10-08",
+      "nav": 3.6987,
+      "previousDate": "2026-09-30",
+      "previousNav": 3.7262,
+      "dailyChange": -0.0275,
+      "dailyChangePct": -0.74,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 3.7262
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 3.7262
+        }
+      },
       "source": "https://fund.eastmoney.com/006555.html"
     },
     "016665": {
@@ -315,6 +565,16 @@
       "previousNav": 2.7709,
       "dailyChange": -0.0888,
       "dailyChangePct": -3.2,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.7709
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.7709
+        }
+      },
       "source": "https://fund.eastmoney.com/016665.html"
     },
     "019736": {
@@ -327,6 +587,16 @@
       "previousNav": 1.5246,
       "dailyChange": 0.0152,
       "dailyChangePct": 1,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.5246
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.5246
+        }
+      },
       "source": "https://fund.eastmoney.com/019736.html"
     },
     "026645": {
@@ -339,6 +609,16 @@
       "previousNav": 0.8454,
       "dailyChange": -0.0085,
       "dailyChangePct": -1.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 0.8665
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 0.8665
+        }
+      },
       "source": "https://fund.eastmoney.com/026645.html"
     },
     "017091": {
@@ -351,6 +631,16 @@
       "previousNav": 2.9758,
       "dailyChange": 0.0095,
       "dailyChangePct": 0.32,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.9853
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.9853
+        }
+      },
       "source": "https://fund.eastmoney.com/017091.html"
     },
     "006431": {
@@ -363,6 +653,16 @@
       "previousNav": 1.1096,
       "dailyChange": 0.0001,
       "dailyChangePct": 0.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.1092
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.1092
+        }
+      },
       "source": "https://fund.eastmoney.com/006431.html"
     },
     "008401": {
@@ -375,6 +675,16 @@
       "previousNav": 2.6901,
       "dailyChange": 0.0472,
       "dailyChangePct": 1.75,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.6901
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.6901
+        }
+      },
       "source": "https://fund.eastmoney.com/008401.html"
     },
     "096001": {
@@ -387,6 +697,16 @@
       "previousNav": 2.706,
       "dailyChange": 0.0479,
       "dailyChangePct": 1.77,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.706
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.706
+        }
+      },
       "source": "https://fund.eastmoney.com/096001.html"
     },
     "019737": {
@@ -399,6 +719,16 @@
       "previousNav": 1.5136,
       "dailyChange": 0.0151,
       "dailyChangePct": 1,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.5136
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.5136
+        }
+      },
       "source": "https://fund.eastmoney.com/019737.html"
     },
     "007722": {
@@ -411,6 +741,16 @@
       "previousNav": 2.1987,
       "dailyChange": 0.0279,
       "dailyChangePct": 1.27,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.1987
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.1987
+        }
+      },
       "source": "https://fund.eastmoney.com/007722.html"
     },
     "007721": {
@@ -423,6 +763,16 @@
       "previousNav": 2.2406,
       "dailyChange": 0.0285,
       "dailyChangePct": 1.27,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.2406
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.2406
+        }
+      },
       "source": "https://fund.eastmoney.com/007721.html"
     },
     "019118": {
@@ -435,6 +785,16 @@
       "previousNav": 2.9547,
       "dailyChange": 0.0094,
       "dailyChangePct": 0.32,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.9641
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.9641
+        }
+      },
       "source": "https://fund.eastmoney.com/019118.html"
     },
     "017093": {
@@ -447,6 +807,16 @@
       "previousNav": 2.928,
       "dailyChange": 0.0093,
       "dailyChangePct": 0.32,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.9373
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.9373
+        }
+      },
       "source": "https://fund.eastmoney.com/017093.html"
     },
     "018044": {
@@ -459,6 +829,16 @@
       "previousNav": 2.0641,
       "dailyChange": 0.0207,
       "dailyChangePct": 1,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.0641
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.0641
+        }
+      },
       "source": "https://fund.eastmoney.com/018044.html"
     },
     "018043": {
@@ -471,6 +851,16 @@
       "previousNav": 2.082,
       "dailyChange": 0.021,
       "dailyChangePct": 1.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.082
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.082
+        }
+      },
       "source": "https://fund.eastmoney.com/018043.html"
     },
     "012752": {
@@ -483,6 +873,16 @@
       "previousNav": 3.4127,
       "dailyChange": 0.0313,
       "dailyChangePct": 0.92,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 3.4127
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 3.4127
+        }
+      },
       "source": "https://fund.eastmoney.com/012752.html"
     },
     "017641": {
@@ -495,6 +895,16 @@
       "previousNav": 1.6923,
       "dailyChange": 0.0242,
       "dailyChangePct": 1.43,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6923
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6923
+        }
+      },
       "source": "https://fund.eastmoney.com/017641.html"
     },
     "019173": {
@@ -507,6 +917,16 @@
       "previousNav": 1.7753,
       "dailyChange": 0.0177,
       "dailyChangePct": 1,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.7753
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.7753
+        }
+      },
       "source": "https://fund.eastmoney.com/019173.html"
     },
     "019172": {
@@ -519,6 +939,16 @@
       "previousNav": 1.7922,
       "dailyChange": 0.018,
       "dailyChangePct": 1,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.7922
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.7922
+        }
+      },
       "source": "https://fund.eastmoney.com/019172.html"
     },
     "019548": {
@@ -531,6 +961,16 @@
       "previousNav": 1.5916,
       "dailyChange": 0.015,
       "dailyChangePct": 0.94,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.5916
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.5916
+        }
+      },
       "source": "https://fund.eastmoney.com/019548.html"
     },
     "000834": {
@@ -543,6 +983,16 @@
       "previousNav": 6.4356,
       "dailyChange": 0.0653,
       "dailyChangePct": 1.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 6.4356
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 6.4356
+        }
+      },
       "source": "https://fund.eastmoney.com/000834.html"
     },
     "016453": {
@@ -555,6 +1005,16 @@
       "previousNav": 2.3319,
       "dailyChange": 0.0237,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.3319
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.3319
+        }
+      },
       "source": "https://fund.eastmoney.com/016453.html"
     },
     "016452": {
@@ -567,6 +1027,16 @@
       "previousNav": 2.3425,
       "dailyChange": 0.0239,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 2.3425
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 2.3425
+        }
+      },
       "source": "https://fund.eastmoney.com/016452.html"
     },
     "008971": {
@@ -579,6 +1049,16 @@
       "previousNav": 6.3741,
       "dailyChange": 0.0642,
       "dailyChangePct": 1.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 6.3741
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 6.3741
+        }
+      },
       "source": "https://fund.eastmoney.com/008971.html"
     },
     "019305": {
@@ -591,6 +1071,16 @@
       "previousNav": 1.6759,
       "dailyChange": 0.0239,
       "dailyChangePct": 1.43,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6759
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6759
+        }
+      },
       "source": "https://fund.eastmoney.com/019305.html"
     },
     "019441": {
@@ -603,6 +1093,16 @@
       "previousNav": 1.7274,
       "dailyChange": 0.0174,
       "dailyChangePct": 1.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.7274
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.7274
+        }
+      },
       "source": "https://fund.eastmoney.com/019441.html"
     },
     "018967": {
@@ -615,6 +1115,16 @@
       "previousNav": 1.6376,
       "dailyChange": 0.0161,
       "dailyChangePct": 0.98,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6376
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6376
+        }
+      },
       "source": "https://fund.eastmoney.com/018967.html"
     },
     "018966": {
@@ -627,6 +1137,16 @@
       "previousNav": 1.6581,
       "dailyChange": 0.0165,
       "dailyChangePct": 1,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6581
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6581
+        }
+      },
       "source": "https://fund.eastmoney.com/018966.html"
     },
     "019442": {
@@ -639,6 +1159,16 @@
       "previousNav": 1.7159,
       "dailyChange": 0.0173,
       "dailyChangePct": 1.01,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.7159
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.7159
+        }
+      },
       "source": "https://fund.eastmoney.com/019442.html"
     },
     "019524": {
@@ -651,6 +1181,16 @@
       "previousNav": 1.6868,
       "dailyChange": 0.0167,
       "dailyChangePct": 0.99,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6868
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6868
+        }
+      },
       "source": "https://fund.eastmoney.com/019524.html"
     },
     "019525": {
@@ -663,6 +1203,16 @@
       "previousNav": 1.6722,
       "dailyChange": 0.0165,
       "dailyChangePct": 0.99,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6722
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6722
+        }
+      },
       "source": "https://fund.eastmoney.com/019525.html"
     },
     "006479": {
@@ -675,6 +1225,16 @@
       "previousNav": 8.2072,
       "dailyChange": 0.0837,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 8.2072
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 8.2072
+        }
+      },
       "source": "https://fund.eastmoney.com/006479.html"
     },
     "020713": {
@@ -687,6 +1247,16 @@
       "previousNav": 1.4598,
       "dailyChange": -0.0026,
       "dailyChangePct": -0.18,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.4161
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.4161
+        }
+      },
       "source": "https://fund.eastmoney.com/020713.html"
     },
     "020712": {
@@ -699,6 +1269,16 @@
       "previousNav": 1.4694,
       "dailyChange": -0.0026,
       "dailyChangePct": -0.18,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.4254
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.4254
+        }
+      },
       "source": "https://fund.eastmoney.com/020712.html"
     },
     "019547": {
@@ -711,6 +1291,16 @@
       "previousNav": 1.6095,
       "dailyChange": 0.0154,
       "dailyChangePct": 0.96,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 1.6095
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 1.6095
+        }
+      },
       "source": "https://fund.eastmoney.com/019547.html"
     },
     "014978": {
@@ -723,6 +1313,16 @@
       "previousNav": 8.2132,
       "dailyChange": 0.0841,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 8.2132
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 8.2132
+        }
+      },
       "source": "https://fund.eastmoney.com/014978.html"
     },
     "040046": {
@@ -735,6 +1335,16 @@
       "previousNav": 8.3873,
       "dailyChange": 0.0863,
       "dailyChangePct": 1.03,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 8.3873
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 8.3873
+        }
+      },
       "source": "https://fund.eastmoney.com/040046.html"
     },
     "021778": {
@@ -747,6 +1357,16 @@
       "previousNav": 8.3234,
       "dailyChange": 0.0849,
       "dailyChangePct": 1.02,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 8.3234
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 8.3234
+        }
+      },
       "source": "https://fund.eastmoney.com/021778.html"
     },
     "018738": {
@@ -759,6 +1379,16 @@
       "previousNav": 5.5456,
       "dailyChange": 0.0804,
       "dailyChangePct": 1.45,
+      "referenceNavs": {
+        "2026-10-07": {
+          "date": "2026-09-30",
+          "nav": 5.5456
+        },
+        "2026-10-03": {
+          "date": "2026-09-30",
+          "nav": 5.5456
+        }
+      },
       "source": "https://fund.eastmoney.com/018738.html"
     }
   }
