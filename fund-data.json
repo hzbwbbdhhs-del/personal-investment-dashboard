@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-08T14:06:51.787Z",
+  "updatedAt": "2026-10-09T05:49:49.748Z",
   "source": "东方财富公开基金历史净值接口",
   "note": "日收益率为基金单位净值日变化；未提供份额时，仪表盘按记录持仓市值估算金额。QDII净值可能晚于海外市场交易日公布。",
   "count": 63,
@@ -80,13 +80,13 @@
     "003949": {
       "code": "003949",
       "name": "兴全稳泰债券A",
-      "status": "unavailable",
-      "latestDate": null,
-      "nav": null,
-      "previousDate": null,
-      "previousNav": null,
-      "dailyChange": null,
-      "dailyChangePct": null,
+      "status": "available",
+      "latestDate": "2026-10-08",
+      "nav": 1.2439,
+      "previousDate": "2026-09-30",
+      "previousNav": 1.2436,
+      "dailyChange": 0.0003,
+      "dailyChangePct": 0.02,
       "source": "https://fund.eastmoney.com/003949.html"
     },
     "003376": {
@@ -128,13 +128,13 @@
     "006670": {
       "code": "006670",
       "name": "广发景秀纯债债券A",
-      "status": "unavailable",
-      "latestDate": null,
-      "nav": null,
-      "previousDate": null,
-      "previousNav": null,
-      "dailyChange": null,
-      "dailyChangePct": null,
+      "status": "available",
+      "latestDate": "2026-10-08",
+      "nav": 1.1286,
+      "previousDate": "2026-09-30",
+      "previousNav": 1.1287,
+      "dailyChange": -0.0001,
+      "dailyChangePct": -0.01,
       "source": "https://fund.eastmoney.com/006670.html"
     },
     "012920": {

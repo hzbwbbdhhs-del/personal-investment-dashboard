@@ -128,7 +128,7 @@
 
         <section class="section-panel" id="section-today-returns" data-panel>
           <div class="section-heading"><div><div class="section-kicker">TODAY'S RETURNS / 今日收益</div><h2>逐笔查看最新公布的基金收益。</h2></div><div class="section-meta"><span class="status-dot yellow"></span><span id="todayReturnStatus">等待基金净值</span></div></div>
-          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>这不是同一交易日的实时账户收益。</strong><span>各只基金净值公布日可能不同；QDII 净值通常滞后。合计仅为各基金最新可得单日变动的混合日期估算，不能当作“今天实际赚了多少”。</span></div></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>晚间约每5分钟检查新净值，打开的页面每分钟读取一次。</strong><span>定时任务与数据源可能延迟。各只基金净值公布日可能不同；QDII 净值通常滞后。合计仅为各基金最新可得单日变动的混合日期估算，不能当作“今天实际赚了多少”。</span></div></div>
           <div class="grid-two">
             <article class="hero-card total-card"><div class="card-label-row"><span class="card-label">最新净值日变动合计</span><span class="tag estimate">估算</span></div><div class="hero-number" id="todayReturnTotal">—</div><div class="hero-foot"><span>按持仓市值及份额计算</span><span id="todayReturnCoverage">—</span></div><div class="hero-rule"></div><div class="hero-microcopy">每只基金以下方标注的净值日期为准；当前持仓金额仍是已录入快照，不是自动同步的实时账户市值。</div></article>
             <article class="content-card"><div class="content-card-head"><div><div class="section-kicker">RETURN DETAILS / 统计口径</div><h3>日期与覆盖情况</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>净值日期范围</span><strong id="todayReturnDate">等待数据</strong></div><div><span class="confidence-key inferred"></span><span>组合估算涨幅</span><strong id="todayReturnRate">—</strong></div><div><span class="confidence-key api-key"></span><span>收益算法</span><strong id="todayReturnMethod">份额 × 单位净值变化；缺份额时估算</strong></div></div></article>
@@ -206,7 +206,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261008-nav-date-labels"></script>
+    <script src="./app.js?v=20261009-nav-auto-refresh"></script>
     <script src="./qdii-ui.js?v=20261008-qdii-channels"></script>
   </body>
 </html>

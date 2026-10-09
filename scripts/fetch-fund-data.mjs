@@ -15,6 +15,13 @@ const jsonSource = portfolioSource
   .replace(/^\s*window\.portfolioSnapshot\s*=\s*/, "")
   .replace(/;\s*$/, "");
 const portfolio = JSON.parse(jsonSource);
+let previousFunds = {};
+try {
+  const previous = JSON.parse(await readFile(outputPath, "utf8"));
+  previousFunds = previous.funds || {};
+} catch {
+  // The first run has no previous snapshot to retain.
+}
 const namesByCode = new Map();
 for (const record of portfolio["持仓"] || []) {
   const code = codeByName[record["基金名称"]] || record["基金代码"];
@@ -24,45 +31,53 @@ for (const record of portfolio["持仓"] || []) {
 
 async function fetchFund(code, name) {
   const source = `https://fund.eastmoney.com/${code}.html`;
-  try {
-    const url = new URL("https://api.fund.eastmoney.com/f10/lsjz");
-    url.search = new URLSearchParams({ fundCode: code, pageIndex: "1", pageSize: "30" }).toString();
-    const response = await fetch(url, {
-      headers: {
-        Referer: "https://fund.eastmoney.com/",
-        "User-Agent": "Mozilla/5.0 personal-investment-dashboard/1.0",
-      },
-      signal: AbortSignal.timeout(20000),
-    });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = await response.json();
-    const rows = payload?.Data?.LSJZList || [];
-    const valid = rows.filter((row) => Number.isFinite(Number(row.DWJZ)) && row.FSRQ);
-    if (!valid.length) throw new Error(payload?.ErrMsg || "no published NAV rows");
-    const latest = valid[0];
-    const previous = valid.find((row) => row.FSRQ !== latest.FSRQ);
-    const nav = Number(latest.DWJZ);
-    const previousNav = previous ? Number(previous.DWJZ) : null;
-    const reportedChange = String(latest.JZZZL ?? "").trim();
-    const dailyChangePct = reportedChange !== "" && Number.isFinite(Number(reportedChange))
-      ? Number(latest.JZZZL)
-      : previousNav ? (nav / previousNav - 1) * 100 : null;
-    return {
-      code,
-      name,
-      status: "available",
-      latestDate: latest.FSRQ,
-      nav,
-      previousDate: previous?.FSRQ || null,
-      previousNav,
-      dailyChange: previousNav == null ? null : Number((nav - previousNav).toFixed(8)),
-      dailyChangePct: Number.isFinite(dailyChangePct) ? dailyChangePct : null,
-      source,
-    };
-  } catch (error) {
-    console.warn(`${code} ${name}: ${error.message}`);
-    return { code, name, status: "unavailable", latestDate: null, nav: null, previousDate: null, previousNav: null, dailyChange: null, dailyChangePct: null, source };
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const url = new URL("https://api.fund.eastmoney.com/f10/lsjz");
+      url.search = new URLSearchParams({ fundCode: code, pageIndex: "1", pageSize: "30" }).toString();
+      const response = await fetch(url, {
+        headers: {
+          Referer: "https://fund.eastmoney.com/",
+          "User-Agent": "Mozilla/5.0 personal-investment-dashboard/1.0",
+        },
+        signal: AbortSignal.timeout(12000),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      const rows = payload?.Data?.LSJZList || [];
+      const valid = rows.filter((row) => Number.isFinite(Number(row.DWJZ)) && row.FSRQ);
+      if (!valid.length) throw new Error(payload?.ErrMsg || "no published NAV rows");
+      const latest = valid[0];
+      const previous = valid.find((row) => row.FSRQ !== latest.FSRQ);
+      const nav = Number(latest.DWJZ);
+      const previousNav = previous ? Number(previous.DWJZ) : null;
+      const reportedChange = String(latest.JZZZL ?? "").trim();
+      const dailyChangePct = reportedChange !== "" && Number.isFinite(Number(reportedChange))
+        ? Number(latest.JZZZL)
+        : previousNav ? (nav / previousNav - 1) * 100 : null;
+      return {
+        code,
+        name,
+        status: "available",
+        latestDate: latest.FSRQ,
+        nav,
+        previousDate: previous?.FSRQ || null,
+        previousNav,
+        dailyChange: previousNav == null ? null : Number((nav - previousNav).toFixed(8)),
+        dailyChangePct: Number.isFinite(dailyChangePct) ? dailyChangePct : null,
+        source,
+      };
+    } catch (error) {
+      console.warn(`${code} ${name}: attempt ${attempt}/3 failed: ${error.message}`);
+      if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+    }
   }
+  const previous = previousFunds[code];
+  if (previous?.status === "available" && previous.latestDate) {
+    console.warn(`${code} ${name}: retaining ${previous.latestDate} NAV after failed refresh`);
+    return previous;
+  }
+  return { code, name, status: "unavailable", latestDate: null, nav: null, previousDate: null, previousNav: null, dailyChange: null, dailyChangePct: null, source };
 }
 
 const codes = [...namesByCode.keys()];
@@ -80,6 +95,10 @@ const payload = {
   count: Object.keys(funds).length,
   funds,
 };
+if (JSON.stringify(funds) === JSON.stringify(previousFunds)) {
+  console.log(`No new fund NAVs; ${Object.values(funds).filter((fund) => fund.status === "available").length}/${payload.count} remain available`);
+  process.exit(0);
+}
 await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const available = Object.values(funds).filter((fund) => fund.status === "available").length;
 console.log(`Wrote ${outputPath}: ${available}/${payload.count} fund NAVs available`);

@@ -182,6 +182,7 @@ function renderHoldings() {
 }
 
 let fundData = {};
+let fundSnapshotUpdatedAt = "";
 function dailyReturnFor(item) {
   const fund = fundData[item.code];
   if (!fund || fund.status !== "available" || fund.dailyChangePct == null) return null;
@@ -262,9 +263,23 @@ function renderTodayReturns() {
 
 async function refreshFundData() {
   try {
-    const response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    const rawUrl = `https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/fund-data.json?ts=${Date.now()}`;
+    let response;
+    if (location.hostname.endsWith("github.io")) {
+      try {
+        response = await fetch(rawUrl, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      } catch {
+        response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store" });
+      }
+    } else {
+      response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store" });
+    }
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
+    if (!payload.funds || !Object.keys(payload.funds).length) throw new Error("Empty fund snapshot");
+    if (fundSnapshotUpdatedAt && payload.updatedAt === fundSnapshotUpdatedAt) return;
+    fundSnapshotUpdatedAt = payload.updatedAt || "";
     fundData = payload.funds || {};
     renderHoldings();
     const available = Object.values(fundData).filter((fund) => fund.status === "available");
@@ -610,4 +625,5 @@ renderHoldings();
 refreshMarketData();
 window.setInterval(refreshMarketData, 60 * 1000);
 refreshFundData();
-window.setInterval(refreshFundData, 60 * 60 * 1000);
+window.setInterval(refreshFundData, 60 * 1000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshFundData(); });

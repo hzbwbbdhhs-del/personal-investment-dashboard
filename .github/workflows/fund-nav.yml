@@ -2,8 +2,17 @@ name: refresh-fund-nav
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/fund-nav.yml"
+      - "scripts/fetch-fund-data.mjs"
   schedule:
-    - cron: "0 14 * * *"
+    # 18:02–01:57 Asia/Shanghai, every five minutes.
+    - cron: "2-59/5 10-17 * * *"
+
+concurrency:
+  group: refresh-fund-nav
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -23,4 +32,5 @@ jobs:
           git add fund-data.json
           git diff --cached --quiet && exit 0
           git commit -m "Refresh fund NAV and daily returns"
+          git pull --rebase origin main
           git push
