@@ -97,12 +97,12 @@ function renderQdiiLimits() {
 async function qdiiFetch(path) {
   if (location.hostname.endsWith("github.io")) {
     try {
-      const result = await fetch("https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/" + path + "?ts=" + Date.now(), { cache: "no-store" });
+      const result = await fetch("https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/" + path + "?ts=" + Date.now(), { cache: "no-store", signal: AbortSignal.timeout(8000) });
       if (!result.ok) throw new Error("HTTP " + result.status);
       return await result.json();
     } catch { /* Pages copy is a fallback, with its own age checks. */ }
   }
-  const response = await fetch("./" + path + "?ts=" + Date.now(), { cache: "no-store" });
+  const response = await fetch("./" + path + "?ts=" + Date.now(), { cache: "no-store", signal: AbortSignal.timeout(8000) });
   if (!response.ok) throw new Error("HTTP " + response.status);
   return response.json();
 }
