@@ -133,7 +133,7 @@ function loadHoldings() {
     const importedById = new Map(initialHoldings.map((item) => [item.id, item]));
     return saved.map((item) => {
       const imported = importedById.get(item.id);
-      if (!imported) return item;
+      if (!imported || item.userEdited) return item;
       return { ...item, value: imported.value, cost: imported.cost, shares: imported.shares, date: imported.date, code: imported.code, category: imported.category, status: imported.status, note: imported.note };
     });
   } catch {
@@ -164,24 +164,38 @@ function statusClass(status) {
   return status === "用户已确认" ? "verified-label" : "pending-label";
 }
 
+let editingHoldingId = null;
+
 function renderHoldings() {
   const body = $("#holdingsTableBody");
   const empty = $("#holdingsEmpty");
   if (!body) return;
-  body.innerHTML = holdings.map((item) => `
+  const query = ($("#holdingsSearch")?.value || "").trim().toLocaleLowerCase("zh-CN");
+  const category = $("#holdingsCategory")?.value || "all";
+  const visible = holdings.filter((item) =>
+    (category === "all" || item.category === category)
+    && (!query || `${item.name} ${item.code || ""} ${item.channel || ""}`.toLocaleLowerCase("zh-CN").includes(query))
+  );
+  const filterCount = $("#holdingsFilterCount");
+  if (filterCount) filterCount.textContent = `显示 ${visible.length} / ${holdings.length} 笔`;
+  body.innerHTML = visible.map((item) => `
     <tr>
-      <td><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small></td>
-      <td>${escapeHtml(item.category)}</td>
-      <td><strong>${formatCurrency(valuationFor(item).value)}</strong><small>${escapeHtml(valuationFor(item).label)}${item.note ? ` · ${escapeHtml(item.note)}` : ""}</small></td>
-      <td>${renderDailyReturn(item)}</td>
-      <td>${formatCurrency(item.cost)}</td>
-      <td>${formatCurrency(item.monthly)}</td>
-      <td><span class="status-label ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td>
-      <td><button class="table-delete" data-delete-id="${item.id}" aria-label="删除 ${escapeHtml(item.name)}">删除</button></td>
+      <td data-label="基金"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small></td>
+      <td data-label="分类">${escapeHtml(item.category)}</td>
+      <td data-label="估算市值"><strong>${formatCurrency(valuationFor(item).value)}</strong><small>${escapeHtml(valuationFor(item).label)}${item.note ? ` · ${escapeHtml(item.note)}` : ""}</small></td>
+      <td data-label="日收益">${renderDailyReturn(item)}</td>
+      <td data-label="持有成本">${formatCurrency(item.cost)}</td>
+      <td data-label="月定投">${formatCurrency(item.monthly)}</td>
+      <td data-label="状态"><span class="status-label ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td>
+      <td class="holding-row-actions"><button class="table-edit" data-edit-id="${escapeHtml(item.id)}" aria-label="编辑 ${escapeHtml(item.name)}">编辑</button><button class="table-delete" data-delete-id="${escapeHtml(item.id)}" aria-label="删除 ${escapeHtml(item.name)}">删除</button></td>
     </tr>
   `).join("");
-  empty.hidden = holdings.length > 0;
+  empty.textContent = holdings.length ? "没有找到匹配的持仓，试试更换关键词或分类。" : "还没有记录，点击“新增一笔”开始录入。";
+  empty.hidden = visible.length > 0;
+  $$(`[data-edit-id]`, body).forEach((button) => button.addEventListener("click", () => openModal(button.dataset.editId)));
   $$(`[data-delete-id]`, body).forEach((button) => button.addEventListener("click", () => {
+    const item = holdings.find((holding) => holding.id === button.dataset.deleteId);
+    if (!item || !window.confirm(`确定从本机台账删除「${item.name}」吗？此操作不会改变基金账户。`)) return;
     holdings = holdings.filter((item) => item.id !== button.dataset.deleteId);
     saveHoldings();
     renderHoldings();
@@ -189,6 +203,26 @@ function renderHoldings() {
   }));
   updatePortfolioSummary();
   renderTodayReturns();
+  renderMonthlyPlan();
+}
+
+function renderMonthlyPlan() {
+  const content = $("#contributionContent");
+  const tag = $("#contributionTag");
+  if (!content || !tag) return;
+  const plans = holdings.filter((item) => Number(item.monthly) > 0);
+  if (!plans.length) {
+    tag.textContent = "待补充";
+    tag.className = "tag pending";
+    content.className = "contribution-empty";
+    content.innerHTML = '<div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>在上方持仓清单点「编辑」，填写每月定投和扣款日，这里就会汇总计划。</span>';
+    return;
+  }
+  const monthlyTotal = plans.reduce((sum, item) => sum + Number(item.monthly), 0);
+  tag.textContent = `${plans.length} 项计划`;
+  tag.className = "tag verified";
+  content.className = "contribution-summary";
+  content.innerHTML = `<div class="contribution-total"><small>计划每月投入</small><strong>${formatCurrency(monthlyTotal)}</strong><span>按已录入定投额汇总，不代表实际扣款</span></div><div class="contribution-plans">${plans.map((item) => `<div><span>${escapeHtml(item.name)}<small>${item.monthlyDay ? `每月 ${escapeHtml(item.monthlyDay)} 日` : "扣款日待补充"}</small></span><strong>${formatCurrency(item.monthly)}</strong></div>`).join("")}</div>`;
 }
 
 let fundData = {};
@@ -332,7 +366,12 @@ function updatePortfolioSummary() {
   const snapshotTotal = holdings.reduce((sum, item) => sum + Number(item.value || 0), 0);
   const baselineNode = $("#baselineAsset"); if (baselineNode) baselineNode.textContent = formatCurrency(snapshotTotal);
   const countNode = $("#assetFreshness"); if (countNode) countNode.textContent = `${holdings.length} 项`;
+  const hasLocalChanges = holdings.length !== initialHoldings.length || holdings.some((item) => item.userEdited);
+  const baselineNote = hasLocalChanges ? "当前设备的本地台账" : "支付宝10月7日 · 直销10月3日快照";
+  const sidebarNote = $("#sidebarBaselineNote"); if (sidebarNote) sidebarNote.textContent = baselineNote;
+  const ledgerNote = $("#confidenceLedger"); if (ledgerNote) ledgerNote.textContent = `${holdings.length} 项 / ${formatCurrency(snapshotTotal)}`;
   const refreshed = valuations.filter(({ valuation }) => valuation.kind !== "snapshot");
+  const confidenceValuation = $("#confidenceValuation"); if (confidenceValuation) confidenceValuation.textContent = `${refreshed.length}/${holdings.length} 笔按净值估算`;
   const latestNavDate = refreshed.map(({ valuation }) => valuation.date).sort().at(-1);
   const dateCounts = new Map();
   refreshed.forEach(({ valuation }) => dateCounts.set(valuation.date, (dateCounts.get(valuation.date) || 0) + 1));
@@ -341,8 +380,8 @@ function updatePortfolioSummary() {
   const tag = $("#assetValueTag"); if (tag) tag.textContent = refreshed.length ? "净值估算" : "持仓快照";
   const allocationTag = $("#allocationValueTag"); if (allocationTag) allocationTag.textContent = refreshed.length ? "净值估算" : "持仓快照";
   const sidebarDate = $("#sidebarNavDate"); if (sidebarDate) sidebarDate.textContent = latestNavDate ? `最晚${displayChinaDate(latestNavDate)}净值` : "等待净值";
-  const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = latestNavDate ? `按各基金最新净值估算 · 最晚${displayChinaDate(latestNavDate)}` : "支付宝10月7日 + 直销10月3日持仓快照";
-  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = `较录入基准${difference >= 0 ? "+" : "-"}${formatCurrency(Math.abs(difference))}；${refreshed.length}/${holdings.length}笔可按净值估值（${dateSummary || "净值待更新"}）。录入基准：支付宝10月7日、直销10月3日；买卖、分红和账户余额未自动同步，不等于实时实盘余额。`;
+  const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = latestNavDate ? `按各基金最新净值估算 · 最晚${displayChinaDate(latestNavDate)}` : baselineNote;
+  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = `较录入基准${difference >= 0 ? "+" : "-"}${formatCurrency(Math.abs(difference))}；${refreshed.length}/${holdings.length}笔可按净值估值（${dateSummary || "净值待更新"}）。录入基准：${baselineNote}；买卖、分红和账户余额未自动同步，不等于实时实盘余额。`;
   categoryNames.forEach((name) => {
     const id = { "债券 / 现金": "bond", "纳指 100": "ndx", "标普 500": "spx", "主动 QDII": "active", "其他": "other" }[name];
     const node = $(`#allocation-${id}`); if (node) node.textContent = `${percent(name).toFixed(1)}%`;
@@ -516,7 +555,20 @@ function activateSection(sectionName) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function openModal() {
+function openModal(itemId = null) {
+  const item = typeof itemId === "string" ? holdings.find((holding) => holding.id === itemId) : null;
+  editingHoldingId = item?.id || null;
+  const form = $("#holdingForm");
+  form.reset();
+  $("#modalTitle").textContent = item ? "编辑持仓" : "新增持仓";
+  $("#saveHoldingButton").textContent = item ? "保存修改" : "保存到本地";
+  for (const field of ["name", "code", "category", "value", "date", "channel", "cost", "shares", "monthly", "monthlyDay", "status", "note"]) {
+    if (form.elements[field]) form.elements[field].value = item?.[field] ?? (field === "date" ? chinaDate() : "");
+  }
+  if (!item) {
+    form.elements.channel.value = "手动录入";
+    form.elements.status.value = "用户已确认";
+  }
   $("#holdingModal").hidden = false;
   document.body.style.overflow = "hidden";
   setTimeout(() => $("input[name=name]")?.focus(), 40);
@@ -526,6 +578,7 @@ function closeModal() {
   $("#holdingModal").hidden = true;
   document.body.style.overflow = "";
   $("#holdingForm").reset();
+  editingHoldingId = null;
 }
 
 function showToast(message) {
@@ -711,10 +764,42 @@ function exportData() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = "investment-dashboard-data.json";
+  link.download = `investment-dashboard-backup-${chinaDate()}.json`;
   link.click();
   URL.revokeObjectURL(url);
   showToast("本地数据已导出");
+}
+
+async function importData(file) {
+  if (!file) return;
+  try {
+    if (file.size > 2_000_000) throw new Error("备份文件过大");
+    const payload = JSON.parse(await file.text());
+    const records = payload?.holdings;
+    if (!Array.isArray(records) || records.length > 500) throw new Error("不是有效的持仓备份");
+    const ids = new Set();
+    const checked = records.map((item) => {
+      if (!item || typeof item !== "object" || typeof item.id !== "string" || !item.id || ids.has(item.id)
+        || typeof item.name !== "string" || !item.name.trim() || item.name.length > 200
+        || !categoryNames.includes(item.category)) throw new Error("备份中有无效或重复的持仓记录");
+      ids.add(item.id);
+      for (const field of ["value", "cost", "shares", "monthly"]) {
+        if (item[field] !== "" && item[field] != null && (!Number.isFinite(Number(item[field])) || Number(item[field]) < 0)) throw new Error("备份中的金额或份额无效");
+      }
+      if (item.monthlyDay !== "" && item.monthlyDay != null && (!Number.isInteger(Number(item.monthlyDay)) || Number(item.monthlyDay) < 1 || Number(item.monthlyDay) > 28)) throw new Error("备份中的扣款日无效");
+      if (item.date && !/^\d{4}-\d{2}-\d{2}$/.test(item.date)) throw new Error("备份中的日期格式无效");
+      return { ...item, userEdited: true };
+    });
+    if (!window.confirm(`确定导入 ${checked.length} 笔持仓吗？这会替换当前设备的 ${holdings.length} 笔本地记录。建议先导出当前备份。`)) return;
+    holdings = checked;
+    saveHoldings();
+    renderHoldings();
+    showToast(`已导入 ${checked.length} 笔；仅在当前设备生效`);
+  } catch (error) {
+    showToast(`导入失败：${error.message}`);
+  } finally {
+    $("#importDataFile").value = "";
+  }
 }
 
 $$(`[data-section]`).forEach((button) => button.addEventListener("click", () => activateSection(button.dataset.section)));
@@ -723,26 +808,42 @@ $$(`[data-chart]`).forEach((button) => button.addEventListener("click", () => op
 $$(`[data-chart-symbol]`).forEach((button) => button.addEventListener("click", () => { activeChartSymbol = button.dataset.chartSymbol; renderTradingViewChart(); }));
 $("#closeMarketChartButton")?.addEventListener("click", closeMarketChart);
 $("#marketChartModal")?.addEventListener("click", (event) => { if (event.target.id === "marketChartModal") closeMarketChart(); });
-$$(`[data-open-modal="holding"]`).forEach((button) => button.addEventListener("click", openModal));
-$("#addHoldingButton")?.addEventListener("click", openModal);
-$("#addHoldingButtonSecondary")?.addEventListener("click", openModal);
+$$(`[data-open-modal="holding"]`).forEach((button) => button.addEventListener("click", () => openModal()));
+$("#addHoldingButton")?.addEventListener("click", () => openModal());
+$("#addHoldingButtonSecondary")?.addEventListener("click", () => openModal());
 $("#closeModalButton")?.addEventListener("click", closeModal);
 $("#cancelModalButton")?.addEventListener("click", closeModal);
 $("#holdingModal")?.addEventListener("click", (event) => { if (event.target.id === "holdingModal") closeModal(); });
 $("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData(), refreshValuationData()]); showToast("已检查公开数据；各项观察日以页面标注为准"); });
-$("#clearHoldingsButton")?.addEventListener("click", () => { holdings = structuredClone(initialHoldings); saveHoldings(); renderHoldings(); showToast("已恢复初始估算"); });
+$("#clearHoldingsButton")?.addEventListener("click", () => {
+  if (!window.confirm("确定恢复初始持仓快照吗？本机手动新增、修改和删除的记录将被覆盖。建议先在数据设置中导出备份。")) return;
+  holdings = structuredClone(initialHoldings);
+  saveHoldings();
+  renderHoldings();
+  showToast("已恢复初始持仓快照");
+});
+$("#holdingsSearch")?.addEventListener("input", renderHoldings);
+$("#holdingsCategory")?.addEventListener("change", renderHoldings);
 $("#exportDataButton")?.addEventListener("click", exportData);
+$("#importDataButton")?.addEventListener("click", () => $("#importDataFile").click());
+$("#importDataFile")?.addEventListener("change", (event) => importData(event.currentTarget.files?.[0]));
 $("#addQdiiButton")?.addEventListener("click", () => { activateSection("holdings"); openModal(); $("select[name=category]").value = "主动 QDII"; });
 $("#majorChangeOnly")?.addEventListener("change", () => showToast("仅记录页面偏好；自动通知尚未接入"));
 $("#holdingForm")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = Object.fromEntries(new FormData(event.currentTarget).entries());
-  holdings.push({ ...data, id: `holding-${Date.now()}` });
+  if (editingHoldingId) {
+    const index = holdings.findIndex((item) => item.id === editingHoldingId);
+    if (index < 0) return;
+    holdings[index] = { ...holdings[index], ...data, userEdited: true };
+  } else {
+    holdings.push({ ...data, id: `holding-${Date.now()}`, userEdited: true });
+  }
   saveHoldings();
   renderHoldings();
   closeModal();
   activateSection("holdings");
-  showToast("已保存到本地台账");
+  showToast("已保存到本机台账；其他设备不会自动同步");
 });
 
 document.addEventListener("keydown", (event) => {
