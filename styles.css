@@ -159,3 +159,42 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .qdii-table-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; color: var(--muted); font-size: 11px; }
 @media (max-width: 450px) { .qdii-table-card .content-card-head { align-items: flex-start; flex-wrap: wrap; }.qdii-search-label, .qdii-search-label input { width: 100%; }.qdii-controls select { flex: 1; } }
 @media (max-width: 800px) { .market-chart-modal { min-height: min(700px, 92vh); max-height: 92vh; padding: 16px; }.chart-frame { min-height: 340px; height: 50vh; }.chart-frame > .tradingview-widget-container, .chart-frame .tradingview-widget-container__widget { min-height: 340px; }.chart-footer { flex-direction: column; gap: 5px; } }
+
+.holdings-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 14px; margin: -5px 0 12px; }
+.holdings-toolbar label { display: grid; gap: 5px; color: var(--muted); font-size: 11px; font-weight: 700; }
+.holdings-toolbar input, .holdings-toolbar select { min-height: 36px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: inherit; font-size: 12px; }
+.holdings-search { flex: 1 1 220px; }
+.holdings-search input { width: 100%; }
+.holdings-filter select { min-width: 140px; }
+.holdings-filter-count { margin-left: auto; color: var(--muted); font-size: 11px; white-space: nowrap; }
+.holding-row-actions { white-space: nowrap; }
+.table-edit, .table-delete { border: 0; padding: 7px 5px; background: transparent; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+.table-edit { color: #477b60; margin-right: 8px; }
+.table-edit:hover, .table-delete:hover { text-decoration: underline; }
+.table-edit:focus-visible, .table-delete:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+.form-hint { margin: 12px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.backup-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.backup-note { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+.contribution-summary { display: grid; gap: 14px; }
+.contribution-total { display: grid; gap: 4px; padding: 16px; border: 1px solid #d4e0d3; border-radius: 10px; background: #fff; }
+.contribution-total small, .contribution-total span { color: var(--muted); font-size: 11px; }
+.contribution-total strong { font-size: 26px; font-variant-numeric: tabular-nums; }
+.contribution-plans { max-height: 240px; overflow-y: auto; }
+.contribution-plans > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 2px; border-bottom: 1px solid #dce5dc; font-size: 12px; }
+.contribution-plans > div:last-child { border-bottom: 0; }
+.contribution-plans small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+.contribution-plans strong { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+@media (max-width: 800px) {
+  #section-holdings .table-scroll { overflow: visible; }
+  #section-holdings table, #section-holdings tbody, #section-holdings tr { display: block; min-width: 0; width: 100%; }
+  #section-holdings thead { display: none; }
+  #section-holdings tbody { display: grid; gap: 10px; }
+  #section-holdings tr { padding: 13px 15px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper-2); }
+  #section-holdings td { display: block; position: relative; min-height: 31px; padding: 6px 0 6px 86px; border-bottom: 1px solid #edf0ea; overflow-wrap: anywhere; }
+  #section-holdings td::before { content: attr(data-label); position: absolute; left: 0; top: 8px; width: 77px; color: var(--muted); font-size: 10px; font-weight: 700; }
+  #section-holdings td:first-child { padding: 0 0 10px; margin-bottom: 3px; }
+  #section-holdings td:first-child::before, #section-holdings td:last-child::before { display: none; }
+  #section-holdings td:first-child strong { font-size: 14px; }
+  #section-holdings td:last-child { display: flex; justify-content: flex-end; padding: 6px 0 0; border: 0; }
+  .holdings-filter-count { width: 100%; margin-left: 0; }
+}
