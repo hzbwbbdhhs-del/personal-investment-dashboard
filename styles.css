@@ -136,6 +136,13 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .valuation-scroll-hint { display: none; color: var(--muted); font-size: 10px; margin-bottom: 6px; }
 @media (max-width: 800px) { .valuation-scroll-hint { display: block; } }
 .qdii-table-card { min-width: 0; }
+.qdii-coverage { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 12px; }
+.qdii-coverage > div { display: grid; gap: 3px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-2); }
+.qdii-coverage strong { font-size: 23px; font-variant-numeric: tabular-nums; color: var(--ink); }
+.qdii-coverage span { color: var(--muted); font-size: 11px; line-height: 1.35; }
+.qdii-help { margin-bottom: 14px; border: 1px solid #dce5dc; border-radius: 10px; background: #f7f9f4; padding: 11px 14px; font-size: 12px; line-height: 1.65; }
+.qdii-help summary { color: var(--ink); font-weight: 800; cursor: pointer; }
+.qdii-help p { margin: 9px 0 0; color: var(--muted); }
 .qdii-count { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
 .qdii-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 10px 14px; margin-bottom: 12px; }
 .qdii-categories { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
@@ -145,10 +152,15 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .qdii-search-label input, .qdii-controls select { height: 36px; min-width: 170px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font-size: 12px; }
 .qdii-filter-label { display: flex; align-items: center; gap: 6px; min-height: 36px; font-size: 12px; font-weight: 700; }
 .qdii-scope { margin: 0 0 9px; color: var(--muted); font-size: 11px; line-height: 1.5; }
-.qdii-table { min-width: 830px; }
+.qdii-table { min-width: 780px; }
 .qdii-table td { line-height: 1.45; }
 .qdii-table td:first-child { max-width: 260px; }
+.qdii-table td small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.4; }
+.qdii-reference-value { display: block; margin-top: 5px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.qdii-table td small.qdii-conflict { color: #b25248; font-weight: 800; }
+.qdii-unverified { color: var(--muted); font-size: 11px; font-weight: 700; }
 .qdii-table a { color: #447a60; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.qdii-table td:last-child a { display: block; margin: 2px 0 5px; }
 .qdii-table a:hover { text-decoration: underline; }
 .qdii-held { color: #9b6140; font-size: 10px; font-weight: 800; margin-left: 5px; }
 .qdii-state { display: inline-block; padding: 4px 7px; border-radius: 6px; font-weight: 800; white-space: nowrap; }
@@ -158,6 +170,22 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .qdii-state.unknown { background: #e9eeee; color: #667777; }
 .qdii-table-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; color: var(--muted); font-size: 11px; }
 @media (max-width: 450px) { .qdii-table-card .content-card-head { align-items: flex-start; flex-wrap: wrap; }.qdii-search-label, .qdii-search-label input { width: 100%; }.qdii-controls select { flex: 1; } }
+@media (max-width: 800px) {
+  .qdii-coverage { gap: 6px; }
+  .qdii-coverage > div { padding: 10px; }
+  .qdii-coverage strong { font-size: 18px; }
+  .qdii-coverage span { font-size: 10px; }
+  #section-qdii .table-scroll { overflow: visible; }
+  #section-qdii .qdii-table, #section-qdii .qdii-table tbody, #section-qdii .qdii-table tr { display: block; min-width: 0; width: 100%; }
+  #section-qdii .qdii-table thead { display: none; }
+  #section-qdii .qdii-table tbody { display: grid; gap: 10px; }
+  #section-qdii .qdii-table tr { padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-2); }
+  #section-qdii .qdii-table td { display: block; position: relative; max-width: none; min-height: 32px; padding: 8px 0 8px 86px; border-bottom: 1px solid #e8eee8; overflow-wrap: anywhere; }
+  #section-qdii .qdii-table td::before { content: attr(data-label); position: absolute; left: 0; top: 10px; width: 78px; color: var(--muted); font-size: 10px; font-weight: 700; }
+  #section-qdii .qdii-table td:first-child { padding: 0 0 10px; }
+  #section-qdii .qdii-table td:first-child::before { display: none; }
+  #section-qdii .qdii-table td:last-child { border-bottom: 0; padding-bottom: 0; }
+}
 @media (max-width: 800px) { .market-chart-modal { min-height: min(700px, 92vh); max-height: 92vh; padding: 16px; }.chart-frame { min-height: 340px; height: 50vh; }.chart-frame > .tradingview-widget-container, .chart-frame .tradingview-widget-container__widget { min-height: 340px; }.chart-footer { flex-direction: column; gap: 5px; } }
 
 .holdings-toolbar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 14px; margin: -5px 0 12px; }
