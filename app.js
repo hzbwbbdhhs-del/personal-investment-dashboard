@@ -650,12 +650,24 @@ function parseValuationMarkdown(markdown) {
   return { SPX: parseIndex("S&P 500"), NDX: parseIndex("Nasdaq-100"), asOf };
 }
 
+// Full-page values are verified manually against the attributed source. Never
+// display them beside a newer valuation date from the live Markdown feed.
+const valuationSupplement = {
+  asOf: "2026-10-09",
+  SPX: { change: 0.03, median5y: 20.20 },
+  NDX: { change: -0.20, median5y: 24.54 },
+};
+
 function applyValuationData(data) {
   const put = (id, value) => { const node = $(`#${id}`); if (node) node.textContent = value; };
+  const supplementMatches = data.asOf === valuationSupplement.asOf;
   for (const [key, suffix] of [["SPX", "spx"], ["NDX", "ndx"]]) {
     const item = data[key];
+    const extra = supplementMatches ? valuationSupplement[key] : null;
     put(`valuation-${suffix}-pe`, `${item.pe.toFixed(2)}×`);
+    put(`valuation-${suffix}-change`, extra ? `${extra.change >= 0 ? "+" : "−"}${Math.abs(extra.change).toFixed(2)}×` : "—");
     put(`valuation-${suffix}-yield`, `${item.earningsYield.toFixed(2)}%`);
+    put(`valuation-${suffix}-median`, extra ? `${extra.median5y.toFixed(2)}×` : "—");
     put(`valuation-${suffix}-rank`, `${item.percentile5y.toFixed(0)}%`);
     put(`valuation-${suffix}-date`, item.asOf);
     put(`valuation-mini-${suffix}`, `${item.pe.toFixed(2)}×`);
@@ -665,6 +677,9 @@ function applyValuationData(data) {
   const freshness = lagDays > 5 ? "（数据已超过 5 天，请核对来源）" : "（最新可得日线，非盘中）";
   put("valuationDate", `估值日 ${data.asOf} ${freshness}`);
   put("valuationMiniDate", `估值日 ${data.asOf}${lagDays > 5 ? " · 已过期" : ""}`);
+  put("valuationExtraNote", supplementMatches
+    ? `日变化与 5 年中位数已按 ${valuationSupplement.asOf} 的来源完整页面核对；这两项为日期固定快照，不会随网页自动刷新。`
+    : `日变化与 5 年中位数尚无 ${data.asOf} 的同日核对值，已隐藏旧快照；可点击下方来源查看最新完整表。`);
 }
 
 async function refreshValuationData() {
@@ -677,10 +692,11 @@ async function refreshValuationData() {
     const detail = $("#valuationDate"); if (detail) detail.textContent = message;
     const mini = $("#valuationMiniDate"); if (mini) mini.textContent = "估值更新失败 · 查看来源";
     ["spx", "ndx"].forEach((suffix) => {
-      ["pe", "yield", "rank", "date"].forEach((field) => { const node = $(`#valuation-${suffix}-${field}`); if (node) node.textContent = "—"; });
+      ["pe", "change", "yield", "median", "rank", "date"].forEach((field) => { const node = $(`#valuation-${suffix}-${field}`); if (node) node.textContent = "—"; });
       const value = $(`#valuation-mini-${suffix}`); if (value) value.textContent = "—";
       const rank = $(`#valuation-mini-${suffix}-rank`); if (rank) rank.textContent = "5年分位 —";
     });
+    const extraNote = $("#valuationExtraNote"); if (extraNote) extraNote.textContent = "估值来源暂不可读取，日变化与 5 年中位数也已隐藏。";
     console.warn("估值水位更新失败", error);
   }
 }

@@ -108,7 +108,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .valuation-mini-source:hover { text-decoration: underline; }
 .valuation-card { margin-top: 14px; min-width: 0; }
 .valuation-card .content-card-head small { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
-.valuation-table { min-width: 600px; }
+.valuation-table { min-width: 780px; }
 .valuation-table th, .valuation-table td { white-space: nowrap; }
 .valuation-table tbody th { font-weight: 800; }
 .valuation-rank { display: inline-block; min-width: 44px; padding: 5px 8px; border-radius: 99px; background: #e1f1e5; color: #477b60; text-align: center; font-weight: 800; }
