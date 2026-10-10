@@ -161,6 +161,10 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .qdii-unverified { color: var(--muted); font-size: 11px; font-weight: 700; }
 .qdii-table a { color: #447a60; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .qdii-table td:last-child a { display: block; margin: 2px 0 5px; }
+.qdii-table td:last-child { max-width: 280px; }
+.qdii-table details { margin-top: 8px; font-size: 10px; }
+.qdii-table summary { cursor: pointer; color: var(--muted); font-weight: 700; }
+.qdii-table details a { white-space: normal; overflow-wrap: anywhere; }
 .qdii-table a:hover { text-decoration: underline; }
 .qdii-held { color: #9b6140; font-size: 10px; font-weight: 800; margin-left: 5px; }
 .qdii-state { display: inline-block; padding: 4px 7px; border-radius: 6px; font-weight: 800; white-space: nowrap; }
