@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261010-allocation-card" />
+    <link rel="stylesheet" href="./styles.css?v=20261010-ledger-upgrade" />
   </head>
   <body>
     <div class="app-shell">
@@ -34,7 +34,7 @@
         <div class="sidebar-footer">
           <div class="mini-label">录入持仓基准</div>
           <div class="baseline-value" id="baselineAsset">¥ 498,331</div>
-          <div class="muted">支付宝10月7日 · 直销10月3日快照</div>
+          <div class="muted" id="sidebarBaselineNote">支付宝10月7日 · 直销10月3日快照</div>
           <div class="sidebar-stamp">最新估值<br /><strong id="sidebarNavDate">等待净值</strong></div>
         </div>
       </aside>
@@ -125,13 +125,14 @@
 
         <section class="section-panel" id="section-holdings" data-panel>
           <div class="section-heading"><div><div class="section-kicker">HOLDINGS / 持仓与定投</div><h2>每一笔都能追溯到来源。</h2></div><button class="primary-button" id="addHoldingButtonSecondary">＋ 新增一笔</button></div>
-          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>基金净值每天北京时间22:00自动更新。</strong><span>按最新已公布单位净值显示日涨跌；份额未确认时，收益金额按记录持仓市值估算。QDII 净值可能晚于海外市场交易日公布。</span></div></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>净值公布后由云端定时检查，页面打开时也会刷新。</strong><span>按最新已公布单位净值显示日涨跌；份额未确认时，收益金额按记录持仓市值估算。买卖和份额变化仍需手动录入，QDII 净值可能延后公布。</span></div></div>
           <article class="content-card table-card">
-            <div class="content-card-head"><div><div class="section-kicker">PORTFOLIO LEDGER / 组合台账</div><h3>持仓清单</h3><small id="fundDailySummary">正在读取基金净值…</small></div><div class="table-actions"><button class="ghost-button" id="clearHoldingsButton">恢复初始估算</button></div></div>
+            <div class="content-card-head"><div><div class="section-kicker">PORTFOLIO LEDGER / 组合台账</div><h3>持仓清单</h3><small id="fundDailySummary">正在读取基金净值…</small></div><div class="table-actions"><button class="ghost-button" id="clearHoldingsButton">恢复初始快照</button></div></div>
+            <div class="holdings-toolbar"><label class="holdings-search">查找持仓<input id="holdingsSearch" type="search" placeholder="基金名称或代码" autocomplete="off" /></label><label class="holdings-filter">资产分类<select id="holdingsCategory"><option value="all">全部分类</option><option>债券 / 现金</option><option>纳指 100</option><option>标普 500</option><option>主动 QDII</option><option>其他</option></select></label><span id="holdingsFilterCount" class="holdings-filter-count" aria-live="polite">—</span></div>
             <div class="table-scroll"><table><thead><tr><th>资产 / 代码</th><th>分类</th><th>估算市值</th><th>最新日收益</th><th>持有成本</th><th>月定投</th><th>数据状态</th><th></th></tr></thead><tbody id="holdingsTableBody"></tbody></table></div>
             <div class="empty-state" id="holdingsEmpty" hidden>还没有记录，点击“新增一笔”开始录入。</div>
           </article>
-          <div class="grid-two lower-grid"><article class="content-card contribution-card"><div class="content-card-head"><div><div class="section-kicker">DCA / 定投节奏</div><h3>定投计划</h3></div><span class="tag pending">待补充</span></div><div class="contribution-empty"><div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>当前已载入持仓金额；补充定投金额、扣款日和标的后，这里会显示年度投入路径。</span><button class="outline-button" data-open-modal="holding">补充定投计划</button></div></article><article class="content-card source-card"><div class="content-card-head"><div><div class="section-kicker">CONFIDENCE / 数据可信度</div><h3>这页数据怎么来的</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>持仓快照</span><strong>71 项 / 49.83 万元</strong></div><div><span class="confidence-key inferred"></span><span>推导字段</span><strong>支付宝成本由市值 - 持有收益估算</strong></div><div><span class="confidence-key pending-key"></span><span>待确认</span><strong>基金代码、份额、定投</strong></div><div><span class="confidence-key api-key"></span><span>接口数据</span><strong>行情与宏观指标</strong></div></div></article></div>
+          <div class="grid-two lower-grid"><article class="content-card contribution-card"><div class="content-card-head"><div><div class="section-kicker">DCA / 定投节奏</div><h3>定投计划</h3></div><span class="tag pending" id="contributionTag">待补充</span></div><div id="contributionContent" class="contribution-empty"><div class="empty-icon">＋</div><strong>定投金额和扣款日还未录入</strong><span>在上方持仓清单点「编辑」，填写每月定投和扣款日，这里就会汇总计划。</span></div></article><article class="content-card source-card"><div class="content-card-head"><div><div class="section-kicker">CONFIDENCE / 数据可信度</div><h3>这页数据怎么来的</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>本机台账</span><strong id="confidenceLedger">—</strong></div><div><span class="confidence-key inferred"></span><span>推导字段</span><strong>部分成本由市值 - 持有收益估算</strong></div><div><span class="confidence-key pending-key"></span><span>净值估算</span><strong id="confidenceValuation">—</strong></div><div><span class="confidence-key api-key"></span><span>接口数据</span><strong>行情与宏观指标</strong></div></div></article></div>
         </section>
 
         <section class="section-panel" id="section-today-returns" data-panel>
@@ -195,7 +196,8 @@
           <div class="section-heading"><div><div class="section-kicker">DATA SETTINGS / 数据设置</div><h2>先把数据链路摆清楚。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 本地优先　·　密钥不放在浏览器</div></div>
           <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag estimate">公开数据部分接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>FRED 免费公开日线；盘中实时指标待接入</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED 公开 CSV；各指标依发布周期更新</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>公开净值自动抓取；限额渠道核验未全覆盖</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>目前只有页面内规则，自动推送未接入</small></div><span class="connector-status">未接入通知</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 当前结构</div><h3>公开快照自动刷新</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>公开数据源</strong><small>基金净值 / FRED / 第三方限额</small></div><i>→</i><div><span>02</span><strong>GitHub 定时抓取</strong><small>5 / 15 / 30 分钟检查</small></div><i>→</i><div><span>03</span><strong>网页读取快照</strong><small>打开时自动更新</small></div></div><div class="architecture-note">买卖、分红、份额与真实余额仍需你提供记录；公开快照不能代替账户同步。</div></article></div>
           <article class="content-card api-table-card"><div class="content-card-head"><div><div class="section-kicker">API NOTES / 接口说明</div><h3>哪些数据可能需要密钥或付费</h3></div><span class="tag estimate">以供应商当前条款为准</span></div><div class="api-grid"><div class="api-row"><span class="api-type public">公开</span><div><strong>部分 Treasury / BLS 公共数据</strong><small>可能无需密钥，但有频率、历史范围或实时延迟限制。</small></div><span class="api-cost">通常免费</span></div><div class="api-row"><span class="api-type key">Key</span><div><strong>FRED、BEA、部分行情服务</strong><small>通常需要申请 API Key；免费档不等于无限制或实时权限。</small></div><span class="api-cost">免费档 + 限额</span></div><div class="api-row"><span class="api-type paid">Paid</span><div><strong>实时美股指数、期权或高频行情</strong><small>实时权限、商业使用、历史深度数据往往进入付费套餐。</small></div><span class="api-cost">可能收费</span></div><div class="api-row"><span class="api-type source">源</span><div><strong>基金限购与申购状态</strong><small>优先读取基金公司公告和代销页面；自动抓取要考虑稳定性和条款。</small></div><span class="api-cost">需维护</span></div></div></article>
-          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>重大变化提醒偏好</strong><small>当前仅记录页面偏好，尚未接入自动通知；不会主动推送消息。</small></span></label><button class="outline-button" id="exportDataButton">导出本地数据</button></div>
+          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>重大变化提醒偏好</strong><small>当前仅记录页面偏好，尚未接入自动通知；不会主动推送消息。</small></span></label><div class="backup-actions"><button class="outline-button" id="exportDataButton">导出备份</button><button class="outline-button" id="importDataButton" type="button">导入备份</button><input id="importDataFile" type="file" accept="application/json,.json" hidden /></div></div>
+          <p class="backup-note">手动修改只保存在当前设备的浏览器中；换手机或浏览器时，请先导出 JSON，再在新设备导入。导入会替换该设备的本地持仓，不会上传文件到网站服务器。</p>
         </section>
 
         <footer class="app-footer"><span>个人投资仪表盘 · 本地优先版本</span><span>估算数据不构成投资建议</span></footer>
@@ -215,16 +217,17 @@
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-head"><div><div class="section-kicker">LEDGER ENTRY / 台账录入</div><h2 id="modalTitle">新增持仓</h2></div><button class="close-button" id="closeModalButton" aria-label="关闭">×</button></div>
         <form id="holdingForm">
-          <div class="form-grid"><label>资产名称<input name="name" required placeholder="例如：纳斯达克100定投" /></label><label>代码 / 标识<input name="code" placeholder="例如：513100" /></label><label>分类<select name="category"><option>债券 / 现金</option><option>纳指 100</option><option>标普 500</option><option>主动 QDII</option><option>其他</option></select></label><label>当前市值<input name="value" type="number" min="0" step="0.01" placeholder="人民币" /></label><label>成本金额<input name="cost" type="number" min="0" step="0.01" placeholder="可暂不填" /></label><label>份额<input name="shares" type="number" min="0" step="0.0001" placeholder="可暂不填" /></label><label>每月定投<input name="monthly" type="number" min="0" step="0.01" placeholder="人民币" /></label><label>数据状态<select name="status"><option>用户已确认</option><option>估算</option><option>待确认</option></select></label></div>
+          <div class="form-grid"><label>资产名称<input name="name" required placeholder="例如：纳斯达克100定投" /></label><label>代码 / 标识<input name="code" placeholder="例如：513100" /></label><label>分类<select name="category"><option>债券 / 现金</option><option>纳指 100</option><option>标普 500</option><option>主动 QDII</option><option>其他</option></select></label><label>录入市值（元）<input name="value" type="number" min="0" step="0.01" placeholder="人民币" /></label><label>市值对应日期<input name="date" type="date" /></label><label>购买渠道<select name="channel"><option>手动录入</option><option>支付宝</option><option>直销</option><option>其他</option></select></label><label>成本金额<input name="cost" type="number" min="0" step="0.01" placeholder="可暂不填" /></label><label>份额<input name="shares" type="number" min="0" step="0.0001" placeholder="可暂不填" /></label><label>每月定投<input name="monthly" type="number" min="0" step="0.01" placeholder="人民币" /></label><label>每月扣款日<input name="monthlyDay" type="number" min="1" max="28" step="1" placeholder="1–28 日，可暂不填" /></label><label>数据状态<select name="status"><option>用户已确认</option><option>估算</option><option>待确认</option></select></label></div>
+          <p class="form-hint">填入份额时按「份额 × 最新净值」计算；未填份额时，用录入市值和对应日期的净值估算。</p>
           <label class="full-field">备注<textarea name="note" rows="3" placeholder="例如：支付宝代销、人民币对冲份额、公告链接或核对时间"></textarea></label>
-          <div class="form-actions"><button type="button" class="ghost-button" id="cancelModalButton">取消</button><button type="submit" class="primary-button">保存到本地</button></div>
+          <div class="form-actions"><button type="button" class="ghost-button" id="cancelModalButton">取消</button><button type="submit" class="primary-button" id="saveHoldingButton">保存到本地</button></div>
         </form>
       </div>
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261010-allocation-card"></script>
+    <script src="./app.js?v=20261010-ledger-upgrade"></script>
     <script src="./qdii-ui.js?v=20261009-live-valuations"></script>
   </body>
 </html>
