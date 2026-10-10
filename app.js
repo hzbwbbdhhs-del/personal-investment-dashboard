@@ -346,8 +346,13 @@ function updatePortfolioSummary() {
   categoryNames.forEach((name) => {
     const id = { "债券 / 现金": "bond", "纳指 100": "ndx", "标普 500": "spx", "主动 QDII": "active", "其他": "other" }[name];
     const node = $(`#allocation-${id}`); if (node) node.textContent = `${percent(name).toFixed(1)}%`;
+    const amount = $(`#allocation-${id}-amount`); if (amount) amount.textContent = formatCurrency(totals[name]);
   });
   const centerValue = $("#allocationCenterValue"); if (centerValue) centerValue.textContent = `${percent("债券 / 现金").toFixed(1)}%`;
+  const allocationFoot = $("#allocationFoot");
+  if (allocationFoot) allocationFoot.textContent = latestNavDate
+    ? `按各基金净值估算 · 最晚${displayChinaDate(latestNavDate)}净值 · 买卖未自动同步`
+    : "按已录入持仓快照估算 · 买卖未自动同步";
   const donut = $("#allocationDonut");
   if (donut) {
     const stops = [];

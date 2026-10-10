@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261010-valuation-extras" />
+    <link rel="stylesheet" href="./styles.css?v=20261010-allocation-card" />
   </head>
   <body>
     <div class="app-shell">
@@ -73,15 +73,16 @@
             <article class="hero-card allocation-card">
               <div class="card-label-row"><span class="card-label">资产分布</span><span class="tag estimate" id="allocationValueTag">持仓快照</span></div>
               <div class="allocation-body">
-                <div class="donut-wrap"><div class="donut" id="allocationDonut" aria-label="资产分类占比"><div class="donut-center"><strong id="allocationCenterValue">62.3%</strong><span id="allocationCenterLabel">债券 / 现金</span></div></div></div>
-                <div class="legend-list">
-                  <div><span class="legend-swatch swatch-bond"></span><span>债券 / 现金</span><strong id="allocation-bond">62.3%</strong></div>
-                  <div><span class="legend-swatch swatch-ndx"></span><span>纳指 100</span><strong id="allocation-ndx">7.3%</strong></div>
-                  <div><span class="legend-swatch swatch-spx"></span><span>标普 500</span><strong id="allocation-spx">2.4%</strong></div>
-                  <div><span class="legend-swatch swatch-active"></span><span>主动 QDII</span><strong id="allocation-active">26.5%</strong></div>
-                  <div><span class="legend-swatch swatch-other"></span><span>其他</span><strong id="allocation-other">1.5%</strong></div>
+                <div class="donut-wrap"><div class="donut" id="allocationDonut" role="img" aria-label="资产分类占比"><div class="donut-center"><strong id="allocationCenterValue">—</strong><span id="allocationCenterLabel">债券 / 现金</span></div></div></div>
+                <div class="legend-list" aria-label="各类资产占比与金额">
+                  <div class="legend-item"><span class="legend-swatch swatch-bond"></span><span class="legend-name">债券 / 现金<small id="allocation-bond-amount">—</small></span><strong id="allocation-bond">—</strong></div>
+                  <div class="legend-item"><span class="legend-swatch swatch-ndx"></span><span class="legend-name">纳指 100<small id="allocation-ndx-amount">—</small></span><strong id="allocation-ndx">—</strong></div>
+                  <div class="legend-item"><span class="legend-swatch swatch-spx"></span><span class="legend-name">标普 500<small id="allocation-spx-amount">—</small></span><strong id="allocation-spx">—</strong></div>
+                  <div class="legend-item"><span class="legend-swatch swatch-active"></span><span class="legend-name">主动 QDII<small id="allocation-active-amount">—</small></span><strong id="allocation-active">—</strong></div>
+                  <div class="legend-item"><span class="legend-swatch swatch-other"></span><span class="legend-name">其他<small id="allocation-other-amount">—</small></span><strong id="allocation-other">—</strong></div>
                 </div>
               </div>
+              <div class="allocation-foot" id="allocationFoot">按已录入持仓估算；买卖未自动同步</div>
             </article>
             <article class="hero-card signal-card">
               <div class="card-label-row"><span class="card-label">当前操作信号</span><span class="tag pending" id="signalTag">待接入行情</span></div>
@@ -223,7 +224,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261010-valuation-extras"></script>
+    <script src="./app.js?v=20261010-allocation-card"></script>
     <script src="./qdii-ui.js?v=20261009-live-valuations"></script>
   </body>
 </html>
