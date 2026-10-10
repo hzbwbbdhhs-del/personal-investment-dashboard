@@ -75,7 +75,7 @@ function renderQdiiLimits() {
       + (fund.alipay ? '<a href="' + qdiiEscape(fund.alipay.sourceUrl) + '" target="_blank" rel="noopener noreferrer">支付宝公开资料 ↗</a>' : '')
       + '<details><summary>最新公告与其他参考</summary>' + (fund.latestNotices || []).slice(0, 3).map(n => '<a href="' + qdiiEscape(n.url) + '" target="_blank" rel="noopener noreferrer">' + qdiiEscape(n.date + " " + n.title) + ' ↗</a>').join("")
       + '<small>公告索引检查 ' + qdiiTime(fund.noticeCheckedAt) + '</small><a href="' + qdiiEscape(fund.sourceUrl) + '" target="_blank" rel="noopener noreferrer">天天基金参考（非支付宝） ↗</a>'
-      + (qdiiRecent(qdiiView.payload.updatedAt) && fund.quotaCny != null ? '<small>该第三方渠道参考 ¥' + Number(fund.quotaCny).toLocaleString("zh-CN") + '/日，不参与排序</small>' : '') + '</details>';
+      + (qdiiRecent(qdiiView.payload.universeCheckedAt || qdiiView.payload.updatedAt) && fund.quotaCny != null ? '<small>该第三方渠道参考 ¥' + Number(fund.quotaCny).toLocaleString("zh-CN") + '/日，不参与排序</small>' : '') + '</details>';
     return '<tr><td data-label="基金"><strong>' + qdiiEscape(fund.name) + (held.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : '') + '</strong><small>' + qdiiEscape(fund.code + " · " + labels[fund.category]) + (fund.currency === "USD" ? ' · 美元' : '') + '</small></td>'
       + '<td data-label="支付宝代销">' + qdiiChannelHtml(fund, e, "alipay") + '</td><td data-label="基金公司直销">' + qdiiChannelHtml(fund, e, "direct") + '</td>'
       + '<td data-label="来源与说明">' + sources + (e.newNotice ? '<small class="qdii-conflict">新公告需核对，不沿用旧额度</small>' : '') + '</td></tr>';
@@ -113,7 +113,7 @@ async function refreshQdiiLimits() {
     if (payload.status !== "available" || payload.schemaVersion < 2 || !Array.isArray(payload.funds) || payload.funds.length < 60 || !Array.isArray(rules.rules)) throw new Error("快照不完整");
     qdiiView.payload = payload;
     qdiiView.rules = rules;
-    label.textContent = "采集 " + qdiiTime(payload.updatedAt) + "（北京时间）" + (qdiiRecent(payload.updatedAt) ? " · 定时检查，非逐秒实时" : " · 数据过期");
+    label.textContent = "采集 " + qdiiTime(payload.updatedAt) + "（北京时间）" + (qdiiRecent(payload.updatedAt) ? " · 定时检查，非逐秒实时" : " · 数据过期") + (payload.errors?.length ? " · 部分来源失败，见逐基金核验时间" : "") + (payload.catalogStale ? " · 名录未刷新，不保证完整" : "");
     renderQdiiLimits();
   } catch {
     label.textContent = qdiiView.payload ? "刷新失败，保留原采集时间；过期额度自动隐藏" : "数据暂不可用，请稍后刷新";
