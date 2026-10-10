@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261010-ledger-upgrade" />
+    <link rel="stylesheet" href="./styles.css?v=20261011-qdii-clarity" />
   </head>
   <body>
     <div class="app-shell">
@@ -181,11 +181,13 @@
         <section class="section-panel" id="section-qdii" data-panel>
           <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>纳指、标普和主动 QDII 申购核对。</h2></div><div class="section-meta" id="qdiiUpdatedAt">正在读取公开页面快照…</div></div>
           <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>直销看基金公司官网公告；支付宝代销看适用的代销公告及支付宝实际下单页。</strong><span>已找到的公告按发布日列示，仍须留意后续调整；写“各代销机构”不等于已核实支付宝此刻可买额度。第三方快照只作线索，不可代替两种渠道的核验。</span></div></div>
+          <div class="qdii-coverage" aria-label="QDII 数据覆盖情况"><div><strong id="qdiiMarketCount">—</strong><span>公开页面状态参考</span></div><div><strong id="qdiiQuotaCount">—</strong><span>含参考限额</span></div><div><strong id="qdiiNoticeCount">—</strong><span>已核基金官网记录</span></div></div>
+          <details class="qdii-help"><summary>为什么支付宝限额仍有待核对？怎么查？</summary><p>公开页面的申购状态属于天天基金渠道参考，不等于支付宝的实际可下单额度。基金公司公告若明确写“各代销机构”，会显示为适用代销渠道的公告口径；支付宝是否销售该份额、是否另有限制，仍以支付宝 App 内该基金的买入页提示为准。</p><p>核对路径：支付宝 → 理财 → 基金 → 搜索基金代码 → 买入页查看“申购限额/暂停申购”。无需下单。本站目前没有可验证的支付宝逐基金公开实时限额接口。</p></details>
           <article class="content-card table-card qdii-table-card">
             <div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>QDII 核对清单 <span id="qdiiCount" class="qdii-count">—</span></h3></div><button class="ghost-button" id="qdiiRefreshButton" type="button">↻ 检查云端快照</button></div>
             <div class="qdii-controls"><div class="qdii-categories" role="group" aria-label="QDII 分类"><button type="button" data-qdii-category="all" class="active">全部</button><button type="button" data-qdii-category="nasdaq100">纳斯达克100</button><button type="button" data-qdii-category="sp500">标普500</button><button type="button" data-qdii-category="active">主动型 QDII</button></div><label class="qdii-search-label">搜索基金或代码<input id="qdiiSearch" type="search" placeholder="名称 / 6 位代码" /></label><label class="qdii-filter-label"><input id="qdiiHeldOnly" type="checkbox" /> 只看我的持仓</label><select id="qdiiStatusFilter" aria-label="筛选申购状态"><option value="all">全部申购状态</option><option value="限大额">限大额</option><option value="暂停申购">暂停申购</option><option value="开放申购">开放申购</option></select></div>
             <p class="qdii-scope" id="qdiiScope">覆盖范围加载中…</p>
-            <div class="table-scroll"><table class="qdii-table"><thead><tr><th>基金 / 代码</th><th>类别</th><th>基金公司直销</th><th>支付宝代销</th><th>第三方页面参考</th><th>公告与核对来源</th></tr></thead><tbody id="qdiiRows"><tr><td colspan="6">正在读取公开页面快照…</td></tr></tbody></table></div>
+            <div class="table-scroll"><table class="qdii-table"><thead><tr><th>基金 / 代码</th><th>公开状态与参考限额</th><th>基金公司直销公告</th><th>支付宝代销口径</th><th>公告与核对来源</th></tr></thead><tbody id="qdiiRows"><tr><td colspan="5">正在读取公开页面快照…</td></tr></tbody></table></div>
             <div class="qdii-table-footer"><span id="qdiiShown">—</span><button type="button" class="ghost-button" id="qdiiMoreButton" hidden>显示更多</button></div>
             <div class="card-footnote">同一基金的 A/C 等份额分别列示，额度可能按基金账户或份额合并计算；“开放申购”只表示当前表未显示限制，不保证其他渠道不限购。单笔能否买入请以实际下单页及基金公司公告为准。</div>
           </article>
@@ -228,6 +230,6 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
     <script src="./app.js?v=20261010-ledger-upgrade"></script>
-    <script src="./qdii-ui.js?v=20261009-live-valuations"></script>
+    <script src="./qdii-ui.js?v=20261011-qdii-harvest"></script>
   </body>
 </html>
