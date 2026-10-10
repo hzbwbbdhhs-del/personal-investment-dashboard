@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261009-live-valuations" />
+    <link rel="stylesheet" href="./styles.css?v=20261010-valuation-waterline" />
   </head>
   <body>
     <div class="app-shell">
@@ -100,6 +100,13 @@
                 <button class="market-mini chart-trigger" type="button" data-chart="VIX" aria-label="打开VIX和VXN日线、分时图"><span class="mini-top"><span>VIX / VXN</span><span class="state-pill yellow" data-status-for="VIX">待接入</span></span><strong id="metric-vol">— / —</strong><span>恐慌与科技波动</span><svg class="sparkline spark-coral" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,36 C15,26 25,34 36,18 S55,31 68,22 S83,12 96,25 S115,15 127,20 S142,10 160,15" /></svg><small class="chart-hint">点击查看 VIX / VXN 图表 ↗</small></button>
                 <button class="market-mini chart-trigger" type="button" data-chart="US10Y" aria-label="打开美国10年期国债收益率日线和分时图"><span class="mini-top"><span>10年期美债收益率</span><span class="state-pill yellow" data-status-for="US10Y">待接入</span></span><strong id="metric-us10y">—</strong><span>百分比标度，例如 5.25%</span><svg class="sparkline spark-blue" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 C14,22 23,30 39,26 S58,12 72,20 S96,26 112,16 S136,22 160,12" /></svg><small class="chart-hint">点击查看收益率图表 ↗</small></button>
               </div>
+              <div class="valuation-mini" aria-live="polite">
+                <div class="valuation-mini-head"><strong>估值水位 · 预期市盈率</strong><button class="text-button" type="button" data-section-target="market">看详情 ↗</button></div>
+                <div class="valuation-mini-row"><span>标普 500</span><strong id="valuation-mini-spx">—</strong><small id="valuation-mini-spx-rank">5年分位 —</small></div>
+                <div class="valuation-mini-row"><span>纳指 100</span><strong id="valuation-mini-ndx">—</strong><small id="valuation-mini-ndx-rank">5年分位 —</small></div>
+                <small id="valuationMiniDate">正在读取估值日…</small>
+                <a class="valuation-mini-source" href="https://dollarliquidity.com/en/valuation" target="_blank" rel="noopener noreferrer">数据：Dollar Liquidity（dollarliquidity.com）↗</a>
+              </div>
               <div class="card-footnote" id="marketFootnote">当前页面展示的是界面演示值槽位，尚未调用实时行情 API。</div>
             </article>
 
@@ -150,6 +157,16 @@
             <button class="indicator-card chart-trigger" type="button" data-chart="US10Y" aria-label="查看美国10年期国债收益率走势图"><span class="indicator-head"><span>US10Y</span><span class="state-pill yellow" data-status-for="US10Y">待接入</span></span><strong id="indicator-us10y">—</strong><small>美国 10 年期国债收益率</small><span class="indicator-bar teal"><span style="width:51%"></span></span><span class="indicator-foot"><span>收益率标度</span><b>%</b></span><span class="indicator-chart-link">看日线 / 分时 ↗</span></button>
             <button class="indicator-card chart-trigger" type="button" data-chart="USDCNY" aria-label="查看美元兑人民币走势图"><span class="indicator-head"><span>USD/CNY</span><span class="state-pill yellow" data-status-for="USDCNY">待接入</span></span><strong id="indicator-usdcny">—</strong><small>美元兑人民币</small><span class="indicator-bar orange"><span style="width:45%"></span></span><span class="indicator-foot"><span>汇率</span><b>—</b></span><span class="indicator-chart-link">看日线 / 分时 ↗</span></button>
           </div>
+          <article class="content-card valuation-card" aria-label="标普500和纳指100估值水位">
+            <div class="content-card-head"><div><div class="section-kicker">VALUATION / 历史水位</div><h3>标普 500 与纳指 100 估值</h3><small id="valuationDate">正在读取最新可得估值日…</small></div><span class="tag estimate">日线 · 非盘中</span></div>
+            <div class="valuation-scroll-hint">表格可左右滑动查看全部指标 →</div>
+            <div class="table-scroll"><table class="valuation-table"><thead><tr><th>指数</th><th>预期市盈率</th><th>盈利收益率</th><th>近 5 年分位</th><th>估值日</th></tr></thead><tbody>
+              <tr><th scope="row">标普 500</th><td id="valuation-spx-pe">—</td><td id="valuation-spx-yield">—</td><td><span class="valuation-rank" id="valuation-spx-rank">—</span></td><td id="valuation-spx-date">—</td></tr>
+              <tr><th scope="row">纳斯达克 100</th><td id="valuation-ndx-pe">—</td><td id="valuation-ndx-yield">—</td><td><span class="valuation-rank" id="valuation-ndx-rank">—</span></td><td id="valuation-ndx-date">—</td></tr>
+            </tbody></table></div>
+            <p class="card-footnote">预期市盈率基于未来约 12 个月盈利预测；盈利收益率约等于 100 ÷ 市盈率。分位越低，表示估值在该来源的近 5 年历史中越靠低位，不代表马上会上涨。原图的“日变化”和“5 年中位数”未在可自动读取的公开版本中提供，暂不混用旧值。估值不参与上方回撤加仓分档。</p>
+            <a class="tradingview-attribution" href="https://dollarliquidity.com/en/valuation" target="_blank" rel="noopener noreferrer">数据：Dollar Liquidity（dollarliquidity.com）· 查看完整历史水位 ↗</a>
+          </article>
           <article class="content-card tradingview-quotes-card" aria-label="TradingView 行情参考">
             <div class="content-card-head"><div><div class="section-kicker">TRADINGVIEW / 指数走势</div><h3>折线走势与时间区间</h3></div><span class="tag estimate">第三方图表</span></div>
             <div id="tradingviewMarketQuotes" class="tradingview-quotes-frame" aria-live="polite">打开本页后加载 TradingView 行情…</div>
@@ -206,7 +223,7 @@
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261009-qdii-nav-updated"></script>
+    <script src="./app.js?v=20261010-valuation-waterline"></script>
     <script src="./qdii-ui.js?v=20261009-live-valuations"></script>
   </body>
 </html>

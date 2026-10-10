@@ -94,6 +94,26 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .tradingview-quotes-frame > .tradingview-widget-container, .tradingview-quotes-frame .tradingview-widget-container__widget, .tradingview-quotes-frame iframe { width: 100%; height: 100%; }
 .tradingview-attribution { display: inline-block; margin-top: 8px; color: #477b60; font-size: 11px; font-weight: 800; text-decoration: none; }
 .tradingview-attribution:hover { text-decoration: underline; }
+.valuation-mini { margin-top: 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: #f5f7f1; }
+.valuation-mini-head, .valuation-mini-row { display: flex; align-items: center; gap: 10px; }
+.valuation-mini-head { justify-content: space-between; margin-bottom: 7px; }
+.valuation-mini-head strong { font-size: 12px; }
+.valuation-mini-head .text-button { font-size: 11px; }
+.valuation-mini-row { padding: 6px 0; border-top: 1px solid var(--line); font-size: 11px; }
+.valuation-mini-row span { flex: 1; }
+.valuation-mini-row strong { font-size: 14px; white-space: nowrap; }
+.valuation-mini-row small { min-width: 83px; color: var(--muted); text-align: right; }
+#valuationMiniDate { display: block; color: var(--muted); font-size: 10px; margin-top: 7px; }
+.valuation-mini-source { display: inline-block; color: #477b60; font-size: 10px; text-decoration: none; margin-top: 5px; }
+.valuation-mini-source:hover { text-decoration: underline; }
+.valuation-card { margin-top: 14px; min-width: 0; }
+.valuation-card .content-card-head small { display: block; margin-top: 7px; color: var(--muted); font-size: 11px; }
+.valuation-table { min-width: 600px; }
+.valuation-table th, .valuation-table td { white-space: nowrap; }
+.valuation-table tbody th { font-weight: 800; }
+.valuation-rank { display: inline-block; min-width: 44px; padding: 5px 8px; border-radius: 99px; background: #e1f1e5; color: #477b60; text-align: center; font-weight: 800; }
+.valuation-scroll-hint { display: none; color: var(--muted); font-size: 10px; margin-bottom: 6px; }
+@media (max-width: 800px) { .valuation-scroll-hint { display: block; } }
 .qdii-table-card { min-width: 0; }
 .qdii-count { font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
 .qdii-controls { display: flex; align-items: end; flex-wrap: wrap; gap: 10px 14px; margin-bottom: 12px; }

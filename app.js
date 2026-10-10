@@ -633,6 +633,58 @@ async function refreshMarketData() {
   }
 }
 
+function parseValuationMarkdown(markdown) {
+  const asOf = markdown.match(/^- As of:\s*(\d{4}-\d{2}-\d{2})\s*$/m)?.[1];
+  if (!asOf || Number.isNaN(Date.parse(`${asOf}T00:00:00Z`))) throw new Error("估值日期缺失");
+  if (Date.parse(`${asOf}T00:00:00Z`) > Date.now() + 86400000) throw new Error("估值日期超出当前日期");
+  const parseIndex = (name) => {
+    const line = markdown.split(/\r?\n/).find((item) => item.startsWith(`- ${name} Forward P/E (`));
+    const match = line?.match(/:\s*([\d.]+)x Forward P\/E,\s*([\d.]+)% Earnings yield,\s*([\d.]+)% 5y percentile/);
+    if (!match) throw new Error(`${name} 估值字段缺失`);
+    const [, peRaw, yieldRaw, rankRaw] = match;
+    const pe = Number(peRaw), earningsYield = Number(yieldRaw), percentile5y = Number(rankRaw);
+    if (!(pe > 0 && pe < 200 && earningsYield > 0 && earningsYield < 100 && percentile5y >= 0 && percentile5y <= 100)) throw new Error(`${name} 估值超出合理范围`);
+    if (Math.abs(100 / pe - earningsYield) > 0.08) throw new Error(`${name} 盈利收益率与市盈率不一致`);
+    return { pe, earningsYield, percentile5y, asOf };
+  };
+  return { SPX: parseIndex("S&P 500"), NDX: parseIndex("Nasdaq-100"), asOf };
+}
+
+function applyValuationData(data) {
+  const put = (id, value) => { const node = $(`#${id}`); if (node) node.textContent = value; };
+  for (const [key, suffix] of [["SPX", "spx"], ["NDX", "ndx"]]) {
+    const item = data[key];
+    put(`valuation-${suffix}-pe`, `${item.pe.toFixed(2)}×`);
+    put(`valuation-${suffix}-yield`, `${item.earningsYield.toFixed(2)}%`);
+    put(`valuation-${suffix}-rank`, `${item.percentile5y.toFixed(0)}%`);
+    put(`valuation-${suffix}-date`, item.asOf);
+    put(`valuation-mini-${suffix}`, `${item.pe.toFixed(2)}×`);
+    put(`valuation-mini-${suffix}-rank`, `5年分位 ${item.percentile5y.toFixed(0)}%`);
+  }
+  const lagDays = Math.floor((Date.now() - Date.parse(`${data.asOf}T00:00:00Z`)) / 86400000);
+  const freshness = lagDays > 5 ? "（数据已超过 5 天，请核对来源）" : "（最新可得日线，非盘中）";
+  put("valuationDate", `估值日 ${data.asOf} ${freshness}`);
+  put("valuationMiniDate", `估值日 ${data.asOf}${lagDays > 5 ? " · 已过期" : ""}`);
+}
+
+async function refreshValuationData() {
+  try {
+    const response = await fetch(`https://dollarliquidity.com/en/valuation.md?t=${Math.floor(Date.now() / 600000)}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    applyValuationData(parseValuationMarkdown(await response.text()));
+  } catch (error) {
+    const message = "估值来源暂不可读取；请点下方来源链接查看。";
+    const detail = $("#valuationDate"); if (detail) detail.textContent = message;
+    const mini = $("#valuationMiniDate"); if (mini) mini.textContent = "估值更新失败 · 查看来源";
+    ["spx", "ndx"].forEach((suffix) => {
+      ["pe", "yield", "rank", "date"].forEach((field) => { const node = $(`#valuation-${suffix}-${field}`); if (node) node.textContent = "—"; });
+      const value = $(`#valuation-mini-${suffix}`); if (value) value.textContent = "—";
+      const rank = $(`#valuation-mini-${suffix}-rank`); if (rank) rank.textContent = "5年分位 —";
+    });
+    console.warn("估值水位更新失败", error);
+  }
+}
+
 function exportData() {
   const blob = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), holdings, note: "本地台账导出；市场行情由服务端快照提供。" }, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -656,7 +708,7 @@ $("#addHoldingButtonSecondary")?.addEventListener("click", openModal);
 $("#closeModalButton")?.addEventListener("click", closeModal);
 $("#cancelModalButton")?.addEventListener("click", closeModal);
 $("#holdingModal")?.addEventListener("click", (event) => { if (event.target.id === "holdingModal") closeModal(); });
-$("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData()]); showToast("已检查公开数据；各项观察日以页面标注为准"); });
+$("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData(), refreshValuationData()]); showToast("已检查公开数据；各项观察日以页面标注为准"); });
 $("#clearHoldingsButton")?.addEventListener("click", () => { holdings = structuredClone(initialHoldings); saveHoldings(); renderHoldings(); showToast("已恢复初始估算"); });
 $("#exportDataButton")?.addEventListener("click", exportData);
 $("#addQdiiButton")?.addEventListener("click", () => { activateSection("holdings"); openModal(); $("select[name=category]").value = "主动 QDII"; });
@@ -682,6 +734,8 @@ updateCurrentDateLabel();
 window.setInterval(updateCurrentDateLabel, 60 * 1000);
 refreshMarketData();
 window.setInterval(refreshMarketData, 60 * 1000);
+refreshValuationData();
+window.setInterval(refreshValuationData, 10 * 60 * 1000);
 refreshFundData();
 window.setInterval(refreshFundData, 60 * 1000);
-document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshFundData(); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden) { refreshFundData(); refreshValuationData(); } });
