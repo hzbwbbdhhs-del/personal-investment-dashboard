@@ -35,10 +35,13 @@ function renderQdiiUpdateTimes() {
   if (node) node.textContent = status.join(" · ");
 }
 const qdiiHeldCodes = () => new Set(holdings.map(item => item.code).filter(code => /^\d{6}$/.test(code || "")));
+const qdiiHeldActiveCodes = () => new Set(holdings.filter(item => item.category === "主动 QDII" && Number(item.value) > 0).map(item => item.code).filter(code => /^\d{6}$/.test(code || "")));
 function qdiiScopeFunds() {
-  const held = qdiiHeldCodes();
+  const activeHeld = qdiiHeldActiveCodes();
   const extras = Boolean(qdii$("#qdiiIncludeExtra")?.checked);
-  return (qdiiView.payload?.funds || []).filter(f => (f.category !== "held" || held.has(f.code)) && (extras || (f.currency === "CNY" && !f.exchangeOnly)));
+  return (qdiiView.payload?.funds || []).filter(f =>
+    (f.category === "nasdaq100" || f.category === "sp500" || (f.category === "held" && activeHeld.has(f.code) && !/指数|ETF|联接/i.test(f.name)))
+    && (extras || (f.currency === "CNY" && !f.exchangeOnly)));
 }
 function qdiiEvidence(fund) {
   const evidence = fund.evidence;
@@ -127,7 +130,7 @@ function renderQdiiLimits() {
       && (!search || (fund.name + " " + fund.code).toLowerCase().includes(search));
   }).sort(qdiiCompare);
   const visible = selected.slice(0, qdiiView.shown);
-  const labels = { nasdaq100: "纳指100", sp500: "标普500", held: "我的其他持仓" };
+  const labels = { nasdaq100: "纳指100", sp500: "标普500", held: "我的主动 QDII" };
   qdii$("#qdiiRows").innerHTML = visible.map(fund => {
     const e = qdiiEvidence(fund);
     const parsedLinks = ['agency', 'direct'].map(channel => {
@@ -155,7 +158,7 @@ function renderQdiiLimits() {
   qdii$("#qdiiQuotaCount").textContent = scope.filter(f => qdiiEvidence(f).antFresh).length;
   qdii$("#qdiiNoticeCount").textContent = scope.filter(f => qdiiEvidence(f).ruleValid && qdiiEvidence(f).rule?.direct != null).length;
   const sorting = qdii$("#qdiiSortSelect")?.value === 'holding' ? '按我的持仓金额从高到低排；同一代码跨渠道持仓合并，未持有基金置后。' : '按直销＋代销已知参考上限之和从高到低排；暂停渠道不计入，缺失渠道不假定为零。';
-  qdii$("#qdiiScope").textContent = sorting + '合计未扣跨渠道共享额度，不保证实际可以买满；支付宝实际限额未核实。默认人民币场外：我的持仓＋纳指100/标普500，完整名录 ' + qdiiView.payload.funds.length + ' 个份额。持仓金额沿用总览净值估算；A/C合并规则以公告为准。';
+  qdii$("#qdiiScope").textContent = sorting + '合计未扣跨渠道共享额度，不保证实际可以买满；支付宝实际限额未核实。仅显示纳指100、标普500和我持有的主动型QDII；默认人民币场外，其他基金不显示。持仓金额沿用总览净值估算；A/C合并规则以公告为准。';
   qdii$$("[data-qdii-category]").forEach(button => {
     const active = button.dataset.qdiiCategory === qdiiView.category;
     button.classList.toggle("active", active);
