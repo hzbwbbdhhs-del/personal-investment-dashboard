@@ -28,7 +28,7 @@ assert.equal(validComparison({ funds: [], updated_at: now }), false);
 const assetRoot = fs.existsSync('dist/qdii-ui.js') ? 'dist/' : '';
 const payload = JSON.parse(fs.readFileSync(assetRoot + 'qdii-limits.json'));
 const elements = new Map();
-const el = id => elements.get(id) || (elements.set(id, { value: id === '#qdiiChannelFilter' ? 'either' : '', checked: false, addEventListener() {} }), elements.get(id));
+const el = id => elements.get(id) || (elements.set(id, { value: id === '#qdiiChannelFilter' ? 'either' : '', checked: false, listeners: {}, addEventListener(event, callback) { this.listeners[event] = callback; } }), elements.get(id));
 const context = vm.createContext({ Date, Set, Math, Number, Boolean, String, holdings: [{code:'096001'}],
   document: { querySelector: el, querySelectorAll: () => [] }, location: { hostname: 'localhost' },
   window: { setInterval() {} }, fetch: () => new Promise(() => {}) });
@@ -48,6 +48,7 @@ assert.ok(html.includes('支付宝实际限额未核实'));
 assert.ok(html.includes('¥100/日'));
 assert.ok(html.includes('核实时间：'));
 assert.ok(html.includes('在售状态核实：'));
+assert.ok(!html.includes('<details>')); // Agency amount is visible without opening a disclosure.
 const directHtml = vm.runInContext('qdiiChannelHtml(qdiiView.payload.funds.find(f=>f.code==="096001"), qdiiEvidence(qdiiView.payload.funds.find(f=>f.code==="096001")), "direct")', context);
 assert.ok(directHtml.includes('¥1,000/日'));
 assert.ok(directHtml.includes('平台：大成基金官方直销'));
@@ -74,4 +75,39 @@ assert.ok(el('#qdiiRows').innerHTML.includes('支付宝'));
 assert.ok(!el('#qdiiRows').innerHTML.includes('undefined'));
 assert.equal(new Set(payload.funds.map(f=>f.code)).size, payload.funds.length);
 assert.equal(payload.missingHeldCodes.length, 0);
-console.log('PASS: synthetic adapter/channel fixtures, expiry, future rules, single-order exclusion, stale manual exclusion, scope, rendering');
+
+const fixture = (code, direct, agency, category = 'nasdaq100') => ({ ...structuredClone(fund), code, category,
+  evidence: { ...structuredClone(parsed), checkedAt: now,
+    direct: { ...parsed.direct, amount: direct, status: direct === 0 ? 'suspended' : direct == null ? 'unknown' : 'limited' },
+    agency: { ...parsed.agency, amount: agency, status: agency === 0 ? 'suspended' : agency == null ? 'unknown' : 'limited' } } });
+context.sortFunds = [fixture('000001', 900, 0), fixture('000002', 600, 500), fixture('000003', null, null),
+  fixture('000004', 0, 0), fixture('000005', 100, null), fixture('000006', 1500, 500, 'held')];
+context.holdings = [{ code: '000001', value: 100 }, { code: '000001', value: 250 }, { code: '000002', value: 300 },
+  { code: '000006', value: 10 }];
+const evaluate = code => vm.runInContext(code, context);
+el('#qdiiSortSelect').value = 'combined';
+assert.equal(evaluate('sortFunds.slice().sort(qdiiCompare).map(f=>f.code).join(",")'), '000006,000002,000001,000005,000004,000003');
+assert.equal(evaluate('qdiiHoldingValue("000001")'), 350); // Same-code records across channels are combined.
+assert.equal(evaluate('qdiiHoldingValue("000003")'), null);
+assert.equal(evaluate('qdiiCombinedQuota(sortFunds[4], qdiiEvidence(sortFunds[4])).complete'), false);
+assert.ok(evaluate('qdiiRowSummary(sortFunds[4], qdiiEvidence(sortFunds[4]))').includes('仅已知渠道'));
+context.sortFunds[1].alipay.status = '不可售';
+assert.equal(evaluate('qdiiCombinedQuota(sortFunds[1], qdiiEvidence(sortFunds[1])).amount'), 600);
+context.sortFunds[1].alipay.status = '正常申购';
+el('#qdiiSortSelect').value = 'holding';
+assert.equal(evaluate('sortFunds.slice().sort(qdiiCompare).map(f=>f.code).join(",")'), '000001,000002,000006,000005,000004,000003');
+context.valuationFor = item => ({ value: item.code === '000002' ? 500 : item.value });
+assert.equal(evaluate('qdiiHoldingValue("000002")'), 500);
+assert.equal(evaluate('sortFunds.slice().sort(qdiiCompare)[0].code'), '000002');
+evaluate('qdiiView.payload = { ...payload, funds: sortFunds }; qdiiView.shown = 60');
+el('#qdiiSortSelect').listeners.change();
+assert.equal(evaluate('qdiiView.shown'), 30);
+assert.ok(el('#qdiiScope').textContent.includes('按我的持仓金额'));
+const ordered = el('#qdiiRows').innerHTML;
+assert.ok(ordered.indexOf('000002 ·') < ordered.indexOf('000001 ·'));
+assert.ok(ordered.includes('我的持仓金额（估算）：¥500.00'));
+el('#qdiiSortSelect').value = 'combined';
+el('#qdiiSortSelect').listeners.change();
+assert.ok(el('#qdiiScope').textContent.includes('合计未扣跨渠道共享额度'));
+assert.ok(el('#qdiiRows').innerHTML.indexOf('000006 ·') < el('#qdiiRows').innerHTML.indexOf('000002 ·'));
+console.log('PASS: channel evidence, freshness, visible agency amounts, combined-quota sorting, holding sorting, duplicate aggregation, NAV valuation, dropdown events, unknown and suspended quotas');

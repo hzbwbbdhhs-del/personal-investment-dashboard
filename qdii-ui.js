@@ -31,17 +31,38 @@ function qdiiEvidence(fund) {
   const alipay = ruleValid && antOpen && Number.isFinite(rule.agency) && rule.agency > 0 && (fund.alipay.minimumCny == null || rule.agency >= fund.alipay.minimumCny) ? rule.agency : null;
   const direct = ruleValid && Number.isFinite(rule.direct) && rule.direct > 0 ? rule.direct : null;
   const channel = qdii$("#qdiiChannelFilter")?.value || "either";
-  const available = channel === "alipay" ? alipay : channel === "direct" ? direct : Math.max(alipay || 0, direct || 0) || null;
+  const available = channel === "alipay" ? alipay : channel === "direct" ? direct : alipay == null && direct == null ? null : (alipay ?? 0) + (direct ?? 0);
   const paused = channel === "alipay" ? antBlocked || (ruleValid && rule.agency === 0) : channel === "direct" ? ruleValid && rule.direct === 0 : (antBlocked || (ruleValid && rule.agency === 0)) && ruleValid && rule.direct === 0;
   return { rule, ruleValid, newNotice, antFresh, antOpen, antBlocked, alipay, direct, available, paused };
 }
 function qdiiCompare(a, b) {
   const left = qdiiEvidence(a), right = qdiiEvidence(b);
-  const rank = (f, e) => f.category === "held" ? 0 : e.available ? 3 : e.antOpen ? 2 : e.paused ? -1 : 1;
-  return rank(b, right) - rank(a, left)
-    || (right.available || 0) - (left.available || 0)
-    || Number(qdiiHeldCodes().has(b.code)) - Number(qdiiHeldCodes().has(a.code))
+  const holdingDifference = (qdiiHoldingValue(b.code) ?? -1) - (qdiiHoldingValue(a.code) ?? -1);
+  if (qdii$("#qdiiSortSelect")?.value === "holding" && holdingDifference) return holdingDifference;
+  const leftTotal = qdiiCombinedQuota(a, left), rightTotal = qdiiCombinedQuota(b, right);
+  return (rightTotal.amount ?? -1) - (leftTotal.amount ?? -1)
+    || Number(rightTotal.complete) - Number(leftTotal.complete)
+    || holdingDifference
     || a.code.localeCompare(b.code);
+}
+function qdiiHoldingValue(code) {
+  const records = holdings.filter(item => item.code === code);
+  if (!records.length) return null;
+  const values = records.map(item => typeof valuationFor === 'function' ? valuationFor(item).value : Number(item.value));
+  return values.every(value => Number.isFinite(value) && value >= 0) ? values.reduce((sum, value) => sum + value, 0) : null;
+}
+function qdiiCombinedQuota(fund, evidence) {
+  if (fund.exchangeOnly || fund.currency !== 'CNY') return { amount: null, complete: false };
+  const agency = evidence.antBlocked || evidence.ruleValid && evidence.rule?.agency === 0 ? 0 : evidence.alipay;
+  const direct = evidence.ruleValid && evidence.rule?.direct === 0 ? 0 : evidence.direct;
+  const known = [direct, agency].filter(value => Number.isFinite(value) && value >= 0);
+  return { amount: known.length ? known.reduce((sum, value) => sum + value, 0) : null, complete: known.length === 2 };
+}
+function qdiiRowSummary(fund, evidence) {
+  const total = qdiiCombinedQuota(fund, evidence);
+  const holding = qdiiHoldingValue(fund.code);
+  const quota = total.amount == null ? '直销＋代销参考合计：待核实' : '直销＋代销参考合计：¥' + total.amount.toLocaleString('zh-CN') + '/日' + (total.complete ? '' : '（仅已知渠道）');
+  return '<small>' + quota + '</small>' + (holding == null ? '' : '<small>我的持仓金额（估算）：¥' + holding.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '</small>');
 }
 function qdiiAmount(amount) {
   return amount === 0 ? '<span class="qdii-state paused">暂停申购</span>' : '<strong class="qdii-reference-value">¥' + Number(amount).toLocaleString("zh-CN") + '/日</strong>';
@@ -100,7 +121,7 @@ function renderQdiiLimits() {
       + '<details><summary>最新公告与其他参考</summary>' + (fund.latestNotices || []).slice(0, 3).map(n => '<a href="' + qdiiEscape(n.url) + '" target="_blank" rel="noopener noreferrer">' + qdiiEscape(n.date + " " + n.title) + ' ↗</a>').join("")
       + '<small>公告索引检查 ' + qdiiTime(fund.noticeCheckedAt) + '</small><a href="' + qdiiEscape(fund.sourceUrl) + '" target="_blank" rel="noopener noreferrer">天天基金参考（非支付宝） ↗</a>'
       + (qdiiRecent(qdiiView.payload.universeCheckedAt || qdiiView.payload.updatedAt) && fund.quotaCny != null ? '<small>该第三方渠道参考 ¥' + Number(fund.quotaCny).toLocaleString("zh-CN") + '/日，不参与排序</small>' : '') + '</details></details>';
-    return '<tr><td data-label="基金"><strong>' + qdiiEscape(fund.name) + (held.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : '') + '</strong><small>' + qdiiEscape(fund.code + " · " + labels[fund.category]) + (fund.currency === "USD" ? ' · 美元' : '') + '</small></td>'
+    return '<tr><td data-label="基金"><strong>' + qdiiEscape(fund.name) + (held.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : '') + '</strong><small>' + qdiiEscape(fund.code + " · " + labels[fund.category]) + (fund.currency === "USD" ? ' · 美元' : '') + '</small>' + qdiiRowSummary(fund, e) + '</td>'
       + '<td data-label="支付宝代销">' + qdiiChannelHtml(fund, e, "alipay") + '</td><td data-label="基金公司直销">' + qdiiChannelHtml(fund, e, "direct") + '</td>'
       + '<td data-label="来源与说明">' + sources + (e.newNotice ? '<small class="qdii-conflict">新公告需核对，不沿用旧额度</small>' : '') + '</td></tr>';
   }).join("") || '<tr><td colspan="4">没有符合条件的基金；可以清空搜索或调整筛选。</td></tr>';
@@ -110,8 +131,8 @@ function renderQdiiLimits() {
   qdii$("#qdiiMarketCount").textContent = scope.length;
   qdii$("#qdiiQuotaCount").textContent = scope.filter(f => qdiiEvidence(f).antFresh).length;
   qdii$("#qdiiNoticeCount").textContent = scope.filter(f => qdiiEvidence(f).ruleValid && qdiiEvidence(f).rule?.direct != null).length;
-  const availableIndices = scope.filter(f => f.category !== "held" && qdiiEvidence(f).available).length;
-  qdii$("#qdiiScope").textContent = "默认人民币场外：你的持仓＋大陆公募纳指100/标普500。自动解析出公告参考额度的指数份额 " + availableIndices + " 只优先，按所选渠道参考上限从高到低排；不代表买入页实测可买。完整名录 " + qdiiView.payload.funds.length + " 个份额。主动QDII自动解析暂不覆盖，缺数据不代表不限购；A/C是否合并请阅读原公告。";
+  const sorting = qdii$("#qdiiSortSelect")?.value === 'holding' ? '按我的持仓金额从高到低排；同一代码跨渠道持仓合并，未持有基金置后。' : '按直销＋代销已知参考上限之和从高到低排；暂停渠道不计入，缺失渠道不假定为零。';
+  qdii$("#qdiiScope").textContent = sorting + '合计未扣跨渠道共享额度，不保证实际可以买满；支付宝实际限额未核实。默认人民币场外：我的持仓＋纳指100/标普500，完整名录 ' + qdiiView.payload.funds.length + ' 个份额。持仓金额沿用总览净值估算；A/C合并规则以公告为准。';
   qdii$$("[data-qdii-category]").forEach(button => {
     const active = button.dataset.qdiiCategory === qdiiView.category;
     button.classList.toggle("active", active);
@@ -148,7 +169,7 @@ async function refreshQdiiLimits() {
 qdii$$("[data-qdii-category]").forEach(button => button.addEventListener("click", () => {
   qdiiView.category = button.dataset.qdiiCategory; qdiiView.shown = 30; renderQdiiLimits();
 }));
-["#qdiiSearch", "#qdiiHeldOnly", "#qdiiStatusFilter", "#qdiiChannelFilter", "#qdiiIncludeExtra"].forEach(selector => qdii$(selector)?.addEventListener(selector === "#qdiiSearch" ? "input" : "change", () => { qdiiView.shown = 30; renderQdiiLimits(); }));
+["#qdiiSearch", "#qdiiHeldOnly", "#qdiiStatusFilter", "#qdiiChannelFilter", "#qdiiSortSelect", "#qdiiIncludeExtra"].forEach(selector => qdii$(selector)?.addEventListener(selector === "#qdiiSearch" ? "input" : "change", () => { qdiiView.shown = 30; renderQdiiLimits(); }));
 qdii$("#qdiiMoreButton")?.addEventListener("click", () => { qdiiView.shown += 30; renderQdiiLimits(); });
 qdii$("#qdiiRefreshButton")?.addEventListener("click", refreshQdiiLimits);
 qdii$("#refreshButton")?.addEventListener("click", refreshQdiiLimits);
