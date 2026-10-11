@@ -8,6 +8,8 @@ on:
       - "scripts/fetch-qdii-limits.mjs"
       - "scripts/refresh-qdii-evidence.mjs"
       - "scripts/track-qdii-changes.mjs"
+      - "scripts/test-qdii-ui.mjs"
+      - "scripts/test-qdii-monitor.mjs"
       - "qdii-monitor-core.js"
       - "vendor/qdii-purchase-limits/**"
   schedule:
