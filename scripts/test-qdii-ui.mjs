@@ -44,13 +44,23 @@ const evidence = () => vm.runInContext('qdiiEvidence(qdiiView.payload.funds.find
 assert.equal(evidence().direct, 1000);
 assert.equal(evidence().alipay, 100); // Announcement reference ONLY.
 const html = vm.runInContext('qdiiChannelHtml(qdiiView.payload.funds.find(f=>f.code==="096001"), qdiiEvidence(qdiiView.payload.funds.find(f=>f.code==="096001")), "alipay")', context);
-assert.ok(html.includes('不是支付宝实测'));
-assert.ok(html.includes('每日限额：未确认'));
+assert.ok(html.includes('支付宝实际限额未核实'));
+assert.ok(html.includes('¥100/日'));
+assert.ok(html.includes('核实时间：'));
+assert.ok(html.includes('在售状态核实：'));
+const directHtml = vm.runInContext('qdiiChannelHtml(qdiiView.payload.funds.find(f=>f.code==="096001"), qdiiEvidence(qdiiView.payload.funds.find(f=>f.code==="096001")), "direct")', context);
+assert.ok(directHtml.includes('¥1,000/日'));
+assert.ok(directHtml.includes('平台：大成基金官方直销'));
+assert.ok(directHtml.includes('核实时间：'));
 fund.alipay.status = '不可售';
 assert.equal(evidence().alipay, null);
 fund.alipay.status = '正常申购';
 fund.evidence.checkedAt = '2020-01-01';
 assert.equal(evidence().available, null);
+const expiredHtml = vm.runInContext('qdiiChannelHtml(qdiiView.payload.funds.find(f=>f.code==="096001"), qdiiEvidence(qdiiView.payload.funds.find(f=>f.code==="096001")), "direct")', context);
+assert.ok(expiredHtml.includes('金额：未核实'));
+assert.ok(!expiredHtml.includes('¥1,000/日'));
+assert.ok(expiredHtml.includes('额度核实时间：未核实'));
 fund.evidence.checkedAt = now;
 fund.latestNotices.push({ date: '2099-01-01' });
 assert.equal(evidence().available, null);

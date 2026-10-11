@@ -10,7 +10,7 @@ const qdiiRecent = stamp => {
 };
 const qdiiTime = stamp => {
   const time = new Date(stamp);
-  return Number.isFinite(time.getTime()) ? time.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }) : "未核验";
+  return Number.isFinite(time.getTime()) ? time.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }) : "未核实";
 };
 const qdiiHeldCodes = () => new Set(holdings.map(item => item.code).filter(code => /^\d{6}$/.test(code || "")));
 function qdiiScopeFunds() {
@@ -46,19 +46,28 @@ function qdiiCompare(a, b) {
 function qdiiAmount(amount) {
   return amount === 0 ? '<span class="qdii-state paused">暂停申购</span>' : '<strong class="qdii-reference-value">¥' + Number(amount).toLocaleString("zh-CN") + '/日</strong>';
 }
+function qdiiDirectPlatform(fund) {
+  const managers = ['工银瑞信', '交银施罗德', '景顺长城', '浦银安盛', '华泰柏瑞', '汇添富', '易方达', '国泰', '南方', '大成', '建信', '华安', '广发', '摩根', '招商', '宝盈', '天弘', '博时', '嘉实', '富国', '华夏', '华宝', '海富通', '银华', '万家', '中银', '诺安', '鹏华', '融通', '国富', '国联安', '国联', '长城'];
+  const manager = managers.find(name => String(fund.name || '').startsWith(name));
+  return manager ? (manager === '国富' ? '国海富兰克林' : manager) + '基金官方直销' : '基金公司官方直销';
+}
 function qdiiChannelHtml(fund, evidence, channel) {
   const { rule, ruleValid, antFresh, antBlocked, newNotice } = evidence;
   if (fund.exchangeOnly) return '<span class="qdii-unverified">场内 ETF</span><small>券商二级市场买卖，不适用支付宝/直销日限额</small>';
   if (fund.currency !== "CNY") return '<span class="qdii-unverified">美元份额</span><small>未核美元渠道额度；不可沿用人民币上限</small>';
   const amount = rule?.[channel === "alipay" ? "agency" : "direct"];
-  const status = channel === "alipay" ? '<span class="qdii-state ' + (antFresh ? antBlocked ? "paused" : evidence.antOpen ? "open" : "unknown" : "unknown") + '">' + qdiiEscape(antFresh ? fund.alipay.status : "在售状态待更新") + '</span><small>蚂蚁基金公开页 · ' + qdiiTime(fund.alipay?.checkedAt) + '</small>' : "";
+  const status = channel === "alipay" ? '<span class="qdii-state ' + (antFresh ? antBlocked ? "paused" : evidence.antOpen ? "open" : "unknown" : "unknown") + '">' + qdiiEscape(antFresh ? fund.alipay.status : "在售状态待更新") + '</span>' : "";
   const parsed = fund.evidence?.[channel === 'alipay' ? 'agency' : 'direct'];
-  const actualUnknown = channel === 'alipay' ? '<small>支付宝实际限额：未获取（以买入页为准）</small>' : '<small>直销买入页是否在售：未核实</small>';
-  if (!ruleValid || amount == null) return status + '<span class="qdii-unverified">' + (fund.category === 'held' ? '自动公告解析暂不覆盖此持仓' : newNotice && fund.evidence ? "有更新公告，旧额度不沿用" : rule ? "公告证据过期或解析未完成" : "公告额度暂未获取") + '</span>' + actualUnknown;
-  const effective = parsed?.effectiveDate || '公告未注明';
-  if (channel === 'alipay') return status + '<span class="qdii-unverified">每日限额：未确认</span><small>支付宝买入页未接入，不能确认可买金额</small><details><summary>公告参考</summary>' + qdiiAmount(amount) + '<small>这是代销公告上限，不是支付宝实测额度；生效 ' + qdiiEscape(effective) + '</small></details>';
-  if (channel === "alipay" && antBlocked && amount > 0) return status + '<small>公告代销上限 ¥' + Number(amount).toLocaleString("zh-CN") + '/日；支付宝当前不可买</small><small>生效 ' + qdiiEscape(effective) + '</small>';
-  return qdiiAmount(amount) + '<small>直销公告上限（参考）</small>';
+  const platform = channel === 'direct' ? '<small>平台：' + qdiiEscape(qdiiDirectPlatform(fund)) + '（公告口径）</small>' : '';
+  const saleTime = channel === 'alipay' ? '<small>在售状态核实：' + qdiiTime(fund.alipay?.checkedAt) + (antFresh ? '' : '（未取得最新状态）') + '</small>' : '';
+  if (!ruleValid || amount == null) {
+    const reason = fund.category === 'held' ? '此持仓尚无自动解析额度' : newNotice && fund.evidence ? '有更新公告，旧额度不沿用' : rule ? '公告证据过期或解析未完成' : '公告额度暂未获取';
+    const lastCheck = parsed?.checkedAt || fund.evidence?.checkedAt;
+    return status + '<span class="qdii-unverified">金额：未核实</span>' + platform + '<small>额度核实时间：未核实</small>' + (lastCheck ? '<small>上次公告检查：' + qdiiTime(lastCheck) + '</small>' : '') + saleTime + '<small>' + reason + '</small>';
+  }
+  const quotaTime = '<small>核实时间：' + qdiiTime(parsed?.checkedAt || fund.evidence.checkedAt) + '（公告自动核验）</small>';
+  if (channel === 'alipay') return status + qdiiAmount(amount) + '<small>代销公告上限；支付宝实际限额未核实</small>' + quotaTime + saleTime + (antBlocked ? '<small>支付宝公开在售状态为不可买</small>' : '');
+  return qdiiAmount(amount) + platform + quotaTime + '<small>直销公告上限；买入页是否在售未核实</small>';
 }
 function renderQdiiLimits() {
   if (!qdiiView.payload) return;
