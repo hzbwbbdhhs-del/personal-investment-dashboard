@@ -98,6 +98,12 @@ let cursor = 0;
 await Promise.all(Array.from({ length: 3 }, async () => { while (cursor < funds.length) { const f = funds[cursor++]; await collect(f); } }));
 const counts = Object.fromEntries(['nasdaq100', 'sp500', 'held'].map(c => [c, funds.filter(f => f.category === c).length]));
 const payload = { status: 'available', schemaVersion: 2, updatedAt: new Date().toISOString(), sourceDataDates: sourceDates, source: '蚂蚁基金公开在售状态＋基金公告索引＋天天基金参考', sourceUrl: endpoint, scope: '大陆公募：已有持仓与全部名称匹配纳斯达克100/标普500的份额；人民币场外默认显示，美元与场内可展开。', counts, heldCount: heldCodes.size, missingHeldCodes: [...heldCodes].filter(c => !funds.some(f => f.code === c)), funds, errors, changes: funds.filter(f => before.has(f.code) && (before.get(f.code).status !== f.status || before.get(f.code).alipay?.status !== f.alipay?.status)).map(f => ({ code: f.code, status: f.status, alipay: f.alipay?.status })).slice(0, 100) };
+// Preserve timestamps if the optional evidence stage is interrupted.
+payload.evidenceSources = previous?.evidenceSources || null;
+for (const fund of payload.funds) {
+  fund.evidence = before.get(fund.code)?.evidence || null;
+  fund.comparison = before.get(fund.code)?.comparison || null;
+}
 payload.universeCheckedAt = universeCheckedAt;
 payload.catalogStale = !universeCheckedAt || Date.now() - new Date(universeCheckedAt).getTime() > 24 * 60 * 60 * 1000;
 await writeFile(outputPath, JSON.stringify(payload, null, 2) + '\n');

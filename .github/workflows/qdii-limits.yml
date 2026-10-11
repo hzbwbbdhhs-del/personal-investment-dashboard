@@ -6,20 +6,48 @@ on:
     paths:
       - ".github/workflows/qdii-limits.yml"
       - "scripts/fetch-qdii-limits.mjs"
+      - "scripts/refresh-qdii-evidence.mjs"
+      - "vendor/qdii-purchase-limits/**"
   schedule:
     - cron: "*/15 * * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: qdii-refresh
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 18
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/qdii-engine
+          key: qdii-engine-v1-${{ github.run_id }}
+          restore-keys: qdii-engine-v1-
+      - name: Install pinned announcement parser
+        run: npm ci --prefix vendor/qdii-purchase-limits --omit=optional --ignore-scripts
       - name: Fetch public QDII purchase limits
         run: node scripts/fetch-qdii-limits.mjs
+      - name: Parse announcements and read daily cross-check
+        run: node scripts/refresh-qdii-evidence.mjs
+      - name: Validate parser and dashboard channel boundaries
+        run: |
+          node vendor/qdii-purchase-limits/scripts/check-release.js
+          node scripts/test-qdii-ui.mjs
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache/qdii-engine
+          key: qdii-engine-v1-${{ github.run_id }}
       - name: Commit refreshed limits
         run: |
           git config user.name "github-actions[bot]"

@@ -19,9 +19,12 @@ function qdiiScopeFunds() {
   return (qdiiView.payload?.funds || []).filter(f => (f.category !== "held" || held.has(f.code)) && (extras || (f.currency === "CNY" && !f.exchangeOnly)));
 }
 function qdiiEvidence(fund) {
-  const rule = qdiiView.rules?.rules?.find(r => r.codes.includes(fund.code));
-  const newNotice = (fund.latestNotices || []).find(n => n.date > (qdiiView.rules?.reviewedThrough || ""));
-  const ruleValid = Boolean(rule && !newNotice && qdiiRecent(fund.noticeCheckedAt) && rule.effectiveAt <= new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Shanghai" }));
+  const evidence = fund.evidence;
+  const rule = evidence ? { agency: evidence.agency?.status === 'suspended' ? 0 : evidence.agency?.amount,
+    direct: evidence.direct?.status === 'suspended' ? 0 : evidence.direct?.amount } : null;
+  const noticeDate = [evidence?.noticeDate, evidence?.agency?.noticeDate, evidence?.direct?.noticeDate].filter(Boolean).sort().at(-1) || '';
+  const newNotice = (fund.latestNotices || []).find(n => n.date > noticeDate);
+  const ruleValid = Boolean(evidence && !newNotice && !evidence.error && qdiiRecent(evidence.checkedAt) && qdiiRecent(fund.noticeCheckedAt));
   const antFresh = Boolean(fund.alipay && !fund.alipay.stale && qdiiRecent(fund.alipay.checkedAt));
   const antOpen = antFresh && fund.alipay.status === "正常申购";
   const antBlocked = antFresh && /暂停|不可售|停售|停止/.test(fund.alipay.status);
@@ -49,10 +52,15 @@ function qdiiChannelHtml(fund, evidence, channel) {
   if (fund.currency !== "CNY") return '<span class="qdii-unverified">美元份额</span><small>未核美元渠道额度；不可沿用人民币上限</small>';
   const amount = rule?.[channel === "alipay" ? "agency" : "direct"];
   const status = channel === "alipay" ? '<span class="qdii-state ' + (antFresh ? antBlocked ? "paused" : evidence.antOpen ? "open" : "unknown" : "unknown") + '">' + qdiiEscape(antFresh ? fund.alipay.status : "在售状态待更新") + '</span><small>蚂蚁基金公开页 · ' + qdiiTime(fund.alipay?.checkedAt) + '</small>' : "";
-  if (!ruleValid || amount == null) return status + '<span class="qdii-unverified">' + (newNotice ? "出现新公告，额度待复核" : rule && !qdiiRecent(fund.noticeCheckedAt) ? "核验过期，额度暂隐藏" : "额度未核实") + '</span>';
-  const effective = channel === "alipay" ? rule.agencyEffectiveAt || rule.effectiveAt : rule.directEffectiveAt || rule.effectiveAt;
+  const parsed = fund.evidence?.[channel === 'alipay' ? 'agency' : 'direct'];
+  const actualUnknown = channel === 'alipay' ? '<small>支付宝实际限额：未获取（以买入页为准）</small>' : '<small>直销买入页是否在售：未核实</small>';
+  if (!ruleValid || amount == null) return status + '<span class="qdii-unverified">' + (fund.category === 'held' ? '自动公告解析暂不覆盖此持仓' : newNotice && fund.evidence ? "有更新公告，旧额度不沿用" : rule ? "公告证据过期或解析未完成" : "公告额度暂未获取") + '</span>' + actualUnknown;
+  const effective = parsed?.effectiveDate || '公告未注明';
+  if (channel === 'alipay') return status + '<span class="qdii-unverified">每日限额：未确认</span><small>支付宝买入页未接入，不能确认可买金额</small><details><summary>公告参考</summary>' + qdiiAmount(amount) + '<small>这是代销公告上限，不是支付宝实测额度；生效 ' + qdiiEscape(effective) + '</small></details>';
   if (channel === "alipay" && antBlocked && amount > 0) return status + '<small>公告代销上限 ¥' + Number(amount).toLocaleString("zh-CN") + '/日；支付宝当前不可买</small><small>生效 ' + qdiiEscape(effective) + '</small>';
-  return status + qdiiAmount(amount) + '<small>' + (channel === "alipay" ? "基金公告代销上限；订单页可能更低" : "基金公告直销上限") + '</small><small>生效 ' + qdiiEscape(effective) + '</small>';
+  const basis = parsed?.accountBasis || '';
+  const basisLabel = basis.includes('across') || basis.includes('combined') ? '单基金账户单日累计（份额可能合并，详见公告）' : basis.includes('per-share') ? '单基金账户单日累计（按份额类别）' : '单基金账户单日累计；份额合并规则见公告';
+  return status + qdiiAmount(amount) + '<small>' + (channel === "alipay" ? "公告代销上限（参考，不是支付宝实测）" : "自动解析：公告直销上限（参考）") + '</small>' + actualUnknown + '<small>生效 ' + qdiiEscape(effective) + ' · 解析 ' + qdiiTime(parsed?.checkedAt) + '</small><small>' + basisLabel + '</small>';
 }
 function renderQdiiLimits() {
   if (!qdiiView.payload) return;
@@ -70,12 +78,21 @@ function renderQdiiLimits() {
   const visible = selected.slice(0, qdiiView.shown);
   const labels = { nasdaq100: "纳指100", sp500: "标普500", held: "我的其他持仓" };
   qdii$("#qdiiRows").innerHTML = visible.map(fund => {
-    const e = qdiiEvidence(fund), rule = e.rule;
-    const sources = (rule ? '<a href="' + qdiiEscape(rule.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + (rule.sourceType || "管理人公告原文") + ' ↗</a><small>发布 ' + qdiiEscape(rule.announcedAt) + ' · 原文核对 ' + qdiiEscape(qdiiView.rules.checkedAt) + '</small>' + (rule.directSourceUrl ? '<a href="' + qdiiEscape(rule.directSourceUrl) + '" target="_blank" rel="noopener noreferrer">直销原公告 ↗</a>' : '') + (rule.agencySourceUrl ? '<a href="' + qdiiEscape(rule.agencySourceUrl) + '" target="_blank" rel="noopener noreferrer">代销原公告 ↗</a>' : '') + '<small>' + qdiiEscape(rule.note) + '</small>' : '')
+    const e = qdiiEvidence(fund);
+    const parsedLinks = ['agency', 'direct'].map(channel => {
+      const parsed = fund.evidence?.[channel];
+      return parsed?.sourceUrl ? '<a href="' + qdiiEscape(parsed.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + (channel === 'agency' ? '代销' : '直销') + '公告证据 ↗</a><small>发布 ' + qdiiEscape(parsed.noticeDate || '未注明') + '</small>' : '';
+    }).join('');
+    const check = fund.comparison;
+    const comparisonFresh = check && !check.stale && Date.now() - new Date(check.sourceUpdatedAt).getTime() < 26 * 60 * 60 * 1000;
+    const sameChannel = fund.evidence?.sourceAmount;
+    const conflict = comparisonFresh && Number.isFinite(sameChannel) && Number.isFinite(check.amount) && sameChannel !== check.amount;
+    const comparisonHtml = check ? '<small>汇总交叉检查：' + qdiiEscape(check.status) + (check.amount != null ? ' ¥' + Number(check.amount).toLocaleString('zh-CN') + '/日' : '') + '</small><small>天天基金参考，非支付宝/直销 · 数据 ' + qdiiTime(check.sourceUpdatedAt) + (comparisonFresh ? '' : '（过期/采集失败）') + '</small>' + (conflict ? '<small class="qdii-conflict">同渠道参考数值不一致，请核对原公告；不自动替换额度</small>' : '') : '';
+    const sources = '<details><summary>查看来源与采集时间</summary>' + parsedLinks + comparisonHtml
       + (fund.alipay ? '<a href="' + qdiiEscape(fund.alipay.sourceUrl) + '" target="_blank" rel="noopener noreferrer">支付宝公开资料 ↗</a>' : '')
       + '<details><summary>最新公告与其他参考</summary>' + (fund.latestNotices || []).slice(0, 3).map(n => '<a href="' + qdiiEscape(n.url) + '" target="_blank" rel="noopener noreferrer">' + qdiiEscape(n.date + " " + n.title) + ' ↗</a>').join("")
       + '<small>公告索引检查 ' + qdiiTime(fund.noticeCheckedAt) + '</small><a href="' + qdiiEscape(fund.sourceUrl) + '" target="_blank" rel="noopener noreferrer">天天基金参考（非支付宝） ↗</a>'
-      + (qdiiRecent(qdiiView.payload.universeCheckedAt || qdiiView.payload.updatedAt) && fund.quotaCny != null ? '<small>该第三方渠道参考 ¥' + Number(fund.quotaCny).toLocaleString("zh-CN") + '/日，不参与排序</small>' : '') + '</details>';
+      + (qdiiRecent(qdiiView.payload.universeCheckedAt || qdiiView.payload.updatedAt) && fund.quotaCny != null ? '<small>该第三方渠道参考 ¥' + Number(fund.quotaCny).toLocaleString("zh-CN") + '/日，不参与排序</small>' : '') + '</details></details>';
     return '<tr><td data-label="基金"><strong>' + qdiiEscape(fund.name) + (held.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : '') + '</strong><small>' + qdiiEscape(fund.code + " · " + labels[fund.category]) + (fund.currency === "USD" ? ' · 美元' : '') + '</small></td>'
       + '<td data-label="支付宝代销">' + qdiiChannelHtml(fund, e, "alipay") + '</td><td data-label="基金公司直销">' + qdiiChannelHtml(fund, e, "direct") + '</td>'
       + '<td data-label="来源与说明">' + sources + (e.newNotice ? '<small class="qdii-conflict">新公告需核对，不沿用旧额度</small>' : '') + '</td></tr>';
@@ -85,9 +102,9 @@ function renderQdiiLimits() {
   qdii$("#qdiiMoreButton").hidden = visible.length >= selected.length;
   qdii$("#qdiiMarketCount").textContent = scope.length;
   qdii$("#qdiiQuotaCount").textContent = scope.filter(f => qdiiEvidence(f).antFresh).length;
-  qdii$("#qdiiNoticeCount").textContent = scope.filter(f => qdiiEvidence(f).ruleValid && qdiiEvidence(f).rule.direct != null).length;
+  qdii$("#qdiiNoticeCount").textContent = scope.filter(f => qdiiEvidence(f).ruleValid && qdiiEvidence(f).rule?.direct != null).length;
   const availableIndices = scope.filter(f => f.category !== "held" && qdiiEvidence(f).available).length;
-  qdii$("#qdiiScope").textContent = "默认人民币场外：你的已有持仓＋大陆公募纳指100/标普500份额。已核有额度的指数基金 " + availableIndices + " 只优先，按所选渠道额度从高到低排列；暂停和待核实靠后。完整名录 " + qdiiView.payload.funds.length + " 个份额，包含美元和场内 ETF，可展开查看。公告额度不是账户剩余额度；A/C 合并限制请看备注。";
+  qdii$("#qdiiScope").textContent = "默认人民币场外：你的持仓＋大陆公募纳指100/标普500。自动解析出公告参考额度的指数份额 " + availableIndices + " 只优先，按所选渠道参考上限从高到低排；不代表买入页实测可买。完整名录 " + qdiiView.payload.funds.length + " 个份额。主动QDII自动解析暂不覆盖，缺数据不代表不限购；A/C是否合并请阅读原公告。";
   qdii$$("[data-qdii-category]").forEach(button => {
     const active = button.dataset.qdiiCategory === qdiiView.category;
     button.classList.toggle("active", active);
@@ -109,11 +126,11 @@ async function qdiiFetch(path) {
 async function refreshQdiiLimits() {
   const label = qdii$("#qdiiUpdatedAt");
   try {
-    const [payload, rules] = await Promise.all([qdiiFetch("qdii-limits.json"), qdiiFetch("qdii-channel-rules.json")]);
-    if (payload.status !== "available" || payload.schemaVersion < 2 || !Array.isArray(payload.funds) || payload.funds.length < 60 || !Array.isArray(rules.rules)) throw new Error("快照不完整");
+    const payload = await qdiiFetch("qdii-limits.json");
+    if (payload.status !== "available" || payload.schemaVersion < 2 || !Array.isArray(payload.funds) || payload.funds.length < 60) throw new Error("快照不完整");
     qdiiView.payload = payload;
-    qdiiView.rules = rules;
     label.textContent = "采集 " + qdiiTime(payload.updatedAt) + "（北京时间）" + (qdiiRecent(payload.updatedAt) ? " · 定时检查，非逐秒实时" : " · 数据过期") + (payload.errors?.length ? " · 部分来源失败，见逐基金核验时间" : "") + (payload.catalogStale ? " · 名录未刷新，不保证完整" : "");
+    label.textContent += ' · 公告解析 ' + qdiiTime(payload.evidenceSources?.parser?.checkedAt) + (payload.evidenceSources?.parser?.error ? '（部分失败）' : '') + ' · 汇总数据 ' + qdiiTime(payload.evidenceSources?.comparison?.sourceUpdatedAt);
     renderQdiiLimits();
   } catch {
     label.textContent = qdiiView.payload ? "刷新失败，保留原采集时间；过期额度自动隐藏" : "数据暂不可用，请稍后刷新";
@@ -131,3 +148,5 @@ qdii$("#refreshButton")?.addEventListener("click", refreshQdiiLimits);
 refreshQdiiLimits();
 window.setInterval(refreshQdiiLimits, 15 * 60 * 1000);
 window.setInterval(renderQdiiLimits, 60 * 1000);
+document.addEventListener?.('visibilitychange', () => { if (!document.hidden) refreshQdiiLimits(); });
+window.addEventListener?.('online', refreshQdiiLimits);
