@@ -58,9 +58,7 @@ function qdiiChannelHtml(fund, evidence, channel) {
   const effective = parsed?.effectiveDate || '公告未注明';
   if (channel === 'alipay') return status + '<span class="qdii-unverified">每日限额：未确认</span><small>支付宝买入页未接入，不能确认可买金额</small><details><summary>公告参考</summary>' + qdiiAmount(amount) + '<small>这是代销公告上限，不是支付宝实测额度；生效 ' + qdiiEscape(effective) + '</small></details>';
   if (channel === "alipay" && antBlocked && amount > 0) return status + '<small>公告代销上限 ¥' + Number(amount).toLocaleString("zh-CN") + '/日；支付宝当前不可买</small><small>生效 ' + qdiiEscape(effective) + '</small>';
-  const basis = parsed?.accountBasis || '';
-  const basisLabel = basis.includes('across') || basis.includes('combined') ? '单基金账户单日累计（份额可能合并，详见公告）' : basis.includes('per-share') ? '单基金账户单日累计（按份额类别）' : '单基金账户单日累计；份额合并规则见公告';
-  return status + qdiiAmount(amount) + '<small>' + (channel === "alipay" ? "公告代销上限（参考，不是支付宝实测）" : "自动解析：公告直销上限（参考）") + '</small>' + actualUnknown + '<small>生效 ' + qdiiEscape(effective) + ' · 解析 ' + qdiiTime(parsed?.checkedAt) + '</small><small>' + basisLabel + '</small>';
+  return qdiiAmount(amount) + '<small>直销公告上限（参考）</small>';
 }
 function renderQdiiLimits() {
   if (!qdiiView.payload) return;
@@ -81,7 +79,7 @@ function renderQdiiLimits() {
     const e = qdiiEvidence(fund);
     const parsedLinks = ['agency', 'direct'].map(channel => {
       const parsed = fund.evidence?.[channel];
-      return parsed?.sourceUrl ? '<a href="' + qdiiEscape(parsed.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + (channel === 'agency' ? '代销' : '直销') + '公告证据 ↗</a><small>发布 ' + qdiiEscape(parsed.noticeDate || '未注明') + '</small>' : '';
+      return parsed?.sourceUrl ? '<a href="' + qdiiEscape(parsed.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + (channel === 'agency' ? '代销' : '直销') + '公告证据 ↗</a><small>发布 ' + qdiiEscape(parsed.noticeDate || '未注明') + ' · 生效 ' + qdiiEscape(parsed.effectiveDate || '未注明') + '</small><small>解析 ' + qdiiTime(parsed.checkedAt) + '；直销买入页是否在售未核实。单基金账户单日累计，份额合并规则见原公告。</small>' : '';
     }).join('');
     const check = fund.comparison;
     const comparisonFresh = check && !check.stale && Date.now() - new Date(check.sourceUpdatedAt).getTime() < 26 * 60 * 60 * 1000;
