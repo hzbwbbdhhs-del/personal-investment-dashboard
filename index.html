@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261011-qdii-channels" />
+    <link rel="stylesheet" href="./styles.css?v=20261011-update-header" />
   </head>
   <body>
     <div class="app-shell">
@@ -43,13 +43,20 @@
         <header class="topbar">
           <div class="topbar-copy">
             <div class="eyebrow" id="topbarDate">正在读取北京时间…</div>
-            <h1>把波动放在视野里，<em>把节奏留给自己。</em></h1>
-            <p>资产、定投和宏观信号集中在一个安静的观察窗里。</p>
+            <h1>我的投资仪表盘</h1>
           </div>
-          <div class="topbar-actions">
+          <div class="topbar-right">
+            <aside class="update-card" aria-label="QDII 数据更新时间">
+              <div class="update-card-heading"><strong>QDII 数据更新时间</strong><span>北京时间</span></div>
+              <div class="update-card-primary"><span>最近采集</span><time id="qdiiCollectedAt">等待数据</time></div>
+              <div class="update-card-details"><div><span>公告解析</span><time id="qdiiParserAt">未核实</time></div><div><span>汇总数据</span><time id="qdiiComparisonAt">未核实</time></div></div>
+              <p class="update-card-status" id="qdiiUpdatedAt" role="status">正在读取数据…</p>
+            </aside>
+            <div class="topbar-actions">
             <div class="data-mode-badge"><span class="status-dot yellow"></span><span id="dataModeLabel">持仓已导入</span></div>
             <button class="icon-button" id="refreshButton" title="刷新本地数据" aria-label="刷新本地数据">↻</button>
             <button class="primary-button" id="addHoldingButton">＋ 录入持仓</button>
+            </div>
           </div>
         </header>
 
@@ -57,7 +64,7 @@
           <div class="section-heading">
             <div>
               <div class="section-kicker">OVERVIEW / 资产总览</div>
-              <h2>先看组合，再看噪声。</h2>
+              <h2>资产总览</h2>
             </div>
             <div class="section-meta"><span class="status-dot green"></span> 组合结构可用　<span class="divider-dot">·</span>　<span id="overviewDataStatus">市场温度待更新</span></div>
           </div>
@@ -179,7 +186,7 @@
         </section>
 
         <section class="section-panel" id="section-qdii" data-panel>
-          <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>有额度的纳指、标普优先看。</h2></div><div class="section-meta" id="qdiiUpdatedAt">正在读取公开页面快照…</div></div>
+          <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>基金申购额度</h2></div></div>
           <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>已接入开源公告解析＋每日汇总交叉检查。</strong><span>支付宝公开页只确认在售状态，实际限额仍需买入页确认。公告代销上限和直销上限单独标注为参考，不再将公告数字写成支付宝已确认额度。</span></div></div>
           <div class="qdii-coverage" aria-label="QDII 数据覆盖情况"><div><strong id="qdiiMarketCount">—</strong><span>当前范围内基金</span></div><div><strong id="qdiiQuotaCount">—</strong><span>支付宝在售状态已读取</span></div><div><strong id="qdiiNoticeCount">—</strong><span>直销公告已自动解析</span></div></div>
           <details class="qdii-help"><summary>数据从哪里来？哪些还无法确认？</summary><p>公告自动解析使用 <a href="https://github.com/aiten2/qdii-purchase-limits" target="_blank" rel="noopener noreferrer">qdii-purchase-limits</a>，每日汇总参考使用 <a href="https://github.com/promise96319/qdii" target="_blank" rel="noopener noreferrer">promise96319/qdii</a>。后者的金额来自天天基金，不能替代支付宝或直销额度；两者共享部分上游，不是独立权威认证。</p><p>支付宝在售状态按15分钟任务检查，公告解析约每小时检查，汇总按其源站每日发布；GitHub调度可能延迟。逐项显示原始采集时间，不把网页刷新时间当数据更新时间。新公告未解析、来源过期或失败时不沿用旧额度。主动QDII尚未被此解析器覆盖；账户剩余额度、渠道额外限制仍需买入页确认。PDF可能来自披露镜像，自动解析不保证完全准确。</p></details>
@@ -230,6 +237,6 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
     <script src="./app.js?v=20261010-ledger-upgrade"></script>
-    <script src="./qdii-ui.js?v=20261011-qdii-sorting"></script>
+    <script src="./qdii-ui.js?v=20261011-update-header"></script>
   </body>
 </html>

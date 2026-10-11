@@ -1,6 +1,6 @@
 // Channel limits are issuer announcement rules, never copied from another distributor.
 // Ant Fund's public page supplies saleStatus only; its 0-- limit is a placeholder.
-const qdiiView = { payload: null, rules: null, category: "all", shown: 30 };
+const qdiiView = { payload: null, rules: null, category: "all", shown: 30, refreshFailed: false };
 const qdii$ = selector => document.querySelector(selector);
 const qdii$$ = selector => [...document.querySelectorAll(selector)];
 const qdiiEscape = value => String(value ?? "").replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
@@ -9,9 +9,31 @@ const qdiiRecent = stamp => {
   return Number.isFinite(age) && age >= -60000 && age <= 90 * 60 * 1000;
 };
 const qdiiTime = stamp => {
+  if (!stamp) return "未核实";
   const time = new Date(stamp);
   return Number.isFinite(time.getTime()) ? time.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }) : "未核实";
 };
+function renderQdiiUpdateTimes() {
+  const payload = qdiiView.payload;
+  if (!payload) return;
+  for (const [selector, stamp] of [
+    ["#qdiiCollectedAt", payload.updatedAt],
+    ["#qdiiParserAt", payload.evidenceSources?.parser?.checkedAt],
+    ["#qdiiComparisonAt", payload.evidenceSources?.comparison?.sourceUpdatedAt]
+  ]) {
+    const node = qdii$(selector);
+    if (!node) continue;
+    node.textContent = qdiiTime(stamp);
+    if (stamp && Number.isFinite(new Date(stamp).getTime())) node.setAttribute("datetime", new Date(stamp).toISOString());
+    else node.removeAttribute("datetime");
+  }
+  const status = [qdiiRecent(payload.updatedAt) ? "定时检查 · 非逐秒实时" : "采集数据过期"];
+  if (qdiiView.refreshFailed) status.push("刷新失败，保留原时间");
+  if (payload.errors?.length || payload.evidenceSources?.parser?.error) status.push("部分来源失败");
+  if (payload.catalogStale) status.push("基金名录未刷新");
+  const node = qdii$("#qdiiUpdatedAt");
+  if (node) node.textContent = status.join(" · ");
+}
 const qdiiHeldCodes = () => new Set(holdings.map(item => item.code).filter(code => /^\d{6}$/.test(code || "")));
 function qdiiScopeFunds() {
   const held = qdiiHeldCodes();
@@ -91,6 +113,7 @@ function qdiiChannelHtml(fund, evidence, channel) {
   return qdiiAmount(amount) + platform + quotaTime + '<small>直销公告上限；买入页是否在售未核实</small>';
 }
 function renderQdiiLimits() {
+  renderQdiiUpdateTimes();
   if (!qdiiView.payload) return;
   const held = qdiiHeldCodes();
   const search = (qdii$("#qdiiSearch")?.value || "").trim().toLowerCase();
@@ -157,10 +180,10 @@ async function refreshQdiiLimits() {
     const payload = await qdiiFetch("qdii-limits.json");
     if (payload.status !== "available" || payload.schemaVersion < 2 || !Array.isArray(payload.funds) || payload.funds.length < 60) throw new Error("快照不完整");
     qdiiView.payload = payload;
-    label.textContent = "采集 " + qdiiTime(payload.updatedAt) + "（北京时间）" + (qdiiRecent(payload.updatedAt) ? " · 定时检查，非逐秒实时" : " · 数据过期") + (payload.errors?.length ? " · 部分来源失败，见逐基金核验时间" : "") + (payload.catalogStale ? " · 名录未刷新，不保证完整" : "");
-    label.textContent += ' · 公告解析 ' + qdiiTime(payload.evidenceSources?.parser?.checkedAt) + (payload.evidenceSources?.parser?.error ? '（部分失败）' : '') + ' · 汇总数据 ' + qdiiTime(payload.evidenceSources?.comparison?.sourceUpdatedAt);
+    qdiiView.refreshFailed = false;
     renderQdiiLimits();
   } catch {
+    qdiiView.refreshFailed = true;
     label.textContent = qdiiView.payload ? "刷新失败，保留原采集时间；过期额度自动隐藏" : "数据暂不可用，请稍后刷新";
     if (qdiiView.payload) renderQdiiLimits();
     else qdii$("#qdiiRows").innerHTML = '<tr><td colspan="4">数据源暂不可用；空白不代表不限购。</td></tr>';
