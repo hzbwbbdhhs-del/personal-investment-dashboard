@@ -7,6 +7,8 @@ on:
       - ".github/workflows/qdii-limits.yml"
       - "scripts/fetch-qdii-limits.mjs"
       - "scripts/refresh-qdii-evidence.mjs"
+      - "scripts/track-qdii-changes.mjs"
+      - "qdii-monitor-core.js"
       - "vendor/qdii-purchase-limits/**"
   schedule:
     - cron: "*/15 * * * *"
@@ -39,10 +41,13 @@ jobs:
         run: node scripts/fetch-qdii-limits.mjs
       - name: Parse announcements and read daily cross-check
         run: node scripts/refresh-qdii-evidence.mjs
+      - name: Track successful quota changes
+        run: node scripts/track-qdii-changes.mjs
       - name: Validate parser and dashboard channel boundaries
         run: |
           node vendor/qdii-purchase-limits/scripts/check-release.js
           node scripts/test-qdii-ui.mjs
+          node scripts/test-qdii-monitor.mjs
       - uses: actions/cache/save@v4
         if: always()
         with:
@@ -52,7 +57,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add qdii-limits.json
+          git add qdii-limits.json qdii-quota-history.json
           git diff --cached --quiet && exit 0
           git commit -m "Refresh QDII purchase limits"
           git pull --rebase origin main

@@ -1,3 +1,19 @@
+.qdii-large-alert { border:1px solid #cddad2; border-radius:16px; padding:20px 24px; margin:16px 0; background:#f0f4ee; overflow-wrap:anywhere; }
+.qdii-large-alert.has-quota { background:#fff3cf; border-color:#caa54d; }
+.qdii-large-alert > strong { display:block; font-size:19px; }
+.qdii-large-alert p { margin:8px 0; }
+.qdii-large-alert div { padding:7px 0; border-top:1px solid #dcd9ca; }
+.qdii-large-alert small { display:block; margin-top:8px; color:#667c83; }
+.qdii-change-row { display:grid; gap:6px; padding:12px 0; border-bottom:1px solid #d8dfda; }
+.qdii-ranking { margin:16px 0 24px; padding:18px; border:1px solid #cddad2; border-radius:14px; background:#f4f7f1; min-width:0; }
+.qdii-ranking[hidden] { display:none; }
+.qdii-ranking h3 { margin:0 0 10px; }
+.qdii-ranking p { font-size:13px; line-height:1.7; color:#657b83; overflow-wrap:anywhere; }
+.qdii-ranking-table { width:100%; min-width:980px; border-collapse:collapse; font-size:13px; }
+.qdii-ranking-table th, .qdii-ranking-table td { text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid #d8dfda; }
+.qdii-ranking-table small { display:block; line-height:1.6; margin-top:6px; color:#657b83; }
+.qdii-ranking-table a { color:#35775c; }
+@media(max-width:600px) { .qdii-large-alert {padding:16px;} .qdii-ranking {padding:12px;} .qdii-ranking-table {min-width:820px;} }
 :root {
   --ink: #102332;
   --ink-2: #1d3444;

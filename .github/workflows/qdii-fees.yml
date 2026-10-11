@@ -1,0 +1,35 @@
+name: refresh-qdii-fees
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/qdii-fees.yml'
+      - 'scripts/fetch-qdii-fees.mjs'
+  schedule:
+    - cron: '35 0 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: qdii-fees-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci --prefix vendor/qdii-purchase-limits --omit=optional --ignore-scripts
+      - run: node scripts/fetch-qdii-fees.mjs
+      - run: node scripts/test-qdii-monitor.mjs
+      - name: Commit researched product fees
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add qdii-fees.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh primary product fee disclosures and NAV comparison"
+          git pull --rebase origin main
+          git push

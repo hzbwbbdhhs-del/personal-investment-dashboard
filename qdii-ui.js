@@ -126,6 +126,7 @@ function renderQdiiLimits() {
     const e = qdiiEvidence(fund);
     return (qdiiView.category === "all" || fund.category === qdiiView.category)
       && (!qdii$("#qdiiHeldOnly")?.checked || held.has(fund.code))
+      && (!qdii$("#qdiiChangedOnly")?.checked || (typeof qdiiInsights !== 'undefined' && qdiiInsights.history?.events?.some(event=>event.code===fund.code)))
       && (status === "all" || status === "available" && e.available || status === "paused" && e.paused || status === "unknown" && !e.available && !e.paused)
       && (!search || (fund.name + " " + fund.code).toLowerCase().includes(search));
   }).sort(qdiiCompare);
@@ -164,6 +165,7 @@ function renderQdiiLimits() {
     button.classList.toggle("active", active);
     button.setAttribute("aria-pressed", active);
   });
+  if (typeof renderQdiiInsights === 'function') renderQdiiInsights();
 }
 async function qdiiFetch(path) {
   if (location.hostname.endsWith("github.io")) {
@@ -195,7 +197,7 @@ async function refreshQdiiLimits() {
 qdii$$("[data-qdii-category]").forEach(button => button.addEventListener("click", () => {
   qdiiView.category = button.dataset.qdiiCategory; qdiiView.shown = 30; renderQdiiLimits();
 }));
-["#qdiiSearch", "#qdiiHeldOnly", "#qdiiStatusFilter", "#qdiiChannelFilter", "#qdiiSortSelect", "#qdiiIncludeExtra"].forEach(selector => qdii$(selector)?.addEventListener(selector === "#qdiiSearch" ? "input" : "change", () => { qdiiView.shown = 30; renderQdiiLimits(); }));
+["#qdiiSearch", "#qdiiHeldOnly", "#qdiiChangedOnly", "#qdiiStatusFilter", "#qdiiChannelFilter", "#qdiiSortSelect", "#qdiiIncludeExtra"].forEach(selector => qdii$(selector)?.addEventListener(selector === "#qdiiSearch" ? "input" : "change", () => { qdiiView.shown = 30; renderQdiiLimits(); }));
 qdii$("#qdiiMoreButton")?.addEventListener("click", () => { qdiiView.shown += 30; renderQdiiLimits(); });
 qdii$("#qdiiRefreshButton")?.addEventListener("click", refreshQdiiLimits);
 qdii$("#refreshButton")?.addEventListener("click", refreshQdiiLimits);

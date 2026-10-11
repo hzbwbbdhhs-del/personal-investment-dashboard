@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261011-overview-clean" />
+    <link rel="stylesheet" href="./styles.css?v=20261011-qdii-reference" />
   </head>
   <body>
     <div class="app-shell">
@@ -182,11 +182,20 @@
           <div class="section-heading"><div><div class="section-kicker">QDII WATCH / QDII 状态</div><h2>基金申购额度</h2></div></div>
           <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>已接入开源公告解析＋每日汇总交叉检查。</strong><span>支付宝公开页只确认在售状态，实际限额仍需买入页确认。公告代销上限和直销上限单独标注为参考，不再将公告数字写成支付宝已确认额度。</span></div></div>
           <div class="qdii-coverage" aria-label="QDII 数据覆盖情况"><div><strong id="qdiiMarketCount">—</strong><span>当前范围内基金</span></div><div><strong id="qdiiQuotaCount">—</strong><span>支付宝在售状态已读取</span></div><div><strong id="qdiiNoticeCount">—</strong><span>直销公告已自动解析</span></div></div>
+          <aside class="qdii-large-alert" id="qdiiLargeAlert" aria-live="polite">正在检查单渠道≥1,000元/日的公告参考额度…</aside>
+          <details class="qdii-help qdii-history"><summary>额度变化记录</summary><div id="qdiiChanges">正在读取变化记录…</div></details>
+          <label class="qdii-filter-label"><input id="qdiiChangedOnly" type="checkbox" /> 只看有额度变化记录的基金</label>
           <details class="qdii-help"><summary>数据从哪里来？哪些还无法确认？</summary><p>公告自动解析使用 <a href="https://github.com/aiten2/qdii-purchase-limits" target="_blank" rel="noopener noreferrer">qdii-purchase-limits</a>，每日汇总参考使用 <a href="https://github.com/promise96319/qdii" target="_blank" rel="noopener noreferrer">promise96319/qdii</a>。后者的金额来自天天基金，不能替代支付宝或直销额度；两者共享部分上游，不是独立权威认证。</p><p>支付宝在售状态按15分钟任务检查，公告解析约每小时检查，汇总按其源站每日发布；GitHub调度可能延迟。逐项显示原始采集时间，不把网页刷新时间当数据更新时间。新公告未解析、来源过期或失败时不沿用旧额度。主动QDII尚未被此解析器覆盖；账户剩余额度、渠道额外限制仍需买入页确认。PDF可能来自披露镜像，自动解析不保证完全准确。</p></details>
           <article class="content-card table-card qdii-table-card">
             <div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>QDII 核对清单 <span id="qdiiCount" class="qdii-count">—</span></h3></div><button class="ghost-button" id="qdiiRefreshButton" type="button">↻ 检查云端快照</button></div>
             <div class="qdii-controls"><div class="qdii-categories" role="group" aria-label="QDII 分类"><button type="button" data-qdii-category="all" class="active">全部</button><button type="button" data-qdii-category="nasdaq100">纳斯达克100</button><button type="button" data-qdii-category="sp500">标普500</button><button type="button" data-qdii-category="held">我的主动QDII</button></div><label class="qdii-search-label">搜索基金或代码<input id="qdiiSearch" type="search" placeholder="名称 / 6 位代码" /></label><label class="qdii-search-label">排序方式<select id="qdiiSortSelect" aria-label="QDII排序方式"><option value="combined">直销＋代销参考额度：高→低</option><option value="holding">我的持仓金额：高→低</option></select></label><label class="qdii-filter-label"><input id="qdiiHeldOnly" type="checkbox" /> 只看我的持仓</label><select id="qdiiChannelFilter" aria-label="申购筛选渠道"><option value="either">筛选渠道：直销＋代销</option><option value="alipay">筛选渠道：支付宝代销</option><option value="direct">筛选渠道：基金公司直销</option></select><select id="qdiiStatusFilter" aria-label="筛选申购状态"><option value="all">全部状态</option><option value="available">公告有参考额度</option><option value="paused">暂停 / 不可售</option><option value="unknown">额度待核实</option></select><label class="qdii-filter-label"><input id="qdiiIncludeExtra" type="checkbox" /> 包含美元份额 / 场内 ETF</label></div>
             <p class="qdii-scope" id="qdiiScope">覆盖范围加载中…</p>
+            <article id="qdiiRanking" class="qdii-ranking" hidden>
+              <h3>长期定投 · 购买参考顺序</h3><p id="qdiiRankingNote"></p>
+              <div class="table-scroll"><table class="qdii-ranking-table"><thead><tr><th>费用顺位</th><th>基金 / 份额</th><th>年化综合运作费率</th><th>管理 / 托管 / 服务费</th><th>同期近一年净值涨幅</th><th>参考额度 / 资料来源</th></tr></thead><tbody id="qdiiRankingRows"></tbody></table></div>
+              <button class="ghost-button" type="button" id="qdiiRankingMore">展开完整费用顺序</button>
+              <details><summary>方法、研究依据与未排名基金</summary><p>长期费用优先，不追逐短期涨幅。研究依据：<a href="https://www.sec.gov/files/visual-aids-2022-02.pdf" target="_blank" rel="noopener noreferrer">指数基金费用选择研究</a>、<a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-4" target="_blank" rel="noopener noreferrer">Investor.gov 指数基金说明</a>。这是本站明确规则的费用顺序，不是研究机构发布的中国QDII推荐榜。</p><p>综合费率包含管理、托管、销售服务及其他运作费用测算，不能再将分项相加扣除。申购折扣与赎回费因平台、持有期不同，暂不纳入排名；因此A/C费用顺位不是最终购买结论。净值涨幅已包含净值内费用；尚未取得统一人民币基准、跟踪误差和可靠复权收益，暂不将涨幅用于推荐评分。联接基金与直接投资基金的实际成本口径需看原概要。</p><p id="qdiiRankingMissing"></p></details>
+            </article>
             <div class="table-scroll"><table class="qdii-table"><thead><tr><th>基金 / 代码</th><th>支付宝代销</th><th>基金公司直销</th><th>来源 / 生效日期 / 合并规则</th></tr></thead><tbody id="qdiiRows"><tr><td colspan="4">正在读取公开页面快照…</td></tr></tbody></table></div>
             <div class="qdii-table-footer"><span id="qdiiShown">—</span><button type="button" class="ghost-button" id="qdiiMoreButton" hidden>显示更多</button></div>
             <div class="card-footnote">范围仅保留公开基金名录内的纳斯达克100、标普500相关份额，以及你已持有的主动型QDII（大陆公募；非全球所有基金）。等权重与市值加权不同，见名称及备注；合并额度不能简单按A/C相加。按实际订单页及最新管理人公告确认，不自动下单。</div>
@@ -230,6 +239,8 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
     <script src="./app.js?v=20261010-ledger-upgrade"></script>
-    <script src="./qdii-ui.js?v=20261011-qdii-scope"></script>
+    <script src="./qdii-monitor-core.js?v=20261011-qdii-reference"></script>
+    <script src="./qdii-ui.js?v=20261011-qdii-reference"></script>
+    <script src="./qdii-insights.js?v=20261011-qdii-reference"></script>
   </body>
 </html>
