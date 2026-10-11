@@ -13,6 +13,17 @@
 .qdii-ranking-table th, .qdii-ranking-table td { text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid #d8dfda; }
 .qdii-ranking-table small { display:block; line-height:1.6; margin-top:6px; color:#657b83; }
 .qdii-ranking-table a { color:#35775c; }
+#section-qdii .qdii-ranking .table-scroll { max-width:100%; overflow-x:auto; }
+@media(min-width:1000px) {
+  .qdii-ranking-table { min-width:0; table-layout:fixed; }
+  .qdii-ranking-table td, .qdii-ranking-table th { overflow-wrap:anywhere; }
+  .qdii-ranking-table th:nth-child(1) { width:5%; }
+  .qdii-ranking-table th:nth-child(2) { width:22%; }
+  .qdii-ranking-table th:nth-child(3) { width:12%; }
+  .qdii-ranking-table th:nth-child(4) { width:22%; }
+  .qdii-ranking-table th:nth-child(5) { width:15%; }
+  .qdii-ranking-table th:nth-child(6) { width:24%; }
+}
 @media(max-width:600px) { .qdii-large-alert {padding:16px;} .qdii-ranking {padding:12px;} .qdii-ranking-table {min-width:820px;} }
 :root {
   --ink: #102332;
