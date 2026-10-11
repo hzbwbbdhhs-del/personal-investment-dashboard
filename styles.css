@@ -19,9 +19,15 @@
   background: var(--paper);
 }
 
-/* Factual source timestamps replace the header slogan. */
-.topbar-copy { min-width: 0; flex: 1; }
-.topbar-right { width: min(100%, 470px); flex: 0 1 470px; min-width: 0; }
+/* Only the QDII page uses the timestamp header; all other headers keep their original layout. */
+.topbar-right { display: contents; }
+.qdii-header-title, .update-card { display: none; }
+.main-content:has(#section-qdii.active) .topbar-copy { min-width: 0; flex: 1; }
+.main-content:has(#section-qdii.active) .topbar-right { display: block; width: min(100%, 470px); flex: 0 1 470px; min-width: 0; }
+.main-content:has(#section-qdii.active) .general-header-title,
+.main-content:has(#section-qdii.active) .general-header-subtitle { display: none; }
+.main-content:has(#section-qdii.active) .qdii-header-title,
+.main-content:has(#section-qdii.active) .update-card { display: block; }
 .update-card { padding: 20px 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper-2); }
 .update-card-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; }
 .update-card-heading > span { color: var(--muted); font-size: 12px; }
@@ -32,9 +38,9 @@
 .update-card-details > div { display: grid; gap: 6px; min-width: 0; }
 .update-card-details time { font-size: 16px; font-weight: 700; line-height: 1.4; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .topbar .update-card-status { margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.5; }
-.topbar-right .topbar-actions { justify-content: flex-end; flex-wrap: wrap; margin-top: 14px; }
-@media (max-width: 1100px) and (min-width: 801px) { .topbar { flex-wrap: wrap; } .topbar-right { flex-basis: 100%; width: 100%; } }
-@media (max-width: 800px) { .topbar-right { width: 100%; flex-basis: auto; } .update-card { padding: 18px; } .update-card-primary time { font-size: 27px; } }
+.main-content:has(#section-qdii.active) .topbar-actions { justify-content: flex-end; flex-wrap: wrap; margin-top: 14px; }
+@media (max-width: 1100px) and (min-width: 801px) { .main-content:has(#section-qdii.active) .topbar { flex-wrap: wrap; } .main-content:has(#section-qdii.active) .topbar-right { flex-basis: 100%; width: 100%; } }
+@media (max-width: 800px) { .main-content:has(#section-qdii.active) .topbar-right { width: 100%; flex-basis: auto; } .update-card { padding: 18px; } .update-card-primary time { font-size: 27px; } }
 @media (max-width: 380px) { .update-card-details { grid-template-columns: 1fr; } .update-card-primary time { font-size: 24px; } }
 
 * { box-sizing: border-box; }
