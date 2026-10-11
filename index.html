@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261011-qdii-compact" />
+    <link rel="stylesheet" href="./styles.css?v=20261011-overview-clean" />
   </head>
   <body>
     <div class="app-shell">
@@ -101,7 +101,7 @@
             </article>
           </div>
 
-          <div class="grid-two">
+          <div class="grid-two overview-market-only">
             <article class="content-card watchlist-card">
               <div class="content-card-head"><div><div class="section-kicker">WATCHLIST / 关注指标</div><h3>市场温度</h3></div><span class="tag pending" id="temperatureTag">等待数据</span></div>
               <div class="market-mini-grid">
@@ -120,15 +120,6 @@
               <div class="card-footnote" id="marketFootnote">当前页面展示的是界面演示值槽位，尚未调用实时行情 API。</div>
             </article>
 
-            <article class="content-card action-card">
-              <div class="content-card-head"><div><div class="section-kicker">NEXT ACTION / 下一步</div><h3>把不确定项变成可确认项</h3></div><span class="tag estimate">4 项</span></div>
-              <div class="action-list">
-                <button class="action-row" data-section-target="holdings"><span class="action-number">01</span><span><strong>补充基金代码、份额与成本</strong><small>金额已载入，明细字段仍待补齐</small></span><span class="action-arrow">↗</span></button>
-                <button class="action-row" data-section-target="holdings"><span class="action-number">02</span><span><strong>补充定投金额与扣款日</strong><small>长期定投节奏还未录入</small></span><span class="action-arrow">↗</span></button>
-                <button class="action-row" data-section-target="qdii"><span class="action-number">03</span><span><strong>核对 QDII 渠道与限购公告</strong><small>直销与代销渠道要分开看</small></span><span class="action-arrow">↗</span></button>
-                <button class="action-row" data-section-target="settings"><span class="action-number">04</span><span><strong>补充盘中行情与宏观来源</strong><small>实时指数与点阵图仍待接入</small></span><span class="action-arrow">↗</span></button>
-              </div>
-            </article>
           </div>
         </section>
 

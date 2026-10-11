@@ -77,6 +77,8 @@
   .main-content:has(#section-qdii.active) .topbar-actions .primary-button { flex: 0 1 auto; }
 }
 
+#section-overview .overview-market-only { grid-template-columns: minmax(0, 1fr); }
+
 * { box-sizing: border-box; }
 .positive { color: var(--green); }
 .negative { color: var(--coral); }
