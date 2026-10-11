@@ -32,6 +32,8 @@ const el = id => elements.get(id) || (elements.set(id, { value: id === '#qdiiCha
 const context = vm.createContext({ Date, Set, Math, Number, Boolean, String, holdings: [{code:'096001'}],
   document: { querySelector: el, querySelectorAll: () => [] }, location: { hostname: 'localhost' },
   window: { setInterval() {} }, fetch: () => new Promise(() => {}) });
+vm.runInContext(fs.readFileSync(assetRoot + 'qdii-monitor-core.js', 'utf8'), context);
+context.qdiiMonitorCore=context.window.qdiiMonitorCore;
 vm.runInContext(fs.readFileSync(assetRoot + 'qdii-ui.js', 'utf8'), context);
 context.payload = payload;
 vm.runInContext('qdiiView.payload = payload;', context);
@@ -148,4 +150,42 @@ assert.ok(!el('#qdiiRows').innerHTML.includes('100006 ·'));
 assert.ok(el('#qdiiScope').textContent.includes('其他基金不显示'));
 context.holdings = [];
 assert.equal(evaluate('qdiiScopeFunds().some(f=>f.category === "held")'), false);
-console.log('PASS: channel evidence, sorting, NAV valuation, header timestamps, refresh preservation and QDII-only scope');
+// The merged index table never ranks stale, paused or unknown quota rows.
+context.mergedFunds=[fixture('200001',1000,0),fixture('200002',0,100),fixture('200003',0,0),fixture('200004',null,null),fixture('200005',1,null),fixture('200006',100,100)];
+context.mergedFunds.forEach(f=>f.name='测试纳斯达克100指数A');
+context.mergedFunds[5].evidence.checkedAt='2020-01-01';
+context.feeFixtures={checkedAt:now,funds:{
+  '200001':{status:'available',checkedAt:now,documentDate:now.slice(0,10),operatingPct:0.5},
+  '200002':{status:'available',checkedAt:now,documentDate:now.slice(0,10),operatingPct:0.2}
+}};
+evaluate('const qdiiInsights={fees:feeFixtures}; qdiiView.payload={...payload,funds:mergedFunds}; qdiiView.category="nasdaq100"');
+el('#qdiiSortSelect').value='reference';
+el('#qdiiChannelFilter').value='either';
+evaluate('renderQdiiLimits()');
+assert.equal(el('#qdiiCount').textContent,'3 只');
+assert.equal(el('#qdiiTableHead').innerHTML.match(/<th>/g).length,6);
+assert.ok(!el('#qdiiMethod').hidden);
+let mergedHtml=el('#qdiiRows').innerHTML;
+assert.ok(mergedHtml.indexOf('200002 ·')<mergedHtml.indexOf('200001 ·'));
+assert.ok(mergedHtml.indexOf('200001 ·')<mergedHtml.indexOf('200005 ·'));
+assert.ok(mergedHtml.includes('qdii-rank-badge">1</span>'));
+assert.ok(mergedHtml.includes('费用待核实 · 不给名次'));
+assert.ok(mergedHtml.split('</tr>')[0].includes('¥100/日'));
+assert.equal(mergedHtml.match(/<td /g).length,18);
+el('#qdiiChannelFilter').value='alipay';
+evaluate('renderQdiiLimits()');
+assert.equal(el('#qdiiCount').textContent,'1 只');
+assert.ok(!el('#qdiiRows').innerHTML.includes('200001 ·'));
+el('#qdiiChannelFilter').value='direct';
+evaluate('renderQdiiLimits()');
+assert.equal(el('#qdiiCount').textContent,'2 只');
+context.mergedFunds.forEach(f=>f.evidence.checkedAt='2020-01-01');
+evaluate('renderQdiiLimits()');
+assert.equal(el('#qdiiCount').textContent,'0 只');
+assert.ok(el('#qdiiRows').innerHTML.includes('colspan="6"'));
+assert.ok(el('#qdiiRows').innerHTML.includes('空表不代表市场没有额度'));
+evaluate('qdiiView.category="all"; renderQdiiLimits()');
+assert.equal(el('#qdiiTableHead').innerHTML.match(/<th>/g).length,4);
+assert.ok(el('#qdiiMethod').hidden);
+assert.ok(el('#qdiiSortReference').disabled);
+console.log('PASS: channel evidence, sorting, NAV valuation, header timestamps, scope and merged index quota ranking');

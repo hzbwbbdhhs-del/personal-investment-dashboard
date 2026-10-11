@@ -25,6 +25,8 @@
   .qdii-ranking-table th:nth-child(6) { width:24%; }
 }
 @media(max-width:600px) { .qdii-large-alert {padding:16px;} .qdii-ranking {padding:12px;} .qdii-ranking-table {min-width:820px;} }
+.qdii-rank-badge { display:inline-block; padding:3px 7px; margin:0 7px 5px 0; border-radius:6px; background:#dcebd9; color:#285e48; font-size:11px; }
+#qdiiMethod[hidden] { display:none; }
 :root {
   --ink: #102332;
   --ink-2: #1d3444;

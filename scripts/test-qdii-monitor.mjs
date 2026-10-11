@@ -31,4 +31,16 @@ const period={start:'2025-10-09',end:'2026-10-09'};
 assert.equal(core.periodReturn(fee,period,now),100);
 fee.nav[0].accumulated=3;
 assert.equal(core.periodReturn(fee,period,now),null);
-console.log('PASS: history baselines, failed/stale evidence, dedup, comparable index and NAV boundaries');
+const fees={};
+const candidates=[0.4,0.2,0.2,0.1,null,0.05].map((cost,i)=>{
+  const code=String(i+1).padStart(6,'0');
+  fees[code]={status:'available',checkedAt:stamp,documentDate:stamp.slice(0,10),operatingPct:cost};
+  return {...fixture,code,name:i===5?'测试标普500等权重A':'测试标普500A',quota:i===3?0:1};
+});
+candidates.push({...fixture,code:'999999',quota:null},{...fixture,code:'999998',quota:1000,currency:'USD'},{...fixture,code:'999997',quota:1000,exchangeOnly:true});
+const ranked=core.purchaseRanking(candidates,fees,f=>({available:f.quota}),now);
+assert.deepEqual(ranked.eligible.map(f=>f.code),['000002','000003','000001','000005','000006']);
+assert.deepEqual(ranked.ranks,{'000002':1,'000003':1,'000001':3});
+fees['000002'].checkedAt='2020-01-01';
+assert.equal(core.purchaseRanking(candidates,fees,f=>({available:f.quota}),now).ranks['000002'],undefined);
+console.log('PASS: history, evidence, merged positive-quota fee ranking, ties, strategy boundaries and NAV');

@@ -35,6 +35,15 @@
   }
   const comparable = fund => ['nasdaq100','sp500'].includes(fund.category) && fund.currency === 'CNY' && !fund.exchangeOnly && !/等权|增强|杠杆|反向|行业|科技指数/.test(fund.name);
   const largeChannels = (alipay, direct, threshold=1000) => [['支付宝代销',alipay],['官方直销',direct]].filter(([,amount])=>Number.isFinite(amount)&&amount>=threshold);
+  function purchaseRanking(funds, fees, evidenceFor, now=Date.now()) {
+    const hasQuota = fund => fund.currency==='CNY' && !fund.exchangeOnly && Number.isFinite(evidenceFor(fund).available) && evidenceFor(fund).available>0;
+    const eligible=funds.filter(hasQuota);
+    const valid=fund=>comparable(fund)&&feeValid(fees[fund.code],now);
+    eligible.sort((a,b)=>Number(valid(b))-Number(valid(a)) || (valid(a)&&valid(b)?fees[a.code].operatingPct-fees[b.code].operatingPct:0) || a.code.localeCompare(b.code));
+    const ranks={}; let last=null, rank=0, count=0;
+    for(const fund of eligible){if(!valid(fund))continue;count++;const fee=fees[fund.code].operatingPct;if(fee!==last)rank=count;last=fee;ranks[fund.code]=rank;}
+    return { eligible, ranks };
+  }
   function returnWindow(funds, fees) {
     const counts = {};
     for (const f of funds.filter(comparable)) {
@@ -62,7 +71,7 @@
     if (rows.filter(r=>r.date>=period.start&&r.date<=period.end).some(r=>!r.accumulated || Math.abs(r.accumulated-r.value-gap)>0.0002)) return null;
     return (end.value/start.value-1)*100;
   }
-  const api = { recent, observations, track, feeValid, comparable, largeChannels, returnWindow, periodReturn };
+  const api = { recent, observations, track, feeValid, comparable, largeChannels, purchaseRanking, returnWindow, periodReturn };
   if (typeof module !== 'undefined') module.exports = api;
   root.qdiiMonitorCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);

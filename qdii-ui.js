@@ -122,14 +122,25 @@ function renderQdiiLimits() {
   const search = (qdii$("#qdiiSearch")?.value || "").trim().toLowerCase();
   const status = qdii$("#qdiiStatusFilter")?.value || "all";
   const scope = qdiiScopeFunds();
+  const indexView = ['nasdaq100','sp500'].includes(qdiiView.category);
+  const fees = typeof qdiiInsights !== 'undefined' ? qdiiInsights.fees?.funds || {} : {};
+  const categoryFunds=scope.filter(f=>f.category===qdiiView.category);
+  const ranking=indexView && typeof qdiiMonitorCore !== 'undefined' ? qdiiMonitorCore.purchaseRanking(categoryFunds,fees,qdiiEvidence) : { eligible:[],ranks:{} };
+  const quotaCodes=new Set(ranking.eligible.map(f=>f.code));
+  const order=new Map(ranking.eligible.map((f,i)=>[f.code,i]));
+  const period=indexView && typeof qdiiMonitorCore !== 'undefined' ? qdiiMonitorCore.returnWindow(categoryFunds,fees) : null;
+  qdii$('#qdiiTableHead').innerHTML=indexView ? '<tr><th>参考顺序 / 基金</th><th>年化综合运作费率</th><th>同期净值涨幅</th><th>支付宝代销</th><th>基金公司直销</th><th>来源 / 生效日期</th></tr>' : '<tr><th>基金 / 代码</th><th>支付宝代销</th><th>基金公司直销</th><th>来源 / 生效日期 / 合并规则</th></tr>';
+  qdii$('#qdiiMethod').hidden=!indexView;
+  qdii$('#qdiiSortReference').disabled=!indexView;
   const selected = scope.filter(fund => {
     const e = qdiiEvidence(fund);
     return (qdiiView.category === "all" || fund.category === qdiiView.category)
+      && (!indexView || quotaCodes.has(fund.code))
       && (!qdii$("#qdiiHeldOnly")?.checked || held.has(fund.code))
       && (!qdii$("#qdiiChangedOnly")?.checked || (typeof qdiiInsights !== 'undefined' && qdiiInsights.history?.events?.some(event=>event.code===fund.code)))
       && (status === "all" || status === "available" && e.available || status === "paused" && e.paused || status === "unknown" && !e.available && !e.paused)
       && (!search || (fund.name + " " + fund.code).toLowerCase().includes(search));
-  }).sort(qdiiCompare);
+  }).sort(indexView && qdii$('#qdiiSortSelect')?.value==='reference' ? (a,b)=>order.get(a.code)-order.get(b.code) : qdiiCompare);
   const visible = selected.slice(0, qdiiView.shown);
   const labels = { nasdaq100: "纳指100", sp500: "标普500", held: "我的主动 QDII" };
   qdii$("#qdiiRows").innerHTML = visible.map(fund => {
@@ -148,18 +159,26 @@ function renderQdiiLimits() {
       + '<details><summary>最新公告与其他参考</summary>' + (fund.latestNotices || []).slice(0, 3).map(n => '<a href="' + qdiiEscape(n.url) + '" target="_blank" rel="noopener noreferrer">' + qdiiEscape(n.date + " " + n.title) + ' ↗</a>').join("")
       + '<small>公告索引检查 ' + qdiiTime(fund.noticeCheckedAt) + '</small><a href="' + qdiiEscape(fund.sourceUrl) + '" target="_blank" rel="noopener noreferrer">天天基金参考（非支付宝） ↗</a>'
       + (qdiiRecent(qdiiView.payload.universeCheckedAt || qdiiView.payload.updatedAt) && fund.quotaCny != null ? '<small>该第三方渠道参考 ¥' + Number(fund.quotaCny).toLocaleString("zh-CN") + '/日，不参与排序</small>' : '') + '</details></details>';
-    return '<tr><td data-label="基金"><strong>' + qdiiEscape(fund.name) + (held.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : '') + '</strong><small>' + qdiiEscape(fund.code + " · " + labels[fund.category]) + (fund.currency === "USD" ? ' · 美元' : '') + '</small>' + qdiiRowSummary(fund, e) + '</td>'
+    const fee=fees[fund.code];
+    const feeValid=indexView && qdiiMonitorCore.feeValid(fee);
+    const pct=value=>Number.isFinite(value)?value.toFixed(2)+'%':'未单列';
+    const change=feeValid && qdiiMonitorCore.comparable(fund) ? qdiiMonitorCore.periodReturn(fee,period) : null;
+    const rankBadge=indexView ? '<span class="qdii-rank-badge">'+(ranking.ranks[fund.code] || (qdiiMonitorCore.comparable(fund)?'未排名':'独立策略'))+'</span>' : '';
+    const extraCells=indexView ? '<td data-label="年化运作费率">'+(feeValid?'<strong>'+pct(fee.operatingPct)+'</strong><small>管理 '+pct(fee.managementPct)+' / 托管 '+pct(fee.custodyPct)+'</small><small>销售服务 '+pct(fee.salesPct)+'</small>':'<span class="qdii-unverified">费用待核实 · 不给名次</span>')+'</td><td data-label="同期净值涨幅">'+(change==null?'不可比较':'<strong>'+(change>=0?'+':'')+change.toFixed(2)+'%</strong>')+'<small>非复权，不参与排序</small></td>' : '';
+    const feeSources=indexView && fee?.sourceUrl ? '<details><summary>费用与净值来源</summary><a href="'+qdiiEscape(fee.sourceUrl)+'" target="_blank" rel="noopener noreferrer">产品资料概要 '+qdiiEscape(fee.documentDate)+' ↗</a><small>费用核验 '+qdiiTime(fee.checkedAt)+(feeValid?'':'（资料无效或过期）')+'</small>'+ (fee.navSourceUrl?'<a href="'+qdiiEscape(fee.navSourceUrl)+'" target="_blank" rel="noopener noreferrer">净值来源 ↗</a><small>净值核验 '+qdiiTime(fee.navCheckedAt)+'</small>':'')+'</details>' : '';
+    return '<tr><td data-label="基金"><strong>' + rankBadge + qdiiEscape(fund.name) + (held.has(fund.code) ? '<span class="qdii-held">我的持仓</span>' : '') + '</strong><small>' + qdiiEscape(fund.code + " · " + labels[fund.category]) + (fund.currency === "USD" ? ' · 美元' : '') + '</small>' + qdiiRowSummary(fund, e) + '</td>' + extraCells
       + '<td data-label="支付宝代销">' + qdiiChannelHtml(fund, e, "alipay") + '</td><td data-label="基金公司直销">' + qdiiChannelHtml(fund, e, "direct") + '</td>'
-      + '<td data-label="来源与说明">' + sources + (e.newNotice ? '<small class="qdii-conflict">新公告需核对，不沿用旧额度</small>' : '') + '</td></tr>';
-  }).join("") || '<tr><td colspan="4">没有符合条件的基金；可以清空搜索或调整筛选。</td></tr>';
+      + '<td data-label="来源与说明">' + feeSources + sources + (e.newNotice ? '<small class="qdii-conflict">新公告需核对，不沿用旧额度</small>' : '') + '</td></tr>';
+  }).join("") || '<tr><td colspan="'+(indexView?6:4)+'">'+(indexView?'当前筛选下没有新鲜有效的正额度证据；暂停、未核实、过期的基金不参与排名，空表不代表市场没有额度。':'没有符合条件的基金；可以清空搜索或调整筛选。')+'</td></tr>';
   qdii$("#qdiiCount").textContent = selected.length + " 只";
   qdii$("#qdiiShown").textContent = "已显示 " + visible.length + " / " + selected.length + " 只";
   qdii$("#qdiiMoreButton").hidden = visible.length >= selected.length;
   qdii$("#qdiiMarketCount").textContent = scope.length;
   qdii$("#qdiiQuotaCount").textContent = scope.filter(f => qdiiEvidence(f).antFresh).length;
   qdii$("#qdiiNoticeCount").textContent = scope.filter(f => qdiiEvidence(f).ruleValid && qdiiEvidence(f).rule?.direct != null).length;
-  const sorting = qdii$("#qdiiSortSelect")?.value === 'holding' ? '按我的持仓金额从高到低排；同一代码跨渠道持仓合并，未持有基金置后。' : '按直销＋代销已知参考上限之和从高到低排；暂停渠道不计入，缺失渠道不假定为零。';
-  qdii$("#qdiiScope").textContent = sorting + '合计未扣跨渠道共享额度，不保证实际可以买满；支付宝实际限额未核实。仅显示纳指100、标普500和我持有的主动型QDII；默认人民币场外，其他基金不显示。持仓金额沿用总览净值估算；A/C合并规则以公告为准。';
+  const sorting = qdii$("#qdiiSortSelect")?.value === 'holding' ? '按我的持仓金额从高到低排；同一代码跨渠道持仓合并，未持有基金置后。' : indexView && qdii$('#qdiiSortSelect')?.value==='reference' ? '仅显示当前筛选渠道有正参考额度的人民币场外基金；同指数费用低的优先，同费率并列。费用未核实或独立策略置后且不给名次。' : '按直销＋代销已知参考上限之和从高到低排；暂停渠道不计入，缺失渠道不假定为零。';
+  const periodNote=indexView ? (period?'同期净值区间 '+period.start+' 至 '+period.end+'，非复权，不是总回报。':'暂无可比较的同期净值区间。')+'申赎费用及跟踪误差未纳入顺位；费用核验 '+qdiiTime(typeof qdiiInsights !== 'undefined' ? qdiiInsights.fees?.checkedAt : null)+'。' : '';
+  qdii$("#qdiiScope").textContent = sorting + periodNote + '公告上限不是实际买入页额度；合计未扣跨渠道共享额度，不保证实际可以买满。仅显示纳指100、标普500和我持有的主动型QDII；其他基金不显示。A/C合并规则以公告为准。';
   qdii$$("[data-qdii-category]").forEach(button => {
     const active = button.dataset.qdiiCategory === qdiiView.category;
     button.classList.toggle("active", active);
@@ -195,7 +214,9 @@ async function refreshQdiiLimits() {
   }
 }
 qdii$$("[data-qdii-category]").forEach(button => button.addEventListener("click", () => {
-  qdiiView.category = button.dataset.qdiiCategory; qdiiView.shown = 30; renderQdiiLimits();
+  qdiiView.category = button.dataset.qdiiCategory; qdiiView.shown = 30;
+  qdii$('#qdiiSortSelect').value=['nasdaq100','sp500'].includes(qdiiView.category)?'reference':'combined';
+  renderQdiiLimits();
 }));
 ["#qdiiSearch", "#qdiiHeldOnly", "#qdiiChangedOnly", "#qdiiStatusFilter", "#qdiiChannelFilter", "#qdiiSortSelect", "#qdiiIncludeExtra"].forEach(selector => qdii$(selector)?.addEventListener(selector === "#qdiiSearch" ? "input" : "change", () => { qdiiView.shown = 30; renderQdiiLimits(); }));
 qdii$("#qdiiMoreButton")?.addEventListener("click", () => { qdiiView.shown += 30; renderQdiiLimits(); });
