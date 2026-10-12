@@ -48,17 +48,19 @@ function qdiiEvidence(fund) {
   const rule = evidence ? { agency: evidence.agency?.status === 'suspended' ? 0 : evidence.agency?.amount,
     direct: evidence.direct?.status === 'suspended' ? 0 : evidence.direct?.amount } : null;
   const noticeDate = [evidence?.noticeDate, evidence?.agency?.noticeDate, evidence?.direct?.noticeDate].filter(Boolean).sort().at(-1) || '';
-  const newNotice = (fund.latestNotices || []).find(n => n.date > noticeDate);
-  const ruleValid = Boolean(evidence && !newNotice && !evidence.error && qdiiRecent(evidence.checkedAt) && qdiiRecent(fund.noticeCheckedAt));
+  const newNotice = qdiiMonitorCore.newerNotice(fund);
+  const pending = qdiiMonitorCore.pendingRules(fund);
+  const due = pending.some(r => r.effectiveDate <= qdiiMonitorCore.chinaDay());
+  const ruleValid = Boolean(evidence && !newNotice && !due && !evidence.error && !fund.audit?.error && qdiiRecent(evidence.checkedAt) && qdiiRecent(fund.noticeCheckedAt));
   const antFresh = Boolean(fund.alipay && !fund.alipay.stale && qdiiRecent(fund.alipay.checkedAt));
   const antOpen = antFresh && fund.alipay.status === "正常申购";
   const antBlocked = antFresh && /暂停|不可售|停售|停止/.test(fund.alipay.status);
   const alipay = ruleValid && antOpen && Number.isFinite(rule.agency) && rule.agency > 0 && (fund.alipay.minimumCny == null || rule.agency >= fund.alipay.minimumCny) ? rule.agency : null;
   const direct = ruleValid && Number.isFinite(rule.direct) && rule.direct > 0 ? rule.direct : null;
   const channel = qdii$("#qdiiChannelFilter")?.value || "either";
-  const available = channel === "alipay" ? alipay : channel === "direct" ? direct : alipay == null && direct == null ? null : (alipay ?? 0) + (direct ?? 0);
+  const available = channel === "alipay" ? alipay : channel === "direct" ? direct : alipay == null && direct == null ? null : Math.max(alipay ?? 0, direct ?? 0);
   const paused = channel === "alipay" ? antBlocked || (ruleValid && rule.agency === 0) : channel === "direct" ? ruleValid && rule.direct === 0 : (antBlocked || (ruleValid && rule.agency === 0)) && ruleValid && rule.direct === 0;
-  return { rule, ruleValid, newNotice, antFresh, antOpen, antBlocked, alipay, direct, available, paused };
+  return { rule, ruleValid, newNotice, antFresh, antOpen, antBlocked, alipay, direct, available, paused, pending, due };
 }
 function qdiiCompare(a, b) {
   const left = qdiiEvidence(a), right = qdiiEvidence(b);
@@ -81,12 +83,14 @@ function qdiiCombinedQuota(fund, evidence) {
   const agency = evidence.antBlocked || evidence.ruleValid && evidence.rule?.agency === 0 ? 0 : evidence.alipay;
   const direct = evidence.ruleValid && evidence.rule?.direct === 0 ? 0 : evidence.direct;
   const known = [direct, agency].filter(value => Number.isFinite(value) && value >= 0);
-  return { amount: known.length ? known.reduce((sum, value) => sum + value, 0) : null, complete: known.length === 2 };
+  const independent = fund.evidence?.crossChannelPolicy === 'independent';
+  return { amount: known.length ? independent ? known.reduce((sum, value) => sum + value, 0) : Math.max(...known) : null,
+    complete: known.length === 2, independent };
 }
 function qdiiRowSummary(fund, evidence) {
   const total = qdiiCombinedQuota(fund, evidence);
   const holding = qdiiHoldingValue(fund.code);
-  const quota = total.amount == null ? '直销＋代销参考合计：待核实' : '直销＋代销参考合计：¥' + total.amount.toLocaleString('zh-CN') + '/日' + (total.complete ? '' : '（仅已知渠道）');
+  const quota = total.amount == null ? '渠道公告额度：待核实' : (total.independent ? '已确认独立渠道参考合计：¥' : '单渠道最大公告上限：¥') + total.amount.toLocaleString('zh-CN') + '/日' + (total.complete ? '' : '（仅已知渠道）');
   return '<small>' + quota + '</small>' + (holding == null ? '' : '<small>我的持仓金额（估算）：¥' + holding.toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '</small>');
 }
 function qdiiAmount(amount) {
@@ -106,18 +110,23 @@ function qdiiChannelHtml(fund, evidence, channel) {
   const parsed = fund.evidence?.[channel === 'alipay' ? 'agency' : 'direct'];
   const platform = channel === 'direct' ? '<small>平台：' + qdiiEscape(qdiiDirectPlatform(fund)) + '（公告口径）</small>' : '';
   const saleTime = channel === 'alipay' ? '<small>在售状态核实：' + qdiiTime(fund.alipay?.checkedAt) + (antFresh ? '' : '（未取得最新状态）') + '</small>' : '';
+  const futureHtml = evidence.pending.filter(r => r.channel === (channel === 'alipay' ? 'agency' : 'direct')).map(r =>
+    '<div class="qdii-pending-rule"><strong>' + (r.effectiveDate <= qdiiMonitorCore.chinaDay() ? '已到生效日 · 等待重新核验' : r.status === 'suspended' ? '将暂停申购' : '已公告 · 待生效') + '</strong><small>' + qdiiEscape(r.effectiveDate) + ' 起：' +
+    (r.status === 'suspended' ? '暂停' : r.amount != null ? '¥' + r.amount.toLocaleString('zh-CN') + '/日' : '恢复申购，额度待核实') + '</small></div>').join('');
   if (!ruleValid || amount == null) {
-    const reason = fund.category === 'held' ? '此持仓尚无自动解析额度' : newNotice && fund.evidence ? '有更新公告，旧额度不沿用' : rule ? '公告证据过期或解析未完成' : '公告额度暂未获取';
+    const reason = evidence.due ? '新规则已到生效日，等待重新核验；不沿用旧额度' : fund.audit?.error || fund.evidence?.error ? '公告核验失败，不显示旧额度' : newNotice && fund.evidence ? '有更新公告，旧额度不沿用' : rule ? '公告证据过期或解析未完成' : '公告额度暂未获取';
     const lastCheck = parsed?.checkedAt || fund.evidence?.checkedAt;
-    return status + '<span class="qdii-unverified">金额：未核实</span>' + platform + '<small>额度核实时间：未核实</small>' + (lastCheck ? '<small>上次公告检查：' + qdiiTime(lastCheck) + '</small>' : '') + saleTime + '<small>' + reason + '</small>';
+    return status + '<span class="qdii-unverified">金额：未核实</span>' + futureHtml + platform + '<small>额度核实时间：未核实</small>' + (lastCheck ? '<small>上次公告检查：' + qdiiTime(lastCheck) + '</small>' : '') + saleTime + '<small>' + reason + '</small>';
   }
   const quotaTime = '<small>核实时间：' + qdiiTime(parsed?.checkedAt || fund.evidence.checkedAt) + '（公告自动核验）</small>';
-  if (channel === 'alipay') return status + qdiiAmount(amount) + '<small>代销公告上限；支付宝实际限额未核实</small>' + quotaTime + saleTime + (antBlocked ? '<small>支付宝公开在售状态为不可买</small>' : '');
-  return qdiiAmount(amount) + platform + quotaTime + '<small>直销公告上限；买入页是否在售未核实</small>';
+  if (channel === 'alipay') return (amount === 0 ? '' : status) + qdiiAmount(amount) + futureHtml + '<small>代销公告上限；支付宝实际限额未核实</small>' + quotaTime + saleTime + (antBlocked ? '<small>支付宝公开在售状态为不可买</small>' : amount === 0 && evidence.antOpen ? '<small>公开页在售与当前暂停规则不一致，以生效公告及买入页为准</small>' : '');
+  return qdiiAmount(amount) + futureHtml + platform + quotaTime + '<small>直销公告上限；买入页是否在售未核实</small>';
 }
 function renderQdiiLimits() {
   renderQdiiUpdateTimes();
   if (!qdiiView.payload) return;
+  const quotaSort = qdii$('#qdiiSortSelect option[value="combined"]');
+  if (quotaSort) quotaSort.textContent = '单渠道最大公告额度：高→低';
   const held = qdiiHeldCodes();
   const search = (qdii$("#qdiiSearch")?.value || "").trim().toLowerCase();
   const status = qdii$("#qdiiStatusFilter")?.value || "all";
@@ -176,9 +185,9 @@ function renderQdiiLimits() {
   qdii$("#qdiiMarketCount").textContent = scope.length;
   qdii$("#qdiiQuotaCount").textContent = scope.filter(f => qdiiEvidence(f).antFresh).length;
   qdii$("#qdiiNoticeCount").textContent = scope.filter(f => qdiiEvidence(f).ruleValid && qdiiEvidence(f).rule?.direct != null).length;
-  const sorting = qdii$("#qdiiSortSelect")?.value === 'holding' ? '按我的持仓金额从高到低排；同一代码跨渠道持仓合并，未持有基金置后。' : indexView && qdii$('#qdiiSortSelect')?.value==='reference' ? '仅显示当前筛选渠道有正参考额度的人民币场外基金；同指数费用低的优先，同费率并列。费用未核实或独立策略置后且不给名次。' : '按直销＋代销已知参考上限之和从高到低排；暂停渠道不计入，缺失渠道不假定为零。';
+  const sorting = qdii$("#qdiiSortSelect")?.value === 'holding' ? '按我的持仓金额从高到低排；同一代码跨渠道持仓合并，未持有基金置后。' : indexView && qdii$('#qdiiSortSelect')?.value==='reference' ? '仅显示当前筛选渠道有正参考额度的人民币场外基金；待生效额度单独提示，不参与今日排名。同指数费用低的优先。' : '按单渠道最大公告上限从高到低排；未确认独立额度时不把直销与代销相加。';
   const periodNote=indexView ? (period?'同期净值区间 '+period.start+' 至 '+period.end+'，非复权，不是总回报。':'暂无可比较的同期净值区间。')+'申赎费用及跟踪误差未纳入顺位；费用核验 '+qdiiTime(typeof qdiiInsights !== 'undefined' ? qdiiInsights.fees?.checkedAt : null)+'。' : '';
-  qdii$("#qdiiScope").textContent = sorting + periodNote + '公告上限不是实际买入页额度；合计未扣跨渠道共享额度，不保证实际可以买满。仅显示纳指100、标普500和我持有的主动型QDII；其他基金不显示。A/C合并规则以公告为准。';
+  qdii$("#qdiiScope").textContent = sorting + periodNote + '公告上限不是实际买入页额度；跨渠道可能累计计算，不保证可以买满。仅显示纳指100、标普500和我持有的主动型QDII；其他基金不显示。A/C合并规则以公告为准。';
   qdii$$("[data-qdii-category]").forEach(button => {
     const active = button.dataset.qdiiCategory === qdiiView.category;
     button.classList.toggle("active", active);

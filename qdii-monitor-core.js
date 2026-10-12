@@ -2,11 +2,26 @@
   const recent = (stamp, now = Date.now(), max = 90 * 60000) => {
     const age = now - Date.parse(stamp); return Number.isFinite(age) && age >= -60000 && age <= max;
   };
+  const chinaDay = (now = Date.now()) => new Intl.DateTimeFormat('en-CA', { timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit' }).format(new Date(now));
+  function newerNotice(fund) {
+    const e=fund.evidence;
+    const date=[e?.noticeDate,e?.agency?.noticeDate,e?.direct?.noticeDate,...(e?.pending||[]).map(r=>r.noticeDate)].filter(Boolean).sort().at(-1)||'';
+    const lastId=(e?.reviewedNoticeIds||[]).slice().sort().at(-1)||'';
+    return (fund.latestNotices||[]).find(n=>n.id&&e?.reviewedNoticeIds?.includes(n.id)?false:n.date>date || (n.date===date && n.id && lastId && n.id>lastId));
+  }
+  function pendingRules(fund, now = Date.now()) {
+    const e=fund.evidence;
+    if (!e || e.error || fund.audit?.error || newerNotice(fund) || !recent(e.checkedAt,now) || !recent(fund.noticeCheckedAt,now)) return [];
+    return (e.pending || []).filter(r => ['agency','direct'].includes(r.channel) && /^\d{4}-\d{2}-\d{2}$/.test(r.effectiveDate || '')
+      && ['limited','suspended','open'].includes(r.status) && r.sourceUrl);
+  }
   function observations(funds, now = Date.now()) {
     return funds.flatMap(fund => {
       const e = fund.evidence;
       const date = [e?.noticeDate, e?.agency?.noticeDate, e?.direct?.noticeDate].filter(Boolean).sort().at(-1) || '';
-      if (fund.currency !== 'CNY' || fund.exchangeOnly || !e || e.error || !recent(e.checkedAt, now) || !recent(fund.noticeCheckedAt, now) || (fund.latestNotices || []).some(n=>n.date > date)) return [];
+      if (fund.currency !== 'CNY' || fund.exchangeOnly || !e || e.error || fund.audit?.error || !recent(e.checkedAt, now) || !recent(fund.noticeCheckedAt, now)
+        || pendingRules(fund,now).some(r=>r.effectiveDate<=chinaDay(now))
+        || newerNotice(fund)) return [];
       return ['agency','direct'].flatMap(channel => {
         const rule = e[channel];
         const amount = rule?.status === 'suspended' ? 0 : rule?.amount;
@@ -71,7 +86,7 @@
     if (rows.filter(r=>r.date>=period.start&&r.date<=period.end).some(r=>!r.accumulated || Math.abs(r.accumulated-r.value-gap)>0.0002)) return null;
     return (end.value/start.value-1)*100;
   }
-  const api = { recent, observations, track, feeValid, comparable, largeChannels, purchaseRanking, returnWindow, periodReturn };
+  const api = { recent, chinaDay, newerNotice, pendingRules, observations, track, feeValid, comparable, largeChannels, purchaseRanking, returnWindow, periodReturn };
   if (typeof module !== 'undefined') module.exports = api;
   root.qdiiMonitorCore = api;
 })(typeof window !== 'undefined' ? window : globalThis);

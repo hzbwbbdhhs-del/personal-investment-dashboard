@@ -5,6 +5,17 @@
 .qdii-large-alert div { padding:7px 0; border-top:1px solid #dcd9ca; }
 .qdii-large-alert small { display:block; margin-top:8px; color:#667c83; }
 .qdii-change-row { display:grid; gap:6px; padding:12px 0; border-bottom:1px solid #d8dfda; }
+.qdii-audit-panel { padding:14px 18px; border:1px solid var(--line); border-radius:12px; display:grid; gap:8px; margin:12px 0; }
+.qdii-audit-panel span, .qdii-audit-panel small { color:var(--muted); font-size:12px; }
+.qdii-audit-panel details > div { padding:8px 0; }
+.qdii-audit-panel small { display:block; overflow-wrap:anywhere; }
+.qdii-pending-panel { margin:12px 0; padding:16px 18px; border:1px solid #d5bf77; background:#fbf4db; border-radius:12px; }
+.qdii-pending-panel[hidden] { display:none; }
+.qdii-pending-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:6px 16px; padding:12px 0; border-bottom:1px solid #e7ddbf; }
+.qdii-pending-row small { grid-column:1/-1; color:var(--muted); }
+.qdii-pending-rule { margin:8px 0; padding:8px 10px; border-radius:8px; background:#fbf4db; }
+.qdii-pending-rule strong { font-size:12px; color:#786025; }
+@media(max-width:600px){ .qdii-pending-row { grid-template-columns:1fr; } }
 .qdii-ranking { margin:16px 0 24px; padding:18px; border:1px solid #cddad2; border-radius:14px; background:#f4f7f1; min-width:0; }
 .qdii-ranking[hidden] { display:none; }
 .qdii-ranking h3 { margin:0 0 10px; }

@@ -7,6 +7,10 @@ on:
       - ".github/workflows/qdii-limits.yml"
       - "scripts/fetch-qdii-limits.mjs"
       - "scripts/refresh-qdii-evidence.mjs"
+      - "scripts/qdii-evidence-core.mjs"
+      - "scripts/audit-held-qdii.mjs"
+      - "scripts/audit-qdii-rules.mjs"
+      - "scripts/test-qdii-evidence.mjs"
       - "scripts/track-qdii-changes.mjs"
       - "scripts/test-qdii-ui.mjs"
       - "scripts/test-qdii-monitor.mjs"
@@ -50,6 +54,7 @@ jobs:
           node vendor/qdii-purchase-limits/scripts/check-release.js
           node scripts/test-qdii-ui.mjs
           node scripts/test-qdii-monitor.mjs
+          node scripts/test-qdii-evidence.mjs
       - uses: actions/cache/save@v4
         if: always()
         with:

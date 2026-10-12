@@ -4,6 +4,16 @@ function renderQdiiInsights() {
   if (!qdiiView.payload || typeof qdiiMonitorCore === 'undefined') return;
   const scope = qdiiScopeFunds().filter(f=>qdiiView.category==='all'||f.category===qdiiView.category);
   const index = scope.filter(f=>['nasdaq100','sp500'].includes(f.category));
+  const checked=scope.filter(f=>qdiiEvidence(f).ruleValid && ['agency','direct'].some(c=>['limited','suspended','open'].includes(f.evidence?.[c]?.status)));
+  const unresolved=scope.filter(f=>!qdiiEvidence(f).ruleValid || !['agency','direct'].every(c=>['limited','suspended'].includes(f.evidence?.[c]?.status)));
+  const audit=qdii$('#qdiiAuditStatus');
+  if(audit) audit.innerHTML='<strong>公告核查：'+checked.length+' / '+scope.length+' 只有新鲜规则 · '+(scope.length-unresolved.length)+' 只两渠道规则完整</strong><span>'+unresolved.length+' 只存在未核实渠道；未核实不等于没有额度。支付宝实际可买金额仍需买入页确认。</span>'+ (unresolved.length ? '<details><summary>查看待核实基金</summary>'+unresolved.map(f=>'<div>'+qdiiEscape(f.name)+'（'+f.code+'）<small>'+qdiiEscape(f.audit?.error || f.evidence?.error || (qdiiEvidence(f).newNotice?'新公告尚未解析':qdiiEvidence(f).due?'待生效规则已到期，等待重新核验':['agency','direct'].filter(c=>!['limited','suspended'].includes(f.evidence?.[c]?.status)).map(c=>c==='agency'?'代销规则未核实':'直销规则未核实').join('；')||'核查时间已过期'))+'</small></div>').join('')+'</details>':'');
+  const pending=scope.flatMap(f=>qdiiMonitorCore.pendingRules(f).map(rule=>({f,rule})));
+  const panel=qdii$('#qdiiPendingNotices');
+  if(panel){
+    panel.hidden=pending.length===0;
+    panel.innerHTML='<strong>新公告 · 待生效额度（不计入今日可买排序）</strong>'+pending.map(({f,rule})=>'<div class="qdii-pending-row"><span>'+qdiiEscape(f.name)+' · '+f.code+'</span><span>'+ (rule.channel==='agency'?'代销公告':'直销公告')+'：'+(rule.status==='suspended'?'将暂停':rule.amount!=null?'¥'+rule.amount.toLocaleString('zh-CN')+'/日':'将恢复，金额待核实')+'</span><small>'+qdiiEscape(rule.effectiveDate)+' 起生效 · 核查 '+qdiiTime(rule.checkedAt)+' · <a href="'+qdiiEscape(rule.sourceUrl)+'" target="_blank" rel="noopener noreferrer">公告原文 ↗</a></small></div>').join('');
+  }
   const large = index.flatMap(f=>{
     const e=qdiiEvidence(f);
     return qdiiMonitorCore.largeChannels(e.alipay,e.direct).map(([channel,amount])=>({f,channel,amount}));

@@ -1,0 +1,48 @@
+import assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
+import { announcementEvidence, beijingDate } from './qdii-evidence-core.mjs';
+import { parseReviewedText } from './audit-qdii-rules.mjs';
+const require=createRequire(import.meta.url);
+const { buildOfficialTimelineNotice }=require('../vendor/qdii-purchase-limits/scripts/lib/official-notices.js');
+const root=require('../'+(require('node:fs').existsSync('app.js')?'':'dist/')+'qdii-monitor-core.js');
+const at='2026-10-12T12:00:00Z';
+const event=(id,date,category,limits,status)=>({id,date,category,url:'https://example.com/'+id+'.pdf',parsed:{parsed:true,effectiveDate:date,shareCodes:['000001','000002','000003'],accountBasis:'single-fund-account-daily-cumulative-per-share',limits}});
+const amounts=(codes,amount)=>({scope:'fund-manager-general',channels:[],perShareLimits:Object.fromEntries(codes.map(c=>[c,{amount,currency:'CNY'}]))});
+const old=event('AN202609010000','2026-09-01','full-suspend',[]);
+const next=event('AN202610120000','2026-10-13','resume',[amounts(['000001','000002'],10),amounts(['000001','000002','000003'],10),amounts(['000003'],100)]);
+for (const [code,expected] of [['000001',10],['000002',10],['000003',100]]) {
+  const row={code,officialNotice:buildOfficialTimelineNotice([old,next])};
+  const current=announcementEvidence(row,at);
+  assert.equal(current.direct.status,'suspended');
+  assert.equal(current.pending.find(r=>r.channel==='direct').amount,expected);
+  assert.equal(announcementEvidence(row,'2026-10-13T00:00:00+08:00').direct.amount,expected);
+  assert.equal(announcementEvidence({...row,officialNoticeError:'failed'},at).pending.length,0);
+}
+const conflict=event('AN202610120001','2026-10-12','limit',[amounts(['000001'],10),amounts(['000001'],100)]);
+const bad=announcementEvidence({code:'000001',officialNotice:buildOfficialTimelineNotice([conflict])},at);
+assert.equal(bad.direct.status,'unknown'); assert.equal(bad.direct.amount,null);
+const partial=event('AN202610110000','2026-10-11','full-suspend',[amounts(['000003'],100)]);
+partial.parsed.shareCodes=['000001','000002'];
+for(const code of ['000001','000002']) assert.equal(announcementEvidence({code,officialNotice:buildOfficialTimelineNotice([partial])},at).direct.status,'suspended');
+assert.equal(announcementEvidence({code:'000003',officialNotice:buildOfficialTimelineNotice([partial])},at).direct.amount,100);
+assert.equal(beijingDate('2026-10-12T16:00:00Z'),'2026-10-13');
+const fund={currency:'CNY',code:'000001',noticeCheckedAt:at,evidence:{...announcementEvidence({code:'000001',officialNotice:buildOfficialTimelineNotice([old,next])},at),checkedAt:at},latestNotices:[{id:'AN202609200000',date:'2026-09-20'}]};
+assert.equal(root.newerNotice(fund),undefined); // older unparsed notices do not eclipse reviewed newer rules.
+fund.latestNotices.push({id:'AN202610120001',date:'2026-10-13'});
+assert.ok(root.newerNotice(fund)); assert.equal(root.pendingRules(fund,Date.parse(at)).length,0);
+fund.latestNotices.pop();
+assert.equal(root.observations([fund],Date.parse('2026-10-13T00:01:00+08:00')).length,0);
+const text='公告送出日期：2026年10月12日。自2026年10月13日起，单个基金账户单日累计申购通过非直销销售机构本基金（000001）的金额限额为1千元人民币；通过直销销售机构单日单个基金账户申购本基金（000001）的金额不应超过2000元。';
+const parsed=parseReviewedText(text);
+assert.equal(parsed.parsed,true);
+assert.ok(parsed.limits.some(r=>r.scope==='sales-agency'&&r.perShareLimits['000001'].amount===1000));
+assert.ok(parsed.limits.some(r=>r.scope==='specific-channel'&&r.perShareLimits['000001'].amount===2000));
+assert.ok(parsed.accountBasis.startsWith('single-fund-account-daily-cumulative'));
+assert.equal(parseReviewedText('单笔申购不得超过1000元。').accountBasis,'unknown');
+const combined=parseReviewedText('基金代码：0 00001。自2026年10月13日（含当日）起，A类、C类份额合并计算；代销渠道单日单个基金账户累计金额限制为10元；直销渠道单日单个基金账户累计金额限制仍为100元。','2026-10-12',[
+  {code:'000001',name:'测试基金A',currency:'CNY'},{code:'000002',name:'测试基金C',currency:'CNY'}]);
+assert.equal(combined.parsed,true); assert.equal(combined.effectiveDate,'2026-10-13');
+assert.equal(combined.accountBasis,'single-fund-account-daily-cumulative-combined-shares');
+assert.equal(combined.limits.find(r=>r.scope==='specific-channel').perShareLimits['000002'].amount,100);
+assert.equal(parseReviewedText('本基金（000001）单个投资者通过直销机构单日累计申购金额不应超过人民币100元，自2026年10月13日起。','2026-10-12').announcementDateSource,'disclosure-index');
+console.log('PASS: resume plus new caps, per-share specificity, conflicts, effective dates, stale/new notices, channel wording and daily-account basis');

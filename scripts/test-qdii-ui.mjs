@@ -79,7 +79,7 @@ assert.equal(new Set(payload.funds.map(f=>f.code)).size, payload.funds.length);
 assert.equal(payload.missingHeldCodes.length, 0);
 
 const fixture = (code, direct, agency, category = 'nasdaq100') => ({ ...structuredClone(fund), code, category,
-  evidence: { ...structuredClone(parsed), checkedAt: now,
+  evidence: { ...structuredClone(parsed), checkedAt: now, crossChannelPolicy: 'independent',
     direct: { ...parsed.direct, amount: direct, status: direct === 0 ? 'suspended' : direct == null ? 'unknown' : 'limited' },
     agency: { ...parsed.agency, amount: agency, status: agency === 0 ? 'suspended' : agency == null ? 'unknown' : 'limited' } } });
 context.sortFunds = [fixture('000001', 900, 0), fixture('000002', 600, 500), fixture('000003', null, null),
@@ -110,7 +110,7 @@ assert.ok(ordered.indexOf('000002 ·') < ordered.indexOf('000001 ·'));
 assert.ok(ordered.includes('我的持仓金额（估算）：¥500.00'));
 el('#qdiiSortSelect').value = 'combined';
 el('#qdiiSortSelect').listeners.change();
-assert.ok(el('#qdiiScope').textContent.includes('合计未扣跨渠道共享额度'));
+assert.ok(el('#qdiiScope').textContent.includes('跨渠道可能累计计算'));
 assert.ok(el('#qdiiRows').innerHTML.indexOf('000006 ·') < el('#qdiiRows').innerHTML.indexOf('000002 ·'));
 evaluate('qdiiView.payload = { ...payload, updatedAt: "2026-10-11T10:39:00Z", evidenceSources: { parser: { checkedAt: "2026-10-11T09:56:00Z" }, comparison: { sourceUpdatedAt: "2026-10-11T07:35:00Z" } } }; renderQdiiUpdateTimes()');
 assert.equal(el('#qdiiCollectedAt').textContent, '2026/10/11 18:39');

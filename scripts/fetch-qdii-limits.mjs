@@ -85,7 +85,7 @@ async function collect(fund) {
   }
   const oldCheck = old?.noticeCheckedAt && new Date(old.noticeCheckedAt).getTime();
   fund.noticeSchemaVersion = 2;
-  if (old?.noticeSchemaVersion === 2 && oldCheck && Date.now() - oldCheck < 60 * 60 * 1000) { fund.latestNotices = old.latestNotices; fund.noticeCheckedAt = old.noticeCheckedAt; return; }
+  if (old?.noticeSchemaVersion === 2 && oldCheck && Date.now() - oldCheck < 10 * 60 * 1000) { fund.latestNotices = old.latestNotices; fund.noticeCheckedAt = old.noticeCheckedAt; return; }
   try {
     const url = 'https://api.fund.eastmoney.com/f10/JJGG?fundcode=' + fund.code + '&pageIndex=1&pageSize=100&type=0';
     const notices = JSON.parse(await fetchText(url));

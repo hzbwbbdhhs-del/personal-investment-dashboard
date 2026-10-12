@@ -7,7 +7,7 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261011-qdii-merged" />
+    <link rel="stylesheet" href="./styles.css?v=20261012-qdii-audit" />
   </head>
   <body>
     <div class="app-shell">
@@ -183,9 +183,11 @@
           <div class="notice-banner purple-notice"><span class="notice-icon">!</span><div><strong>已接入开源公告解析＋每日汇总交叉检查。</strong><span>支付宝公开页只确认在售状态，实际限额仍需买入页确认。公告代销上限和直销上限单独标注为参考，不再将公告数字写成支付宝已确认额度。</span></div></div>
           <div class="qdii-coverage" aria-label="QDII 数据覆盖情况"><div><strong id="qdiiMarketCount">—</strong><span>当前范围内基金</span></div><div><strong id="qdiiQuotaCount">—</strong><span>支付宝在售状态已读取</span></div><div><strong id="qdiiNoticeCount">—</strong><span>直销公告已自动解析</span></div></div>
           <aside class="qdii-large-alert" id="qdiiLargeAlert" aria-live="polite">正在检查单渠道≥1,000元/日的公告参考额度…</aside>
+          <aside class="qdii-audit-panel" id="qdiiAuditStatus" aria-live="polite">正在核查当前规则、新公告和待生效额度…</aside>
+          <aside class="qdii-pending-panel" id="qdiiPendingNotices" aria-live="polite" hidden></aside>
           <details class="qdii-help qdii-history"><summary>额度变化记录</summary><div id="qdiiChanges">正在读取变化记录…</div></details>
           <label class="qdii-filter-label"><input id="qdiiChangedOnly" type="checkbox" /> 只看有额度变化记录的基金</label>
-          <details class="qdii-help"><summary>数据从哪里来？哪些还无法确认？</summary><p>公告自动解析使用 <a href="https://github.com/aiten2/qdii-purchase-limits" target="_blank" rel="noopener noreferrer">qdii-purchase-limits</a>，每日汇总参考使用 <a href="https://github.com/promise96319/qdii" target="_blank" rel="noopener noreferrer">promise96319/qdii</a>。后者的金额来自天天基金，不能替代支付宝或直销额度；两者共享部分上游，不是独立权威认证。</p><p>支付宝在售状态按15分钟任务检查，公告解析约每小时检查，汇总按其源站每日发布；GitHub调度可能延迟。逐项显示原始采集时间，不把网页刷新时间当数据更新时间。新公告未解析、来源过期或失败时不沿用旧额度。主动QDII尚未被此解析器覆盖；账户剩余额度、渠道额外限制仍需买入页确认。PDF可能来自披露镜像，自动解析不保证完全准确。</p></details>
+          <details class="qdii-help"><summary>数据从哪里来？哪些还无法确认？</summary><p>公告自动解析使用 <a href="https://github.com/aiten2/qdii-purchase-limits" target="_blank" rel="noopener noreferrer">qdii-purchase-limits</a>，每日汇总参考使用 <a href="https://github.com/promise96319/qdii" target="_blank" rel="noopener noreferrer">promise96319/qdii</a>。后者的金额来自天天基金，不能替代支付宝或直销额度；两者共享部分上游，不是独立权威认证。</p><p>15分钟任务检查支付宝公开在售状态和最新公告；GitHub调度可能延迟，非逐秒实时。逐项显示原始核查时间，不把网页刷新时间当数据更新时间。已持有的主动QDII也纳入公告检查，当前生效与待生效规则分开显示。正文下载失败、渠道或金额冲突、新公告未解析、来源过期时，不沿用旧额度，也不进入排序和提醒。未确认可独立购买的直销、代销额度不相加。账户剩余额度及支付宝、直销实际买入页限制仍需订单页确认。PDF可能来自披露镜像，自动解析不保证完全准确。</p></details>
           <article class="content-card table-card qdii-table-card">
             <div class="content-card-head"><div><div class="section-kicker">SUBSCRIPTION STATUS / 申购状态</div><h3>QDII 核对清单 <span id="qdiiCount" class="qdii-count">—</span></h3></div><button class="ghost-button" id="qdiiRefreshButton" type="button">↻ 检查云端快照</button></div>
             <div class="qdii-controls"><div class="qdii-categories" role="group" aria-label="QDII 分类"><button type="button" data-qdii-category="all" class="active">全部</button><button type="button" data-qdii-category="nasdaq100">纳斯达克100</button><button type="button" data-qdii-category="sp500">标普500</button><button type="button" data-qdii-category="held">我的主动QDII</button></div><label class="qdii-search-label">搜索基金或代码<input id="qdiiSearch" type="search" placeholder="名称 / 6 位代码" /></label><label class="qdii-search-label">排序方式<select id="qdiiSortSelect" aria-label="QDII排序方式"><option id="qdiiSortReference" value="reference" disabled>有额度基金：费用参考顺序</option><option value="combined">直销＋代销参考额度：高→低</option><option value="holding">我的持仓金额：高→低</option></select></label><label class="qdii-filter-label"><input id="qdiiHeldOnly" type="checkbox" /> 只看我的持仓</label><select id="qdiiChannelFilter" aria-label="申购筛选渠道"><option value="either">筛选渠道：直销＋代销</option><option value="alipay">筛选渠道：支付宝代销</option><option value="direct">筛选渠道：基金公司直销</option></select><select id="qdiiStatusFilter" aria-label="筛选申购状态"><option value="all">全部状态</option><option value="available">公告有参考额度</option><option value="paused">暂停 / 不可售</option><option value="unknown">额度待核实</option></select><label class="qdii-filter-label"><input id="qdiiIncludeExtra" type="checkbox" /> 包含美元份额 / 场内 ETF</label></div>
@@ -234,8 +236,8 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261007-funds"></script>
     <script src="./app.js?v=20261010-ledger-upgrade"></script>
-    <script src="./qdii-monitor-core.js?v=20261011-qdii-merged"></script>
-    <script src="./qdii-ui.js?v=20261011-qdii-merged"></script>
-    <script src="./qdii-insights.js?v=20261011-qdii-merged"></script>
+    <script src="./qdii-monitor-core.js?v=20261012-qdii-audit"></script>
+    <script src="./qdii-ui.js?v=20261012-qdii-audit"></script>
+    <script src="./qdii-insights.js?v=20261012-qdii-audit"></script>
   </body>
 </html>
