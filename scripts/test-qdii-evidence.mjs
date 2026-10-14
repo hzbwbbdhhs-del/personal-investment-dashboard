@@ -1,11 +1,14 @@
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { announcementEvidence, beijingDate } from './qdii-evidence-core.mjs';
-import { parseReviewedText } from './audit-qdii-rules.mjs';
+import { parseReviewedText, suspensionTitleClasses } from './audit-qdii-rules.mjs';
 const require=createRequire(import.meta.url);
 const { buildOfficialTimelineNotice }=require('../vendor/qdii-purchase-limits/scripts/lib/official-notices.js');
 const root=require('../'+(require('node:fs').existsSync('app.js')?'':'dist/')+'qdii-monitor-core.js');
 const at='2026-10-12T12:00:00Z';
+assert.deepEqual(suspensionTitleClasses('博时纳斯达克100联接A类、C类份额暂停申购'),['A','C']);
+assert.deepEqual(suspensionTitleClasses('博时纳斯达克100联接I类类份额暂停申购'),['I']);
+assert.deepEqual(suspensionTitleClasses('博时纳斯达克100联接A、C两类份额暂停申购'),['A','C']);
 const event=(id,date,category,limits,status)=>({id,date,category,url:'https://example.com/'+id+'.pdf',parsed:{parsed:true,effectiveDate:date,shareCodes:['000001','000002','000003'],accountBasis:'single-fund-account-daily-cumulative-per-share',limits}});
 const amounts=(codes,amount)=>({scope:'fund-manager-general',channels:[],perShareLimits:Object.fromEntries(codes.map(c=>[c,{amount,currency:'CNY'}]))});
 const old=event('AN202609010000','2026-09-01','full-suspend',[]);
