@@ -9,6 +9,13 @@ const { buildOfficialTimelineNotice } = require('../vendor/qdii-purchase-limits/
 const run = promisify(execFile);
 const VERSION = 1;
 
+// Titles such as "A类、C类份额" must retain both classes. Matching only the
+// class immediately before "份额" silently revives older purchase limits.
+export function suspensionTitleClasses(title) {
+  const phrase = String(title || '').match(/(?:[A-Z]\s*类?\s*[、，和及与]*)+(?:两|三|四)?类?(?:基金)?份额/);
+  return [...new Set([...(phrase?.[0] || '').matchAll(/([A-Z])\s*类?/g)].map(match => match[1]))];
+}
+
 // Normalize equivalent issuer wording; amounts and share codes remain untouched.
 // This dashboard is for an individual investor, not institutional direct sales.
 export function parseReviewedText(text, indexedDate = null, linkedFunds = []) {
@@ -119,7 +126,7 @@ export async function reviewRules(rows, funds, scope, cache, { force = false } =
           stored[event.id] = { version: VERSION, text, downloadedAt: new Date().toISOString() };
         }
         const parsed = parseReviewedText(text, event.date, linkedById.get(event.id));
-        const titleClasses=[...event.title.matchAll(/([A-Z])类(?:基金)?份额/g)].map(m=>m[1]);
+        const titleClasses=suspensionTitleClasses(event.title);
         if (event.category==='full-suspend' && titleClasses.length) {
           const block=text.replace(/\s/g,'').match(/下属分级基金的(?:基金)?简称(.*?)下属分级基金的交易代码/);
           const classes=[...(block?.[1] || '').matchAll(/QDII(?:[-－](?:FOF|LOF))?[）)]([A-Z])/g)].map(m=>m[1]);
