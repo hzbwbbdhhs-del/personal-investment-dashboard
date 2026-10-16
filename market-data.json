@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-16T13:10:07.707Z",
+  "updatedAt": "2026-10-16T14:01:26.131Z",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
@@ -24,21 +24,21 @@
     },
     "VIX": {
       "label": "VIX",
-      "value": 16.87,
-      "changePct": 10.478061558611666,
-      "drawdownPct": -79.59850042326762,
+      "value": 16.46,
+      "changePct": -2.4303497332542983,
+      "drawdownPct": -80.09432821381061,
       "peak": 82.69,
-      "updatedAt": "2026-10-14",
+      "updatedAt": "2026-10-15",
       "source": "FRED公开CSV:VIXCLS",
       "status": "daily"
     },
     "VXN": {
       "label": "VXN",
-      "value": 22.7,
-      "changePct": 7.379375591296116,
-      "drawdownPct": -71.85019841269842,
+      "value": 22.89,
+      "changePct": 0.8370044052863493,
+      "drawdownPct": -71.61458333333333,
       "peak": 80.64,
-      "updatedAt": "2026-10-14",
+      "updatedAt": "2026-10-15",
       "source": "FRED公开CSV:VXNCLS",
       "status": "daily"
     },
