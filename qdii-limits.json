@@ -1,7 +1,7 @@
 {
   "status": "available",
   "schemaVersion": 4,
-  "updatedAt": "2026-10-18T17:32:26.986Z",
+  "updatedAt": "2026-10-18T17:58:33.397Z",
   "sourceDataDates": [
     "2026-10-16",
     "2026-10-15"
@@ -68,7 +68,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202501031641797628_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:52.953Z",
+      "noticeCheckedAt": "2026-10-18T17:58:07.240Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -89,7 +89,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:52.876Z",
+        "checkedAt": "2026-10-18T17:58:07.327Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=000834",
         "stale": false
       },
@@ -156,7 +156,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504081653077191_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:54.162Z",
+      "noticeCheckedAt": "2026-10-18T17:58:07.589Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -168,7 +168,7 @@
           "noticeDate": "2026-06-03",
           "noticeId": "AN202606031823188725",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606031823188725_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.654Z",
+          "checkedAt": "2026-10-18T17:59:27.153Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -182,7 +182,7 @@
           "noticeDate": "2026-06-03",
           "noticeId": "AN202606031823188725",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606031823188725_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.654Z",
+          "checkedAt": "2026-10-18T17:59:27.153Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -196,11 +196,18 @@
           "AN202501151641927995",
           "AN202407101637741307",
           "AN202402071621006270",
-          "AN202401101616985143"
+          "AN202401101616985143",
+          "AN202009041407390615",
+          "AN202009021406389650",
+          "AN202006031381971308",
+          "AN202003281377106317",
+          "AN202003111376108683",
+          "AN202002181375197058",
+          "AN202002111374973778"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.654Z",
-        "checkedAt": "2026-10-18T17:33:02.654Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.153Z",
+        "checkedAt": "2026-10-18T17:59:27.153Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/000834.html",
@@ -211,13 +218,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.654Z",
+        "checkedAt": "2026-10-18T17:59:27.153Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -249,7 +256,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:52.882Z",
+        "checkedAt": "2026-10-18T17:58:07.329Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=001235",
         "stale": false
       },
@@ -316,7 +323,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202502111642958531_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:54.445Z",
+      "noticeCheckedAt": "2026-10-18T17:58:08.864Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -337,7 +344,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:53.247Z",
+        "checkedAt": "2026-10-18T17:58:08.271Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=002891",
         "stale": false
       },
@@ -404,7 +411,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202605121822195254_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:54.681Z",
+      "noticeCheckedAt": "2026-10-18T17:58:08.526Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -416,7 +423,7 @@
           "noticeDate": "2026-09-02",
           "noticeId": "AN202609021828902436",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609021828902436_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.654Z",
+          "checkedAt": "2026-10-18T17:59:27.153Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -430,7 +437,7 @@
           "noticeDate": "2026-09-02",
           "noticeId": "AN202609021828902436",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609021828902436_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.654Z",
+          "checkedAt": "2026-10-18T17:59:27.153Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -440,15 +447,15 @@
           "AN202608211828237187"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.654Z",
-        "checkedAt": "2026-10-18T17:33:02.654Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.153Z",
+        "checkedAt": "2026-10-18T17:59:27.153Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-02",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.654Z",
+        "checkedAt": "2026-10-18T17:59:27.153Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": null
@@ -470,7 +477,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:54.474Z",
+        "checkedAt": "2026-10-18T17:58:07.884Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=002910",
         "stale": false
       },
@@ -483,7 +490,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202608071827750635_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:55.686Z",
+      "noticeCheckedAt": "2026-10-18T17:58:08.131Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -504,13 +511,13 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:54.758Z",
+        "checkedAt": "2026-10-18T17:58:08.426Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=003376",
         "stale": false
       },
       "noticeSchemaVersion": 2,
       "latestNotices": [],
-      "noticeCheckedAt": "2026-10-18T17:31:56.053Z",
+      "noticeCheckedAt": "2026-10-18T17:58:09.630Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -566,7 +573,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508151727982986_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:56.172Z",
+      "noticeCheckedAt": "2026-10-18T17:58:09.717Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -622,7 +629,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508151727982990_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:56.970Z",
+      "noticeCheckedAt": "2026-10-18T17:58:09.356Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -643,7 +650,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:56.354Z",
+        "checkedAt": "2026-10-18T17:58:09.651Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=003949",
         "stale": false
       },
@@ -710,7 +717,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202409301640107777_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:57.559Z",
+      "noticeCheckedAt": "2026-10-18T17:58:09.898Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -731,7 +738,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:56.486Z",
+        "checkedAt": "2026-10-18T17:58:09.934Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=004400",
         "stale": false
       },
@@ -798,7 +805,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508251733975592_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:57.943Z",
+      "noticeCheckedAt": "2026-10-18T17:58:10.190Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -819,7 +826,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:57.276Z",
+        "checkedAt": "2026-10-18T17:58:09.999Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=006075",
         "stale": false
       },
@@ -886,20 +893,20 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759289250_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:58.881Z",
+      "noticeCheckedAt": "2026-10-18T17:58:10.506Z",
       "evidence": {
         "agency": {
           "status": "unknown",
           "amount": null,
-          "checkedAt": "2026-10-18T17:32:27.141Z"
+          "checkedAt": "2026-10-18T17:58:33.547Z"
         },
         "direct": {
           "status": "unknown",
           "amount": null,
-          "checkedAt": "2026-10-18T17:32:27.141Z"
+          "checkedAt": "2026-10-18T17:58:33.547Z"
         },
         "pending": [],
-        "checkedAt": "2026-10-18T17:32:27.141Z",
+        "checkedAt": "2026-10-18T17:58:33.547Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/006075.html",
@@ -910,13 +917,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:32:27.141Z",
+        "checkedAt": "2026-10-18T17:58:33.547Z",
         "status": "failed",
         "error": "公告正文或渠道对应关系未能可靠复核",
         "sourceChecks": {
@@ -948,7 +955,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:57.870Z",
+        "checkedAt": "2026-10-18T17:58:10.182Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=006373",
         "stale": false
       },
@@ -1015,7 +1022,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202512031792980030_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:59.089Z",
+      "noticeCheckedAt": "2026-10-18T17:58:10.685Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -1027,7 +1034,7 @@
           "noticeDate": "2026-09-29",
           "noticeId": "AN202609291829979673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609291829979673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.655Z",
+          "checkedAt": "2026-10-18T17:59:27.154Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -1041,7 +1048,7 @@
           "noticeDate": "2026-09-29",
           "noticeId": "AN202609291829979673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609291829979673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.655Z",
+          "checkedAt": "2026-10-18T17:59:27.154Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -1071,15 +1078,15 @@
           "AN202407111637781357"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.655Z",
-        "checkedAt": "2026-10-18T17:33:02.655Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.154Z",
+        "checkedAt": "2026-10-18T17:59:27.154Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-29",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.655Z",
+        "checkedAt": "2026-10-18T17:59:27.154Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -1111,7 +1118,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:58.267Z",
+        "checkedAt": "2026-10-18T17:58:10.484Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=006431",
         "stale": false
       },
@@ -1178,7 +1185,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202212091580949477_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:59.515Z",
+      "noticeCheckedAt": "2026-10-18T17:58:10.743Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -1199,7 +1206,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:59.174Z",
+        "checkedAt": "2026-10-18T17:58:10.801Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=006479",
         "stale": false
       },
@@ -1266,7 +1273,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504111654532837_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:31:59.673Z",
+      "noticeCheckedAt": "2026-10-18T17:58:11.055Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -1278,7 +1285,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429076",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429076_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.655Z",
+          "checkedAt": "2026-10-18T17:59:27.154Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -1292,7 +1299,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429076",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429076_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.655Z",
+          "checkedAt": "2026-10-18T17:59:27.154Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -1346,8 +1353,8 @@
           "AN201903011301220698"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.655Z",
-        "checkedAt": "2026-10-18T17:33:02.655Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.154Z",
+        "checkedAt": "2026-10-18T17:59:27.154Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/006479.html",
@@ -1358,13 +1365,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.655Z",
+        "checkedAt": "2026-10-18T17:59:27.154Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -1431,7 +1438,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202501031641797628_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:07.483Z",
+      "noticeCheckedAt": "2026-10-18T17:58:10.954Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -1452,7 +1459,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:59.845Z",
+        "checkedAt": "2026-10-18T17:58:11.029Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=006555",
         "stale": false
       },
@@ -1519,7 +1526,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202603141820560702_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:00.107Z",
+      "noticeCheckedAt": "2026-10-18T17:58:11.545Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -1531,7 +1538,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580901",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580901_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -1545,7 +1552,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580901",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580901_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -1555,15 +1562,15 @@
           "AN202608201828181672"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-18",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": null
@@ -1585,7 +1592,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:31:59.981Z",
+        "checkedAt": "2026-10-18T17:58:11.240Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=006670",
         "stale": false
       },
@@ -1628,7 +1635,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604031821003021_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:00.480Z",
+      "noticeCheckedAt": "2026-10-18T17:58:11.515Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -1649,7 +1656,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:00.407Z",
+        "checkedAt": "2026-10-18T17:58:11.349Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=007280",
         "stale": false
       },
@@ -1716,7 +1723,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506051685278522_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:00.668Z",
+      "noticeCheckedAt": "2026-10-18T17:58:11.828Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -1728,7 +1735,7 @@
           "noticeDate": "2026-09-09",
           "noticeId": "AN202609081829127885",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609081829127885_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -1742,7 +1749,7 @@
           "noticeDate": "2026-05-22",
           "noticeId": "AN202605221822662094",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202605221822662094_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -1775,15 +1782,15 @@
           "AN202309141598453268"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-09",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -1815,7 +1822,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:00.771Z",
+        "checkedAt": "2026-10-18T17:58:11.827Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=007721",
         "stale": false
       },
@@ -1882,7 +1889,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508191730205129_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:01.018Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.104Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -1894,7 +1901,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580336",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580336_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -1908,7 +1915,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580336",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580336_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -1935,8 +1942,8 @@
           "AN202002011374663557"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/007721.html",
@@ -1947,13 +1954,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -1985,7 +1992,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:00.992Z",
+        "checkedAt": "2026-10-18T17:58:11.851Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=007722",
         "stale": false
       },
@@ -2052,7 +2059,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508191730205129_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:01.476Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.101Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -2064,7 +2071,7 @@
           "noticeDate": "2026-09-01",
           "noticeId": "AN202609011828844257",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609011828844257_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2078,7 +2085,7 @@
           "noticeDate": "2026-09-01",
           "noticeId": "AN202609011828844257",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609011828844257_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2105,8 +2112,8 @@
           "AN202002011374663557"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/007722.html",
@@ -2117,13 +2124,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -2155,7 +2162,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:01.316Z",
+        "checkedAt": "2026-10-18T17:58:12.124Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=008401",
         "stale": false
       },
@@ -2222,7 +2229,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504081653058946_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:01.579Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.373Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -2234,7 +2241,7 @@
           "noticeDate": "2026-10-15",
           "noticeId": "AN202610151830479604",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610151830479604_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2248,7 +2255,7 @@
           "noticeDate": "2026-10-15",
           "noticeId": "AN202610151830479604",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610151830479604_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2269,8 +2276,8 @@
           "AN202401041616283690"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceStatus": "limited",
         "sourceAmount": 50,
         "sourceUrl": "https://fund.eastmoney.com/008401.html",
@@ -2281,13 +2288,13 @@
         "status": "限大额",
         "amount": 50,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -2319,7 +2326,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:01.769Z",
+        "checkedAt": "2026-10-18T17:58:12.392Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=008971",
         "stale": false
       },
@@ -2386,7 +2393,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504081653077191_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:02.032Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.650Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -2398,7 +2405,7 @@
           "noticeDate": "2026-06-03",
           "noticeId": "AN202606031823188725",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606031823188725_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2412,7 +2419,7 @@
           "noticeDate": "2026-06-03",
           "noticeId": "AN202606031823188725",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606031823188725_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2429,8 +2436,8 @@
           "AN202401101616985143"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/008971.html",
@@ -2441,13 +2448,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -2538,7 +2545,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202511041774827137_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:01.859Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.353Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -2559,7 +2566,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:02.264Z",
+        "checkedAt": "2026-10-18T17:58:12.676Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=012752",
         "stale": false
       },
@@ -2626,7 +2633,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202511041774827137_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:02.518Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.938Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -2638,7 +2645,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828132673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828132673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2652,7 +2659,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828132673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828132673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.656Z",
+          "checkedAt": "2026-10-18T17:59:27.155Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -2682,8 +2689,8 @@
           "AN202401251618073910"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.656Z",
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.155Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/012752.html",
@@ -2694,13 +2701,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.656Z",
+        "checkedAt": "2026-10-18T17:59:27.155Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -2791,7 +2798,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202511041774827137_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:03.100Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.634Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -2812,7 +2819,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:02.925Z",
+        "checkedAt": "2026-10-18T17:58:12.959Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=012860",
         "stale": false
       },
@@ -2849,7 +2856,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508151727982986_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:03.170Z",
+      "noticeCheckedAt": "2026-10-18T17:58:13.218Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -2861,7 +2868,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618457",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618457_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -2875,7 +2882,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618457",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618457_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -2888,8 +2895,8 @@
           "AN202301161582041586"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.657Z",
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/012860.html",
@@ -2900,13 +2907,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -2973,7 +2980,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508151727982986_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:04.681Z",
+      "noticeCheckedAt": "2026-10-18T17:58:12.901Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -2994,7 +3001,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:03.492Z",
+        "checkedAt": "2026-10-18T17:58:13.226Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=012870",
         "stale": false
       },
@@ -3031,7 +3038,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508151727982990_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:04.008Z",
+      "noticeCheckedAt": "2026-10-18T17:58:13.485Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -3043,7 +3050,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618456",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618456_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -3057,7 +3064,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618456",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618456_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -3069,8 +3076,8 @@
           "AN202301041581687181"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.657Z",
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/012870.html",
@@ -3081,13 +3088,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -3154,7 +3161,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508151727982990_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:04.495Z",
+      "noticeCheckedAt": "2026-10-18T17:58:13.188Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -3175,7 +3182,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:04.780Z",
+        "checkedAt": "2026-10-18T17:58:13.486Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=012920",
         "stale": false
       },
@@ -3212,7 +3219,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202601261818426205_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:05.282Z",
+      "noticeCheckedAt": "2026-10-18T17:58:13.737Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -3224,7 +3231,7 @@
           "noticeDate": "2026-07-04",
           "noticeId": "AN202607031826694877",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607031826694877_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -3238,7 +3245,7 @@
           "noticeDate": "2026-07-04",
           "noticeId": "AN202607031826694877",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607031826694877_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -3259,15 +3266,15 @@
           "AN202501231642485943"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.657Z",
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceAmount": null,
         "noticeDate": "2026-07-04",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -3299,7 +3306,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:04.983Z",
+        "checkedAt": "2026-10-18T17:58:13.509Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=012922",
         "stale": false
       },
@@ -3336,7 +3343,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202601261818426205_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:05.484Z",
+      "noticeCheckedAt": "2026-10-18T17:58:14.005Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -3348,7 +3355,7 @@
           "noticeDate": "2026-07-04",
           "noticeId": "AN202607031826694877",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607031826694877_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -3362,7 +3369,7 @@
           "noticeDate": "2026-07-04",
           "noticeId": "AN202607031826694877",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607031826694877_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -3383,15 +3390,15 @@
           "AN202501231642485943"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.657Z",
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceAmount": null,
         "noticeDate": "2026-07-04",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -3482,7 +3489,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504081653058946_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:06.492Z",
+      "noticeCheckedAt": "2026-10-18T17:58:13.738Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -3562,7 +3569,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759289250_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:05.983Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.288Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -3642,7 +3649,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759289250_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:06.484Z",
+      "noticeCheckedAt": "2026-10-18T17:58:14.000Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -3663,7 +3670,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:06.791Z",
+        "checkedAt": "2026-10-18T17:58:14.299Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=014002",
         "stale": false
       },
@@ -3730,7 +3737,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202603141820560702_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:07.288Z",
+      "noticeCheckedAt": "2026-10-18T17:58:14.559Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -3742,7 +3749,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580901",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580901_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -3756,7 +3763,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580901",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580901_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -3766,15 +3773,15 @@
           "AN202608201828181672"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.657Z",
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-18",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": null
@@ -3796,7 +3803,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:06.801Z",
+        "checkedAt": "2026-10-18T17:58:14.297Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=014978",
         "stale": false
       },
@@ -3863,7 +3870,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202502111642958512_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:07.292Z",
+      "noticeCheckedAt": "2026-10-18T17:58:14.548Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -3875,7 +3882,7 @@
           "noticeDate": "2026-09-23",
           "noticeId": "AN202609231829773864",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609231829773864_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -3889,7 +3896,7 @@
           "noticeDate": "2026-09-23",
           "noticeId": "AN202609231829773864",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609231829773864_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.657Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -3918,8 +3925,8 @@
           "AN202301311582541355"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.657Z",
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceStatus": "limited",
         "sourceAmount": 5,
         "sourceUrl": "https://fund.eastmoney.com/014978.html",
@@ -3930,13 +3937,13 @@
         "status": "限大额",
         "amount": 5,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.657Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -3968,7 +3975,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:07.734Z",
+        "checkedAt": "2026-10-18T17:58:14.883Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=015299",
         "stale": false
       },
@@ -4029,7 +4036,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507141708494482_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:08.221Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.143Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -4041,7 +4048,7 @@
           "noticeDate": "2025-11-22",
           "noticeId": "AN202511221785999927",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511221785999927_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4055,7 +4062,7 @@
           "noticeDate": "2026-08-07",
           "noticeId": "AN202608071827734257",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608071827734257_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.156Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4073,8 +4080,8 @@
           "AN202401241617984837"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.658Z",
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.156Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/015299.html",
@@ -4085,13 +4092,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "checkedAt": "2026-10-18T17:59:27.156Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -4123,7 +4130,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:07.593Z",
+        "checkedAt": "2026-10-18T17:58:14.856Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=015300",
         "stale": false
       },
@@ -4184,7 +4191,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507141708494482_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:08.090Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.121Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -4196,7 +4203,7 @@
           "noticeDate": "2025-11-22",
           "noticeId": "AN202511221785999927",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511221785999927_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4210,7 +4217,7 @@
           "noticeDate": "2026-08-07",
           "noticeId": "AN202608071827734257",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608071827734257_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4228,8 +4235,8 @@
           "AN202401241617984837"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.658Z",
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/015300.html",
@@ -4240,13 +4247,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -4313,7 +4320,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507141708494482_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:07.978Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.632Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -4393,7 +4400,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504081653058946_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:09.563Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.400Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -4414,7 +4421,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:08.394Z",
+        "checkedAt": "2026-10-18T17:58:15.601Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016055",
         "stale": false
       },
@@ -4481,7 +4488,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507091705603349_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:08.888Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.855Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -4493,7 +4500,7 @@
           "noticeDate": "2025-09-27",
           "noticeId": "AN202509271751405684",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202509271751405684_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4507,7 +4514,7 @@
           "noticeDate": "2025-09-27",
           "noticeId": "AN202509271751405684",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202509271751405684_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4542,8 +4549,8 @@
           "AN202402221622753597"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.658Z",
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/016055.html",
@@ -4554,13 +4561,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -4651,7 +4658,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507091705603349_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:08.722Z",
+      "noticeCheckedAt": "2026-10-18T17:58:15.894Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -4672,7 +4679,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:09.029Z",
+        "checkedAt": "2026-10-18T17:58:15.928Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016057",
         "stale": false
       },
@@ -4739,7 +4746,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507091705603349_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:09.524Z",
+      "noticeCheckedAt": "2026-10-18T17:58:16.181Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -4751,7 +4758,7 @@
           "noticeDate": "2025-09-27",
           "noticeId": "AN202509271751405684",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202509271751405684_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4765,7 +4772,7 @@
           "noticeDate": "2025-09-27",
           "noticeId": "AN202509271751405684",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202509271751405684_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -4797,8 +4804,8 @@
           "AN202401241617987792"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.658Z",
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/016057.html",
@@ -4809,13 +4816,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -4906,7 +4913,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507091705603349_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:09.146Z",
+      "noticeCheckedAt": "2026-10-18T17:58:16.345Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -4927,7 +4934,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:09.447Z",
+        "checkedAt": "2026-10-18T17:58:16.189Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016452",
         "stale": false
       },
@@ -4994,7 +5001,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506181692979786_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:09.706Z",
+      "noticeCheckedAt": "2026-10-18T17:58:16.442Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -5006,7 +5013,7 @@
           "noticeDate": "2026-07-08",
           "noticeId": "AN202607081826816306",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607081826816306_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5020,7 +5027,7 @@
           "noticeDate": "2026-07-08",
           "noticeId": "AN202607081826816306",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607081826816306_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.658Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5048,8 +5055,8 @@
           "AN202404021629374702"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.658Z",
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/016452.html",
@@ -5060,13 +5067,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.658Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -5098,7 +5105,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:09.812Z",
+        "checkedAt": "2026-10-18T17:58:16.463Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016453",
         "stale": false
       },
@@ -5165,7 +5172,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506181692979786_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:10.067Z",
+      "noticeCheckedAt": "2026-10-18T17:58:16.721Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -5177,7 +5184,7 @@
           "noticeDate": "2026-07-08",
           "noticeId": "AN202607081826816306",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607081826816306_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5191,7 +5198,7 @@
           "noticeDate": "2026-07-08",
           "noticeId": "AN202607081826816306",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607081826816306_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5219,8 +5226,8 @@
           "AN202404021629374702"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/016453.html",
@@ -5231,13 +5238,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -5269,7 +5276,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:09.888Z",
+        "checkedAt": "2026-10-18T17:58:16.645Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016532",
         "stale": false
       },
@@ -5336,7 +5343,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412261641430143_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:10.384Z",
+      "noticeCheckedAt": "2026-10-18T17:58:17.135Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -5348,7 +5355,7 @@
           "noticeDate": "2026-02-03",
           "noticeId": "AN202602031819507007",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202602031819507007_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -5362,7 +5369,7 @@
           "noticeDate": "2026-02-03",
           "noticeId": "AN202602031819507007",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202602031819507007_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -5379,8 +5386,8 @@
           "AN202501231642470308"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/016532.html",
@@ -5391,13 +5398,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -5429,7 +5436,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:10.750Z",
+        "checkedAt": "2026-10-18T17:58:16.732Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016533",
         "stale": false
       },
@@ -5496,7 +5503,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412261641430143_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:11.256Z",
+      "noticeCheckedAt": "2026-10-18T17:58:16.979Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -5508,7 +5515,7 @@
           "noticeDate": "2026-02-03",
           "noticeId": "AN202602031819507007",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202602031819507007_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -5522,7 +5529,7 @@
           "noticeDate": "2026-02-03",
           "noticeId": "AN202602031819507007",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202602031819507007_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -5539,8 +5546,8 @@
           "AN202501231642470308"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/016533.html",
@@ -5551,13 +5558,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -5648,7 +5655,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412261641430143_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:10.556Z",
+      "noticeCheckedAt": "2026-10-18T17:58:17.198Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -5728,7 +5735,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412261641430143_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:10.881Z",
+      "noticeCheckedAt": "2026-10-18T17:58:18.545Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -5749,7 +5756,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:10.850Z",
+        "checkedAt": "2026-10-18T17:58:17.433Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016664",
         "stale": false
       },
@@ -5816,7 +5823,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202411181640929178_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:11.335Z",
+      "noticeCheckedAt": "2026-10-18T17:58:17.690Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -5828,7 +5835,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580905",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580905_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5842,7 +5849,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580905",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580905_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5863,15 +5870,15 @@
           "AN202407131637858297"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-18",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -5903,7 +5910,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:11.183Z",
+        "checkedAt": "2026-10-18T17:58:17.491Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=016665",
         "stale": false
       },
@@ -5970,7 +5977,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202411181640929178_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:11.446Z",
+      "noticeCheckedAt": "2026-10-18T17:58:17.986Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -5982,7 +5989,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580905",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580905_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -5996,7 +6003,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580905",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580905_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.157Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -6017,15 +6024,15 @@
           "AN202407131637858297"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.157Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-18",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.157Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -6057,7 +6064,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:11.585Z",
+        "checkedAt": "2026-10-18T17:58:17.984Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017028",
         "stale": false
       },
@@ -6124,7 +6131,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202503031643671159_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:11.843Z",
+      "noticeCheckedAt": "2026-10-18T17:58:18.478Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -6136,7 +6143,7 @@
           "noticeDate": "2025-10-17",
           "noticeId": "AN202510171763661096",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202510171763661096_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -6150,7 +6157,7 @@
           "noticeDate": "2025-10-17",
           "noticeId": "AN202510171763661096",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202510171763661096_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -6195,8 +6202,8 @@
           "AN202211211580416135"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.158Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/017028.html",
@@ -6207,13 +6214,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -6245,7 +6252,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:11.645Z",
+        "checkedAt": "2026-10-18T17:58:18.292Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017030",
         "stale": false
       },
@@ -6312,7 +6319,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202503031643671159_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:12.149Z",
+      "noticeCheckedAt": "2026-10-18T17:58:18.781Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -6324,7 +6331,7 @@
           "noticeDate": "2025-10-17",
           "noticeId": "AN202510171763661096",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202510171763661096_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -6338,7 +6345,7 @@
           "noticeDate": "2025-10-17",
           "noticeId": "AN202510171763661096",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202510171763661096_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -6383,8 +6390,8 @@
           "AN202211211580416135"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.158Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/017030.html",
@@ -6395,13 +6402,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -6433,7 +6440,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:11.741Z",
+        "checkedAt": "2026-10-18T17:58:18.775Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017091",
         "stale": false
       },
@@ -6476,7 +6483,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506241696590561_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:12.225Z",
+      "noticeCheckedAt": "2026-10-18T17:58:19.274Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -6497,7 +6504,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:12.137Z",
+        "checkedAt": "2026-10-18T17:58:18.842Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017093",
         "stale": false
       },
@@ -6540,7 +6547,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506241696590561_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:12.387Z",
+      "noticeCheckedAt": "2026-10-18T17:58:19.092Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -6561,7 +6568,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:12.455Z",
+        "checkedAt": "2026-10-18T17:58:19.073Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017641",
         "stale": false
       },
@@ -6628,7 +6635,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753191640_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:12.712Z",
+      "noticeCheckedAt": "2026-10-18T17:58:19.569Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -6640,7 +6647,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315718",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315718_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -6654,7 +6661,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315718",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315718_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.659Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -6694,8 +6701,8 @@
           "AN202305261587189107"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.659Z",
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.158Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/017641.html",
@@ -6706,13 +6713,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.659Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -6803,7 +6810,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753191640_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:12.480Z",
+      "noticeCheckedAt": "2026-10-18T17:58:20.284Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -6883,7 +6890,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753191640_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:12.637Z",
+      "noticeCheckedAt": "2026-10-18T17:58:19.521Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -6904,7 +6911,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:12.780Z",
+        "checkedAt": "2026-10-18T17:58:19.820Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017730",
         "stale": false
       },
@@ -6965,7 +6972,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202411141640874171_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:13.045Z",
+      "noticeCheckedAt": "2026-10-18T17:58:20.309Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -6977,7 +6984,7 @@
           "noticeDate": "2025-12-22",
           "noticeId": "AN202512221805581193",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202512221805581193_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -6991,7 +6998,7 @@
           "noticeDate": "2025-12-22",
           "noticeId": "AN202512221805581193",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202512221805581193_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7010,15 +7017,15 @@
           "AN202403231627982430"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.660Z",
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.158Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "sourceAmount": null,
         "noticeDate": "2026-07-23",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -7050,7 +7057,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:12.948Z",
+        "checkedAt": "2026-10-18T17:58:19.861Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=017731",
         "stale": false
       },
@@ -7111,7 +7118,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202411141640874171_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:13.448Z",
+      "noticeCheckedAt": "2026-10-18T17:58:20.110Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -7123,7 +7130,7 @@
           "noticeDate": "2025-12-22",
           "noticeId": "AN202512221805581193",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202512221805581193_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7137,7 +7144,7 @@
           "noticeDate": "2025-12-22",
           "noticeId": "AN202512221805581193",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202512221805581193_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7156,15 +7163,15 @@
           "AN202403231627982430"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.660Z",
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.158Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "sourceAmount": null,
         "noticeDate": "2026-07-23",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -7196,7 +7203,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:13.028Z",
+        "checkedAt": "2026-10-18T17:58:20.404Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018043",
         "stale": false
       },
@@ -7263,7 +7270,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508271735222991_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:13.520Z",
+      "noticeCheckedAt": "2026-10-18T17:58:20.648Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -7275,7 +7282,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829590491",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829590491_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7289,7 +7296,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829590491",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829590491_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.158Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7320,8 +7327,8 @@
           "AN202407111637781341"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.660Z",
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.158Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018043.html",
@@ -7332,13 +7339,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "checkedAt": "2026-10-18T17:59:27.158Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -7370,7 +7377,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:13.367Z",
+        "checkedAt": "2026-10-18T17:58:20.595Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018044",
         "stale": false
       },
@@ -7437,7 +7444,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508271735222991_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:13.623Z",
+      "noticeCheckedAt": "2026-10-18T17:58:21.079Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -7449,7 +7456,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829590491",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829590491_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -7463,7 +7470,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829590491",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829590491_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -7495,8 +7502,8 @@
           "AN202407111637781341"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.660Z",
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.159Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018044.html",
@@ -7507,13 +7514,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -7545,7 +7552,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:13.757Z",
+        "checkedAt": "2026-10-18T17:58:20.588Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018064",
         "stale": false
       },
@@ -7600,7 +7607,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510151762376395_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.009Z",
+      "noticeCheckedAt": "2026-10-18T17:58:20.845Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -7612,7 +7619,7 @@
           "noticeDate": "2025-11-22",
           "noticeId": "AN202511221785999863",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511221785999863_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7626,7 +7633,7 @@
           "noticeDate": "2026-08-07",
           "noticeId": "AN202608071827737353",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608071827737353_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.660Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7642,8 +7649,8 @@
           "AN202401241617986416"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.660Z",
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.159Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018064.html",
@@ -7654,13 +7661,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.660Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -7692,7 +7699,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:13.863Z",
+        "checkedAt": "2026-10-18T17:58:20.965Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018065",
         "stale": false
       },
@@ -7747,7 +7754,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510151762376395_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.108Z",
+      "noticeCheckedAt": "2026-10-18T17:58:21.213Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -7759,7 +7766,7 @@
           "noticeDate": "2025-11-22",
           "noticeId": "AN202511221785999863",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511221785999863_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7773,7 +7780,7 @@
           "noticeDate": "2026-08-07",
           "noticeId": "AN202608071827737353",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608071827737353_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -7789,8 +7796,8 @@
           "AN202401241617986416"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.159Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018065.html",
@@ -7801,13 +7808,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -7880,7 +7887,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510151762376395_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:13.869Z",
+      "noticeCheckedAt": "2026-10-18T17:58:21.108Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -7901,7 +7908,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:14.161Z",
+        "checkedAt": "2026-10-18T17:58:21.370Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018147",
         "stale": false
       },
@@ -7968,7 +7975,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202602251820025614_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.419Z",
+      "noticeCheckedAt": "2026-10-18T17:58:21.633Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -7980,7 +7987,7 @@
           "noticeDate": "2026-08-26",
           "noticeId": "AN202608261828446680",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608261828446680_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -7994,7 +8001,7 @@
           "noticeDate": "2026-08-26",
           "noticeId": "AN202608261828446680",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608261828446680_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.159Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -8022,15 +8029,15 @@
           "AN202403141626700058"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.159Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "sourceAmount": null,
         "noticeDate": "2026-08-26",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.159Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -8062,7 +8069,7 @@
         "status": "不可售",
         "minimumCny": null,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:14.329Z",
+        "checkedAt": "2026-10-18T17:58:21.424Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018738",
         "stale": false
       },
@@ -8129,7 +8136,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759289250_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.574Z",
+      "noticeCheckedAt": "2026-10-18T17:58:21.674Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -8141,7 +8148,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828129205",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828129205_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -8155,7 +8162,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828129205",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828129205_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -8197,8 +8204,8 @@
           "AN202401241617984826"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018738.html",
@@ -8209,13 +8216,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -8247,7 +8254,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:14.472Z",
+        "checkedAt": "2026-10-18T17:58:21.566Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018966",
         "stale": false
       },
@@ -8314,7 +8321,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604101821108923_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.724Z",
+      "noticeCheckedAt": "2026-10-18T17:58:22.056Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -8326,7 +8333,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829835607",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829835607_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -8340,7 +8347,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829835607",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829835607_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -8379,8 +8386,8 @@
           "AN202402081621122577"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018966.html",
@@ -8391,13 +8398,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -8429,7 +8436,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:14.728Z",
+        "checkedAt": "2026-10-18T17:58:21.938Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=018967",
         "stale": false
       },
@@ -8496,7 +8503,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604101821108923_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.991Z",
+      "noticeCheckedAt": "2026-10-18T17:58:22.193Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -8508,7 +8515,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829835607",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829835607_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -8522,7 +8529,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829835607",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829835607_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -8561,8 +8568,8 @@
           "AN202402081621122577"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/018967.html",
@@ -8573,13 +8580,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -8670,7 +8677,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604101821108923_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:15.059Z",
+      "noticeCheckedAt": "2026-10-18T17:58:21.929Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -8750,7 +8757,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604101821108923_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:14.989Z",
+      "noticeCheckedAt": "2026-10-18T17:58:22.423Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -8771,7 +8778,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:15.292Z",
+        "checkedAt": "2026-10-18T17:58:22.374Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019118",
         "stale": false
       },
@@ -8814,7 +8821,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506241696590561_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:15.790Z",
+      "noticeCheckedAt": "2026-10-18T17:58:22.873Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -8835,7 +8842,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:15.321Z",
+        "checkedAt": "2026-10-18T17:58:22.509Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019155",
         "stale": false
       },
@@ -8872,7 +8879,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510271769985405_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:16.311Z",
+      "noticeCheckedAt": "2026-10-18T17:58:22.767Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -8884,7 +8891,7 @@
           "noticeDate": "2026-09-02",
           "noticeId": "AN202609011828876193",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609011828876193_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -8898,7 +8905,7 @@
           "noticeDate": "2026-09-02",
           "noticeId": "AN202609011828876193",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609011828876193_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -8911,15 +8918,15 @@
           "AN202510271769985405"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-02",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -8951,7 +8958,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:15.352Z",
+        "checkedAt": "2026-10-18T17:58:22.720Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019172",
         "stale": false
       },
@@ -9018,7 +9025,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753213776_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:15.843Z",
+      "noticeCheckedAt": "2026-10-18T17:58:23.214Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -9030,7 +9037,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315717",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315717_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9044,7 +9051,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315717",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315717_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9079,8 +9086,8 @@
           "AN202311211611742589"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019172.html",
@@ -9091,13 +9098,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -9129,7 +9136,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:16.080Z",
+        "checkedAt": "2026-10-18T17:58:23.157Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019173",
         "stale": false
       },
@@ -9196,7 +9203,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753213776_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:16.571Z",
+      "noticeCheckedAt": "2026-10-18T17:58:23.408Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -9208,7 +9215,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315717",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315717_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9222,7 +9229,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315717",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315717_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9257,8 +9264,8 @@
           "AN202311211611742589"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019173.html",
@@ -9269,13 +9276,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -9366,7 +9373,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753213776_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:16.094Z",
+      "noticeCheckedAt": "2026-10-18T17:58:23.131Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -9446,7 +9453,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753213776_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:17.650Z",
+      "noticeCheckedAt": "2026-10-18T17:58:23.382Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -9467,7 +9474,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:16.606Z",
+        "checkedAt": "2026-10-18T17:58:23.502Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019305",
         "stale": false
       },
@@ -9534,7 +9541,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509301753191640_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:16.864Z",
+      "noticeCheckedAt": "2026-10-18T17:58:23.759Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -9546,7 +9553,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315718",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315718_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9560,7 +9567,7 @@
           "noticeDate": "2026-07-27",
           "noticeId": "AN202607241827315718",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607241827315718_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.661Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9597,8 +9604,8 @@
           "AN202311211611740887"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.661Z",
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019305.html",
@@ -9609,13 +9616,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.661Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -9647,7 +9654,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:16.881Z",
+        "checkedAt": "2026-10-18T17:58:23.678Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019441",
         "stale": false
       },
@@ -9714,7 +9721,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604111821133293_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:17.135Z",
+      "noticeCheckedAt": "2026-10-18T17:58:23.939Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -9726,7 +9733,7 @@
           "noticeDate": "2026-09-28",
           "noticeId": "AN202609281829947820",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609281829947820_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9740,7 +9747,7 @@
           "noticeDate": "2026-09-28",
           "noticeId": "AN202609281829947820",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609281829947820_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9769,8 +9776,8 @@
           "AN202404181630496745"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019441.html",
@@ -9781,13 +9788,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -9819,7 +9826,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:17.168Z",
+        "checkedAt": "2026-10-18T17:58:23.703Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019442",
         "stale": false
       },
@@ -9886,7 +9893,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604111821133293_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:17.422Z",
+      "noticeCheckedAt": "2026-10-18T17:58:24.189Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -9898,7 +9905,7 @@
           "noticeDate": "2026-09-28",
           "noticeId": "AN202609281829947820",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609281829947820_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9912,7 +9919,7 @@
           "noticeDate": "2026-09-28",
           "noticeId": "AN202609281829947820",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609281829947820_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -9941,8 +9948,8 @@
           "AN202404181630496745"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019442.html",
@@ -9953,13 +9960,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -9991,7 +9998,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:17.436Z",
+        "checkedAt": "2026-10-18T17:58:24.050Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019524",
         "stale": false
       },
@@ -10046,7 +10053,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510231767120377_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:17.700Z",
+      "noticeCheckedAt": "2026-10-18T17:58:24.531Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -10058,7 +10065,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829732369",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829732369_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10072,7 +10079,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829732369",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829732369_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10104,8 +10111,8 @@
           "AN202310271605118487"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 5,
         "sourceUrl": "https://fund.eastmoney.com/019524.html",
@@ -10116,13 +10123,13 @@
         "status": "限大额",
         "amount": 5,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -10154,7 +10161,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:17.724Z",
+        "checkedAt": "2026-10-18T17:58:24.254Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019525",
         "stale": false
       },
@@ -10209,7 +10216,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510231767120377_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:17.985Z",
+      "noticeCheckedAt": "2026-10-18T17:58:24.504Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -10221,7 +10228,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829732369",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829732369_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10235,7 +10242,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829732369",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829732369_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.160Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10267,8 +10274,8 @@
           "AN202310271605118487"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.160Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "sourceStatus": "limited",
         "sourceAmount": 5,
         "sourceUrl": "https://fund.eastmoney.com/019525.html",
@@ -10279,13 +10286,13 @@
         "status": "限大额",
         "amount": 5,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.160Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -10317,7 +10324,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:17.969Z",
+        "checkedAt": "2026-10-18T17:58:24.519Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019547",
         "stale": false
       },
@@ -10384,7 +10391,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504301664879873_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:18.473Z",
+      "noticeCheckedAt": "2026-10-18T17:58:24.769Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -10396,7 +10403,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429114",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429114_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -10410,7 +10417,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429114",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429114_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -10435,8 +10442,8 @@
           "AN202407091637705316"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/019547.html",
@@ -10447,13 +10454,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -10485,7 +10492,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:18.019Z",
+        "checkedAt": "2026-10-18T17:58:24.804Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019548",
         "stale": false
       },
@@ -10552,7 +10559,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504301664879873_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:18.263Z",
+      "noticeCheckedAt": "2026-10-18T17:58:25.062Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -10564,7 +10571,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429114",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429114_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -10578,7 +10585,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429114",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429114_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -10603,8 +10610,8 @@
           "AN202407091637705316"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/019548.html",
@@ -10615,13 +10622,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -10653,7 +10660,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:18.278Z",
+        "checkedAt": "2026-10-18T17:58:24.829Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019736",
         "stale": false
       },
@@ -10720,7 +10727,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759304219_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:18.540Z",
+      "noticeCheckedAt": "2026-10-18T17:58:25.078Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -10732,7 +10739,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829831132",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829831132_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10746,7 +10753,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829831132",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829831132_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10780,8 +10787,8 @@
           "AN202407191638070370"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019736.html",
@@ -10792,13 +10799,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -10830,7 +10837,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:18.566Z",
+        "checkedAt": "2026-10-18T17:58:25.064Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=019737",
         "stale": false
       },
@@ -10897,7 +10904,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759304219_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:18.817Z",
+      "noticeCheckedAt": "2026-10-18T17:58:25.323Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -10909,7 +10916,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829831132",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829831132_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10923,7 +10930,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829831132",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829831132_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -10957,8 +10964,8 @@
           "AN202407191638070370"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/019737.html",
@@ -10969,13 +10976,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -11066,7 +11073,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508131726541159_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:18.959Z",
+      "noticeCheckedAt": "2026-10-18T17:58:25.552Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -11146,7 +11153,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508131726541159_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:18.798Z",
+      "noticeCheckedAt": "2026-10-18T17:58:26.655Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -11167,7 +11174,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:19.098Z",
+        "checkedAt": "2026-10-18T17:58:25.638Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=020712",
         "stale": false
       },
@@ -11234,7 +11241,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202402221622743218_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:19.644Z",
+      "noticeCheckedAt": "2026-10-18T17:58:25.889Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -11255,7 +11262,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:19.127Z",
+        "checkedAt": "2026-10-18T17:58:25.848Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=020713",
         "stale": false
       },
@@ -11322,7 +11329,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202402221622743218_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:19.380Z",
+      "noticeCheckedAt": "2026-10-18T17:58:26.339Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -11343,7 +11350,7 @@
         "status": "不可售",
         "minimumCny": null,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:19.279Z",
+        "checkedAt": "2026-10-18T17:58:26.206Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=021000",
         "stale": false
       },
@@ -11410,7 +11417,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202508161728416774_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:19.761Z",
+      "noticeCheckedAt": "2026-10-18T17:58:26.461Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -11422,7 +11429,7 @@
           "noticeDate": "2026-07-20",
           "noticeId": "AN202607201827139668",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607201827139668_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -11436,7 +11443,7 @@
           "noticeDate": "2026-07-20",
           "noticeId": "AN202607201827139668",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202607201827139668_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -11465,8 +11472,8 @@
           "AN202404021629374702"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/021000.html",
@@ -11477,13 +11484,13 @@
         "status": "限大额",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -11515,7 +11522,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:19.693Z",
+        "checkedAt": "2026-10-18T17:58:26.655Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=021773",
         "stale": false
       },
@@ -11582,7 +11589,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202604101821108923_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:19.940Z",
+      "noticeCheckedAt": "2026-10-18T17:58:26.908Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -11594,7 +11601,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829835607",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829835607_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -11608,7 +11615,7 @@
           "noticeDate": "2026-09-24",
           "noticeId": "AN202609241829835607",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609241829835607_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.662Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -11644,8 +11651,8 @@
           "AN202407021637452016"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.662Z",
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/021773.html",
@@ -11656,13 +11663,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.662Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -11694,7 +11701,7 @@
         "status": "不可售",
         "minimumCny": null,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:19.972Z",
+        "checkedAt": "2026-10-18T17:58:26.788Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=021778",
         "stale": false
       },
@@ -11761,7 +11768,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202601091816882236_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:20.229Z",
+      "noticeCheckedAt": "2026-10-18T17:58:27.268Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -11773,7 +11780,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429076",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429076_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -11787,7 +11794,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429076",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429076_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -11813,8 +11820,8 @@
           "AN202408131639249202"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/021778.html",
@@ -11825,13 +11832,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -11863,7 +11870,7 @@
         "status": "不可售",
         "minimumCny": null,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:20.089Z",
+        "checkedAt": "2026-10-18T17:58:26.963Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=021838",
         "stale": false
       },
@@ -11930,7 +11937,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412261641430143_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:20.587Z",
+      "noticeCheckedAt": "2026-10-18T17:58:27.226Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -11942,7 +11949,7 @@
           "noticeDate": "2026-02-03",
           "noticeId": "AN202602031819507007",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202602031819507007_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -11956,7 +11963,7 @@
           "noticeDate": "2026-02-03",
           "noticeId": "AN202602031819507007",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202602031819507007_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -11973,8 +11980,8 @@
           "AN202501231642470308"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/021838.html",
@@ -11985,13 +11992,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -12023,7 +12030,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:20.241Z",
+        "checkedAt": "2026-10-18T17:58:27.198Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=021842",
         "stale": false
       },
@@ -12090,7 +12097,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202512031792980030_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:20.495Z",
+      "noticeCheckedAt": "2026-10-18T17:58:27.688Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -12102,7 +12109,7 @@
           "noticeDate": "2026-09-29",
           "noticeId": "AN202609291829979673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609291829979673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12116,7 +12123,7 @@
           "noticeDate": "2026-09-29",
           "noticeId": "AN202609291829979673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609291829979673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.161Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12144,15 +12151,15 @@
           "AN202407251638287537"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.161Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "sourceAmount": null,
         "noticeDate": "2026-09-29",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.161Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -12184,7 +12191,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:20.568Z",
+        "checkedAt": "2026-10-18T17:58:27.532Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=022523",
         "stale": false
       },
@@ -12251,7 +12258,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412051641186659_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:20.822Z",
+      "noticeCheckedAt": "2026-10-18T17:58:27.780Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -12263,7 +12270,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580336",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580336_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12277,7 +12284,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829580336",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829580336_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12295,8 +12302,8 @@
           "AN202411111640807044"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/022523.html",
@@ -12307,13 +12314,13 @@
         "status": "限大额",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -12345,7 +12352,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:20.829Z",
+        "checkedAt": "2026-10-18T17:58:27.592Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=022525",
         "stale": false
       },
@@ -12412,7 +12419,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202506241696590593_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:21.085Z",
+      "noticeCheckedAt": "2026-10-18T17:58:27.842Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -12424,7 +12431,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829590491",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829590491_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12438,7 +12445,7 @@
           "noticeDate": "2026-09-18",
           "noticeId": "AN202609181829590491",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609181829590491_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12466,8 +12473,8 @@
           "AN202411011640657980"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/022525.html",
@@ -12478,13 +12485,13 @@
         "status": "限大额",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -12516,7 +12523,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:20.903Z",
+        "checkedAt": "2026-10-18T17:58:28.014Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=022664",
         "stale": false
       },
@@ -12571,7 +12578,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510231767120377_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:21.397Z",
+      "noticeCheckedAt": "2026-10-18T17:58:28.511Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -12583,7 +12590,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829732369",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829732369_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12597,7 +12604,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829732369",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829732369_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12626,8 +12633,8 @@
           "AN202411231641037680"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "limited",
         "sourceAmount": 5,
         "sourceUrl": "https://fund.eastmoney.com/022664.html",
@@ -12638,13 +12645,13 @@
         "status": "限大额",
         "amount": 5,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -12676,7 +12683,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:21.145Z",
+        "checkedAt": "2026-10-18T17:58:28.093Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=023422",
         "stale": false
       },
@@ -12743,7 +12750,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202511041774827137_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:21.392Z",
+      "noticeCheckedAt": "2026-10-18T17:58:28.579Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -12755,7 +12762,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828132673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828132673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12769,7 +12776,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828132673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828132673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -12793,8 +12800,8 @@
           "AN202502121643006354"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/023422.html",
@@ -12805,13 +12812,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -12843,7 +12850,7 @@
         "status": "不可售",
         "minimumCny": null,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:21.411Z",
+        "checkedAt": "2026-10-18T17:58:28.209Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=024237",
         "stale": false
       },
@@ -12910,7 +12917,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202507161709821401_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:21.664Z",
+      "noticeCheckedAt": "2026-10-18T17:58:28.705Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -12922,7 +12929,7 @@
           "noticeDate": "2025-11-21",
           "noticeId": "AN202511211785379194",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511211785379194_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -12936,7 +12943,7 @@
           "noticeDate": "2025-11-21",
           "noticeId": "AN202511211785379194",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511211785379194_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.663Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -12951,8 +12958,8 @@
           "AN202509271751405613"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.663Z",
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "unavailable",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/024237.html",
@@ -12963,13 +12970,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.663Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -13001,7 +13008,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:21.715Z",
+        "checkedAt": "2026-10-18T17:58:28.842Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=026645",
         "stale": false
       },
@@ -13020,7 +13027,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202606231823753057_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:22.203Z",
+      "noticeCheckedAt": "2026-10-18T17:58:29.094Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13041,7 +13048,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:21.701Z",
+        "checkedAt": "2026-10-18T17:58:28.863Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=040046",
         "stale": false
       },
@@ -13108,7 +13115,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202502111642958512_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:21.958Z",
+      "noticeCheckedAt": "2026-10-18T17:58:29.113Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -13120,7 +13127,7 @@
           "noticeDate": "2026-09-23",
           "noticeId": "AN202609231829773864",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609231829773864_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -13134,7 +13141,7 @@
           "noticeDate": "2026-09-23",
           "noticeId": "AN202609231829773864",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609231829773864_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -13167,8 +13174,8 @@
           "AN202009111410746893"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.664Z",
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "limited",
         "sourceAmount": 5,
         "sourceUrl": "https://fund.eastmoney.com/040046.html",
@@ -13179,13 +13186,13 @@
         "status": "限大额",
         "amount": 5,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -13276,7 +13283,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412301641463572_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:22.150Z",
+      "noticeCheckedAt": "2026-10-18T17:58:29.189Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13356,7 +13363,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202412301641463572_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:24.605Z",
+      "noticeCheckedAt": "2026-10-18T17:58:30.625Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13377,7 +13384,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:22.447Z",
+        "checkedAt": "2026-10-18T17:58:29.400Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=050025",
         "stale": false
       },
@@ -13444,20 +13451,20 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202510101759289250_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:22.694Z",
+      "noticeCheckedAt": "2026-10-18T17:58:29.903Z",
       "evidence": {
         "agency": {
           "status": "unknown",
           "amount": null,
-          "checkedAt": "2026-10-18T17:32:27.141Z"
+          "checkedAt": "2026-10-18T17:58:33.547Z"
         },
         "direct": {
           "status": "unknown",
           "amount": null,
-          "checkedAt": "2026-10-18T17:32:27.141Z"
+          "checkedAt": "2026-10-18T17:58:33.547Z"
         },
         "pending": [],
-        "checkedAt": "2026-10-18T17:32:27.141Z",
+        "checkedAt": "2026-10-18T17:58:33.547Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/050025.html",
@@ -13468,13 +13475,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:32:27.141Z",
+        "checkedAt": "2026-10-18T17:58:33.547Z",
         "status": "failed",
         "error": "公告正文或渠道对应关系未能可靠复核",
         "sourceChecks": {
@@ -13506,7 +13513,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:22.507Z",
+        "checkedAt": "2026-10-18T17:58:29.506Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=096001",
         "stale": false
       },
@@ -13573,7 +13580,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504081653058946_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:23.019Z",
+      "noticeCheckedAt": "2026-10-18T17:58:29.989Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -13585,7 +13592,7 @@
           "noticeDate": "2026-10-15",
           "noticeId": "AN202610151830479604",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610151830479604_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -13599,7 +13606,7 @@
           "noticeDate": "2026-10-15",
           "noticeId": "AN202610151830479604",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610151830479604_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.162Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -13631,8 +13638,8 @@
           "AN201910281369849727"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.664Z",
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.162Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "sourceStatus": "limited",
         "sourceAmount": 50,
         "sourceUrl": "https://fund.eastmoney.com/096001.html",
@@ -13643,13 +13650,13 @@
         "status": "限大额",
         "amount": 50,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "checkedAt": "2026-10-18T17:59:27.162Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -13681,7 +13688,7 @@
         "status": "正常申购",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:22.983Z",
+        "checkedAt": "2026-10-18T17:58:30.199Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=110017",
         "stale": false
       },
@@ -13724,7 +13731,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202601091816877232_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:23.236Z",
+      "noticeCheckedAt": "2026-10-18T17:58:30.692Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13756,7 +13763,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202606301826591784_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:23.512Z",
+      "noticeCheckedAt": "2026-10-18T17:58:30.240Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13788,7 +13795,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202608211828272242_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:23.754Z",
+      "noticeCheckedAt": "2026-10-18T17:58:30.720Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13868,7 +13875,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202601131816982273_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:23.770Z",
+      "noticeCheckedAt": "2026-10-18T17:58:30.890Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13887,7 +13894,7 @@
       "announcementUrl": "https://fundf10.eastmoney.com/jjgg_159659.html",
       "noticeSchemaVersion": 2,
       "latestNotices": [],
-      "noticeCheckedAt": "2026-10-18T17:32:24.243Z",
+      "noticeCheckedAt": "2026-10-18T17:58:31.879Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -13908,7 +13915,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:24.071Z",
+        "checkedAt": "2026-10-18T17:58:31.012Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=160213",
         "stale": false
       },
@@ -13957,7 +13964,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202505221677038947_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:24.315Z",
+      "noticeCheckedAt": "2026-10-18T17:58:31.263Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -13969,7 +13976,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829740223",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829740223_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -13983,7 +13990,7 @@
           "noticeDate": "2026-09-22",
           "noticeId": "AN202609221829740223",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609221829740223_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14008,8 +14015,8 @@
           "AN201812051259275648"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.664Z",
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.163Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/160213.html",
@@ -14020,13 +14027,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -14058,7 +14065,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:24.569Z",
+        "checkedAt": "2026-10-18T17:58:31.193Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=161125",
         "stale": false
       },
@@ -14089,7 +14096,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509241749717660_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:25.060Z",
+      "noticeCheckedAt": "2026-10-18T17:58:31.691Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -14101,7 +14108,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618457",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618457_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14115,7 +14122,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618457",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618457_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.664Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14132,8 +14139,8 @@
           "AN202012011434815280"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.664Z",
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.163Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/161125.html",
@@ -14144,13 +14151,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.664Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -14182,7 +14189,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:24.639Z",
+        "checkedAt": "2026-10-18T17:58:31.569Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=161130",
         "stale": false
       },
@@ -14213,7 +14220,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202509241749763561_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:25.138Z",
+      "noticeCheckedAt": "2026-10-18T17:58:31.831Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -14225,7 +14232,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618456",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618456_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14239,7 +14246,7 @@
           "noticeDate": "2026-03-19",
           "noticeId": "AN202603181820618456",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603181820618456_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14255,8 +14262,8 @@
           "AN202012011434815261"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.665Z",
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.163Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/161130.html",
@@ -14267,13 +14274,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -14305,7 +14312,7 @@
         "status": "暂停销售",
         "minimumCny": 1,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:24.893Z",
+        "checkedAt": "2026-10-18T17:58:31.987Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=270042",
         "stale": false
       },
@@ -14372,7 +14379,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202504111654532837_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:25.377Z",
+      "noticeCheckedAt": "2026-10-18T17:58:32.469Z",
       "evidence": {
         "agency": {
           "status": "suspended",
@@ -14384,7 +14391,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429076",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429076_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14398,7 +14405,7 @@
           "noticeDate": "2026-10-14",
           "noticeId": "AN202610141830429076",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610141830429076_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "official-suspended"
         },
@@ -14453,8 +14460,8 @@
           "AN201903011301220698"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.665Z",
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.163Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "sourceStatus": "suspended",
         "sourceAmount": null,
         "sourceUrl": "https://fund.eastmoney.com/270042.html",
@@ -14465,13 +14472,13 @@
         "status": "暂停申购",
         "amount": null,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -14520,7 +14527,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202609031828967476_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:26.610Z",
+      "noticeCheckedAt": "2026-10-18T17:58:32.092Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -14552,7 +14559,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202609031828967491_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:25.396Z",
+      "noticeCheckedAt": "2026-10-18T17:58:32.125Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -14571,7 +14578,7 @@
       "announcementUrl": "https://fundf10.eastmoney.com/jjgg_513650.html",
       "noticeSchemaVersion": 2,
       "latestNotices": [],
-      "noticeCheckedAt": "2026-10-18T17:32:25.861Z",
+      "noticeCheckedAt": "2026-10-18T17:58:32.584Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -14592,7 +14599,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:25.691Z",
+        "checkedAt": "2026-10-18T17:58:32.410Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=539001",
         "stale": false
       },
@@ -14659,7 +14666,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202511041774827137_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:26.196Z",
+      "noticeCheckedAt": "2026-10-18T17:58:32.657Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -14671,7 +14678,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828132673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828132673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -14685,7 +14692,7 @@
           "noticeDate": "2026-08-19",
           "noticeId": "AN202608191828132673",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608191828132673_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -14715,8 +14722,8 @@
           "AN202401251618073910"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.665Z",
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.163Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "sourceStatus": "limited",
         "sourceAmount": 10,
         "sourceUrl": "https://fund.eastmoney.com/539001.html",
@@ -14727,13 +14734,13 @@
         "status": "限大额",
         "amount": 10,
         "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-        "fetchedAt": "2026-10-18T17:32:42.657Z",
+        "fetchedAt": "2026-10-18T17:59:07.770Z",
         "stale": false,
         "sourceUrl": "https://github.com/promise96319/qdii",
         "channel": "天天基金参考（不是支付宝/直销额度）"
       },
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -14765,7 +14772,7 @@
         "status": "暂停销售",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:26.158Z",
+        "checkedAt": "2026-10-18T17:58:32.758Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=539002",
         "stale": false
       },
@@ -14832,7 +14839,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202602251820025614_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:26.653Z",
+      "noticeCheckedAt": "2026-10-18T17:58:33.030Z",
       "evidence": {
         "agency": {
           "status": "limited",
@@ -14844,7 +14851,7 @@
           "noticeDate": "2026-08-26",
           "noticeId": "AN202608261828446680",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608261828446680_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -14858,7 +14865,7 @@
           "noticeDate": "2026-08-26",
           "noticeId": "AN202608261828446680",
           "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608261828446680_1.pdf",
-          "checkedAt": "2026-10-18T17:33:02.665Z",
+          "checkedAt": "2026-10-18T17:59:27.163Z",
           "currentAvailability": "unverified",
           "parserStatus": "channel-no-limit-shown"
         },
@@ -14886,15 +14893,15 @@
           "AN202403141626700058"
         ],
         "crossChannelPolicy": "not-confirmed-independent",
-        "ruleResolvedAt": "2026-10-18T17:33:02.665Z",
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "ruleResolvedAt": "2026-10-18T17:59:27.163Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "sourceAmount": null,
         "noticeDate": "2026-08-26",
         "error": null
       },
       "comparison": null,
       "audit": {
-        "checkedAt": "2026-10-18T17:33:02.665Z",
+        "checkedAt": "2026-10-18T17:59:27.163Z",
         "status": "reviewed",
         "error": null,
         "sourceChecks": {
@@ -14926,7 +14933,7 @@
         "status": "正常申购",
         "minimumCny": 10,
         "quotaCny": null,
-        "checkedAt": "2026-10-18T17:32:26.481Z",
+        "checkedAt": "2026-10-18T17:58:32.890Z",
         "sourceUrl": "https://www.fund123.cn/matiaria?fundCode=539003",
         "stale": false
       },
@@ -14993,7 +15000,7 @@
           "url": "https://pdf.dfcfw.com/pdf/H2_AN202501061641813836_1.pdf"
         }
       ],
-      "noticeCheckedAt": "2026-10-18T17:32:26.985Z",
+      "noticeCheckedAt": "2026-10-18T17:58:33.397Z",
       "evidence": null,
       "comparison": null,
       "audit": null
@@ -15006,9 +15013,9 @@
       "repository": "https://github.com/aiten2/qdii-purchase-limits",
       "version": "1.12.7",
       "commit": "cc86f1a19b9df2c1eb90a0622f4c25f29b6f5aaf",
-      "startedAt": "2026-10-18T17:32:27.104Z",
-      "checkedAt": "2026-10-18T17:32:27.141Z",
-      "completedAt": "2026-10-18T17:32:42.299Z",
+      "startedAt": "2026-10-18T17:58:33.511Z",
+      "checkedAt": "2026-10-18T17:58:33.547Z",
+      "completedAt": "2026-10-18T17:59:07.427Z",
       "health": {
         "status": "ok",
         "checked": 57,
@@ -15022,18 +15029,18 @@
         "parsed": 57,
         "unparsed": 0,
         "errors": 0,
-        "sourceFailureCount": 1,
-        "parseFailureCount": 113,
+        "sourceFailureCount": 0,
+        "parseFailureCount": 120,
         "unresolvedFundCount": 0,
-        "resolvedBySharedNoticeOrCache": 56,
-        "cacheHitNoticeCount": 557,
-        "downloadedNoticeCount": 113,
+        "resolvedBySharedNoticeOrCache": 57,
+        "cacheHitNoticeCount": 564,
+        "downloadedNoticeCount": 120,
         "sources": {
           "announcementIndex": {
             "eligible": 57,
-            "checked": 56,
-            "found": 56,
-            "errors": 1
+            "checked": 57,
+            "found": 57,
+            "errors": 0
           },
           "managerWebsites": {
             "supported": 4,
@@ -15047,7 +15054,7 @@
       "scope": "人民币场外纳斯达克100/标普500＋持有的主动QDII；公告规则与订单页状态分开"
     },
     "heldActive": {
-      "checkedAt": "2026-10-18T17:32:42.664Z",
+      "checkedAt": "2026-10-18T17:59:07.776Z",
       "count": 15,
       "errors": [
         {
@@ -15098,12 +15105,12 @@
     "bodyReview": {
       "count": 95,
       "failed": 1,
-      "checkedAt": "2026-10-18T17:33:02.665Z"
+      "checkedAt": "2026-10-18T17:59:27.163Z"
     },
     "comparison": {
       "repository": "https://github.com/promise96319/qdii",
       "sourceUpdatedAt": "2026-10-18T14:19:59+08:00",
-      "fetchedAt": "2026-10-18T17:32:42.657Z",
+      "fetchedAt": "2026-10-18T17:59:07.770Z",
       "count": 57,
       "error": null
     }
@@ -15111,7 +15118,7 @@
   "universeCheckedAt": "2026-10-18T14:11:33.522Z",
   "catalogStale": false,
   "auditSummary": {
-    "checkedAt": "2026-10-18T17:33:02.720Z",
+    "checkedAt": "2026-10-18T17:59:27.217Z",
     "scopeCount": 72,
     "indexCount": 57,
     "heldActiveCount": 15,
