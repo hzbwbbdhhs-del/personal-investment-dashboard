@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-19T13:33:37.720Z",
+  "updatedAt": "2026-10-19T14:27:36.792Z",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
@@ -24,21 +24,21 @@
     },
     "VIX": {
       "label": "VIX",
-      "value": 16.46,
-      "changePct": -2.4303497332542983,
-      "drawdownPct": -80.09432821381061,
+      "value": 19.99,
+      "changePct": 21.445929526123923,
+      "drawdownPct": -75.8253718708429,
       "peak": 82.69,
-      "updatedAt": "2026-10-15",
+      "updatedAt": "2026-10-16",
       "source": "FRED公开CSV:VIXCLS",
       "status": "daily"
     },
     "VXN": {
       "label": "VXN",
-      "value": 22.89,
-      "changePct": 0.8370044052863493,
-      "drawdownPct": -71.61458333333333,
+      "value": 27.13,
+      "changePct": 18.523372651813013,
+      "drawdownPct": -66.35664682539682,
       "peak": 80.64,
-      "updatedAt": "2026-10-15",
+      "updatedAt": "2026-10-16",
       "source": "FRED公开CSV:VXNCLS",
       "status": "daily"
     },
@@ -127,15 +127,15 @@
   },
   "temperature": {
     "status": "daily",
-    "band": 0,
-    "label": "正常",
-    "action": "维持原定投，不追涨",
-    "color": "green",
+    "band": 1,
+    "label": "略加",
+    "action": "在原计划上小幅加码",
+    "color": "yellow",
     "drawdownPct": -4.128463725340426,
     "reasons": [
       "NDX 从历史高点回撤 4.13%"
     ],
-    "updatedAt": "2026-10-15"
+    "updatedAt": "2026-10-16"
   },
   "refreshSeconds": 1800,
   "source": "FRED公开CSV（无API Key）"
