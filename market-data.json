@@ -1,14 +1,14 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-21T03:23:35.618Z",
+  "updatedAt": "2026-10-21T03:59:09.500Z",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
-      "value": 29529.34,
-      "changePct": 1.1710129832754064,
-      "drawdownPct": -5.429517474793178,
+      "value": 29490.28,
+      "changePct": -0.13227522186408944,
+      "drawdownPct": -5.554610790371339,
       "peak": 31224.69,
-      "updatedAt": "2026-10-19",
+      "updatedAt": "2026-10-20",
       "source": "FRED公开CSV:NASDAQ100",
       "status": "daily"
     },
@@ -131,11 +131,11 @@
     "label": "略加",
     "action": "在原计划上小幅加码",
     "color": "yellow",
-    "drawdownPct": -5.429517474793178,
+    "drawdownPct": -5.554610790371339,
     "reasons": [
-      "NDX 从历史高点回撤 5.43%"
+      "NDX 从历史高点回撤 5.55%"
     ],
-    "updatedAt": "2026-10-19"
+    "updatedAt": "2026-10-20"
   },
   "refreshSeconds": 1800,
   "source": "FRED公开CSV（无API Key）"
