@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-21T14:58:35.709Z",
+  "updatedAt": "2026-10-21T15:26:50.263Z",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
@@ -14,51 +14,51 @@
     },
     "SPX": {
       "label": "标普500",
-      "value": 7712.57,
-      "changePct": 0.28397824393783355,
-      "drawdownPct": -1.360288428212053,
-      "peak": 7818.93,
-      "updatedAt": "2026-10-20",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:SP500",
       "status": "daily"
     },
     "VIX": {
       "label": "VIX",
-      "value": 17.31,
-      "changePct": -6.127982646420838,
-      "drawdownPct": -79.06639255048978,
-      "peak": 82.69,
-      "updatedAt": "2026-10-20",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:VIXCLS",
       "status": "daily"
     },
     "VXN": {
       "label": "VXN",
-      "value": 25.22,
-      "changePct": -1.3302034428794989,
-      "drawdownPct": -68.72519841269842,
-      "peak": 80.64,
-      "updatedAt": "2026-10-20",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:VXNCLS",
       "status": "daily"
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 5.15,
-      "changePct": 1.1787819253438212,
-      "drawdownPct": -67.48737373737373,
-      "peak": 15.84,
-      "updatedAt": "2026-10-19",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:DGS10",
       "status": "daily"
     },
     "USDCNY": {
       "label": "USD/CNY",
-      "value": 6.6861,
-      "changePct": -0.07173922790656503,
-      "drawdownPct": -23.50787676326237,
-      "peak": 8.7409,
-      "updatedAt": "2026-10-16",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:DEXCHUS",
       "status": "daily"
     }
@@ -66,41 +66,41 @@
   "macro": {
     "FEDFUNDS": {
       "label": "联邦基金有效利率",
-      "value": 3.88,
-      "changePct": 0,
-      "drawdownPct": -82.64758497316636,
-      "peak": 22.36,
-      "updatedAt": "2026-10-19",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:DFF",
       "status": "daily"
     },
     "CPI": {
       "label": "CPI",
-      "value": 336.298,
-      "changePct": 0.6485480245771958,
+      "value": 400,
+      "changePct": null,
       "drawdownPct": 0,
-      "peak": 336.298,
-      "updatedAt": "2026-09-01",
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:CPIAUCSL",
       "status": "daily"
     },
     "PCE": {
       "label": "PCE",
-      "value": 131.579,
-      "changePct": 0.3102796328484819,
+      "value": 400,
+      "changePct": null,
       "drawdownPct": 0,
-      "peak": 131.579,
-      "updatedAt": "2026-08-01",
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:PCEPI",
       "status": "daily"
     },
     "UNRATE": {
       "label": "失业率",
-      "value": 4.2,
-      "changePct": 2.4390243902439157,
-      "drawdownPct": -71.62162162162163,
-      "peak": 14.8,
-      "updatedAt": "2026-09-01",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:UNRATE",
       "status": "daily"
     },
@@ -116,26 +116,28 @@
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 5.15,
-      "changePct": 1.1787819253438212,
-      "drawdownPct": -67.48737373737373,
-      "peak": 15.84,
-      "updatedAt": "2026-10-19",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:DGS10",
       "status": "daily"
     }
   },
   "temperature": {
     "status": "daily",
-    "band": 1,
-    "label": "略加",
-    "action": "在原计划上小幅加码",
-    "color": "yellow",
+    "band": 4,
+    "label": "明显加仓",
+    "action": "出现明显回撤，可考虑明显加仓",
+    "color": "red",
     "drawdownPct": 0,
     "reasons": [
-      "NDX 从历史高点回撤 0.00%"
+      "NDX 从历史高点回撤 0.00%",
+      "VIX 400.00，高于 25 阈值",
+      "VXN 400.00，高于 30 阈值"
     ],
-    "updatedAt": "2026-10-20"
+    "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300"
   },
   "refreshSeconds": 1800,
   "source": "FRED公开CSV（无API Key）"
