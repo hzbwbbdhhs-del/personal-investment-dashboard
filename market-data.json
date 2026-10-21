@@ -1,14 +1,14 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-21T14:01:55.745Z",
+  "updatedAt": "2026-10-21T14:58:35.709Z",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
-      "value": 29490.28,
-      "changePct": -0.13227522186408944,
-      "drawdownPct": -5.554610790371339,
-      "peak": 31224.69,
-      "updatedAt": "2026-10-20",
+      "value": 400,
+      "changePct": null,
+      "drawdownPct": 0,
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:NASDAQ100",
       "status": "daily"
     },
@@ -106,11 +106,11 @@
     },
     "PAYEMS": {
       "label": "非农就业",
-      "value": 159044,
-      "changePct": 0.01823727321321888,
+      "value": 400,
+      "changePct": null,
       "drawdownPct": 0,
-      "peak": 159044,
-      "updatedAt": "2026-09-01",
+      "peak": 400,
+      "updatedAt": "    <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300",
       "source": "FRED公开CSV:PAYEMS",
       "status": "daily"
     },
@@ -131,9 +131,9 @@
     "label": "略加",
     "action": "在原计划上小幅加码",
     "color": "yellow",
-    "drawdownPct": -5.554610790371339,
+    "drawdownPct": 0,
     "reasons": [
-      "NDX 从历史高点回撤 5.55%"
+      "NDX 从历史高点回撤 0.00%"
     ],
     "updatedAt": "2026-10-20"
   },
