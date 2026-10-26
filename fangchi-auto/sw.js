@@ -1,0 +1,5 @@
+const CACHE='fangchi-shell-v2';
+const ASSETS=['./','./index.html','./style.css?v=2','./theme-v2.css?v=2','./app.js?v=2','./assets/garage-hero-v2.png','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);for(const path of ASSETS){const url=new URL(path,self.registration.scope);const r=await fetch(url,{cache:'reload'});if(r.ok&&!r.redirected&&r.url===url.href)await cache.put(url,r);}await self.skipWaiting();})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const k of await caches.keys())if(k.startsWith('fangchi-shell-')&&k!==CACHE)await caches.delete(k);await self.clients.claim();})()));
+self.addEventListener('fetch',event=>{const u=new URL(event.request.url);if(event.request.method!=='GET'||u.origin!==location.origin||!ASSETS.some(p=>new URL(p,self.registration.scope).pathname===u.pathname))return;event.respondWith((async()=>{try{return await fetch(event.request);}catch{const c=await caches.match(event.request,{ignoreSearch:true});return c||Response.error();}})());});
