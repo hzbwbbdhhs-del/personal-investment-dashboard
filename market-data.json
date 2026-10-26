@@ -1,6 +1,6 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-26T20:19:14.547Z",
+  "updatedAt": "2026-10-26T20:59:38.156Z",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
@@ -44,11 +44,11 @@
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 4.96,
-      "changePct": -3.3138401559454174,
-      "drawdownPct": -68.68686868686868,
+      "value": 5,
+      "changePct": 0.8064516129032264,
+      "drawdownPct": -68.43434343434343,
       "peak": 15.84,
-      "updatedAt": "2026-10-22",
+      "updatedAt": "2026-10-23",
       "source": "FRED公开CSV:DGS10",
       "status": "daily"
     },
@@ -70,7 +70,7 @@
       "changePct": 0,
       "drawdownPct": -82.64758497316636,
       "peak": 22.36,
-      "updatedAt": "2026-10-22",
+      "updatedAt": "2026-10-23",
       "source": "FRED公开CSV:DFF",
       "status": "daily"
     },
@@ -116,11 +116,11 @@
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 4.96,
-      "changePct": -3.3138401559454174,
-      "drawdownPct": -68.68686868686868,
+      "value": 5,
+      "changePct": 0.8064516129032264,
+      "drawdownPct": -68.43434343434343,
       "peak": 15.84,
-      "updatedAt": "2026-10-22",
+      "updatedAt": "2026-10-23",
       "source": "FRED公开CSV:DGS10",
       "status": "daily"
     }
