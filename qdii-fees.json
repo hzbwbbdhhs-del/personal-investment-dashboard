@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-26T01:22:30.606Z",
+  "checkedAt": "2026-10-27T01:17:53.666Z",
   "funds": {
     "160213": {
       "code": "160213",
       "name": "国泰纳斯达克100指数",
-      "checkedAt": "2026-10-26T01:22:28.322Z",
+      "checkedAt": "2026-10-27T01:17:51.535Z",
       "documentDate": "2026-09-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609211829696259_1.pdf",
       "title": "国泰纳斯达克100指数证券投资基金基金产品资料概要更新",
@@ -20,6 +20,11 @@
       "navDistributionChanged": true,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 4.348,
+          "accumulated": 10.648
+        },
         {
           "date": "2026-10-22",
           "value": 4.35,
@@ -41,9 +46,9 @@
           "accumulated": 10.737
         },
         {
-          "date": "2026-10-16",
-          "value": 4.387,
-          "accumulated": 10.687
+          "date": "2025-10-23",
+          "value": 4.887,
+          "accumulated": 10.287
         },
         {
           "date": "2025-10-22",
@@ -96,14 +101,14 @@
           "accumulated": 10.3
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:29.789Z",
+      "navCheckedAt": "2026-10-27T01:17:52.236Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=160213&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=160213&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=160213&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "161125": {
       "code": "161125",
       "name": "易方达标普500指数人民币A",
-      "checkedAt": "2026-10-26T01:22:28.322Z",
+      "checkedAt": "2026-10-27T01:17:51.535Z",
       "documentDate": "2026-08-11",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608101827818444_1.pdf",
       "title": "易方达标普500指数证券投资基金(LOF)(易方达标普500指数(QDII-LOF)A(人民币份额))基金产品资料概要更新",
@@ -118,6 +123,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 3.1047,
+          "accumulated": 3.1047
+        },
         {
           "date": "2026-10-22",
           "value": 3.1208,
@@ -139,9 +149,9 @@
           "accumulated": 3.1319
         },
         {
-          "date": "2026-10-16",
-          "value": 3.1206,
-          "accumulated": 3.1206
+          "date": "2025-10-23",
+          "value": 2.898,
+          "accumulated": 2.898
         },
         {
           "date": "2025-10-22",
@@ -194,14 +204,14 @@
           "accumulated": 2.9044
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:29.068Z",
+      "navCheckedAt": "2026-10-27T01:17:52.415Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=161125&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=161125&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=161125&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "161130": {
       "code": "161130",
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)A(人民币)",
-      "checkedAt": "2026-10-26T01:22:28.322Z",
+      "checkedAt": "2026-10-27T01:17:51.536Z",
       "documentDate": "2026-08-11",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608101827818475_1.pdf",
       "title": "易方达纳斯达克100交易型开放式指数证券投资基金联接基金(LOF)(易方达纳斯达克100ETF联接(QDII-LOF)A(人民币份额))基金产品资料概要更新",
@@ -216,6 +226,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 4.3348,
+          "accumulated": 4.3348
+        },
         {
           "date": "2026-10-22",
           "value": 4.336,
@@ -237,9 +252,9 @@
           "accumulated": 4.4177
         },
         {
-          "date": "2026-10-16",
-          "value": 4.3704,
-          "accumulated": 4.3704
+          "date": "2025-10-23",
+          "value": 3.9914,
+          "accumulated": 3.9914
         },
         {
           "date": "2025-10-22",
@@ -292,14 +307,14 @@
           "accumulated": 4.0025
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:29.581Z",
+      "navCheckedAt": "2026-10-27T01:17:52.920Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=161130&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=161130&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=161130&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "270042": {
       "code": "270042",
       "name": "广发纳斯达克100ETF联接人民币(QDII)A",
-      "checkedAt": "2026-10-26T01:22:28.323Z",
+      "checkedAt": "2026-10-27T01:17:51.536Z",
       "documentDate": "2026-06-05",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606051823275073_1.pdf",
       "title": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)(广发纳指100ETF联接(QDII)人民币A)基金产品资料概要更新",
@@ -314,6 +329,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 7.9189,
+          "accumulated": 8.1889
+        },
         {
           "date": "2026-10-22",
           "value": 7.9221,
@@ -335,9 +355,9 @@
           "accumulated": 8.3522
         },
         {
-          "date": "2026-10-16",
-          "value": 7.9912,
-          "accumulated": 8.2612
+          "date": "2025-10-23",
+          "value": 7.3546,
+          "accumulated": 7.6246
         },
         {
           "date": "2025-10-22",
@@ -390,14 +410,14 @@
           "accumulated": 7.6501
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:29.557Z",
+      "navCheckedAt": "2026-10-27T01:17:52.459Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=270042&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=270042&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=270042&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "539001": {
       "code": "539001",
       "name": "建信纳斯达克100指数(QDII)A人民币",
-      "checkedAt": "2026-10-26T01:22:29.789Z",
+      "checkedAt": "2026-10-27T01:17:52.920Z",
       "documentDate": "2026-08-04",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608041827607526_1.pdf",
       "title": "建信纳斯达克100指数型证券投资基金(QDII)(A类份额美元现汇)基金产品资料概要更新",
@@ -412,6 +432,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 3.3614,
+          "accumulated": 3.3614
+        },
         {
           "date": "2026-10-22",
           "value": 3.363,
@@ -433,9 +458,9 @@
           "accumulated": 3.4252
         },
         {
-          "date": "2026-10-16",
-          "value": 3.3902,
-          "accumulated": 3.3902
+          "date": "2025-10-23",
+          "value": 3.1085,
+          "accumulated": 3.1085
         },
         {
           "date": "2025-10-22",
@@ -488,21 +513,21 @@
           "accumulated": 3.1217
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:30.606Z",
+      "navCheckedAt": "2026-10-27T01:17:53.666Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=539001&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=539001&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=539001&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "000834": {
       "code": "000834",
       "name": "大成纳斯达克100ETF联接(QDII)A",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:11.049Z"
+      "lastAttemptAt": "2026-10-27T01:17:35.619Z"
     },
     "006075": {
       "code": "006075",
       "name": "博时标普500ETF联接C",
-      "checkedAt": "2026-10-26T01:22:11.096Z",
+      "checkedAt": "2026-10-27T01:17:35.714Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823874998_1.pdf",
       "title": "博时标普500交易型开放式指数证券投资基金联接基金(博时标普500ETF联接C(人民币))基金产品资料概要更新",
@@ -517,6 +542,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 5.3364,
+          "accumulated": 5.3364
+        },
         {
           "date": "2026-10-22",
           "value": 5.3642,
@@ -538,9 +568,9 @@
           "accumulated": 5.3851
         },
         {
-          "date": "2026-10-16",
-          "value": 5.3653,
-          "accumulated": 5.3653
+          "date": "2025-10-23",
+          "value": 4.9831,
+          "accumulated": 4.9831
         },
         {
           "date": "2025-10-22",
@@ -593,14 +623,14 @@
           "accumulated": 4.9951
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:13.219Z",
+      "navCheckedAt": "2026-10-27T01:17:38.701Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=006075&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=006075&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=006075&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "006479": {
       "code": "006479",
       "name": "广发纳斯达克100ETF联接人民币(QDII)C",
-      "checkedAt": "2026-10-26T01:22:11.097Z",
+      "checkedAt": "2026-10-27T01:17:35.716Z",
       "documentDate": "2026-06-05",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606051823274930_1.pdf",
       "title": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)(广发纳指100ETF联接(QDII)人民币C)基金产品资料概要更新",
@@ -615,6 +645,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 7.7783,
+          "accumulated": 7.7783
+        },
         {
           "date": "2026-10-22",
           "value": 7.7815,
@@ -636,9 +671,9 @@
           "accumulated": 7.9389
         },
         {
-          "date": "2026-10-16",
-          "value": 7.8496,
-          "accumulated": 7.8496
+          "date": "2025-10-23",
+          "value": 7.2375,
+          "accumulated": 7.2375
         },
         {
           "date": "2025-10-22",
@@ -691,14 +726,14 @@
           "accumulated": 7.2632
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:13.899Z",
+      "navCheckedAt": "2026-10-27T01:17:38.684Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=006479&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=006479&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=006479&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "007721": {
       "code": "007721",
       "name": "天弘标普500发起(QDII-FOF)A",
-      "checkedAt": "2026-10-25T01:08:35.739Z",
+      "checkedAt": "2026-10-27T01:17:35.717Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823874238_1.pdf",
       "title": "天弘标普500发起式证券投资基金(QDII-FOF)(A类份额)基金产品资料概要(更新)",
@@ -707,12 +742,17 @@
       "managementPct": 0.6,
       "custodyPct": 0.2,
       "salesPct": null,
-      "status": "unverified",
+      "status": "available",
       "warning": null,
       "basis": "基金公司产品资料概要（披露镜像）；年化综合运作费率含历史其他费用测算，不含申赎交易费用。联接基金不重复加目标ETF费率。",
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.2258,
+          "accumulated": 2.2258
+        },
         {
           "date": "2026-10-22",
           "value": 2.2361,
@@ -734,9 +774,9 @@
           "accumulated": 2.2449
         },
         {
-          "date": "2026-10-16",
-          "value": 2.2375,
-          "accumulated": 2.2375
+          "date": "2025-10-23",
+          "value": 2.0841,
+          "accumulated": 2.0841
         },
         {
           "date": "2025-10-22",
@@ -789,16 +829,14 @@
           "accumulated": 2.0885
         }
       ],
-      "navCheckedAt": "2026-10-25T01:08:38.080Z",
+      "navCheckedAt": "2026-10-27T01:17:38.676Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=007721&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=007721&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22",
-      "error": "fetch failed",
-      "lastAttemptAt": "2026-10-26T01:22:11.098Z"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=007721&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "007722": {
       "code": "007722",
       "name": "天弘标普500发起(QDII-FOF)C",
-      "checkedAt": "2026-10-26T01:22:13.900Z",
+      "checkedAt": "2026-10-27T01:17:38.702Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823874169_1.pdf",
       "title": "天弘标普500发起式证券投资基金(QDII-FOF)(C类份额)基金产品资料概要(更新)",
@@ -813,6 +851,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.1838,
+          "accumulated": 2.1838
+        },
         {
           "date": "2026-10-22",
           "value": 2.1939,
@@ -834,9 +877,9 @@
           "accumulated": 2.2026
         },
         {
-          "date": "2026-10-16",
-          "value": 2.1954,
-          "accumulated": 2.1954
+          "date": "2025-10-23",
+          "value": 2.0499,
+          "accumulated": 2.0499
         },
         {
           "date": "2025-10-22",
@@ -889,28 +932,28 @@
           "accumulated": 2.0544
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:15.017Z",
+      "navCheckedAt": "2026-10-27T01:17:39.597Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=007722&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=007722&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=007722&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "008401": {
       "code": "008401",
       "name": "大成标普500等权重指数(QDII)C人民币",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:13.900Z"
+      "lastAttemptAt": "2026-10-27T01:17:38.702Z"
     },
     "008971": {
       "code": "008971",
       "name": "大成纳斯达克100ETF联接(QDII)C",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:13.900Z"
+      "lastAttemptAt": "2026-10-27T01:17:38.702Z"
     },
     "012752": {
       "code": "012752",
       "name": "建信纳斯达克100指数(QDII)C人民币",
-      "checkedAt": "2026-10-26T01:22:13.900Z",
+      "checkedAt": "2026-10-27T01:17:38.702Z",
       "documentDate": "2026-08-04",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608041827607629_1.pdf",
       "title": "建信纳斯达克100指数型证券投资基金(QDII)(C类份额人民币)基金产品资料概要更新",
@@ -925,6 +968,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 3.2513,
+          "accumulated": 3.2513
+        },
         {
           "date": "2026-10-22",
           "value": 3.2529,
@@ -946,9 +994,9 @@
           "accumulated": 3.3131
         },
         {
-          "date": "2026-10-16",
-          "value": 3.2793,
-          "accumulated": 3.2793
+          "date": "2025-10-23",
+          "value": 3.0154,
+          "accumulated": 3.0154
         },
         {
           "date": "2025-10-22",
@@ -1001,14 +1049,14 @@
           "accumulated": 3.0286
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:15.426Z",
+      "navCheckedAt": "2026-10-27T01:17:40.075Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012752&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012752&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012752&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "012860": {
       "code": "012860",
       "name": "易方达标普500指数人民币C",
-      "checkedAt": "2026-10-26T01:22:15.426Z",
+      "checkedAt": "2026-10-27T01:17:40.075Z",
       "documentDate": "2026-08-11",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608111827836222_1.pdf",
       "title": "易方达标普500指数证券投资基金(LOF)(易方达标普500指数(QDII-LOF)C(人民币份额))基金产品资料概要更新",
@@ -1023,6 +1071,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 3.0492,
+          "accumulated": 3.0492
+        },
         {
           "date": "2026-10-22",
           "value": 3.065,
@@ -1044,9 +1097,9 @@
           "accumulated": 3.076
         },
         {
-          "date": "2026-10-16",
-          "value": 3.065,
-          "accumulated": 3.065
+          "date": "2025-10-23",
+          "value": 2.8562,
+          "accumulated": 2.8562
         },
         {
           "date": "2025-10-22",
@@ -1099,14 +1152,14 @@
           "accumulated": 2.8629
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:16.510Z",
+      "navCheckedAt": "2026-10-27T01:17:41.087Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012860&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012860&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012860&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "012870": {
       "code": "012870",
       "name": "易方达纳斯达克100ETF联接(QDII-LOF)C(人民币)",
-      "checkedAt": "2026-10-26T01:22:15.426Z",
+      "checkedAt": "2026-10-27T01:17:40.076Z",
       "documentDate": "2026-08-11",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608111827836814_1.pdf",
       "title": "易方达纳斯达克100交易型开放式指数证券投资基金联接基金(LOF)(易方达纳斯达克100ETF联接(QDII-LOF)C(人民币份额))基金产品资料概要更新",
@@ -1121,6 +1174,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 4.2566,
+          "accumulated": 4.2566
+        },
         {
           "date": "2026-10-22",
           "value": 4.2579,
@@ -1142,9 +1200,9 @@
           "accumulated": 4.3382
         },
         {
-          "date": "2026-10-16",
-          "value": 4.2919,
-          "accumulated": 4.2919
+          "date": "2025-10-23",
+          "value": 3.9318,
+          "accumulated": 3.9318
         },
         {
           "date": "2025-10-22",
@@ -1197,21 +1255,21 @@
           "accumulated": 3.9432
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:17.187Z",
+      "navCheckedAt": "2026-10-27T01:17:40.970Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012870&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012870&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=012870&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "014978": {
       "code": "014978",
       "name": "华安纳斯达克100ETF联接(QDII)C",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:15.426Z"
+      "lastAttemptAt": "2026-10-27T01:17:40.076Z"
     },
     "015299": {
       "code": "015299",
       "name": "华夏纳斯达克100ETF发起式联接(QDII)A",
-      "checkedAt": "2026-10-26T01:22:15.426Z",
+      "checkedAt": "2026-10-27T01:17:40.076Z",
       "documentDate": "2026-05-29",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202605291822989035_1.pdf",
       "title": "华夏纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(华夏纳斯达克100ETF发起式联接(QDII)A)基金产品资料概要更新(2026-05-29)",
@@ -1226,6 +1284,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.9804,
+          "accumulated": 1.9804
+        },
         {
           "date": "2026-10-22",
           "value": 1.9814,
@@ -1247,9 +1310,9 @@
           "accumulated": 2.0205
         },
         {
-          "date": "2026-10-16",
-          "value": 1.9998,
-          "accumulated": 1.9998
+          "date": "2025-10-23",
+          "value": 1.8247,
+          "accumulated": 1.8247
         },
         {
           "date": "2025-10-22",
@@ -1302,14 +1365,14 @@
           "accumulated": 1.8276
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:16.356Z",
+      "navCheckedAt": "2026-10-27T01:17:41.087Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=015299&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=015299&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=015299&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "015300": {
       "code": "015300",
       "name": "华夏纳斯达克100ETF发起式联接(QDII)C",
-      "checkedAt": "2026-10-26T01:22:17.187Z",
+      "checkedAt": "2026-10-27T01:17:41.087Z",
       "documentDate": "2026-05-29",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202605291822989522_1.pdf",
       "title": "华夏纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(华夏纳斯达克100ETF发起式联接(QDII)C)基金产品资料概要更新(2026-05-29)",
@@ -1324,6 +1387,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.9537,
+          "accumulated": 1.9537
+        },
         {
           "date": "2026-10-22",
           "value": 1.9547,
@@ -1345,9 +1413,9 @@
           "accumulated": 1.9933
         },
         {
-          "date": "2026-10-16",
-          "value": 1.973,
-          "accumulated": 1.973
+          "date": "2025-10-23",
+          "value": 1.8055,
+          "accumulated": 1.8055
         },
         {
           "date": "2025-10-22",
@@ -1400,14 +1468,14 @@
           "accumulated": 1.8086
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:18.094Z",
+      "navCheckedAt": "2026-10-27T01:17:41.983Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=015300&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=015300&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=015300&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "016055": {
       "code": "016055",
       "name": "博时纳斯达克100ETF发起式联接(QDII)A人民币",
-      "checkedAt": "2026-10-26T01:22:17.187Z",
+      "checkedAt": "2026-10-27T01:17:41.087Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823875567_1.pdf",
       "title": "博时纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(博时纳斯达克100ETF发起式联接(QDII)A美元现汇)基金产品资料概要更新",
@@ -1422,6 +1490,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.068,
+          "accumulated": 2.068
+        },
         {
           "date": "2026-10-22",
           "value": 2.0686,
@@ -1443,9 +1516,9 @@
           "accumulated": 2.108
         },
         {
-          "date": "2026-10-16",
-          "value": 2.0853,
-          "accumulated": 2.0853
+          "date": "2025-10-23",
+          "value": 1.8834,
+          "accumulated": 1.8834
         },
         {
           "date": "2025-10-22",
@@ -1498,14 +1571,14 @@
           "accumulated": 1.8883
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:18.394Z",
+      "navCheckedAt": "2026-10-27T01:17:41.883Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016055&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016055&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016055&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "016057": {
       "code": "016057",
       "name": "博时纳斯达克100ETF发起式联接(QDII)C人民币",
-      "checkedAt": "2026-10-26T01:22:17.187Z",
+      "checkedAt": "2026-10-27T01:17:41.088Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823875251_1.pdf",
       "title": "博时纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(博时纳斯达克100ETF发起式联接(QDII)C人民币)基金产品资料概要更新",
@@ -1520,6 +1593,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.0402,
+          "accumulated": 2.0402
+        },
         {
           "date": "2026-10-22",
           "value": 2.0408,
@@ -1541,9 +1619,9 @@
           "accumulated": 2.0796
         },
         {
-          "date": "2026-10-16",
-          "value": 2.0573,
-          "accumulated": 2.0573
+          "date": "2025-10-23",
+          "value": 1.8636,
+          "accumulated": 1.8636
         },
         {
           "date": "2025-10-22",
@@ -1596,14 +1674,14 @@
           "accumulated": 1.8686
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:18.236Z",
+      "navCheckedAt": "2026-10-27T01:17:41.970Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016057&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016057&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016057&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "016452": {
       "code": "016452",
       "name": "南方纳斯达克100指数发起(QDII)A",
-      "checkedAt": "2026-10-26T01:22:17.187Z",
+      "checkedAt": "2026-10-27T01:17:41.088Z",
       "documentDate": "2026-10-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610211830733726_1.pdf",
       "title": "南方纳斯达克100指数发起式证券投资基金(QDII)(A类份额)基金产品资料概要(更新)",
@@ -1618,6 +1696,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.229,
+          "accumulated": 2.229
+        },
         {
           "date": "2026-10-22",
           "value": 2.2296,
@@ -1639,9 +1722,9 @@
           "accumulated": 2.2722
         },
         {
-          "date": "2026-10-16",
-          "value": 2.2476,
-          "accumulated": 2.2476
+          "date": "2025-10-23",
+          "value": 2.0554,
+          "accumulated": 2.0554
         },
         {
           "date": "2025-10-22",
@@ -1694,14 +1777,14 @@
           "accumulated": 2.0632
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:18.051Z",
+      "navCheckedAt": "2026-10-27T01:17:42.435Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016452&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016452&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016452&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "016453": {
       "code": "016453",
       "name": "南方纳斯达克100指数发起(QDII)C",
-      "checkedAt": "2026-10-26T01:22:18.394Z",
+      "checkedAt": "2026-10-27T01:17:42.435Z",
       "documentDate": "2026-10-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610211830733725_1.pdf",
       "title": "南方纳斯达克100指数发起式证券投资基金(QDII)(C类份额)基金产品资料概要(更新)",
@@ -1716,6 +1799,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.2187,
+          "accumulated": 2.2187
+        },
         {
           "date": "2026-10-22",
           "value": 2.2194,
@@ -1737,9 +1825,9 @@
           "accumulated": 2.2618
         },
         {
-          "date": "2026-10-16",
-          "value": 2.2373,
-          "accumulated": 2.2373
+          "date": "2025-10-23",
+          "value": 2.0478,
+          "accumulated": 2.0478
         },
         {
           "date": "2025-10-22",
@@ -1792,14 +1880,14 @@
           "accumulated": 2.0558
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:19.396Z",
+      "navCheckedAt": "2026-10-27T01:17:43.587Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016453&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016453&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016453&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "016532": {
       "code": "016532",
       "name": "嘉实纳斯达克100ETF发起联接(QDII)A人民币",
-      "checkedAt": "2026-10-26T01:22:18.394Z",
+      "checkedAt": "2026-10-27T01:17:42.435Z",
       "documentDate": "2026-06-10",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606101823410116_1.pdf",
       "title": "嘉实纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(A类人民币份额)基金产品资料概要更新(2026年06月10日)",
@@ -1814,6 +1902,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.1205,
+          "accumulated": 2.1205
+        },
         {
           "date": "2026-10-22",
           "value": 2.121,
@@ -1835,9 +1928,9 @@
           "accumulated": 2.1611
         },
         {
-          "date": "2026-10-16",
-          "value": 2.138,
-          "accumulated": 2.138
+          "date": "2025-10-23",
+          "value": 1.9424,
+          "accumulated": 1.9424
         },
         {
           "date": "2025-10-22",
@@ -1890,14 +1983,14 @@
           "accumulated": 1.9541
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:19.453Z",
+      "navCheckedAt": "2026-10-27T01:17:43.430Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016532&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016532&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016532&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "016533": {
       "code": "016533",
       "name": "嘉实纳斯达克100ETF发起联接(QDII)C人民币",
-      "checkedAt": "2026-10-26T01:22:18.395Z",
+      "checkedAt": "2026-10-27T01:17:42.435Z",
       "documentDate": "2026-06-10",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606101823410026_1.pdf",
       "title": "嘉实纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(C类人民币份额)基金产品资料概要更新(2026年06月10日)",
@@ -1912,6 +2005,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.0957,
+          "accumulated": 2.0957
+        },
         {
           "date": "2026-10-22",
           "value": 2.0962,
@@ -1933,9 +2031,9 @@
           "accumulated": 2.1359
         },
         {
-          "date": "2026-10-16",
-          "value": 2.1131,
-          "accumulated": 2.1131
+          "date": "2025-10-23",
+          "value": 1.9245,
+          "accumulated": 1.9245
         },
         {
           "date": "2025-10-22",
@@ -1988,14 +2086,14 @@
           "accumulated": 1.9362
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:19.363Z",
+      "navCheckedAt": "2026-10-27T01:17:43.755Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016533&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016533&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=016533&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "017028": {
       "code": "017028",
       "name": "国泰标普500ETF发起联接(QDII)A人民币",
-      "checkedAt": "2026-10-26T01:22:18.395Z",
+      "checkedAt": "2026-10-27T01:17:42.435Z",
       "documentDate": "2026-09-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609211829696221_1.pdf",
       "title": "国泰标普500交易型开放式指数证券投资基金发起式联接基金(QDII)(国泰标普500ETF发起联接(QDII)A人民币)产品资料概要更新",
@@ -2010,6 +2108,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.7008,
+          "accumulated": 1.7008
+        },
         {
           "date": "2026-10-22",
           "value": 1.7096,
@@ -2031,9 +2134,9 @@
           "accumulated": 1.7159
         },
         {
-          "date": "2026-10-16",
-          "value": 1.7096,
-          "accumulated": 1.7096
+          "date": "2025-10-23",
+          "value": 1.5608,
+          "accumulated": 1.5608
         },
         {
           "date": "2025-10-22",
@@ -2086,14 +2189,14 @@
           "accumulated": 1.595
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:19.275Z",
+      "navCheckedAt": "2026-10-27T01:17:44.018Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=017028&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=017028&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=017028&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "017030": {
       "code": "017030",
       "name": "国泰标普500ETF发起联接(QDII)C人民币",
-      "checkedAt": "2026-10-26T01:22:19.453Z",
+      "checkedAt": "2026-10-27T01:17:44.018Z",
       "documentDate": "2026-09-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202609211829696240_1.pdf",
       "title": "国泰标普500交易型开放式指数证券投资基金发起式联接基金(QDII)(国泰标普500ETF发起联接(QDII)C人民币)产品资料概要更新",
@@ -2108,6 +2211,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.6809,
+          "accumulated": 1.6809
+        },
         {
           "date": "2026-10-22",
           "value": 1.6896,
@@ -2129,9 +2237,9 @@
           "accumulated": 1.6959
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6896,
-          "accumulated": 1.6896
+          "date": "2025-10-23",
+          "value": 1.5472,
+          "accumulated": 1.5472
         },
         {
           "date": "2025-10-22",
@@ -2184,21 +2292,21 @@
           "accumulated": 1.5813
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:20.628Z",
+      "navCheckedAt": "2026-10-27T01:17:45.503Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=017030&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=017030&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=017030&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "017641": {
       "code": "017641",
       "name": "摩根标普500指数(QDII)人民币A",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:19.453Z"
+      "lastAttemptAt": "2026-10-27T01:17:44.018Z"
     },
     "018043": {
       "code": "018043",
       "name": "天弘纳斯达克100指数发起(QDII)A",
-      "checkedAt": "2026-10-26T01:22:19.453Z",
+      "checkedAt": "2026-10-27T01:17:44.018Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823874113_1.pdf",
       "title": "天弘纳斯达克100指数型发起式证券投资基金(QDII)(A类份额)基金产品资料概要(更新)",
@@ -2213,6 +2321,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.9815,
+          "accumulated": 1.9815
+        },
         {
           "date": "2026-10-22",
           "value": 1.9821,
@@ -2234,9 +2347,9 @@
           "accumulated": 2.0197
         },
         {
-          "date": "2026-10-16",
-          "value": 1.9979,
-          "accumulated": 1.9979
+          "date": "2025-10-23",
+          "value": 1.8245,
+          "accumulated": 1.8245
         },
         {
           "date": "2025-10-22",
@@ -2289,14 +2402,14 @@
           "accumulated": 1.8296
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:20.599Z",
+      "navCheckedAt": "2026-10-27T01:17:44.971Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018043&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018043&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018043&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "018044": {
       "code": "018044",
       "name": "天弘纳斯达克100指数发起(QDII)C",
-      "checkedAt": "2026-10-26T01:22:19.453Z",
+      "checkedAt": "2026-10-27T01:17:44.018Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823873717_1.pdf",
       "title": "天弘纳斯达克100指数型发起式证券投资基金(QDII)(C类份额)基金产品资料概要(更新)",
@@ -2311,6 +2424,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.9642,
+          "accumulated": 1.9642
+        },
         {
           "date": "2026-10-22",
           "value": 1.9648,
@@ -2332,9 +2450,9 @@
           "accumulated": 2.0021
         },
         {
-          "date": "2026-10-16",
-          "value": 1.9805,
-          "accumulated": 1.9805
+          "date": "2025-10-23",
+          "value": 1.8121,
+          "accumulated": 1.8121
         },
         {
           "date": "2025-10-22",
@@ -2387,14 +2505,14 @@
           "accumulated": 1.8173
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:20.605Z",
+      "navCheckedAt": "2026-10-27T01:17:44.985Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018044&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018044&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018044&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "018064": {
       "code": "018064",
       "name": "华夏标普500ETF发起式联接(QDII)A(人民币)",
-      "checkedAt": "2026-10-26T01:22:20.628Z",
+      "checkedAt": "2026-10-27T01:17:45.503Z",
       "documentDate": "2026-05-29",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202605291822988998_1.pdf",
       "title": "华夏标普500交易型开放式指数证券投资基金发起式联接基金(QDII)(华夏标普500ETF发起式联接(QDII)A(人民币))基金产品资料概要更新(2026-05-29)",
@@ -2409,6 +2527,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.682,
+          "accumulated": 1.682
+        },
         {
           "date": "2026-10-22",
           "value": 1.6911,
@@ -2430,9 +2553,9 @@
           "accumulated": 1.6992
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6937,
-          "accumulated": 1.6937
+          "date": "2025-10-23",
+          "value": 1.5792,
+          "accumulated": 1.5792
         },
         {
           "date": "2025-10-22",
@@ -2485,14 +2608,14 @@
           "accumulated": 1.5812
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:21.411Z",
+      "navCheckedAt": "2026-10-27T01:17:46.372Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018064&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018064&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018064&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "018065": {
       "code": "018065",
       "name": "华夏标普500ETF发起式联接(QDII)C",
-      "checkedAt": "2026-10-26T01:22:20.628Z",
+      "checkedAt": "2026-10-27T01:17:45.504Z",
       "documentDate": "2026-05-29",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202605291822990169_1.pdf",
       "title": "华夏标普500交易型开放式指数证券投资基金发起式联接基金(QDII)(华夏标普500ETF发起式联接(QDII)C)基金产品资料概要更新(2026-05-29)",
@@ -2507,6 +2630,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.6647,
+          "accumulated": 1.6647
+        },
         {
           "date": "2026-10-22",
           "value": 1.6737,
@@ -2528,9 +2656,9 @@
           "accumulated": 1.6817
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6763,
-          "accumulated": 1.6763
+          "date": "2025-10-23",
+          "value": 1.5676,
+          "accumulated": 1.5676
         },
         {
           "date": "2025-10-22",
@@ -2583,14 +2711,14 @@
           "accumulated": 1.5698
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:21.676Z",
+      "navCheckedAt": "2026-10-27T01:17:46.379Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018065&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018065&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018065&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "018738": {
       "code": "018738",
       "name": "博时标普500ETF联接E(人民币)",
-      "checkedAt": "2026-10-26T01:22:20.629Z",
+      "checkedAt": "2026-10-27T01:17:45.504Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823875369_1.pdf",
       "title": "博时标普500交易型开放式指数证券投资基金联接基金(博时标普500ETF联接E(人民币))基金产品资料概要更新",
@@ -2605,6 +2733,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 5.5124,
+          "accumulated": 5.5124
+        },
         {
           "date": "2026-10-22",
           "value": 5.541,
@@ -2626,9 +2759,9 @@
           "accumulated": 5.5625
         },
         {
-          "date": "2026-10-16",
-          "value": 5.5419,
-          "accumulated": 5.5419
+          "date": "2025-10-23",
+          "value": 5.1299,
+          "accumulated": 5.1299
         },
         {
           "date": "2025-10-22",
@@ -2681,14 +2814,14 @@
           "accumulated": 5.1416
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:21.403Z",
+      "navCheckedAt": "2026-10-27T01:17:46.305Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018738&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018738&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018738&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "018966": {
       "code": "018966",
       "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币A",
-      "checkedAt": "2026-10-26T01:22:20.629Z",
+      "checkedAt": "2026-10-27T01:17:45.504Z",
       "documentDate": "2026-08-14",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608141827963210_1.pdf",
       "title": "汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)人民币A类份额更新基金产品资料概要(2026年08月14日更新)",
@@ -2703,6 +2836,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.5786,
+          "accumulated": 1.5786
+        },
         {
           "date": "2026-10-22",
           "value": 1.5789,
@@ -2724,9 +2862,9 @@
           "accumulated": 1.6088
         },
         {
-          "date": "2026-10-16",
-          "value": 1.5915,
-          "accumulated": 1.5915
+          "date": "2025-10-23",
+          "value": 1.4933,
+          "accumulated": 1.4933
         },
         {
           "date": "2025-10-22",
@@ -2779,14 +2917,14 @@
           "accumulated": 1.4985
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:21.772Z",
+      "navCheckedAt": "2026-10-27T01:17:46.376Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018966&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018966&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018966&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "018967": {
       "code": "018967",
       "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币C",
-      "checkedAt": "2026-10-26T01:22:21.772Z",
+      "checkedAt": "2026-10-27T01:17:46.379Z",
       "documentDate": "2026-08-14",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608141827963006_1.pdf",
       "title": "汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)人民币C类份额更新基金产品资料概要(2026年08月14日更新)",
@@ -2801,6 +2939,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.5587,
+          "accumulated": 1.5587
+        },
         {
           "date": "2026-10-22",
           "value": 1.559,
@@ -2822,9 +2965,9 @@
           "accumulated": 1.5885
         },
         {
-          "date": "2026-10-16",
-          "value": 1.5715,
-          "accumulated": 1.5715
+          "date": "2025-10-23",
+          "value": 1.4803,
+          "accumulated": 1.4803
         },
         {
           "date": "2025-10-22",
@@ -2877,35 +3020,35 @@
           "accumulated": 1.4857
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:22.690Z",
+      "navCheckedAt": "2026-10-27T01:17:47.139Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018967&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018967&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=018967&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019172": {
       "code": "019172",
       "name": "摩根纳斯达克100指数(QDII)人民币A",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:21.772Z"
+      "lastAttemptAt": "2026-10-27T01:17:46.379Z"
     },
     "019173": {
       "code": "019173",
       "name": "摩根纳斯达克100指数(QDII)人民币C",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:21.772Z"
+      "lastAttemptAt": "2026-10-27T01:17:46.379Z"
     },
     "019305": {
       "code": "019305",
       "name": "摩根标普500指数(QDII)人民币C",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:21.772Z"
+      "lastAttemptAt": "2026-10-27T01:17:46.379Z"
     },
     "019441": {
       "code": "019441",
       "name": "万家纳斯达克100指数发起式(QDII)A",
-      "checkedAt": "2026-10-26T01:22:22.690Z",
+      "checkedAt": "2026-10-27T01:17:47.140Z",
       "documentDate": "2026-10-20",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610201830701009_1.pdf",
       "title": "万家纳斯达克100指数型发起式证券投资基金(QDII)基金产品资料概要更新",
@@ -2920,6 +3063,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.6451,
+          "accumulated": 1.6451
+        },
         {
           "date": "2026-10-22",
           "value": 1.6456,
@@ -2941,9 +3089,9 @@
           "accumulated": 1.6764
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6585,
-          "accumulated": 1.6585
+          "date": "2025-10-23",
+          "value": 1.5063,
+          "accumulated": 1.5063
         },
         {
           "date": "2025-10-22",
@@ -2996,14 +3144,14 @@
           "accumulated": 1.5105
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:23.505Z",
+      "navCheckedAt": "2026-10-27T01:17:48.071Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019441&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019441&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019441&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019442": {
       "code": "019442",
       "name": "万家纳斯达克100指数发起式(QDII)C",
-      "checkedAt": "2026-10-26T01:22:22.690Z",
+      "checkedAt": "2026-10-27T01:17:47.140Z",
       "documentDate": "2026-10-20",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610201830701009_1.pdf",
       "title": "万家纳斯达克100指数型发起式证券投资基金(QDII)基金产品资料概要更新",
@@ -3018,6 +3166,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.634,
+          "accumulated": 1.634
+        },
         {
           "date": "2026-10-22",
           "value": 1.6345,
@@ -3039,9 +3192,9 @@
           "accumulated": 1.6651
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6474,
-          "accumulated": 1.6474
+          "date": "2025-10-23",
+          "value": 1.499,
+          "accumulated": 1.499
         },
         {
           "date": "2025-10-22",
@@ -3094,14 +3247,14 @@
           "accumulated": 1.5033
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:23.498Z",
+      "navCheckedAt": "2026-10-27T01:17:48.076Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019442&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019442&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019442&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019524": {
       "code": "019524",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)A",
-      "checkedAt": "2026-10-26T01:22:22.690Z",
+      "checkedAt": "2026-10-27T01:17:47.140Z",
       "documentDate": "2025-11-27",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511271789150911_1.pdf",
       "title": "华泰柏瑞纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(A类份额)基金产品资料概要更新",
@@ -3116,6 +3269,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.6064,
+          "accumulated": 1.6064
+        },
         {
           "date": "2026-10-22",
           "value": 1.607,
@@ -3137,9 +3295,9 @@
           "accumulated": 1.6361
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6185,
-          "accumulated": 1.6185
+          "date": "2025-10-23",
+          "value": 1.4866,
+          "accumulated": 1.4866
         },
         {
           "date": "2025-10-22",
@@ -3192,14 +3350,14 @@
           "accumulated": 1.4926
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:23.371Z",
+      "navCheckedAt": "2026-10-27T01:17:47.936Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019524&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019524&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019524&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019525": {
       "code": "019525",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)C",
-      "checkedAt": "2026-10-26T01:22:22.690Z",
+      "checkedAt": "2026-10-27T01:17:47.140Z",
       "documentDate": "2025-11-27",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511271789150910_1.pdf",
       "title": "华泰柏瑞纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(C类份额)基金产品资料概要更新",
@@ -3214,6 +3372,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.5924,
+          "accumulated": 1.5924
+        },
         {
           "date": "2026-10-22",
           "value": 1.5929,
@@ -3235,9 +3398,9 @@
           "accumulated": 1.6218
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6044,
-          "accumulated": 1.6044
+          "date": "2025-10-23",
+          "value": 1.4772,
+          "accumulated": 1.4772
         },
         {
           "date": "2025-10-22",
@@ -3290,14 +3453,14 @@
           "accumulated": 1.4833
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:23.665Z",
+      "navCheckedAt": "2026-10-27T01:17:48.066Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019525&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019525&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019525&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019547": {
       "code": "019547",
       "name": "招商纳斯达克100ETF发起式联接(QDII)A",
-      "checkedAt": "2026-10-26T01:22:23.665Z",
+      "checkedAt": "2026-10-27T01:17:48.076Z",
       "documentDate": "2025-11-28",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511281789785298_1.pdf",
       "title": "招商纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(A类份额)基金产品资料概要更新",
@@ -3312,6 +3475,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.5354,
+          "accumulated": 1.5354
+        },
         {
           "date": "2026-10-22",
           "value": 1.5358,
@@ -3333,9 +3501,9 @@
           "accumulated": 1.5636
         },
         {
-          "date": "2026-10-16",
-          "value": 1.5476,
-          "accumulated": 1.5476
+          "date": "2025-10-23",
+          "value": 1.4055,
+          "accumulated": 1.4055
         },
         {
           "date": "2025-10-22",
@@ -3388,14 +3556,14 @@
           "accumulated": 1.4122
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:24.444Z",
+      "navCheckedAt": "2026-10-27T01:17:48.997Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019547&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019547&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019547&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019548": {
       "code": "019548",
       "name": "招商纳斯达克100ETF发起式联接(QDII)C",
-      "checkedAt": "2026-10-26T01:22:23.665Z",
+      "checkedAt": "2026-10-27T01:17:48.077Z",
       "documentDate": "2025-11-28",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511281789785376_1.pdf",
       "title": "招商纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(C类份额)基金产品资料概要更新",
@@ -3410,6 +3578,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.5179,
+          "accumulated": 1.5179
+        },
         {
           "date": "2026-10-22",
           "value": 1.5183,
@@ -3431,9 +3604,9 @@
           "accumulated": 1.5459
         },
         {
-          "date": "2026-10-16",
-          "value": 1.5301,
-          "accumulated": 1.5301
+          "date": "2025-10-23",
+          "value": 1.395,
+          "accumulated": 1.395
         },
         {
           "date": "2025-10-22",
@@ -3486,14 +3659,14 @@
           "accumulated": 1.4019
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:24.579Z",
+      "navCheckedAt": "2026-10-27T01:17:48.988Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019548&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019548&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019548&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019736": {
       "code": "019736",
       "name": "宝盈纳斯达克100指数发起(QDII)A人民币",
-      "checkedAt": "2026-10-26T01:22:23.665Z",
+      "checkedAt": "2026-10-27T01:17:48.077Z",
       "documentDate": "2026-03-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603211820681573_1.pdf",
       "title": "宝盈纳斯达克100指数型发起式证券投资基金(QDII)(宝盈纳斯达克100指数发起(QDII)A人民币份额)基金产品资料概要(更新)",
@@ -3508,6 +3681,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.4517,
+          "accumulated": 1.4517
+        },
         {
           "date": "2026-10-22",
           "value": 1.452,
@@ -3529,9 +3707,9 @@
           "accumulated": 1.4793
         },
         {
-          "date": "2026-10-16",
-          "value": 1.4635,
-          "accumulated": 1.4635
+          "date": "2025-10-23",
+          "value": 1.3415,
+          "accumulated": 1.3415
         },
         {
           "date": "2025-10-22",
@@ -3584,14 +3762,14 @@
           "accumulated": 1.3452
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:24.398Z",
+      "navCheckedAt": "2026-10-27T01:17:48.845Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019736&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019736&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019736&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "019737": {
       "code": "019737",
       "name": "宝盈纳斯达克100指数发起(QDII)C人民币",
-      "checkedAt": "2026-10-26T01:22:23.666Z",
+      "checkedAt": "2026-10-27T01:17:48.077Z",
       "documentDate": "2026-03-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603211820681570_1.pdf",
       "title": "宝盈纳斯达克100指数型发起式证券投资基金(QDII)(宝盈纳斯达克100指数发起(QDII)C人民币份额)基金产品资料概要(更新)",
@@ -3606,6 +3784,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.4411,
+          "accumulated": 1.4411
+        },
         {
           "date": "2026-10-22",
           "value": 1.4414,
@@ -3627,9 +3810,9 @@
           "accumulated": 1.4686
         },
         {
-          "date": "2026-10-16",
-          "value": 1.4529,
-          "accumulated": 1.4529
+          "date": "2025-10-23",
+          "value": 1.335,
+          "accumulated": 1.335
         },
         {
           "date": "2025-10-22",
@@ -3682,14 +3865,14 @@
           "accumulated": 1.3388
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:24.735Z",
+      "navCheckedAt": "2026-10-27T01:17:48.849Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019737&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019737&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=019737&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "021000": {
       "code": "021000",
       "name": "南方纳斯达克100指数发起(QDII)I",
-      "checkedAt": "2026-10-26T01:22:24.735Z",
+      "checkedAt": "2026-10-27T01:17:48.997Z",
       "documentDate": "2026-10-21",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202610211830733727_1.pdf",
       "title": "南方纳斯达克100指数发起式证券投资基金(QDII)(I类份额)基金产品资料概要(更新)",
@@ -3704,6 +3887,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.2289,
+          "accumulated": 2.2289
+        },
         {
           "date": "2026-10-22",
           "value": 2.2295,
@@ -3725,9 +3913,9 @@
           "accumulated": 2.2721
         },
         {
-          "date": "2026-10-16",
-          "value": 2.2475,
-          "accumulated": 2.2475
+          "date": "2025-10-23",
+          "value": 2.0557,
+          "accumulated": 2.0557
         },
         {
           "date": "2025-10-22",
@@ -3780,14 +3968,14 @@
           "accumulated": 2.0636
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:25.415Z",
+      "navCheckedAt": "2026-10-27T01:17:49.954Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021000&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021000&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021000&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "021773": {
       "code": "021773",
       "name": "汇添富纳斯达克100ETF发起式联接(QDII)人民币E",
-      "checkedAt": "2026-10-26T01:22:24.736Z",
+      "checkedAt": "2026-10-27T01:17:48.997Z",
       "documentDate": "2026-08-14",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608141827962926_1.pdf",
       "title": "汇添富纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)人民币E类份额更新基金产品资料概要(2026年08月14日更新)",
@@ -3802,6 +3990,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.5751,
+          "accumulated": 1.5751
+        },
         {
           "date": "2026-10-22",
           "value": 1.5754,
@@ -3823,9 +4016,9 @@
           "accumulated": 1.6052
         },
         {
-          "date": "2026-10-16",
-          "value": 1.588,
-          "accumulated": 1.588
+          "date": "2025-10-23",
+          "value": 1.4915,
+          "accumulated": 1.4915
         },
         {
           "date": "2025-10-22",
@@ -3878,14 +4071,14 @@
           "accumulated": 1.4967
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:26.260Z",
+      "navCheckedAt": "2026-10-27T01:17:49.825Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021773&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021773&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021773&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "021778": {
       "code": "021778",
       "name": "广发纳指100ETF联接(QDII)人民币F",
-      "checkedAt": "2026-10-26T01:22:24.736Z",
+      "checkedAt": "2026-10-27T01:17:48.998Z",
       "documentDate": "2026-06-05",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606051823275067_1.pdf",
       "title": "广发纳斯达克100交易型开放式指数证券投资基金联接基金(QDII)(广发纳指100ETF联接(QDII)人民币F)基金产品资料概要更新",
@@ -3900,6 +4093,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 7.8886,
+          "accumulated": 7.8886
+        },
         {
           "date": "2026-10-22",
           "value": 7.8918,
@@ -3921,9 +4119,9 @@
           "accumulated": 8.0514
         },
         {
-          "date": "2026-10-16",
-          "value": 7.9608,
-          "accumulated": 7.9608
+          "date": "2025-10-23",
+          "value": 7.3394,
+          "accumulated": 7.3394
         },
         {
           "date": "2025-10-22",
@@ -3976,14 +4174,14 @@
           "accumulated": 7.3654
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:25.576Z",
+      "navCheckedAt": "2026-10-27T01:17:49.959Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021778&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021778&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021778&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "021838": {
       "code": "021838",
       "name": "嘉实纳斯达克100ETF发起联接(QDII)I人民币",
-      "checkedAt": "2026-10-26T01:22:24.736Z",
+      "checkedAt": "2026-10-27T01:17:48.998Z",
       "documentDate": "2026-06-10",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606101823410128_1.pdf",
       "title": "嘉实纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(I类人民币份额)基金产品资料概要更新(2026年06月10日)",
@@ -3998,6 +4196,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.1014,
+          "accumulated": 2.1014
+        },
         {
           "date": "2026-10-22",
           "value": 2.1018,
@@ -4019,9 +4222,9 @@
           "accumulated": 2.1416
         },
         {
-          "date": "2026-10-16",
-          "value": 2.1187,
-          "accumulated": 2.1187
+          "date": "2025-10-23",
+          "value": 1.9269,
+          "accumulated": 1.9269
         },
         {
           "date": "2025-10-22",
@@ -4074,14 +4277,14 @@
           "accumulated": 1.9385
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:25.554Z",
+      "navCheckedAt": "2026-10-27T01:17:49.963Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021838&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021838&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=021838&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "022523": {
       "code": "022523",
       "name": "天弘标普500发起(QDII-FOF)D",
-      "checkedAt": "2026-10-26T01:22:26.261Z",
+      "checkedAt": "2026-10-27T01:17:49.964Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823873877_1.pdf",
       "title": "天弘标普500发起式证券投资基金(QDII-FOF)(D类份额)基金产品资料概要(更新)",
@@ -4096,6 +4299,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.1831,
+          "accumulated": 2.1831
+        },
         {
           "date": "2026-10-22",
           "value": 2.1932,
@@ -4117,9 +4325,9 @@
           "accumulated": 2.2019
         },
         {
-          "date": "2026-10-16",
-          "value": 2.1947,
-          "accumulated": 2.1947
+          "date": "2025-10-23",
+          "value": 2.0494,
+          "accumulated": 2.0494
         },
         {
           "date": "2025-10-22",
@@ -4172,14 +4380,14 @@
           "accumulated": 2.054
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:27.175Z",
+      "navCheckedAt": "2026-10-27T01:17:50.787Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022523&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022523&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022523&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "022525": {
       "code": "022525",
       "name": "天弘纳斯达克100指数发起(QDII)D",
-      "checkedAt": "2026-10-26T01:22:26.261Z",
+      "checkedAt": "2026-10-27T01:17:49.964Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823874023_1.pdf",
       "title": "天弘纳斯达克100指数型发起式证券投资基金(QDII)(D类份额)基金产品资料概要(更新)",
@@ -4194,6 +4402,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.96,
+          "accumulated": 1.96
+        },
         {
           "date": "2026-10-22",
           "value": 1.9606,
@@ -4215,9 +4428,9 @@
           "accumulated": 1.9978
         },
         {
-          "date": "2026-10-16",
-          "value": 1.9763,
-          "accumulated": 1.9763
+          "date": "2025-10-23",
+          "value": 1.8084,
+          "accumulated": 1.8084
         },
         {
           "date": "2025-10-22",
@@ -4270,14 +4483,14 @@
           "accumulated": 1.8135
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:27.075Z",
+      "navCheckedAt": "2026-10-27T01:17:50.658Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022525&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022525&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022525&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "022664": {
       "code": "022664",
       "name": "华泰柏瑞纳斯达克100ETF发起式联接(QDII)I",
-      "checkedAt": "2026-10-26T01:22:26.261Z",
+      "checkedAt": "2026-10-27T01:17:49.964Z",
       "documentDate": "2025-11-27",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202511271789150900_1.pdf",
       "title": "华泰柏瑞纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(I类份额)基金产品资料概要更新",
@@ -4292,6 +4505,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 1.6041,
+          "accumulated": 1.6041
+        },
         {
           "date": "2026-10-22",
           "value": 1.6046,
@@ -4313,9 +4531,9 @@
           "accumulated": 1.6337
         },
         {
-          "date": "2026-10-16",
-          "value": 1.6162,
-          "accumulated": 1.6162
+          "date": "2025-10-23",
+          "value": 1.4858,
+          "accumulated": 1.4858
         },
         {
           "date": "2025-10-22",
@@ -4368,14 +4586,14 @@
           "accumulated": 1.4919
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:27.393Z",
+      "navCheckedAt": "2026-10-27T01:17:50.801Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022664&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022664&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=022664&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "023422": {
       "code": "023422",
       "name": "建信纳斯达克100指数(QDII)D人民币",
-      "checkedAt": "2026-10-26T01:22:26.261Z",
+      "checkedAt": "2026-10-27T01:17:49.964Z",
       "documentDate": "2026-08-04",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202608041827607459_1.pdf",
       "title": "建信纳斯达克100指数型证券投资基金(QDII)(D类份额人民币)基金产品资料概要更新",
@@ -4390,6 +4608,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 3.2669,
+          "accumulated": 3.2669
+        },
         {
           "date": "2026-10-22",
           "value": 3.2685,
@@ -4411,9 +4634,9 @@
           "accumulated": 3.329
         },
         {
-          "date": "2026-10-16",
-          "value": 3.295,
-          "accumulated": 3.295
+          "date": "2025-10-23",
+          "value": 3.0296,
+          "accumulated": 3.0296
         },
         {
           "date": "2025-10-22",
@@ -4466,14 +4689,14 @@
           "accumulated": 3.0429
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:27.231Z",
+      "navCheckedAt": "2026-10-27T01:17:50.802Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=023422&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=023422&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=023422&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "024237": {
       "code": "024237",
       "name": "博时纳斯达克100ETF发起式联接(QDII)I人民币",
-      "checkedAt": "2026-10-26T01:22:27.394Z",
+      "checkedAt": "2026-10-27T01:17:50.802Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823875244_1.pdf",
       "title": "博时纳斯达克100交易型开放式指数证券投资基金发起式联接基金(QDII)(博时纳斯达克100ETF发起式联接(QDII)I人民币)基金产品资料概要更新",
@@ -4488,6 +4711,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 2.0631,
+          "accumulated": 2.0631
+        },
         {
           "date": "2026-10-22",
           "value": 2.0638,
@@ -4509,9 +4737,9 @@
           "accumulated": 2.103
         },
         {
-          "date": "2026-10-16",
-          "value": 2.0804,
-          "accumulated": 2.0804
+          "date": "2025-10-23",
+          "value": 1.8817,
+          "accumulated": 1.8817
         },
         {
           "date": "2025-10-22",
@@ -4564,21 +4792,21 @@
           "accumulated": 1.8867
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:28.322Z",
+      "navCheckedAt": "2026-10-27T01:17:51.535Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=024237&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=024237&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=024237&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "040046": {
       "code": "040046",
       "name": "华安纳斯达克100ETF联接(QDII)A",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:27.394Z"
+      "lastAttemptAt": "2026-10-27T01:17:50.802Z"
     },
     "050025": {
       "code": "050025",
       "name": "博时标普500ETF联接A",
-      "checkedAt": "2026-10-26T01:22:27.394Z",
+      "checkedAt": "2026-10-27T01:17:50.803Z",
       "documentDate": "2026-06-26",
       "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202606261823875186_1.pdf",
       "title": "博时标普500交易型开放式指数证券投资基金联接基金(博时标普500ETF联接A(人民币))基金产品资料概要更新",
@@ -4593,6 +4821,11 @@
       "navDistributionChanged": false,
       "navBasis": "同日期单位净值涨幅（非复权）；不等于含分红总回报，不参与推荐排名。",
       "nav": [
+        {
+          "date": "2026-10-23",
+          "value": 5.5142,
+          "accumulated": 5.5732
+        },
         {
           "date": "2026-10-22",
           "value": 5.5429,
@@ -4614,9 +4847,9 @@
           "accumulated": 5.6233
         },
         {
-          "date": "2026-10-16",
-          "value": 5.5437,
-          "accumulated": 5.6027
+          "date": "2025-10-23",
+          "value": 5.1311,
+          "accumulated": 5.1901
         },
         {
           "date": "2025-10-22",
@@ -4669,16 +4902,16 @@
           "accumulated": 5.2017
         }
       ],
-      "navCheckedAt": "2026-10-26T01:22:28.161Z",
+      "navCheckedAt": "2026-10-27T01:17:51.497Z",
       "navSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=050025&pageIndex=1&pageSize=20",
-      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=050025&pageIndex=1&pageSize=20&startDate=2025-10-08&endDate=2025-10-22"
+      "navBaselineSourceUrl": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=050025&pageIndex=1&pageSize=20&startDate=2025-10-09&endDate=2025-10-23"
     },
     "096001": {
       "code": "096001",
       "name": "大成标普500等权重指数(QDII)A人民币",
       "status": "unverified",
       "error": "概要未找到对应份额代码",
-      "lastAttemptAt": "2026-10-26T01:22:27.394Z"
+      "lastAttemptAt": "2026-10-27T01:17:50.803Z"
     }
   }
 }
