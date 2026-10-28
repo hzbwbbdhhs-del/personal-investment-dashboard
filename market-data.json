@@ -1,7 +1,7 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-28T20:07:32.190Z",
-  "checkedAt": "2026-10-28T20:07:31.691Z",
+  "updatedAt": "2026-10-28T21:06:36.807Z",
+  "checkedAt": "2026-10-28T21:06:34.875Z",
   "checkStatus": "success",
   "market": {
     "NDX": {
@@ -256,7 +256,7 @@
         }
       ],
       "historyStart": "1986-01-02",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "SPX": {
@@ -511,7 +511,7 @@
         }
       ],
       "historyStart": "2016-10-28",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "VIX": {
@@ -766,7 +766,7 @@
         }
       ],
       "historyStart": "1990-01-02",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "VXN": {
@@ -1021,23 +1021,19 @@
         }
       ],
       "historyStart": "2001-02-02",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 5,
-      "changePct": 0,
-      "drawdownPct": -68.43434343434343,
+      "value": 4.99,
+      "changePct": -0.19999999999999576,
+      "drawdownPct": -68.49747474747474,
       "peak": 15.84,
-      "updatedAt": "2026-10-26",
+      "updatedAt": "2026-10-27",
       "source": "FRED公开CSV:DGS10",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-07-31",
-          "value": 4.75
-        },
         {
           "date": "2026-08-03",
           "value": 4.7
@@ -1273,10 +1269,14 @@
         {
           "date": "2026-10-26",
           "value": 5
+        },
+        {
+          "date": "2026-10-27",
+          "value": 4.99
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "USDCNY": {
@@ -1531,7 +1531,7 @@
         }
       ],
       "historyStart": "1981-01-02",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     }
   },
@@ -1542,14 +1542,10 @@
       "changePct": 0,
       "drawdownPct": -82.64758497316636,
       "peak": 22.36,
-      "updatedAt": "2026-10-26",
+      "updatedAt": "2026-10-27",
       "source": "FRED公开CSV:DFF",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-28",
-          "value": 3.63
-        },
         {
           "date": "2026-08-29",
           "value": 3.63
@@ -1785,10 +1781,14 @@
         {
           "date": "2026-10-26",
           "value": 3.88
+        },
+        {
+          "date": "2026-10-27",
+          "value": 3.88
         }
       ],
       "historyStart": "1954-07-01",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "CPI": {
@@ -2043,7 +2043,7 @@
         }
       ],
       "historyStart": "1947-01-01",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "PCE": {
@@ -2298,7 +2298,7 @@
         }
       ],
       "historyStart": "1959-01-01",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "UNRATE": {
@@ -2553,7 +2553,7 @@
         }
       ],
       "historyStart": "1948-01-01",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "PAYEMS": {
@@ -2808,23 +2808,19 @@
         }
       ],
       "historyStart": "1939-01-01",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 5,
-      "changePct": 0,
-      "drawdownPct": -68.43434343434343,
+      "value": 4.99,
+      "changePct": -0.19999999999999576,
+      "drawdownPct": -68.49747474747474,
       "peak": 15.84,
-      "updatedAt": "2026-10-26",
+      "updatedAt": "2026-10-27",
       "source": "FRED公开CSV:DGS10",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-07-31",
-          "value": 4.75
-        },
         {
           "date": "2026-08-03",
           "value": 4.7
@@ -3060,10 +3056,14 @@
         {
           "date": "2026-10-26",
           "value": 5
+        },
+        {
+          "date": "2026-10-27",
+          "value": 4.99
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-10-28T20:07:31.691Z",
+      "lastSuccessAt": "2026-10-28T21:06:34.875Z",
       "refreshStatus": "success"
     }
   },
