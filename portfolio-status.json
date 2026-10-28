@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "reportedOn": "2026-10-28",
+  "reconciliationRequired": false,
+  "settlementDetailsRequired": true,
+  "reason": "支付宝62笔已按2026-10-28录屏核对；直销10笔用户确认无交易。4笔赎回尚未拆分在途金额与剩余持仓。",
+  "snapshotDates": { "alipay": "2026-10-28", "direct": "2026-10-03" },
+  "pendingRecordedRequests": 4,
+  "pendingRequestDate": "2026-10-22",
+  "note": "支付宝总金额463674.68元，与62笔明细一致；370元买入待确认、18473.86元卖出将到账不重复加总，也不记为可用现金。"
+}

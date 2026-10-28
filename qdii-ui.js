@@ -208,10 +208,13 @@ async function qdiiFetch(path) {
   return response.json();
 }
 async function refreshQdiiLimits() {
+  if (refreshQdiiLimits.running) return;
+  refreshQdiiLimits.running = true;
   const label = qdii$("#qdiiUpdatedAt");
   try {
     const payload = await qdiiFetch("qdii-limits.json");
     if (payload.status !== "available" || payload.schemaVersion < 2 || !Array.isArray(payload.funds) || payload.funds.length < 60) throw new Error("快照不完整");
+    if (qdiiView.payload?.updatedAt && Date.parse(payload.updatedAt) < Date.parse(qdiiView.payload.updatedAt)) throw new Error('快照时间倒退');
     qdiiView.payload = payload;
     qdiiView.refreshFailed = false;
     renderQdiiLimits();
@@ -220,7 +223,7 @@ async function refreshQdiiLimits() {
     label.textContent = qdiiView.payload ? "刷新失败，保留原采集时间；过期额度自动隐藏" : "数据暂不可用，请稍后刷新";
     if (qdiiView.payload) renderQdiiLimits();
     else qdii$("#qdiiRows").innerHTML = '<tr><td colspan="4">数据源暂不可用；空白不代表不限购。</td></tr>';
-  }
+  } finally { refreshQdiiLimits.running = false; window.dispatchEvent?.(new Event('dashboard-data')); }
 }
 qdii$$("[data-qdii-category]").forEach(button => button.addEventListener("click", () => {
   qdiiView.category = button.dataset.qdiiCategory; qdiiView.shown = 30;

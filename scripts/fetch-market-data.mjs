@@ -1,4 +1,10 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
+
+const outputPath = existsSync('app.js') ? 'market-data.json' : 'dist/market-data.json';
+let previousSnapshot = {};
+try { previousSnapshot = JSON.parse(await readFile(outputPath, 'utf8')); } catch {}
+const checkedAt = new Date().toISOString();
 
 const series = {
   NDX: ["NASDAQ100", "纳斯达克100"],
@@ -8,6 +14,7 @@ const series = {
   US10Y: ["DGS10", "美国10年期国债收益率"],
   USDCNY: ["DEXCHUS", "USD/CNY"],
 };
+
 const macroSeries = {
   FEDFUNDS: ["DFF", "联邦基金有效利率"],
   CPI: ["CPIAUCSL", "CPI"],
@@ -15,16 +22,20 @@ const macroSeries = {
   UNRATE: ["UNRATE", "失业率"],
   PAYEMS: ["PAYEMS", "非农就业"],
 };
+
 function emptyMetric(label, source) {
   return { label, value: null, changePct: null, drawdownPct: null, peak: null, updatedAt: null, source, status: "error" };
 }
-function parseRows(text) {
-  return text.trim().split(String.fromCharCode(10)).slice(1).map((line) => {
+
+function parseRows(text, seriesId) {
+  const lines = text.trim().split(/\r?\n/);
+  return lines.slice(1).map((line) => {
     const [date, raw] = line.split(",");
-    const value = Number(raw);
+    const value = raw?.trim() && raw !== '.' ? Number(raw) : NaN;
     return [date, Number.isFinite(value) ? value : null];
   }).filter(([date]) => date);
 }
+
 function metricFromRows(rows, label, source) {
   const valid = rows.filter(([, value]) => value !== null);
   const item = emptyMetric(label, source);
@@ -38,19 +49,27 @@ function metricFromRows(rows, label, source) {
   item.peak = peak;
   item.updatedAt = updatedAt;
   item.status = "daily";
+  item.history = valid.slice(-60).map(([date, value]) => ({ date, value }));
+  item.historyStart = valid[0][0];
+  item.lastSuccessAt = checkedAt;
+  item.refreshStatus = 'success';
   return item;
 }
-async function loadSeries(seriesId, label) {
-  const source = "FRED公开CSV:" + seriesId;
+
+async function loadSeries(seriesId, label, previous) {
+  const source = `FRED公开CSV:${seriesId}`;
   try {
-    const response = await fetch("https://fred.stlouisfed.org/graph/fredgraph.csv?id=" + seriesId);
-    if (!response.ok) throw new Error("FRED " + response.status);
-    return metricFromRows(parseRows(await response.text()), label, source);
+    const response = await fetch(`https://fred.stlouisfed.org/graph/fredgraph.csv?id=${seriesId}`, { signal: AbortSignal.timeout(20000) });
+    if (!response.ok) throw new Error(`FRED ${response.status}`);
+    const metric = metricFromRows(parseRows(await response.text(), seriesId), label, source);
+    if (metric.value == null || (previous?.updatedAt && metric.updatedAt < previous.updatedAt)) throw new Error('empty or regressed series');
+    return metric;
   } catch (error) {
-    console.warn("Unable to load " + seriesId + ": " + error.message);
-    return emptyMetric(label, source);
+    console.warn(`Unable to load ${seriesId}: ${error.message}`);
+    return previous?.value != null ? { ...previous, refreshStatus: 'failed', lastSuccessAt: previous.lastSuccessAt || previousSnapshot.updatedAt || null } : { ...emptyMetric(label, source), refreshStatus: 'failed' };
   }
 }
+
 function marketTemperature(market) {
   const ndx = market.NDX || {};
   const vix = market.VIX || {};
@@ -60,30 +79,41 @@ function marketTemperature(market) {
   const vixValue = vix.value;
   const vxnValue = vxn.value;
   let severity = 0;
-  if (drawdown >= 20 || vixValue >= 35 || vxnValue >= 40) severity = 4;
-  else if (drawdown >= 15 || vixValue >= 30 || vxnValue >= 35) severity = 3;
-  else if (drawdown >= 10 || vixValue >= 25 || vxnValue >= 30) severity = 2;
-  else if (drawdown >= 5 || vixValue >= 20 || vxnValue >= 25) severity = 1;
-  const bands = [["正常", "维持原定投，不追涨", "green"], ["略加", "在原计划上小幅加码", "yellow"], ["提高", "提高投入，但分批执行", "orange"], ["加倍", "按计划加倍，仍分批执行", "coral"], ["明显加仓", "出现明显回撤，可考虑明显加仓", "red"]];
+  if (drawdown >= 20) severity = 4;
+  else if (drawdown >= 15) severity = 3;
+  else if (drawdown >= 10) severity = 2;
+  else if (drawdown >= 5) severity = 1;
+  const bands = [
+    ["正常", "维持原定投，不追涨", "green"],
+    ["略加", "在原计划上小幅加码", "yellow"],
+    ["提高", "提高投入，但分批执行", "orange"],
+    ["加倍", "按计划加倍，仍分批执行", "coral"],
+    ["明显加仓", "出现明显回撤，可考虑明显加仓", "red"],
+  ];
   const [label, action, color] = bands[severity];
-  const reasons = ["NDX 从历史高点回撤 " + drawdown.toFixed(2) + "%"];
-  if (vixValue != null && vixValue >= 25) reasons.push("VIX " + vixValue.toFixed(2) + "，高于 25 阈值");
-  if (vxnValue != null && vxnValue >= 30) reasons.push("VXN " + vxnValue.toFixed(2) + "，高于 30 阈值");
-  const dates = [ndx, vix, vxn].map((item) => item.updatedAt).filter(Boolean).sort();
-  return { status: "daily", band: severity, label, action, color, drawdownPct: -drawdown, reasons, updatedAt: dates.length ? dates[dates.length - 1] : null };
+  const reasons = [`NDX 从数据区间高点回撤 ${drawdown.toFixed(2)}%`];
+  if (vixValue != null && vixValue >= 25) reasons.push(`VIX ${vixValue.toFixed(2)}，高于 25 阈值`);
+  if (vxnValue != null && vxnValue >= 30) reasons.push(`VXN ${vxnValue.toFixed(2)}，高于 30 阈值`);
+  return { status: ndx.refreshStatus === 'failed' ? 'stale' : 'daily', band: severity, label, action, color, drawdownPct: -drawdown, reasons, updatedAt: ndx.updatedAt || null };
 }
-const market = Object.fromEntries(await Promise.all(Object.entries(series).map(async ([key, [id, label]]) => [key, await loadSeries(id, label)])));
-const macro = Object.fromEntries(await Promise.all(Object.entries(macroSeries).map(async ([key, [id, label]]) => [key, await loadSeries(id, label)])));
+
+const marketEntries = await Promise.all(Object.entries(series).map(async ([key, [id, label]]) => [key, await loadSeries(id, label, previousSnapshot.market?.[key])]));
+const macroEntries = await Promise.all(Object.entries(macroSeries).map(async ([key, [id, label]]) => [key, await loadSeries(id, label, previousSnapshot.macro?.[key])]));
+const market = Object.fromEntries(marketEntries);
+const macro = Object.fromEntries(macroEntries);
 macro.US10Y = market.US10Y;
 const allMetrics = [...Object.values(market), ...Object.values(macro)];
+const status = allMetrics.some((item) => item.status === "daily") ? "daily" : "error";
 const payload = {
-  status: allMetrics.some((item) => item.status === "daily") ? "daily" : "error",
+  status,
   updatedAt: new Date().toISOString(),
+  checkedAt,
+  checkStatus: allMetrics.every(item => item.refreshStatus === 'success') ? 'success' : allMetrics.some(item => item.refreshStatus === 'success') ? 'partial' : 'failed',
   market,
   macro,
   temperature: marketTemperature(market),
   refreshSeconds: 1800,
   source: "FRED公开CSV（无API Key）",
 };
-await writeFile("market-data.json", JSON.stringify(payload, null, 2) + String.fromCharCode(10), "utf8");
-console.log("Wrote market-data.json (" + payload.status + ")");
+await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+console.log(`Wrote ${outputPath} (${status}, ${payload.checkStatus})`);

@@ -7,7 +7,8 @@
     <meta name="description" content="个人投资组合、定投、宏观与 QDII 状态跟踪仪表盘" />
     <title>我的投资仪表盘</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="stylesheet" href="./styles.css?v=20261012-qdii-audit" />
+    <link rel="stylesheet" href="./styles.css?v=20261028-observation" />
+    <link rel="stylesheet" href="./dashboard.css?v=20261028-observation" />
   </head>
   <body>
     <div class="app-shell">
@@ -21,7 +22,7 @@
         </div>
         <div class="side-note">
           <span class="pulse-dot"></span>
-          <span>重大变化信号观察；通知待接入</span>
+          <span>重要事项与额度 · 网站内提醒</span>
         </div>
         <nav class="nav-list">
           <button class="nav-item active" data-section="overview"><span class="nav-index">01</span><span>总览</span></button>
@@ -43,8 +44,8 @@
         <header class="topbar">
           <div class="topbar-copy">
             <div class="eyebrow" id="topbarDate">正在读取北京时间…</div>
-            <h1 class="general-header-title">把波动放在视野里，<em>把节奏留给自己。</em></h1>
-            <p class="general-header-subtitle">资产、定投和宏观信号集中在一个安静的观察窗里。</p>
+            <h1 class="general-header-title">我的投资观察台</h1>
+            <p class="general-header-subtitle">净值、市场与申购额度；每项数据保留自己的日期。</p>
             <h1 class="qdii-header-title">QDII 申购额度</h1>
           </div>
           <div class="topbar-right">
@@ -62,18 +63,22 @@
           </div>
         </header>
 
+        <section class="feed-strip" id="feedStrip" aria-label="数据更新状态" aria-live="polite"><div>正在检查数据来源…</div></section>
+        <aside class="reconcile-banner" id="reconcileBanner" aria-live="polite"><div><strong>持仓待对账</strong><p>你近期有卖出尚未补录。以下金额为旧持仓参考估值，不是当前账户余额。</p></div><button type="button" class="ghost-button" data-section-target="holdings">查看持仓</button></aside>
+
         <section class="section-panel active" id="section-overview" data-panel>
           <div class="section-heading">
             <div>
               <div class="section-kicker">OVERVIEW / 资产总览</div>
-              <h2>先看组合，再看噪声。</h2>
+              <h2>组合概况</h2>
             </div>
-            <div class="section-meta"><span class="status-dot green"></span> 组合结构可用　<span class="divider-dot">·</span>　<span id="overviewDataStatus">市场温度待更新</span></div>
+            <div class="section-meta"><span id="overviewDataStatus">市场温度待更新</span></div>
           </div>
 
+          <article class="account-receipt" id="accountReceipt" aria-label="支付宝录屏核对结果"></article>
           <div class="hero-grid">
             <article class="hero-card total-card">
-              <div class="card-label-row"><span class="card-label">总资产（最新净值估算）</span><span class="tag estimate" id="assetValueTag">持仓快照</span></div>
+              <div class="card-label-row"><span class="card-label" id="assetTotalLabel">旧持仓参考估值</span><span class="tag estimate" id="assetValueTag">持仓待对账</span></div>
               <div class="hero-number" id="totalAssets">¥ 498,331</div>
               <div class="hero-foot"><span id="assetSourceLabel">支付宝10月7日 + 直销10月3日持仓快照</span><span id="assetFreshness">71 项</span></div>
               <div class="hero-rule"></div>
@@ -94,21 +99,23 @@
               <div class="allocation-foot" id="allocationFoot">按已录入持仓估算；买卖未自动同步</div>
             </article>
             <article class="hero-card signal-card">
-              <div class="card-label-row"><span class="card-label">当前操作信号</span><span class="tag pending" id="signalTag">待接入行情</span></div>
+              <div class="card-label-row"><span class="card-label">纳指回撤 · 原定投规则参考</span><span class="tag pending" id="signalTag">等待数据</span></div>
               <div class="signal-status"><div class="signal-icon" id="signalIcon">⌁</div><div><strong id="signalTitle">等待市场数据</strong><span id="signalDetail">NDX 回撤数据接入后自动判档</span></div></div>
               <div class="signal-scale"><div class="scale-line"><span class="scale-fill" id="signalFill"></span></div><div class="scale-labels"><span>正常</span><span>略加</span><span>提高</span><span>加倍</span><span>明显加仓</span></div></div>
               <button class="text-button" data-section-target="market">查看分档规则 <span>↗</span></button>
             </article>
           </div>
 
+          <article class="attention-card" aria-labelledby="attentionTitle"><div class="attention-heading"><h3 id="attentionTitle">现在值得留意</h3><span id="attentionCount">正在检查</span></div><div id="attentionItems" class="attention-items" aria-live="polite">正在核对数据与额度…</div><small>按公开数据与已设规则生成；有变化才列出，不预测涨跌。</small></article>
+
           <div class="grid-two overview-market-only">
             <article class="content-card watchlist-card">
               <div class="content-card-head"><div><div class="section-kicker">WATCHLIST / 关注指标</div><h3>市场温度</h3></div><span class="tag pending" id="temperatureTag">等待数据</span></div>
               <div class="market-mini-grid">
-                <button class="market-mini chart-trigger" type="button" data-chart="NDX" aria-label="打开纳斯达克100日线和分时图"><span class="mini-top"><span>NDX</span><span class="state-pill yellow" data-status-for="NDX">待接入</span></span><strong id="metric-ndx">—</strong><span id="metric-ndx-caption">纳指 100 · 回撤 —</span><svg class="sparkline spark-yellow" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,35 C18,31 20,25 38,28 S58,18 75,24 S93,13 106,18 S128,12 160,8" /></svg><small class="chart-hint">点击查看日线 / 分时 ↗</small></button>
-                <button class="market-mini chart-trigger" type="button" data-chart="SPX" aria-label="打开标普500日线和分时图"><span class="mini-top"><span>SPX</span><span class="state-pill yellow" data-status-for="SPX">待接入</span></span><strong id="metric-spx">—</strong><span id="metric-spx-caption">标普 500 · 回撤 —</span><svg class="sparkline spark-green" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,38 C17,33 28,37 42,29 S61,25 78,28 S95,17 110,19 S131,14 160,10" /></svg><small class="chart-hint">点击查看日线 / 分时 ↗</small></button>
-                <button class="market-mini chart-trigger" type="button" data-chart="VIX" aria-label="打开VIX和VXN日线、分时图"><span class="mini-top"><span>VIX / VXN</span><span class="state-pill yellow" data-status-for="VIX">待接入</span></span><strong id="metric-vol">— / —</strong><span>恐慌与科技波动</span><svg class="sparkline spark-coral" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,36 C15,26 25,34 36,18 S55,31 68,22 S83,12 96,25 S115,15 127,20 S142,10 160,15" /></svg><small class="chart-hint">点击查看 VIX / VXN 图表 ↗</small></button>
-                <button class="market-mini chart-trigger" type="button" data-chart="US10Y" aria-label="打开美国10年期国债收益率日线和分时图"><span class="mini-top"><span>10年期美债收益率</span><span class="state-pill yellow" data-status-for="US10Y">待接入</span></span><strong id="metric-us10y">—</strong><span>百分比标度，例如 5.25%</span><svg class="sparkline spark-blue" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 C14,22 23,30 39,26 S58,12 72,20 S96,26 112,16 S136,22 160,12" /></svg><small class="chart-hint">点击查看收益率图表 ↗</small></button>
+                <button class="market-mini chart-trigger" type="button" data-chart="NDX" aria-label="打开纳斯达克100日线和分时图"><span class="mini-top"><span>NDX</span><span class="state-pill yellow" data-status-for="NDX">待接入</span></span><strong id="metric-ndx">—</strong><span id="metric-ndx-caption">纳指 100 · 回撤 —</span><svg class="sparkline spark-yellow" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg><small class="chart-hint">点击查看日线 / 分时 ↗</small></button>
+                <button class="market-mini chart-trigger" type="button" data-chart="SPX" aria-label="打开标普500日线和分时图"><span class="mini-top"><span>SPX</span><span class="state-pill yellow" data-status-for="SPX">待接入</span></span><strong id="metric-spx">—</strong><span id="metric-spx-caption">标普 500 · 回撤 —</span><svg class="sparkline spark-green" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg><small class="chart-hint">点击查看日线 / 分时 ↗</small></button>
+                <button class="market-mini chart-trigger" type="button" data-chart="VIX" aria-label="打开VIX和VXN日线、分时图"><span class="mini-top"><span>VIX / VXN</span><span class="state-pill yellow" data-status-for="VIX">待接入</span></span><strong id="metric-vol">— / —</strong><span>恐慌与科技波动</span><svg class="sparkline spark-coral" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg><small class="chart-hint">点击查看 VIX / VXN 图表 ↗</small></button>
+                <button class="market-mini chart-trigger" type="button" data-chart="US10Y" aria-label="打开美国10年期国债收益率日线和分时图"><span class="mini-top"><span>10年期美债收益率</span><span class="state-pill yellow" data-status-for="US10Y">待接入</span></span><strong id="metric-us10y">—</strong><span>百分比标度，例如 5.25%</span><svg class="sparkline spark-blue" viewBox="0 0 160 46" preserveAspectRatio="none" aria-hidden="true"><path d="" /></svg><small class="chart-hint">点击查看收益率图表 ↗</small></button>
               </div>
               <div class="valuation-mini" aria-live="polite">
                 <div class="valuation-mini-head"><strong>估值水位 · 预期市盈率</strong><button class="text-button" type="button" data-section-target="market">看详情 ↗</button></div>
@@ -136,10 +143,12 @@
         </section>
 
         <section class="section-panel" id="section-today-returns" data-panel>
-          <div class="section-heading"><div><div class="section-kicker">TODAY'S RETURNS / 今日收益</div><h2>逐笔查看最新公布的基金收益。</h2></div><div class="section-meta"><span class="status-dot yellow"></span><span id="todayReturnStatus">等待基金净值</span></div></div>
-          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>北京时间日间约每10分钟、晚间约每5分钟检查新净值；打开的页面每分钟读取一次。</strong><span>“已更新”表示已取得该基金最新可获取的净值，不代表净值日期或公告时间是今天。QDII 通常今天公布前一交易日的净值；请以每只基金标注的净值日期为准。合计是混合日期估算，不能当作“今天实际赚了多少”。</span></div></div>
+          <div class="section-heading"><div><div class="section-kicker">今日收益</div><h2>按净值日期看收益</h2></div><div class="section-meta"><span id="todayReturnStatus">等待基金净值</span></div></div>
+          <div class="return-toolbar"><label for="returnDateSelect">净值日期</label><select id="returnDateSelect"><option value="">最新净值日</option></select><span>日期不同分别计算；未覆盖部分不计为零。</span></div>
+          <div class="return-date-groups" id="returnDateBreakdown" aria-label="各净值日的收益汇总"></div>
+          <div class="notice-banner"><span class="notice-icon">i</span><div><strong>“已更新”与净值日期分开显示。</strong><span>QDII可能今天才公布前一交易日的净值。检查失败或日期较早会单独标注；下方只合计所选净值日，其他日期的基金请切换查看。</span></div></div>
           <div class="grid-two">
-            <article class="hero-card total-card"><div class="card-label-row"><span class="card-label">最新净值日变动合计</span><span class="tag estimate">估算</span></div><div class="hero-number" id="todayReturnTotal">—</div><div class="hero-foot"><span>按持仓市值及份额计算</span><span id="todayReturnCoverage">—</span></div><div class="hero-rule"></div><div class="hero-microcopy">每只基金以下方标注的净值日期为准；当前持仓金额仍是已录入快照，不是自动同步的实时账户市值。</div></article>
+            <article class="hero-card total-card"><div class="card-label-row"><span class="card-label">所选净值日 · 已覆盖部分</span><span class="tag estimate">估算</span></div><div class="hero-number" id="todayReturnTotal">—</div><div class="hero-foot"><span>基于已录入持仓</span><span id="todayReturnCoverage">—</span></div><div class="hero-rule"></div><div class="hero-microcopy">此合计仅含所选净值日且可估算的基金；4笔含在途的持仓暂不参与计算。支付宝录屏中的昨日收益另列在总览。</div></article>
             <article class="content-card"><div class="content-card-head"><div><div class="section-kicker">RETURN DETAILS / 统计口径</div><h3>日期与覆盖情况</h3></div></div><div class="confidence-list"><div><span class="confidence-key verified"></span><span>净值日期范围</span><strong id="todayReturnDate">等待数据</strong></div><div><span class="confidence-key inferred"></span><span>组合估算涨幅</span><strong id="todayReturnRate">—</strong></div><div><span class="confidence-key api-key"></span><span>收益算法</span><strong id="todayReturnMethod">份额 × 单位净值变化；缺份额时估算</strong></div></div></article>
           </div>
           <article class="content-card table-card" style="margin-top:14px">
@@ -202,9 +211,9 @@
 
         <section class="section-panel" id="section-settings" data-panel>
           <div class="section-heading"><div><div class="section-kicker">DATA SETTINGS / 数据设置</div><h2>先把数据链路摆清楚。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 本地优先　·　密钥不放在浏览器</div></div>
-          <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag estimate">公开数据部分接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>FRED 免费公开日线；盘中实时指标待接入</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED 公开 CSV；各指标依发布周期更新</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>公开净值自动抓取；限额渠道核验未全覆盖</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>目前只有页面内规则，自动推送未接入</small></div><span class="connector-status">未接入通知</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 当前结构</div><h3>公开快照自动刷新</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>公开数据源</strong><small>基金净值 / FRED / 第三方限额</small></div><i>→</i><div><span>02</span><strong>GitHub 定时抓取</strong><small>5 / 15 / 30 分钟检查</small></div><i>→</i><div><span>03</span><strong>网页读取快照</strong><small>打开时自动更新</small></div></div><div class="architecture-note">买卖、分红、份额与真实余额仍需你提供记录；公开快照不能代替账户同步。</div></article></div>
+          <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag estimate">公开数据部分接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>FRED 免费公开日线；盘中实时指标待接入</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED 公开 CSV；各指标依发布周期更新</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>公开净值自动抓取；限额渠道核验未全覆盖</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>总览按条件提示；关闭网页后不推送</small></div><span class="connector-status">网站内提醒</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 当前结构</div><h3>公开快照自动刷新</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>公开数据源</strong><small>基金净值 / FRED / 第三方限额</small></div><i>→</i><div><span>02</span><strong>GitHub 定时抓取</strong><small>5 / 15 / 30 分钟检查</small></div><i>→</i><div><span>03</span><strong>网页读取快照</strong><small>打开时自动更新</small></div></div><div class="architecture-note">买卖、分红、份额与真实余额仍需你提供记录；公开快照不能代替账户同步。</div></article></div>
           <article class="content-card api-table-card"><div class="content-card-head"><div><div class="section-kicker">API NOTES / 接口说明</div><h3>哪些数据可能需要密钥或付费</h3></div><span class="tag estimate">以供应商当前条款为准</span></div><div class="api-grid"><div class="api-row"><span class="api-type public">公开</span><div><strong>部分 Treasury / BLS 公共数据</strong><small>可能无需密钥，但有频率、历史范围或实时延迟限制。</small></div><span class="api-cost">通常免费</span></div><div class="api-row"><span class="api-type key">Key</span><div><strong>FRED、BEA、部分行情服务</strong><small>通常需要申请 API Key；免费档不等于无限制或实时权限。</small></div><span class="api-cost">免费档 + 限额</span></div><div class="api-row"><span class="api-type paid">Paid</span><div><strong>实时美股指数、期权或高频行情</strong><small>实时权限、商业使用、历史深度数据往往进入付费套餐。</small></div><span class="api-cost">可能收费</span></div><div class="api-row"><span class="api-type source">源</span><div><strong>基金限购与申购状态</strong><small>优先读取基金公司公告和代销页面；自动抓取要考虑稳定性和条款。</small></div><span class="api-cost">需维护</span></div></div></article>
-          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>重大变化提醒偏好</strong><small>当前仅记录页面偏好，尚未接入自动通知；不会主动推送消息。</small></span></label><div class="backup-actions"><button class="outline-button" id="exportDataButton">导出备份</button><button class="outline-button" id="importDataButton" type="button">导入备份</button><input id="importDataFile" type="file" accept="application/json,.json" hidden /></div></div>
+          <div class="settings-footer"><label class="toggle-row"><input type="checkbox" id="majorChangeOnly" checked /><span class="toggle-ui"></span><span><strong>重大变化提醒偏好</strong><small>开启后总览仅显示数据异常、回撤分档和大额度等提醒；不发送站外消息。</small></span></label><div class="backup-actions"><button class="outline-button" id="exportDataButton">导出备份</button><button class="outline-button" id="importDataButton" type="button">导入备份</button><input id="importDataFile" type="file" accept="application/json,.json" hidden /></div></div>
           <p class="backup-note">手动修改只保存在当前设备的浏览器中；换手机或浏览器时，请先导出 JSON，再在新设备导入。导入会替换该设备的本地持仓，不会上传文件到网站服务器。</p>
         </section>
 
@@ -234,10 +243,12 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="./portfolio-data.js?v=20261007-funds"></script>
-    <script src="./app.js?v=20261010-ledger-upgrade"></script>
+    <script src="./portfolio-data.js?v=20261028-verified"></script>
+    <script src="./dashboard-core.js?v=20261028-observation"></script>
+    <script src="./app.js?v=20261028-observation"></script>
     <script src="./qdii-monitor-core.js?v=20261012-qdii-audit"></script>
-    <script src="./qdii-ui.js?v=20261012-qdii-audit"></script>
+    <script src="./qdii-ui.js?v=20261028-observation"></script>
     <script src="./qdii-insights.js?v=20261012-qdii-audit"></script>
+    <script src="./dashboard-monitor.js?v=20261028-observation"></script>
   </body>
 </html>

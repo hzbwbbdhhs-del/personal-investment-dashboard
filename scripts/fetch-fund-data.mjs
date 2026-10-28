@@ -16,8 +16,11 @@ const jsonSource = portfolioSource
   .replace(/;\s*$/, "");
 const portfolio = JSON.parse(jsonSource);
 let previousFunds = {};
+let previousSnapshot = {};
+const checkedAt = new Date().toISOString();
 try {
   const previous = JSON.parse(await readFile(outputPath, "utf8"));
+  previousSnapshot = previous;
   previousFunds = previous.funds || {};
 } catch {
   // The first run has no previous snapshot to retain.
@@ -47,9 +50,10 @@ async function fetchFund(code, name) {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const payload = await response.json();
       const rows = payload?.Data?.LSJZList || [];
-      const valid = rows.filter((row) => row.DWJZ != null && String(row.DWJZ).trim() !== "" && Number.isFinite(Number(row.DWJZ)) && row.FSRQ);
+      const valid = rows.filter((row) => row.DWJZ != null && String(row.DWJZ).trim() !== "" && Number.isFinite(Number(row.DWJZ)) && Number(row.DWJZ) > 0 && /^\d{4}-\d{2}-\d{2}$/.test(row.FSRQ || '')).sort((a,b) => b.FSRQ.localeCompare(a.FSRQ));
       if (!valid.length) throw new Error(payload?.ErrMsg || "no published NAV rows");
       const latest = valid[0];
+      if (previousFunds[code]?.latestDate > latest.FSRQ) throw new Error('source returned older NAV than last successful snapshot');
       const previous = valid.find((row) => row.FSRQ !== latest.FSRQ);
       const nav = Number(latest.DWJZ);
       const previousNav = previous ? Number(previous.DWJZ) : null;
@@ -67,6 +71,10 @@ async function fetchFund(code, name) {
         code,
         name,
         status: "available",
+        refreshStatus: "success",
+        checkedAt,
+        lastSuccessAt: checkedAt,
+        firstSeenAt: previousFunds[code]?.latestDate === latest.FSRQ ? previousFunds[code].firstSeenAt || null : checkedAt,
         latestDate: latest.FSRQ,
         nav,
         previousDate: previous?.FSRQ || null,
@@ -84,9 +92,9 @@ async function fetchFund(code, name) {
   const previous = previousFunds[code];
   if (previous?.status === "available" && previous.latestDate) {
     console.warn(`${code} ${name}: retaining ${previous.latestDate} NAV after failed refresh`);
-    return previous;
+    return { ...previous, refreshStatus: "failed", checkedAt, lastSuccessAt: previous.lastSuccessAt || previousSnapshot.updatedAt || null, error: "公开净值接口本次检查失败，保留上次成功数据" };
   }
-  return { code, name, status: "unavailable", latestDate: null, nav: null, previousDate: null, previousNav: null, dailyChange: null, dailyChangePct: null, source };
+  return { code, name, status: "unavailable", refreshStatus: "failed", checkedAt, lastSuccessAt: null, latestDate: null, nav: null, previousDate: null, previousNav: null, dailyChange: null, dailyChangePct: null, source };
 }
 
 const codes = [...namesByCode.keys()];
@@ -96,18 +104,25 @@ for (let offset = 0; offset < codes.length; offset += 8) {
   for (const fund of batch) funds[fund.code] = fund;
 }
 
+const values = Object.values(funds);
+const successCount = values.filter(fund => fund.refreshStatus === 'success').length;
+const contentOf = entries => JSON.stringify(Object.fromEntries(Object.entries(entries).map(([code, fund]) => {
+  const { checkedAt, lastSuccessAt, refreshStatus, error, ...content } = fund;
+  return [code, content];
+})));
+const changed = contentOf(funds) !== contentOf(previousFunds);
 const payload = {
   status: Object.values(funds).some((fund) => fund.status === "available") ? "daily" : "error",
-  updatedAt: new Date().toISOString(),
+  checkedAt,
+  updatedAt: changed ? checkedAt : previousSnapshot.updatedAt || checkedAt,
+  checkStatus: successCount === values.length ? 'success' : successCount ? 'partial' : 'failed',
+  successCount,
+  failureCount: values.length - successCount,
   source: "东方财富公开基金历史净值接口",
   note: "日收益率为基金单位净值日变化；未提供份额时，仪表盘按记录持仓市值估算金额。QDII净值可能晚于海外市场交易日公布。",
   count: Object.keys(funds).length,
   funds,
 };
-if (JSON.stringify(funds) === JSON.stringify(previousFunds)) {
-  console.log(`No new fund NAVs; ${Object.values(funds).filter((fund) => fund.status === "available").length}/${payload.count} remain available`);
-  process.exit(0);
-}
 await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const available = Object.values(funds).filter((fund) => fund.status === "available").length;
-console.log(`Wrote ${outputPath}: ${available}/${payload.count} fund NAVs available`);
+console.log(`Wrote ${outputPath}: ${available}/${payload.count} NAVs available; ${successCount} checks succeeded, ${payload.failureCount} failed; content changed=${changed}`);

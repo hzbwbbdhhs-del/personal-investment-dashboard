@@ -10,6 +10,10 @@ const fallbackHoldings = [
 // suffixes (A/C/E) are kept because the same fund family can have different
 // trading codes for each class.
 const knownFundCodes = {
+  "易方达成长景明混合C": "026998",
+  "华安黄金ETF联接C": "000217",
+  "广发中债7-10年期国开行债券指数A": "003376",
+  "中银国有企业债债券A": "001235",
   "兴全稳泰债券A": "003949",
   "广发中债7-10年国开行债券指数A": "003376",
   "易方达全球成长精选混合(QDII)C": "012922",
@@ -85,6 +89,7 @@ const categoryNames = ["债券 / 现金", "纳指 100", "标普 500", "主动 QD
 
 function classifyHolding(name) {
   if (["债券", "国开行", "纯债", "稳泰", "增强回报"].some((word) => name.includes(word))) return "债券 / 现金";
+  if (name.includes("纳斯达克科技")) return "其他";
   if (name.includes("纳斯达克") || name.includes("纳指")) return "纳指 100";
   if (name.includes("标普")) return "标普 500";
   if (name.includes("富时100") || name.includes("日经225")) return "其他";
@@ -99,19 +104,22 @@ function importedHoldings() {
     const value = Number(record["持仓金额_元"] || 0);
     const income = record["持有收益_元"];
     return {
-      id: `snapshot-${record["渠道"] || "unknown"}-${record["序号"] || index + 1}`,
+      id: record['记录ID'] || `snapshot-${record["渠道"] || "unknown"}-${record["序号"] || index + 1}`,
       name: record["基金名称"] || "未命名基金",
-      code: knownFundCodes[record["基金名称"]] || record["基金代码"] || "代码待补充",
+      code: record["基金代码"] || knownFundCodes[record["基金名称"]] || "代码待补充",
       channel: record["渠道"] || "未知渠道",
       date: record["数据日期"] || "",
       category: classifyHolding(record["基金名称"] || ""),
       value,
-      cost: record["持有成本_元"] != null ? Number(record["持有成本_元"]) : income == null ? "" : Number((value - Number(income)).toFixed(2)),
+      cost: record['成本待确认'] ? '' : record["持有成本_元"] != null ? Number(record["持有成本_元"]) : income == null ? "" : Number((value - Number(income)).toFixed(2)),
+      valuationBlocked: Boolean(record['暂停自动估值']),
+      reportedYesterday: record['昨日收益_元'] ?? null,
+      reportedIncome: income ?? null,
       shares: record["持有份额_份"] == null ? "" : Number(record["持有份额_份"]),
       monthly: "",
       status: ["支付宝", "直销"].includes(record["渠道"]) ? "用户已确认" : "待确认",
       note: record["渠道"] === "支付宝"
-        ? `支付宝录屏逐帧核对 · ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}`
+        ? `支付宝录屏核对 · ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}${record['暂停自动估值'] ? ' · 含交易在途，暂不推算' : ''}`
         : record["渠道"] === "直销"
           ? `基金公司直销记录 · 用户确认最新持仓 ${record["数据日期"] || "日期待补充"} · 持有收益 ${income == null ? "待补充" : formatCurrency(income)}${record["持有收益日期"] ? `（截至 ${record["持有收益日期"]}）` : ""}${record["昨日收益_元"] == null ? "" : ` · 截图昨日收益 ${formatCurrency(record["昨日收益_元"])}${record["昨日收益日期"] ? `（${record["昨日收益日期"]}）` : "（日期未显示）"}`}`
           : `基金公司直销记录 · ${record["数据日期"] || "日期待补充"} · 持有收益未提供`,
@@ -129,12 +137,27 @@ let holdings = loadHoldings();
 function loadHoldings() {
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey));
+    const revision = window.portfolioSnapshot?.['版本'];
+    if (revision && localStorage.getItem('dashboard-portfolio-revision') !== revision) {
+      if (Array.isArray(saved)) localStorage.setItem(`${storageKey}-before-${revision}`, JSON.stringify(saved));
+      // The user's new Alipay recording is authoritative; preserve locally edited direct records.
+      const imported = structuredClone(initialHoldings);
+      const incoming = imported.map(item => {
+        if (item.channel === '直销') return saved?.find?.(old => old.id === item.id && old.userEdited) || item;
+        const old = saved?.find?.(row => row.channel === item.channel && row.code === item.code);
+        return old ? { ...item, monthly: old.monthly, monthlyDay: old.monthlyDay } : item;
+      });
+      if (Array.isArray(saved)) incoming.push(...saved.filter(old => old.userEdited && old.channel !== '支付宝' && !incoming.some(item => item.id === old.id)));
+      localStorage.setItem(storageKey, JSON.stringify(incoming));
+      localStorage.setItem('dashboard-portfolio-revision', revision);
+      return incoming;
+    }
     if (!Array.isArray(saved)) return structuredClone(initialHoldings);
     const importedById = new Map(initialHoldings.map((item) => [item.id, item]));
     return saved.map((item) => {
       const imported = importedById.get(item.id);
       if (!imported || item.userEdited) return item;
-      return { ...item, value: imported.value, cost: imported.cost, shares: imported.shares, date: imported.date, code: imported.code, category: imported.category, status: imported.status, note: imported.note };
+      return { ...item, ...imported, monthly: item.monthly, monthlyDay: item.monthlyDay };
     });
   } catch {
     return structuredClone(initialHoldings);
@@ -147,7 +170,8 @@ function saveHoldings() {
 
 function formatCurrency(value) {
   if (value === "" || value === null || Number.isNaN(Number(value))) return "—";
-  return `¥ ${Number(value).toLocaleString("zh-CN", { maximumFractionDigits: 2 })}`;
+  const rounded = Math.abs(Number(value)) < 0.005 ? 0 : Number(value);
+  return `¥ ${rounded.toLocaleString("zh-CN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function chinaDate() {
@@ -226,10 +250,14 @@ function renderMonthlyPlan() {
 }
 
 let fundData = {};
+let fundSnapshot = {};
+let marketSnapshot = {};
+const feedErrors = { fund: false, market: false };
 let fundSnapshotUpdatedAt = "";
 let fundRenderDate = "";
 function valuationFor(item) {
   const snapshotValue = Number(item.value || 0);
+  if (item.valuationBlocked) return { value: snapshotValue, kind: 'snapshot', date: item.date, label: `${displayChinaDate(item.date)}录屏金额 · 在途未拆分，暂停估算` };
   const fund = fundData[item.code];
   if (fund?.status === "available" && Number(fund.nav) > 0) {
     if (Number(item.shares) > 0) {
@@ -244,33 +272,45 @@ function valuationFor(item) {
 }
 
 function dailyReturnFor(item) {
+  if (item.valuationBlocked) return null;
   const fund = fundData[item.code];
   if (!fund || fund.status !== "available" || fund.dailyChangePct == null) return null;
   const exact = Number(item.shares) > 0 && fund.dailyChange != null;
   const latestValue = valuationFor(item).value;
   const amount = exact ? Number(item.shares) * fund.dailyChange
+    : Number(fund.nav) > 0 && Number(fund.previousNav) > 0 ? latestValue * (fund.nav - fund.previousNav) / fund.nav
     : fund.dailyChangePct > -100 ? latestValue * fund.dailyChangePct / (100 + fund.dailyChangePct)
       : Number(item.value || 0) * fund.dailyChangePct / 100;
   return { fund, exact, amount };
 }
 
 function renderDailyReturn(item) {
+  if (item.valuationBlocked) return `<strong>${item.reportedYesterday > 0 ? '+' : ''}${formatCurrency(item.reportedYesterday)}</strong><small>${displayChinaDate(item.date)}录屏「昨日收益」；含在途，未计入净值日估算</small>`;
   const result = dailyReturnFor(item);
   if (!result) return `<strong>—</strong><small>等待基金净值</small>`;
   const { fund, exact, amount } = result;
   const sign = amount > 0 ? "+" : "";
   const rateSign = fund.dailyChangePct > 0 ? "+" : "";
   const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small>已更新 · ${fund.latestDate}净值 · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
+  const state = dashboardCore.fundState(fund, fundSnapshot);
+  return `<strong class="${amountClass}">${sign}${formatCurrency(amount)}</strong><small class="feed-${state.level}">${state.label} · ${fund.latestDate}净值 · ${rateSign}${Number(fund.dailyChangePct).toFixed(2)}%${exact ? " · 按份额" : " · 估算"}</small>`;
 }
 
+let selectedReturnDate = '';
 function renderTodayReturns() {
   const body = $("#todayReturnsTableBody");
   if (!body) return;
-  const rows = holdings.map((item) => ({ item, result: dailyReturnFor(item) }));
-  const available = rows.filter(({ result }) => result);
-  const total = available.reduce((sum, row) => sum + row.result.amount, 0);
-  const marketValue = available.reduce((sum, row) => sum + valuationFor(row.item).value, 0);
+  const rows = holdings.map((item) => ({ item, value: valuationFor(item).value, result: dailyReturnFor(item) }));
+  const groups = dashboardCore.groupReturns(rows);
+  const dateSelect = $('#returnDateSelect');
+  if (dateSelect) {
+    dateSelect.innerHTML = '<option value="">最新净值日</option>' + groups.map(group => `<option value="${group.date}">${group.date} · ${group.rows.length}笔</option>`).join('');
+    if (!groups.some(group => group.date === selectedReturnDate)) selectedReturnDate = '';
+    dateSelect.value = selectedReturnDate;
+  }
+  const selected = groups.find(group => group.date === selectedReturnDate) || groups[0];
+  const available = selected?.rows || [];
+  const total = selected?.amount || 0;
   const exactCount = available.filter(({ result }) => result.exact).length;
   const dates = [...new Set(available.map(({ result }) => result.fund.latestDate).filter(Boolean))].sort();
   const latestDate = dates.at(-1) || "";
@@ -290,23 +330,26 @@ function renderTodayReturns() {
     totalNode.className = `hero-number ${total > 0 ? "positive" : total < 0 ? "negative" : ""}`;
   }
   const coverage = $("#todayReturnCoverage");
-  if (coverage) coverage.textContent = `${available.length}/${holdings.length} 笔已取数`;
+  if (coverage) coverage.textContent = `${available.length}/${holdings.length} 笔属于所选净值日`;
   const status = $("#todayReturnStatus");
   if (status) status.textContent = available.length
-    ? `已更新 ${available.length} 笔 · 最新${displayChinaDate(latestDate)}净值 · ${dateBreakdown}`
+    ? `${latestDate}净值 · ${available.length}笔；其他日期未并入合计`
     : "基金净值暂不可用";
   const dateNode = $("#todayReturnDate");
   if (dateNode) dateNode.textContent = available.length ? dateBreakdown : "等待数据";
   const rateNode = $("#todayReturnRate");
   if (rateNode) {
-    const rate = marketValue ? total / marketValue * 100 : null;
-    rateNode.textContent = rate == null ? "—" : `${rate > 0 ? "+" : ""}${rate.toFixed(2)}% · 混合日期估算`;
+    const rate = selected?.rate;
+    rateNode.textContent = rate == null ? "—" : `${rate > 0 ? "+" : ""}${rate.toFixed(2)}% · 所选日期覆盖部分`;
   }
   const methodNode = $("#todayReturnMethod");
   if (methodNode) methodNode.textContent = available.length ? `${exactCount} 笔按份额，其余按市值估算` : "等待净值和持仓数据";
   const empty = $("#todayReturnsEmpty");
-  if (empty) empty.hidden = rows.length > 0;
-  body.innerHTML = rows.sort((a, b) => Math.abs(b.result?.amount || 0) - Math.abs(a.result?.amount || 0)).map(({ item, result }) => {
+  if (empty) empty.hidden = available.length > 0;
+  const breakdown = $('#returnDateBreakdown');
+  if (breakdown) breakdown.innerHTML = groups.length ? groups.map(group => `<button type="button" class="return-date-group ${group.date === latestDate ? 'selected' : ''}" data-return-date="${group.date}"><span>${group.date}<small>${group.rows.length}笔 · 净值日</small></span><strong class="${group.amount > 0 ? 'positive' : group.amount < 0 ? 'negative' : ''}">${group.amount > 0 ? '+' : ''}${formatCurrency(group.amount)}</strong></button>`).join('') : '<p>等待基金净值。缺失数据不计为零收益。</p>';
+  $$('[data-return-date]').forEach(button => button.addEventListener('click', () => { selectedReturnDate = button.dataset.returnDate; renderTodayReturns(); }));
+  body.innerHTML = available.slice().sort((a, b) => Math.abs(b.result?.amount || 0) - Math.abs(a.result?.amount || 0)).map(({ item, result }) => {
     const nameBase = `<strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(item.code || "代码待补充")} · ${escapeHtml(item.channel || "渠道待补充")}</small>`;
     if (!result) {
       const name = `${nameBase}<span class="mobile-nav-date unavailable">日期未获取</span>`;
@@ -314,45 +357,49 @@ function renderTodayReturns() {
     }
     const { fund, exact, amount } = result;
     const amountClass = amount > 0 ? "positive" : amount < 0 ? "negative" : "neutral";
-    const dateClass = "current";
-    const dateNote = "已获取该日期的净值";
-    const dateLabel = `已更新 · ${displayChinaDate(fund.latestDate)}净值`;
+    const state = dashboardCore.fundState(fund, fundSnapshot);
+    const dateClass = state.level === 'ok' ? 'current' : 'unavailable';
+    const dateNote = fund.lastSuccessAt ? `成功检查 ${new Date(fund.lastSuccessAt).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}` : '成功检查时间未记录';
+    const dateLabel = `${state.label} · ${displayChinaDate(fund.latestDate)}净值`;
     const name = `${nameBase}<span class="mobile-nav-date ${dateClass}">${dateLabel}</span>`;
-    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(valuationFor(item).value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td class="nav-date-cell nav-date-column"><span class="nav-date-chip ${dateClass}">${dateLabel}</span><small>${escapeHtml(fund.latestDate || "日期待确认")} · ${dateNote}</small></td><td><strong>${exact ? "按份额精算" : "按持仓市值估算"}</strong></td></tr>`;
+    return `<tr><td>${name}</td><td>${escapeHtml(item.category)}</td><td>${formatCurrency(valuationFor(item).value)}</td><td><strong class="${amountClass}">${amount > 0 ? "+" : ""}${formatCurrency(amount)}</strong></td><td>${fund.dailyChangePct > 0 ? "+" : ""}${Number(fund.dailyChangePct).toFixed(2)}%</td><td class="nav-date-cell nav-date-column"><span class="nav-date-chip ${dateClass}">${dateLabel}</span><small>${escapeHtml(fund.latestDate || "日期待确认")} · ${dateNote}</small></td><td><strong>${exact ? "按录入份额计算" : "按持仓市值估算"}</strong></td></tr>`;
   }).join("");
 }
 
 async function refreshFundData() {
+  if (refreshFundData.running) return;
+  refreshFundData.running = true;
   try {
     const rawUrl = `https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/fund-data.json?ts=${Date.now()}`;
     let response;
     if (location.hostname.endsWith("github.io")) {
       try {
-        response = await fetch(rawUrl, { cache: "no-store" });
+        response = await fetch(rawUrl, { cache: "no-store", signal: AbortSignal.timeout(12000) });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
       } catch {
-        response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store" });
+        response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
       }
     } else {
-      response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store" });
+      response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
     }
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     if (!payload.funds || !Object.keys(payload.funds).length) throw new Error("Empty fund snapshot");
-    if (fundSnapshotUpdatedAt && payload.updatedAt === fundSnapshotUpdatedAt && fundRenderDate === chinaDate()) return;
+    if (fundSnapshot.updatedAt && Date.parse(payload.checkedAt || payload.updatedAt) < Date.parse(fundSnapshot.checkedAt || fundSnapshot.updatedAt)) throw new Error('Older snapshot');
+    feedErrors.fund = false;
+    fundSnapshot = payload;
     fundSnapshotUpdatedAt = payload.updatedAt || "";
     fundRenderDate = chinaDate();
     fundData = payload.funds || {};
     renderHoldings();
     const available = Object.values(fundData).filter((fund) => fund.status === "available");
-    const totalDaily = holdings.reduce((sum, item) => sum + (dailyReturnFor(item)?.amount || 0), 0);
-    const sign = totalDaily > 0 ? "+" : "";
     const summary = $("#fundDailySummary");
-    if (summary) summary.textContent = available.length ? `组合估算日收益 ${sign}${formatCurrency(totalDaily)} · ${available.length}/${Object.keys(fundData).length} 只已取数` : "暂未取得基金净值";
+    if (summary) summary.textContent = available.length ? `${available.length}/${Object.keys(fundData).length} 只已取数；收益按净值日期分别统计` : "暂未取得基金净值";
   } catch {
+    feedErrors.fund = true;
     const summary = $("#fundDailySummary");
     if (summary && !Object.keys(fundData).length) summary.textContent = "基金净值暂不可用";
-  }
+  } finally { refreshFundData.running = false; window.dispatchEvent(new Event('dashboard-data')); }
 }
 
 function updatePortfolioSummary() {
@@ -367,7 +414,7 @@ function updatePortfolioSummary() {
   const baselineNode = $("#baselineAsset"); if (baselineNode) baselineNode.textContent = formatCurrency(snapshotTotal);
   const countNode = $("#assetFreshness"); if (countNode) countNode.textContent = `${holdings.length} 项`;
   const hasLocalChanges = holdings.length !== initialHoldings.length || holdings.some((item) => item.userEdited);
-  const baselineNote = hasLocalChanges ? "当前设备的本地台账" : "支付宝10月7日 · 直销10月3日快照";
+  const baselineNote = hasLocalChanges ? "当前设备的本地台账" : "支付宝10月28日 · 直销10月3日（用户确认无交易）";
   const sidebarNote = $("#sidebarBaselineNote"); if (sidebarNote) sidebarNote.textContent = baselineNote;
   const ledgerNote = $("#confidenceLedger"); if (ledgerNote) ledgerNote.textContent = `${holdings.length} 项 / ${formatCurrency(snapshotTotal)}`;
   const refreshed = valuations.filter(({ valuation }) => valuation.kind !== "snapshot");
@@ -377,11 +424,12 @@ function updatePortfolioSummary() {
   refreshed.forEach(({ valuation }) => dateCounts.set(valuation.date, (dateCounts.get(valuation.date) || 0) + 1));
   const dateSummary = [...dateCounts.entries()].sort(([a], [b]) => b.localeCompare(a)).map(([date, count]) => `${displayChinaDate(date)} ${count}笔`).join("、");
   const difference = total - snapshotTotal;
-  const tag = $("#assetValueTag"); if (tag) tag.textContent = refreshed.length ? "净值估算" : "持仓快照";
+  const tag = $("#assetValueTag"); if (tag) tag.textContent = "含在途 / 部分估算";
   const allocationTag = $("#allocationValueTag"); if (allocationTag) allocationTag.textContent = refreshed.length ? "净值估算" : "持仓快照";
   const sidebarDate = $("#sidebarNavDate"); if (sidebarDate) sidebarDate.textContent = latestNavDate ? `最晚${displayChinaDate(latestNavDate)}净值` : "等待净值";
-  const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = latestNavDate ? `按各基金最新净值估算 · 最晚${displayChinaDate(latestNavDate)}` : baselineNote;
-  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = `较录入基准${difference >= 0 ? "+" : "-"}${formatCurrency(Math.abs(difference))}；${refreshed.length}/${holdings.length}笔可按净值估值（${dateSummary || "净值待更新"}）。录入基准：${baselineNote}；买卖、分红和账户余额未自动同步，不等于实时实盘余额。`;
+  const sourceNode = $("#assetSourceLabel"); if (sourceNode) sourceNode.textContent = latestNavDate ? `已核对快照＋可估值部分 · 最晚${displayChinaDate(latestNavDate)}净值` : baselineNote;
+  const blockedCount = holdings.filter(item => item.valuationBlocked).length;
+  const microcopyNode = $("#assetMicrocopy"); if (microcopyNode) microcopyNode.textContent = `${refreshed.length}/${holdings.length}笔随已公布净值推算；${blockedCount}笔在途未拆分，保留录屏金额。基准：${baselineNote}。未将买入待确认或卖出将到账重复计入现金；金额是合并参考，并非自动读取的账户余额。`;
   categoryNames.forEach((name) => {
     const id = { "债券 / 现金": "bond", "纳指 100": "ndx", "标普 500": "spx", "主动 QDII": "active", "其他": "other" }[name];
     const node = $(`#allocation-${id}`); if (node) node.textContent = `${percent(name).toFixed(1)}%`;
@@ -390,7 +438,7 @@ function updatePortfolioSummary() {
   const centerValue = $("#allocationCenterValue"); if (centerValue) centerValue.textContent = `${percent("债券 / 现金").toFixed(1)}%`;
   const allocationFoot = $("#allocationFoot");
   if (allocationFoot) allocationFoot.textContent = latestNavDate
-    ? `按各基金净值估算 · 最晚${displayChinaDate(latestNavDate)}净值 · 买卖未自动同步`
+    ? `账面金额分类（含在途），不等于实际风险敞口 · 最晚${displayChinaDate(latestNavDate)}净值`
     : "按已录入持仓快照估算 · 买卖未自动同步";
   const donut = $("#allocationDonut");
   if (donut) {
@@ -637,6 +685,7 @@ function applyTemperature(temperature) {
 }
 
 function applyMarketPayload(payload) {
+  marketSnapshot = payload;
   const market = payload.market || {};
   const get = (key) => market[key] || {};
   const ndx = get("NDX"); const spx = get("SPX"); const vix = get("VIX"); const vxn = get("VXN"); const us10y = get("US10Y"); const usdcny = get("USDCNY");
@@ -652,6 +701,11 @@ function applyMarketPayload(payload) {
   write("indicator-us10y", us10y.value == null ? "—" : `${formatMetric(us10y.value)}%`); write("indicator-usdcny", formatMetric(usdcny.value, 4));
   write("drawdown-ndx", ndx.drawdownPct == null ? "—" : `${formatMetric(ndx.drawdownPct)}%`); write("drawdown-spx", spx.drawdownPct == null ? "—" : `${formatMetric(spx.drawdownPct)}%`);
   ["NDX", "SPX", "VIX", "VXN", "US10Y", "USDCNY"].forEach((key) => updateMetricStatus(key, get(key).status, get(key).updatedAt));
+  ['NDX', 'SPX', 'VIX', 'US10Y'].forEach(key => {
+    const chart = $(`.market-mini[data-chart="${key}"] .sparkline`);
+    const path = dashboardCore.sparkline(get(key).history);
+    if (chart) { chart.style.display = path ? '' : 'none'; chart.querySelector('path')?.setAttribute('d', path); }
+  });
   const mode = $("#dataModeLabel"); if (mode) mode.textContent = payload.status === "live" ? "实时数据" : payload.status === "daily" ? "免费日线" : payload.status === "error" ? "接口异常" : "等待密钥";
   const note = $("#marketFootnote");
   if (note) {
@@ -666,29 +720,39 @@ function applyMarketPayload(payload) {
   writeMacroDetail("macro-inflation", ["live", "daily"].includes(macro.PCE?.status) ? `PCE指数 ${formatMetric(macro.PCE.value)}（${displayChinaDate(macro.PCE.updatedAt)}）；核心同比待接入` : "PCE与核心同比待接入");
   write("macro-jobs", ["live", "daily"].includes(macro.UNRATE?.status) ? `失业率 ${formatMetric(macro.UNRATE.value)}% · ${displayChinaDate(macro.UNRATE.updatedAt)}` : "待更新");
   writeMacroDetail("macro-jobs", ["live", "daily"].includes(macro.PAYEMS?.status) ? `非农总就业约${formatMetric(macro.PAYEMS.value / 100000, 2)}亿人（${displayChinaDate(macro.PAYEMS.updatedAt)}）；时薪和初请待接入` : "非农、时薪和初请待接入");
-  applyTemperature(payload.temperature);
+  const band = dashboardCore.drawdownBand(ndx.drawdownPct);
+  const labels = ['正常', '略加', '提高', '加倍', '明显加仓'];
+  const stale = ndx.refreshStatus === 'failed' || payload.checkStatus === 'failed' || dashboardCore.ageDays(payload.checkedAt || payload.updatedAt) > 2 / 24 || dashboardCore.ageDays(ndx.updatedAt) > 5;
+  applyTemperature(band == null || stale ? null : { ...payload.temperature, band, status: 'daily', label: labels[band], color: ['green','yellow','orange','coral','red'][band], updatedAt: ndx.updatedAt, action: '原定投规则参考；持仓对账后再评估投入，波动率不提高加仓档位' });
+  if (stale) { const node = $('#signalTitle'); if (node) node.textContent = '数据较旧，暂不判档'; }
 }
 
 async function refreshMarketData() {
+  if (refreshMarketData.running) return;
+  refreshMarketData.running = true;
   try {
     let response;
     if (location.hostname.endsWith("github.io")) {
       try {
-        response = await fetch(`https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+        response = await fetch(`https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/market-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
       } catch {
-        response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+        response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
       }
     } else {
-      response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store" });
+      response = await fetch(`./market-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
     }
-    if (!response.ok) response = await fetch("./api/market", { cache: "no-store" });
+    if (!response.ok) response = await fetch("./api/market", { cache: "no-store", signal: AbortSignal.timeout(12000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    applyMarketPayload(await response.json());
+    const payload = await response.json();
+    if (!payload.market || (marketSnapshot.updatedAt && Date.parse(payload.updatedAt) < Date.parse(marketSnapshot.updatedAt))) throw new Error('Invalid or older market snapshot');
+    feedErrors.market = false;
+    applyMarketPayload(payload);
   } catch (error) {
+    feedErrors.market = true;
     const mode = $("#dataModeLabel"); if (mode) mode.textContent = "接口不可用";
-    const note = $("#marketFootnote"); if (note) note.textContent = "公开数据快照暂时不可用，当前页面只保留持仓信息和占位提示。";
-  }
+    const note = $("#marketFootnote"); if (note) note.textContent = "本次读取失败；已显示数字保留原观察日期，不能当作最新行情。";
+  } finally { refreshMarketData.running = false; window.dispatchEvent(new Event('dashboard-data')); }
 }
 
 function parseValuationMarkdown(markdown) {
@@ -742,7 +806,7 @@ function applyValuationData(data) {
 
 async function refreshValuationData() {
   try {
-    const response = await fetch(`https://dollarliquidity.com/en/valuation.md?t=${Math.floor(Date.now() / 600000)}`, { cache: "no-store" });
+    const response = await fetch(`https://dollarliquidity.com/en/valuation.md?t=${Math.floor(Date.now() / 600000)}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     applyValuationData(parseValuationMarkdown(await response.text()));
   } catch (error) {
@@ -814,7 +878,8 @@ $("#addHoldingButtonSecondary")?.addEventListener("click", () => openModal());
 $("#closeModalButton")?.addEventListener("click", closeModal);
 $("#cancelModalButton")?.addEventListener("click", closeModal);
 $("#holdingModal")?.addEventListener("click", (event) => { if (event.target.id === "holdingModal") closeModal(); });
-$("#refreshButton")?.addEventListener("click", async () => { await Promise.all([refreshMarketData(), refreshFundData(), refreshValuationData()]); showToast("已检查公开数据；各项观察日以页面标注为准"); });
+$("#refreshButton")?.addEventListener("click", async (event) => { const button = event.currentTarget; button.disabled = true; try { await Promise.allSettled([refreshMarketData(), refreshFundData(), refreshValuationData()]); showToast(feedErrors.fund || feedErrors.market ? '部分数据读取失败，请查看更新状态' : "已读取最新可得快照；净值日与检查时间分开显示"); } finally { button.disabled = false; } });
+$('#returnDateSelect')?.addEventListener('change', event => { selectedReturnDate = event.target.value; renderTodayReturns(); });
 $("#clearHoldingsButton")?.addEventListener("click", () => {
   if (!window.confirm("确定恢复初始持仓快照吗？本机手动新增、修改和删除的记录将被覆盖。建议先在数据设置中导出备份。")) return;
   holdings = structuredClone(initialHoldings);
@@ -828,7 +893,7 @@ $("#exportDataButton")?.addEventListener("click", exportData);
 $("#importDataButton")?.addEventListener("click", () => $("#importDataFile").click());
 $("#importDataFile")?.addEventListener("change", (event) => importData(event.currentTarget.files?.[0]));
 $("#addQdiiButton")?.addEventListener("click", () => { activateSection("holdings"); openModal(); $("select[name=category]").value = "主动 QDII"; });
-$("#majorChangeOnly")?.addEventListener("change", () => showToast("仅记录页面偏好；自动通知尚未接入"));
+$("#majorChangeOnly")?.addEventListener("change", () => { localStorage.setItem('dashboard-major-only', String($('#majorChangeOnly').checked)); window.dispatchEvent(new Event('dashboard-data')); showToast('已保存网站内提示偏好；不发送站外消息'); });
 $("#holdingForm")?.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = Object.fromEntries(new FormData(event.currentTarget).entries());
@@ -860,4 +925,5 @@ refreshValuationData();
 window.setInterval(refreshValuationData, 10 * 60 * 1000);
 refreshFundData();
 window.setInterval(refreshFundData, 60 * 1000);
-document.addEventListener("visibilitychange", () => { if (!document.hidden) { refreshFundData(); refreshValuationData(); } });
+document.addEventListener("visibilitychange", () => { if (!document.hidden) { refreshFundData(); refreshMarketData(); refreshValuationData(); } });
+window.addEventListener('online', () => { refreshFundData(); refreshMarketData(); });

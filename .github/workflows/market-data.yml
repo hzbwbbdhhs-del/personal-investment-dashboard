@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - ".github/workflows/market-data.yml"
+      - "scripts/fetch-market-data.mjs"
   schedule:
     - cron: "*/30 * * * *"
 

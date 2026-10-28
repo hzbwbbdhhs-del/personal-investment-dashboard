@@ -1,0 +1,28 @@
+name: dashboard-integrity-checks
+on:
+  push:
+    paths:
+      - 'app.js'
+      - 'dashboard*.js'
+      - 'portfolio-data.js'
+      - 'scripts/fetch-fund-data.mjs'
+      - 'scripts/fetch-market-data.mjs'
+      - 'scripts/test-dashboard-core.mjs'
+      - 'scripts/test-refresh-integrity.mjs'
+      - 'scripts/test-holdings-reconciliation.mjs'
+      - '.github/workflows/dashboard-checks.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --check app.js && node --check dashboard-monitor.js
+      - run: node scripts/test-dashboard-core.mjs
+      - run: node scripts/test-refresh-integrity.mjs
+      - run: node scripts/test-holdings-reconciliation.mjs
