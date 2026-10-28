@@ -228,6 +228,7 @@ function renderHoldings() {
   updatePortfolioSummary();
   renderTodayReturns();
   renderMonthlyPlan();
+  window.dispatchEvent(new Event('holdings-changed'));
 }
 
 function renderMonthlyPlan() {
@@ -602,6 +603,7 @@ function activateSection(sectionName) {
   $$(`[data-section]`).forEach((button) => button.classList.toggle("active", button.dataset.section === sectionName));
   $$(`[data-panel]`).forEach((panel) => panel.classList.toggle("active", panel.id === `section-${sectionName}`));
   if (sectionName === "market") loadTradingViewQuotes();
+  if (sectionName !== "insights" && location.hash === "#insights") history.replaceState(null, "", location.pathname + location.search);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 

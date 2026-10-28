@@ -9,6 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="stylesheet" href="./styles.css?v=20261028-observation-v3" />
     <link rel="stylesheet" href="./dashboard.css?v=20261028-observation-v3" />
+      <link rel="stylesheet" href="./investment-insights.css?v=20261028-insights" />
   </head>
   <body>
     <div class="app-shell">
@@ -30,7 +31,8 @@
           <button class="nav-item" data-section="holdings"><span class="nav-index">03</span><span>持仓与定投</span></button>
           <button class="nav-item" data-section="market"><span class="nav-index">04</span><span>市场与宏观</span></button>
           <button class="nav-item" data-section="qdii"><span class="nav-index">05</span><span>QDII 状态</span></button>
-          <button class="nav-item" data-section="settings"><span class="nav-index">06</span><span>数据设置</span></button>
+          <button class="nav-item" data-section="insights"><span class="nav-index">06</span><span>持仓建议</span></button>
+          <button class="nav-item" data-section="settings"><span class="nav-index">07</span><span>数据设置</span></button>
         </nav>
         <div class="sidebar-footer">
           <div class="mini-label">录入持仓基准</div>
@@ -209,6 +211,21 @@
           <div class="channel-grid"><div class="channel-card direct"><span class="channel-icon">D</span><div><strong>基金公司直销</strong><small>显示自动解析管理人公告，注明生效日期与各类份额合并规则；未完成则显示待核实。</small></div><span class="channel-state">部分核验</span></div><div class="channel-card alipay"><span class="channel-icon">A</span><div><strong>支付宝代销</strong><small>已接入蚂蚁基金公开销售状态；配合代销公告限额。账户剩余额度和渠道额外限制未接入。</small></div><span class="channel-state">部分核验</span></div></div>
         </section>
 
+        <section class="section-panel" id="section-insights" data-panel>
+          <div class="section-heading"><h2>持仓观察与建议</h2><div class="insight-heading-actions"><label>金额口径<select id="insightBasis"><option value="nav">最新净值估算</option><option value="snapshot">录入账面快照</option></select></label><button type="button" class="outline-button" id="insightRefresh">刷新公开数据</button></div></div>
+          <div class="insight-review-banner"><div><strong id="insightReviewSchedule">每天 08:00 · 北京时间</strong><span id="insightReviewDate">最近核读日期待载入</span></div><span class="insight-review-state" id="insightReviewState">等待核读记录</span><small>8点开始更新研判，完成后发布；持仓与公开数据按原频率刷新。任务需要Mac及Codex可运行，未成功时保留旧日期。</small></div>
+          <p class="insight-basis" id="insightBasisNote">正在读取当前持仓…</p><span class="insight-health" id="insightDataHealth">等待数据</span>
+          <div class="insight-metrics" id="insightMetrics"></div>
+          <div class="insight-split"><article class="insight-panel"><h3>当前值得先考虑的事</h3><p class="insight-section-intro">建议由持仓规则生成；事实、可选动作和限制分开列出。</p><div id="insightPriorities"></div></article>
+          <div class="insight-aside"><article class="insight-panel"><h3>你的资金实际放在哪里</h3><div id="insightAllocation"></div><p class="insight-method" id="insightAllocationNote"></p></article>
+          <article class="insight-panel"><h3>如果继续回调，你能承受吗</h3><p class="insight-section-intro">调整假设看金额变化。这是情景测算，不是走势预测。</p><label class="insight-scenario-control" for="insightEquityShock">非债 / 非黄金类基金涨跌<output id="insightEquityOutput">-20%</output><input type="range" id="insightEquityShock" min="-50" max="20" step="1" value="-20" /></label><label class="insight-scenario-control" for="insightBondShock">债券类基金涨跌<output id="insightBondOutput">-1%</output><input type="range" id="insightBondShock" min="-10" max="5" step="0.5" value="-1" /></label><div class="insight-scenario-result" id="insightScenarioResult" aria-live="polite"></div><button type="button" class="insight-link-button" id="insightResetScenario">重置为 -20% / -1%</button></article></div></div>
+          <div class="insight-research-head"><h3>市场数据怎样影响你的判断</h3><span>公开观察值与解释，非盘中交易信号</span></div><div class="insight-market-grid" id="insightMarket"></div>
+          <div class="insight-research-head"><h3>机构与专业人士，怎么看</h3><span id="insightResearchStatus">核读日期待载入</span></div><div class="research-grid" id="insightResearch" data-reviewed-rows="institution-research"></div><p class="insight-research-notice" id="insightResearchNotice"></p>
+          <article class="insight-panel"><h3>逐只基金的观察重点</h3><p class="insight-section-intro">按持有金额从高到低；同代码跨渠道合并，A/C等不同份额仍分列。关注点不是买卖指令。</p><div class="insight-position-controls"><label>查找<input type="search" id="insightSearch" placeholder="基金名称或代码" /></label><label>分类<select id="insightGroup"><option value="all">全部持仓</option><option value="bond">债券类</option><option value="ndx">纳斯达克100</option><option value="spx">标普500市值加权</option><option value="equal">标普500等权重</option><option value="tech">纳斯达克科技指数</option><option value="active">主动QDII</option><option value="other">其他股票 / 混合</option><option value="gold">黄金</option></select></label><span id="insightPositionCount"></span></div><table class="insight-position-table"><thead><tr><th>基金与渠道</th><th>金额与占比</th><th>关注点与适用条件</th></tr></thead><tbody id="insightPositions"></tbody></table><button type="button" class="insight-link-button" id="insightShowAll">显示全部</button></article>
+          <details class="insight-method"><summary>计算方法、适用范围与更新方式</summary><p>金额使用同一份本机持仓和已公布净值；同代码跨渠道合并。分类按已确认名称及记录，未做完整股票穿透。含在途的四笔使用录屏金额，不把待到账款另加现金。情景对非债/非黄金基金施加统一假设、债券另设假设，未假定各基金真实股票仓位；结果不是历史回测、概率区间或最大损失。</p><p>公开数据沿用现有自动检查，规则在数据刷新、持仓修改时重新计算。机构资料与建议每天北京时间08:00安排一次Codex核读，使用Codex额度，需要Mac与Codex可运行；实际完成并发布后才更新核读日期。网页本机独有而未同步的持仓修改不对任务可见。旧观点保留原发布日期，到复核日标为历史参考。不掌握你的完整收入、负债、用款计划和底层持仓，暂不制定具体买卖数量、目标比例或保证收益。</p><p>被动基金比较方法参考 <a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-4" target="_blank" rel="noopener noreferrer">SEC投资者教育：费用、跟踪误差和指数基金风险 ↗</a>。普通标普、等权标普、纳斯达克科技指数分开看，不混为同一策略。</p></details>
+          <p class="insight-bottom-note">这是为你提供依据和备选动作的观察页，不自动下单。市场观点不代表事实，长期看好也不能消除短期损失。</p>
+        </section>
+
         <section class="section-panel" id="section-settings" data-panel>
           <div class="section-heading"><div><div class="section-kicker">DATA SETTINGS / 数据设置</div><h2>先把数据链路摆清楚。</h2></div><div class="section-meta"><span class="status-dot yellow"></span> 本地优先　·　密钥不放在浏览器</div></div>
           <div class="grid-two settings-top"><article class="content-card connection-card"><div class="content-card-head"><div><div class="section-kicker">CONNECTORS / 数据接口</div><h3>接入状态</h3></div><span class="tag estimate">公开数据部分接入</span></div><div class="connector-list"><div><span class="connector-logo market-logo">M</span><div><strong>行情：NDX / SPX / VIX / VXN</strong><small>FRED 免费公开日线；盘中实时指标待接入</small></div><span class="connector-status">免费日线</span></div><div><span class="connector-logo fred-logo">F</span><div><strong>利率与宏观：US10Y / CPI / PCE / 就业</strong><small>FRED 公开 CSV；各指标依发布周期更新</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo fund-logo">Q</span><div><strong>基金：净值、限购、公告</strong><small>公开净值自动抓取；限额渠道核验未全覆盖</small></div><span class="connector-status">部分接入</span></div><div><span class="connector-logo alert-logo">!</span><div><strong>提醒：重大变化才通知</strong><small>总览按条件提示；关闭网页后不推送</small></div><span class="connector-status">网站内提醒</span></div></div></article><article class="content-card architecture-card"><div class="content-card-head"><div><div class="section-kicker">ARCHITECTURE / 当前结构</div><h3>公开快照自动刷新</h3></div></div><div class="architecture-flow"><div><span>01</span><strong>公开数据源</strong><small>基金净值 / FRED / 第三方限额</small></div><i>→</i><div><span>02</span><strong>GitHub 定时抓取</strong><small>5 / 15 / 30 分钟检查</small></div><i>→</i><div><span>03</span><strong>网页读取快照</strong><small>打开时自动更新</small></div></div><div class="architecture-note">买卖、分红、份额与真实余额仍需你提供记录；公开快照不能代替账户同步。</div></article></div>
@@ -245,10 +262,13 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./portfolio-data.js?v=20261028-verified"></script>
     <script src="./dashboard-core.js?v=20261028-observation-v3"></script>
-    <script src="./app.js?v=20261028-observation-v3"></script>
+    <script src="./app.js?v=20261028-insights"></script>
     <script src="./qdii-monitor-core.js?v=20261012-qdii-audit"></script>
     <script src="./qdii-ui.js?v=20261028-observation-v3"></script>
     <script src="./qdii-insights.js?v=20261012-qdii-audit"></script>
     <script src="./dashboard-monitor.js?v=20261028-observation-v3"></script>
+    <script src="./investment-research.js?v=20261028-insights"></script>
+    <script src="./investment-insights-core.js?v=20261028-insights"></script>
+    <script src="./investment-insights.js?v=20261028-insights"></script>
   </body>
 </html>

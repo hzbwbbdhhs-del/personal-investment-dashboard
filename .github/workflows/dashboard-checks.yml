@@ -4,12 +4,14 @@ on:
     paths:
       - 'app.js'
       - 'dashboard*.js'
+      - 'investment-*.js'
       - 'portfolio-data.js'
       - 'scripts/fetch-fund-data.mjs'
       - 'scripts/fetch-market-data.mjs'
       - 'scripts/test-dashboard-core.mjs'
       - 'scripts/test-refresh-integrity.mjs'
       - 'scripts/test-holdings-reconciliation.mjs'
+      - 'scripts/test-investment-insights.mjs'
       - '.github/workflows/dashboard-checks.yml'
 permissions:
   contents: read
@@ -26,3 +28,4 @@ jobs:
       - run: node scripts/test-dashboard-core.mjs
       - run: node scripts/test-refresh-integrity.mjs
       - run: node scripts/test-holdings-reconciliation.mjs
+      - run: node --check investment-insights.js && node scripts/test-investment-insights.mjs
