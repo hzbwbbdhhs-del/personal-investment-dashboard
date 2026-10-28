@@ -36,7 +36,7 @@ for (const record of portfolio["持仓"] || []) {
 
 async function fetchFund(code, name) {
   const source = `https://fund.eastmoney.com/${code}.html`;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  for (let attempt = 1; attempt <= 4; attempt += 1) {
     try {
       const url = new URL("https://api.fund.eastmoney.com/f10/lsjz");
       url.search = new URLSearchParams({ fundCode: code, pageIndex: "1", pageSize: "30" }).toString();
@@ -85,8 +85,8 @@ async function fetchFund(code, name) {
         source,
       };
     } catch (error) {
-      console.warn(`${code} ${name}: attempt ${attempt}/3 failed: ${error.message}`);
-      if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+      console.warn(`${code} ${name}: attempt ${attempt}/4 failed: ${error.message}${error.cause ? ` (${error.cause.code || error.cause.message || 'network cause unavailable'})` : ''}`);
+      if (attempt < 4) await new Promise((resolve) => setTimeout(resolve, attempt * 1500));
     }
   }
   const previous = previousFunds[code];
@@ -99,8 +99,8 @@ async function fetchFund(code, name) {
 
 const codes = [...namesByCode.keys()];
 const funds = {};
-for (let offset = 0; offset < codes.length; offset += 8) {
-  const batch = await Promise.all(codes.slice(offset, offset + 8).map((code) => fetchFund(code, namesByCode.get(code))));
+for (let offset = 0; offset < codes.length; offset += 4) {
+  const batch = await Promise.all(codes.slice(offset, offset + 4).map((code) => fetchFund(code, namesByCode.get(code))));
   for (const fund of batch) funds[fund.code] = fund;
 }
 
@@ -126,3 +126,4 @@ const payload = {
 await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 const available = Object.values(funds).filter((fund) => fund.status === "available").length;
 console.log(`Wrote ${outputPath}: ${available}/${payload.count} NAVs available; ${successCount} checks succeeded, ${payload.failureCount} failed; content changed=${changed}`);
+if (payload.failureCount && process.env.GITHUB_ACTIONS) console.log(`::warning::${payload.failureCount}/${payload.count} fund checks failed. Previous NAVs retained; see fund-data.json for individual status.`);

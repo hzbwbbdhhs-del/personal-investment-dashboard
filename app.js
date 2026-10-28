@@ -644,7 +644,7 @@ function formatMetric(value, digits = 2) {
 
 function updateMetricStatus(key, status, observedAt) {
   $$(`[data-status-for="${key}"]`).forEach((element) => {
-    element.textContent = status === "live" ? "实时" : status === "daily" ? `${displayChinaDate(observedAt)}日线` : status === "error" ? "异常" : "待接入";
+    element.textContent = status === 'stale' ? `${displayChinaDate(observedAt)}旧值 · 检查失败` : status === "live" ? "实时" : status === "daily" ? `${displayChinaDate(observedAt)}日线` : status === "error" ? "异常" : "待接入";
     element.className = `state-pill ${status === "live" ? "green" : status === "error" ? "red" : "yellow"}`;
   });
 }
@@ -700,7 +700,7 @@ function applyMarketPayload(payload) {
   write("indicator-vix", formatMetric(vix.value)); write("indicator-vxn", formatMetric(vxn.value));
   write("indicator-us10y", us10y.value == null ? "—" : `${formatMetric(us10y.value)}%`); write("indicator-usdcny", formatMetric(usdcny.value, 4));
   write("drawdown-ndx", ndx.drawdownPct == null ? "—" : `${formatMetric(ndx.drawdownPct)}%`); write("drawdown-spx", spx.drawdownPct == null ? "—" : `${formatMetric(spx.drawdownPct)}%`);
-  ["NDX", "SPX", "VIX", "VXN", "US10Y", "USDCNY"].forEach((key) => updateMetricStatus(key, get(key).status, get(key).updatedAt));
+  ["NDX", "SPX", "VIX", "VXN", "US10Y", "USDCNY"].forEach((key) => updateMetricStatus(key, get(key).refreshStatus === 'failed' ? 'stale' : get(key).status, get(key).updatedAt));
   ['NDX', 'SPX', 'VIX', 'US10Y'].forEach(key => {
     const chart = $(`.market-mini[data-chart="${key}"] .sparkline`);
     const path = dashboardCore.sparkline(get(key).history);
