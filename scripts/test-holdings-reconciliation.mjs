@@ -47,3 +47,15 @@ vm.runInContext("const checkedAt='2026-10-28T05:00:00Z';" + market.slice(market.
 assert.equal(vm.runInContext("metricFromRows(parseRows('DATE,TEST\\n2026-10-27,10\\n2026-10-28,','TEST'),'Test','test').value",context),10);
 assert.equal(vm.runInContext("marketTemperature({NDX:{drawdownPct:-2,updatedAt:'2026-10-27'},VIX:{value:50},VXN:{value:60}}).band",context),0);
 console.log('Holdings checks passed: 62-row cent reconciliation, repeat-safe migration, preserved direct edits/plans, pending exclusions, precise NAV return, missing market cells and NDX-only bands.');
+// A stale raw CDN response must not mask a newer Pages snapshot (or vice versa).
+context.location = { hostname:'example.github.io' };
+context.AbortSignal = AbortSignal;
+const response = date => ({ok:true,json:async()=>({checkedAt:date,funds:{TEST:{nav:1}}})});
+context.fetch = async url => response(url.startsWith('./') ? '2026-10-28T05:11:00Z' : '2026-10-28T05:08:00Z');
+vm.runInContext(app.slice(app.indexOf('async function latestFundSnapshot('),app.indexOf('async function refreshFundData(')),context);
+assert.equal((await vm.runInContext('latestFundSnapshot()',context)).checkedAt,'2026-10-28T05:11:00Z');
+context.fetch = async url => { if(url.startsWith('./')) throw Error('offline'); return response('2026-10-28T05:12:00Z'); };
+assert.equal((await vm.runInContext('latestFundSnapshot()',context)).checkedAt,'2026-10-28T05:12:00Z');
+context.fetch = async () => { throw Error('offline'); };
+await assert.rejects(vm.runInContext('latestFundSnapshot()',context), /unavailable/);
+console.log('CDN freshness checks passed: newer snapshot, one-source failure and full outage.');

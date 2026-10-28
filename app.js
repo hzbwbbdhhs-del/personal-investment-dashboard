@@ -366,25 +366,27 @@ function renderTodayReturns() {
   }).join("");
 }
 
+async function latestFundSnapshot() {
+  const paths = [`./fund-data.json?ts=${Date.now()}`];
+  if (location.hostname.endsWith('github.io')) paths.push(`https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/fund-data.json?ts=${Date.now()}`);
+  const results = await Promise.allSettled(paths.map(async path => {
+    const response = await fetch(path, { cache: 'no-store', signal: AbortSignal.timeout(12000) });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    if (!data.funds || !Object.keys(data.funds).length || !Number.isFinite(Date.parse(data.checkedAt || data.updatedAt))) throw new Error('Invalid fund snapshot');
+    return data;
+  }));
+  const snapshots = results.filter(result => result.status === 'fulfilled').map(result => result.value);
+  if (!snapshots.length) throw new Error('Fund sources unavailable');
+  // Pages and raw GitHub have independent CDN caches; prefer the newest successful read.
+  return snapshots.sort((a,b) => Date.parse(b.checkedAt || b.updatedAt) - Date.parse(a.checkedAt || a.updatedAt))[0];
+}
+
 async function refreshFundData() {
   if (refreshFundData.running) return;
   refreshFundData.running = true;
   try {
-    const rawUrl = `https://raw.githubusercontent.com/hzbwbbdhhs-del/personal-investment-dashboard/main/fund-data.json?ts=${Date.now()}`;
-    let response;
-    if (location.hostname.endsWith("github.io")) {
-      try {
-        response = await fetch(rawUrl, { cache: "no-store", signal: AbortSignal.timeout(12000) });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      } catch {
-        response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
-      }
-    } else {
-      response = await fetch(`./fund-data.json?ts=${Date.now()}`, { cache: "no-store", signal: AbortSignal.timeout(12000) });
-    }
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const payload = await response.json();
-    if (!payload.funds || !Object.keys(payload.funds).length) throw new Error("Empty fund snapshot");
+    const payload = await latestFundSnapshot();
     if (fundSnapshot.updatedAt && Date.parse(payload.checkedAt || payload.updatedAt) < Date.parse(fundSnapshot.checkedAt || fundSnapshot.updatedAt)) throw new Error('Older snapshot');
     feedErrors.fund = false;
     fundSnapshot = payload;
