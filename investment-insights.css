@@ -10,6 +10,13 @@
 .insight-review-banner { display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 18px;margin:0 0 18px;border:1px solid var(--line);background:#eaf0e5;border-radius:10px; }
 .insight-review-banner>div { display:grid;gap:6px; }.insight-review-banner strong { font-size:15px; }.insight-review-banner span { font-size:12px; }.insight-review-banner>small { flex-basis:100%;font-size:11px;line-height:1.75;color:var(--muted); }
 .insight-review-state { color:#296146;background:#dcebdc;padding:6px 9px;border-radius:5px; }.insight-review-state.pending { color:#775b2b;background:#f5e9cb; }
+.insight-daily-brief { margin-bottom:24px; }
+.insight-daily-summary { font-size:13px;line-height:1.85;color:#365c48;margin:0 0 18px; }
+.insight-daily-points { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:18px; }
+.insight-daily-points h4 { font-size:14px;line-height:1.7; }
+.insight-daily-points p { font-size:12px;line-height:1.85; }
+.insight-daily-points p>b { color:#577967;font-size:11px;margin-right:7px; }
+@media(max-width:1050px){.insight-daily-points{grid-template-columns:1fr;gap:12px;}.insight-daily-points>section+section{border-top:1px solid var(--line);padding-top:16px;}}
 .insight-health { display:inline-block;border-radius:5px;padding:5px 9px;font-size:11px;color:#316c53;background:#e4eee3;margin-bottom:20px; }
 .insight-health.attention { background:#f5ebcd;color:#7a5d28; }
 .insight-metrics { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;background:var(--paper-2);margin-bottom:24px; }

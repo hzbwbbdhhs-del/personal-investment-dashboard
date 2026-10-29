@@ -35,4 +35,21 @@ assert.equal(actual.count,72);assert.equal(actual.codeCount,64);assert.equal(Mat
 vm.runInContext(readFileSync(base+'investment-research.js','utf8'),ctx);
 assert.ok(ctx.window.investmentResearch.sources.length>=2);
 for(const source of ctx.window.investmentResearch.sources) {assert.match(source.url,/^https:\/\//);assert.ok(source.date<=ctx.window.investmentResearch.reviewedAt);assert.ok(source.reviewAfter>source.date);}
+const research=ctx.window.investmentResearch,brief=research.dailyBrief;
+if(brief) {
+  const reviewed=Date.parse(brief.reviewedAt),basis=brief.basis;
+  assert.ok(Number.isFinite(reviewed));
+  assert.equal(brief.date,research.reviewedAt);
+  assert.equal(brief.reviewedAt,research.reviewedAtTime);
+  assert.match(basis.repositoryCommit,/^[a-f0-9]{40}$/);
+  assert.ok(basis.holdingsVersion&&basis.holdingsCount>=basis.fundCodeCount);
+  assert.equal(Object.values(basis.funds.navDates).reduce((n,count)=>n+count,0),basis.funds.successCount);
+  assert.equal(basis.funds.successCount+basis.funds.failureCount,basis.fundCodeCount);
+  for(const stamp of [basis.funds.checkedAt,basis.market.checkedAt,basis.qdii.collectedAt,basis.qdii.noticeCheckedAt])assert.ok(Date.parse(stamp)<=reviewed,'Evidence cannot be checked after the review');
+  for(const group of [basis.market.observations,basis.macro.observations])for(const value of Object.values(group))assert.ok(value.date<=brief.date,'Observation dates cannot be replaced by future data');
+  for(const event of basis.events||[])if(event.statusAtReview==='not_yet_published')assert.ok(Date.parse(event.scheduledAt)>reviewed,'Future releases must remain separate from published results');
+  for(const hash of Object.values(basis.fileHashes))assert.match(hash,/^[a-f0-9]{64}$/);
+  for(const point of brief.points){assert.ok(point.fact&&point.inference&&point.action&&point.sources.length);for(const source of point.sources)assert.match(source.url,/^https:\/\//);}
+  for(const source of research.sources)if(source.checkStatus==='success'){assert.ok(source.date<=source.reviewedAt);assert.ok(Date.parse(source.reviewedAtTime)<=reviewed);}
+}
 console.log('Investment insights passed: real holdings totals, channel merge, strategy separation, pending bounds, stress monotonicity, missing inputs, research expiry and market freshness.');

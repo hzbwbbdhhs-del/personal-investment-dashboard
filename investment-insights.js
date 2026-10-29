@@ -65,15 +65,28 @@
     const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
     const reviewedToday=data.reviewedAt===today;
     el('insightReviewSchedule').textContent=data.schedule?.enabled?'每天 08:00 · 北京时间':'定期核读';
-    el('insightReviewDate').textContent=`最近核读 ${data.reviewedAt}`;
-    el('insightReviewState').textContent=researchLoadFailed?'检查失败，显示上次版本':reviewedToday?'今日已更新':'今日研判待更新';
-    el('insightReviewState').className='insight-review-state'+(!reviewedToday||researchLoadFailed?' pending':'');
+    const readTime=data.reviewedAtTime&&Number.isFinite(Date.parse(data.reviewedAtTime))?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(data.reviewedAtTime)):'';
+    const partial=data.reviewStatus==='partial';
+    el('insightReviewDate').textContent=`最近核读 ${data.reviewedAt}${readTime?' '+readTime+'（北京）':''}`;
+    el('insightReviewState').textContent=researchLoadFailed?'检查失败，显示上次版本':reviewedToday?(partial?'今日部分更新':'今日已更新'):'今日研判待更新';
+    el('insightReviewState').className='insight-review-state'+(!reviewedToday||researchLoadFailed||partial?' pending':'');
+    renderDailyBrief(data);
     el('insightResearchStatus').textContent=`最近核读 ${data.reviewedAt} · ${fresh.length}/${data.sources.length}篇未到复核日`;
     el('insightResearch').innerHTML=data.sources.map(s=>{
       const review=core.researchState(s),outdated=review!=='reviewed';
       return `<article class="research-card ${outdated?'research-expired':''}" id="research-${esc(s.id)}"><div class="research-meta"><strong>${esc(s.organization)}</strong><span>${esc(s.date)} 发布</span></div><small>${esc(s.author)}</small><h4>${esc(s.title)}</h4><div class="research-badges"><span>${esc(s.horizon)}</span><span>${outdated?'待重新核读 · 仅历史参考':'已核读 · '+esc(s.reviewAfter)+'前复核'}</span></div><dl><dt>机构 / 专业人士观点</dt><dd>${esc(s.view)}</dd><dt>与你持仓的关系 · 本站推断</dt><dd>${esc(s.relevance)}</dd></dl><p class="research-limit">${esc(s.limit)}</p>${link(s.url,'阅读原文')}</article>`;
     }).join('');
     el('insightResearchNotice').textContent='观点仅代表原文发布时的判断。每天早上8点安排一次资料核读与建议更新，完成并发布后才改变核读日期；未有新观点时保留原文发布日期。各篇到复核日自动标为历史参考，刷新页面不会把旧观点变成新观点。';
+  }
+  function renderDailyBrief(data) {
+    let node=el('insightDailyBrief');
+    if(!node){node=document.createElement('article');node.id='insightDailyBrief';node.className='insight-panel insight-daily-brief';el('insightMetrics').before(node);}
+    const b=data.dailyBrief;node.hidden=!b;if(!b)return;
+    const basis=b.basis||{},funds=basis.funds||{},market=basis.market||{},quota=basis.qdii||{};
+    const time=value=>value&&Number.isFinite(Date.parse(value))?new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(value)):'未记录';
+    const navDates=Object.entries(funds.navDates||{}).map(([date,count])=>`${date}：${count}个代码`).join('；');
+    const observations=Object.entries(market.observations||{}).map(([key,v])=>`${key} ${v.date}`).join('；');
+    node.innerHTML=`<h3>${esc(b.date)} 早间观察 · ${esc(b.title)}</h3><p class="insight-daily-summary">${esc(b.summary)}</p><div class="insight-daily-points">${(b.points||[]).map(p=>`<section><h4>${esc(p.title)}</h4><p><b>事实</b>${esc(p.fact)}</p><p><b>本站判断</b>${esc(p.inference)}</p><p><b>可考虑</b>${esc(p.action)}</p><div class="priority-links">${(p.sources||[]).map(s=>link(s.url,s.title)).join(' · ')}</div></section>`).join('')}</div><details class="insight-method"><summary>本次依据、不同观点与数据日期</summary><p>${esc(b.holdingsNote)}</p><p>${esc(b.counterpoint)}</p><p>${esc(b.quotaNote)}</p><p>持仓版本：${esc(basis.holdingsVersion||'未记录')}；${basis.holdingsCount||'—'}笔 / ${basis.fundCodeCount||'—'}个代码。简报是核读时点记录，页面金额可随后更新。</p><p>净值检查：${time(funds.checkedAt)}（北京），${funds.successCount??'—'}个成功 / ${funds.failureCount??'—'}个失败。净值日：${esc(navDates)}。</p><p>行情检查：${time(market.checkedAt)}（北京）；观察日：${esc(observations)}。</p><p>宏观观察期：${esc(Object.entries(basis.macro?.observations||{}).map(([key,v])=>`${key} ${v.date}`).join('；'))}。月度序列的每月1日表示所属月份，不是公告日。</p><p>额度采集：${time(quota.collectedAt)}（北京）；公告检查：${time(quota.noticeCheckedAt)}（北京）。采集成功不表示每个渠道均已核实。</p></details>`;
   }
   function renderMarket() {
     const snapshot=marketSnapshot||{},market=snapshot.market||{};
