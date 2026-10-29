@@ -1,7 +1,7 @@
 {
   "status": "daily",
-  "updatedAt": "2026-10-29T12:09:38.424Z",
-  "checkedAt": "2026-10-29T12:09:37.885Z",
+  "updatedAt": "2026-10-29T13:29:54.243Z",
+  "checkedAt": "2026-10-29T13:29:53.550Z",
   "checkStatus": "success",
   "market": {
     "NDX": {
@@ -256,7 +256,7 @@
         }
       ],
       "historyStart": "1986-01-02",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "SPX": {
@@ -511,7 +511,7 @@
         }
       ],
       "historyStart": "2016-10-31",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "VIX": {
@@ -766,7 +766,7 @@
         }
       ],
       "historyStart": "1990-01-02",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "VXN": {
@@ -1021,7 +1021,7 @@
         }
       ],
       "historyStart": "2001-02-02",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "US10Y": {
@@ -1276,7 +1276,7 @@
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "USDCNY": {
@@ -1531,7 +1531,7 @@
         }
       ],
       "historyStart": "1981-01-02",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     }
   },
@@ -1788,7 +1788,7 @@
         }
       ],
       "historyStart": "1954-07-01",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "CPI": {
@@ -2043,23 +2043,19 @@
         }
       ],
       "historyStart": "1947-01-01",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "PCE": {
       "label": "PCE",
-      "value": 131.579,
-      "changePct": 0.3102796328484819,
+      "value": 132.257,
+      "changePct": 0.4908404312709539,
       "drawdownPct": 0,
-      "peak": 131.579,
-      "updatedAt": "2026-08-01",
+      "peak": 132.257,
+      "updatedAt": "2026-09-01",
       "source": "FRED公开CSV:PCEPI",
       "status": "daily",
       "history": [
-        {
-          "date": "2021-09-01",
-          "value": 109.948
-        },
         {
           "date": "2021-10-01",
           "value": 110.7
@@ -2290,15 +2286,19 @@
         },
         {
           "date": "2026-07-01",
-          "value": 131.172
+          "value": 131.187
         },
         {
           "date": "2026-08-01",
-          "value": 131.579
+          "value": 131.611
+        },
+        {
+          "date": "2026-09-01",
+          "value": 132.257
         }
       ],
       "historyStart": "1959-01-01",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "UNRATE": {
@@ -2553,7 +2553,7 @@
         }
       ],
       "historyStart": "1948-01-01",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "PAYEMS": {
@@ -2808,7 +2808,7 @@
         }
       ],
       "historyStart": "1939-01-01",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     },
     "US10Y": {
@@ -3063,7 +3063,7 @@
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-10-29T12:09:37.885Z",
+      "lastSuccessAt": "2026-10-29T13:29:53.550Z",
       "refreshStatus": "success"
     }
   },
