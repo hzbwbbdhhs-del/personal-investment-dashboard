@@ -17,6 +17,33 @@
     <link rel="stylesheet" crossorigin href="./assets/index-C8rX68YG.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div style="min-height:100svh;display:grid;align-content:center;justify-items:center;gap:16px;padding:30px;background:#f8f7f3;color:#3f5c4a;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;box-sizing:border-box">
+        <h1 style="font:600 30px 'Songti SC',serif;margin:0">衣橱漫游记</h1>
+        <p id="loading-hint" role="status" style="font-size:14px;line-height:1.9;margin:0">正在打开你的衣橱…</p>
+        <button id="loading-retry" type="button" hidden style="border:0;border-radius:7px;padding:12px 22px;background:#3f5c4a;color:white;font-size:14px">重新加载</button>
+        <noscript>请在浏览器中启用 JavaScript 后打开衣橱。</noscript>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const hint = document.getElementById('loading-hint');
+        const retry = document.getElementById('loading-retry');
+        const showRetry = () => {
+          if (!hint.isConnected) return;
+          hint.textContent = '页面暂时没能加载完整。请检查网络，再试一次。';
+          retry.hidden = false;
+        };
+        retry.addEventListener('click', () => location.reload());
+        const onResourceError = (event) => {
+          if (event.target instanceof HTMLScriptElement && event.target.type === 'module') showRetry();
+        };
+        window.addEventListener('error', onResourceError, true);
+        setTimeout(() => {
+          showRetry();
+          window.removeEventListener('error', onResourceError, true);
+        }, 12000);
+      })();
+    </script>
   </body>
 </html>
