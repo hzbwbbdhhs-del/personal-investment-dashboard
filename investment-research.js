@@ -1,7 +1,7 @@
 // Daily reviewed source summaries. Observation, publication and review dates are distinct.
 window.investmentResearch = {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-29",
+  "reviewedAt": "2026-10-30",
   "schedule": {
     "time": "08:00",
     "timezone": "Asia/Shanghai",
@@ -24,8 +24,8 @@ window.investmentResearch = {
         "债券",
         "分散"
       ],
-      "reviewedAt": "2026-10-29",
-      "reviewedAtTime": "2026-10-29T00:06:47Z",
+      "reviewedAt": "2026-10-30",
+      "reviewedAtTime": "2026-10-30T00:55:47Z",
       "checkStatus": "success"
     },
     {
@@ -44,8 +44,8 @@ window.investmentResearch = {
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-10-29",
-      "reviewedAtTime": "2026-10-29T00:06:47Z",
+      "reviewedAt": "2026-10-30",
+      "reviewedAtTime": "2026-10-30T00:55:47Z",
       "checkStatus": "success"
     },
     {
@@ -64,8 +64,8 @@ window.investmentResearch = {
         "科技",
         "主动基金"
       ],
-      "reviewedAt": "2026-10-29",
-      "reviewedAtTime": "2026-10-29T00:06:47Z",
+      "reviewedAt": "2026-10-30",
+      "reviewedAtTime": "2026-10-30T00:55:47Z",
       "checkStatus": "success"
     },
     {
@@ -84,8 +84,8 @@ window.investmentResearch = {
         "A股",
         "主动基金"
       ],
-      "reviewedAt": "2026-10-29",
-      "reviewedAtTime": "2026-10-29T00:06:47Z",
+      "reviewedAt": "2026-10-30",
+      "reviewedAtTime": "2026-10-30T00:55:47Z",
       "checkStatus": "success"
     }
   ],
@@ -96,20 +96,44 @@ window.investmentResearch = {
       "note": "SEC投资者教育资料；不提供中国QDII购买排行榜。"
     }
   ],
-  "reviewedAtTime": "2026-10-29T00:06:47Z",
+  "reviewedAtTime": "2026-10-30T00:55:47Z",
   "reviewStatus": "complete",
   "dailyBrief": {
-    "date": "2026-10-29",
-    "reviewedAt": "2026-10-29T00:06:47Z",
-    "title": "美联储按兵不动，今晚再看增长与通胀",
-    "summary": "今天先保持原定指数预算，额外加仓等新的数据与可用现金确认后再评估。宏观结果会影响风险，但不能单凭一次会议决定全部买卖。",
+    "date": "2026-10-30",
+    "reviewedAt": "2026-10-30T00:55:47Z",
+    "title": "新季报：降低A股暴露，也要看科技集中度",
+    "summary": "两只重点主动基金的三季报已核读。地区配置与科技行业集中是两项不同的风险；先核对赎回后的剩余持仓，再决定是否调整，不能只因下跌就卖出或加仓。",
     "points": [
       {
-        "title": "美联储决议已公布",
-        "fact": "美国10月28日FOMC以10比2维持目标利率3.75%–4.00%；两名反对者希望加息0.25个百分点。声明仍强调通胀偏高。",
-        "inference": "维持利率不变并未承诺后续降息。纳指及主动科技QDII仍需同时观察融资成本、盈利和投资集中度。",
-        "action": "普通纳指100与标普500按原预算分批；若要额外加仓，先确认资金期限与波动承受度。",
+        "title": "易方达与嘉实：季报给出了不同的地区暴露",
+        "fact": "截至9月30日，易方达全球成长精选的中国内地股票及存托凭证占基金净值22.29%，信息技术行业占73.95%；嘉实全球产业升级的“中国”市场占40.43%（中国香港另列7.39%），信息技术占86.69%。两份报告均于10月27日发布。",
+        "inference": "在该季度末，嘉实的中国市场占比与信息技术集中度更高；减少A股暴露并不等于消除科技波动。地区与行业比例会重叠，不能相加；这些也不是今天的实时仓位。",
+        "action": "按“地区暴露是否符合你意愿”和“科技集中度能否承受”分别判断。先核对4笔赎回的剩余持仓与到账，不重复减仓；普通纳指也含大量科技，不能把换成纳指当作完全分散。",
         "sources": [
+          {
+            "title": "易方达三季报，第11–12页",
+            "url": "https://pdf.dfcfw.com/pdf/H2_AN202610271830959154_1.pdf"
+          },
+          {
+            "title": "嘉实三季报，第9页",
+            "url": "https://doc.morningstar.com/Document/686603792.msdoc/?clientid=chinateam&key=4ceb1f0a7331680c"
+          }
+        ]
+      },
+      {
+        "title": "美国增长仍有韧性，通胀约束没有消失",
+        "fact": "BEA于美国10月29日公布：第三季度实际GDP环比折年增长3.4%（第二季度2.2%）；9月PCE物价同比3.6%、核心PCE同比3.1%，环比分别0.5%和0.3%。美联储10月28日维持目标利率3.75%–4.00%。",
+        "inference": "增长能支持企业需求，但物价仍会约束宽松空间；一次数据不能确定后续利率或科技股方向。GDP折年环比与PCE同比口径不同，不直接比较大小。",
+        "action": "已定的纳指100／普通标普500长期预算先保持纪律，额外投入需以可用现金和承受度为前提。债券仍按中国利率、久期与用款时间检查，不能把美债利率直接套到国内债基。",
+        "sources": [
+          {
+            "title": "BEA第三季度GDP初值",
+            "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026"
+          },
+          {
+            "title": "BEA 9月PCE",
+            "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+          },
           {
             "title": "美联储10月28日声明",
             "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
@@ -117,22 +141,10 @@ window.investmentResearch = {
         ]
       },
       {
-        "title": "今晚20:30有新数据，早间尚未发布",
-        "fact": "BEA日程列明美国10月29日08:30（北京时间20:30）发布第三季度GDP初值及9月个人收入与支出报告，后者含PCE价格指标。",
-        "inference": "增长和物价结果可能改变利率预期；目前不能预先断言利好或利空。网站现有PCE仍是8月数据。",
-        "action": "新增的大笔投入可等实际数据公布后复核。债券部分按中国利率、久期及用款时间评估，不照搬美国政策。",
-        "sources": [
-          {
-            "title": "BEA官方发布日程",
-            "url": "https://www.bea.gov/news/schedule"
-          }
-        ]
-      },
-      {
-        "title": "行情日期有差异，暂不依据旧回撤档位追加",
-        "fact": "纳斯达克官网已显示10月28日指数值29,813.16；早间网站FRED快照的纳指与标普仍截至10月27日，汇率截至10月23日。",
-        "inference": "这些数据不是同一时点。纳斯达克页面的涨跌字段与本站序列尚未交叉核对，本页不混用两源推算最新回撤或加仓倍数。",
-        "action": "保留真实观察日期；等同源最新值确认后再复核原来的回撤规则，不用“刚检查成功”代替“最新交易日”。",
+        "title": "最新可得，不等于所有数据都到昨晚",
+        "fact": "本次纳指、标普、VIX/VXN及10年美债的FRED快照截至10月28日，USD/CNY截至10月23日；纳斯达克官网另显示10月29日NDX为29,402.51。64个基金净值抓取成功：13个净值日为10月29日，51个为10月28日。",
+        "inference": "FRED旧日期的回撤档位不能当作昨晚结论；官网涨跌字段尚未交叉核对，本页只引用其明确标日期的指数值。净值发布滞后与抓取失败是两回事。",
+        "action": "等同源行情补齐后再判断回撤加仓档位。额度开放只解决购买渠道；即使单渠道达到1,000元/日，也不因此提高预算。支付宝实际额度仍以买入页为准。",
         "sources": [
           {
             "title": "纳斯达克指数官网",
@@ -149,11 +161,11 @@ window.investmentResearch = {
         ]
       }
     ],
-    "holdingsNote": "仍以10月28日已确认的支付宝62笔及未交易的直销10笔为依据。4笔共55,392.93元尚未拆分剩余持仓与赎回在途，不将其当作已到账现金。网页本机未同步的修改不包含在本次核读中。",
-    "quotaNote": "额度采集正常，但博时标普联接A（050025）和C（006075）公告正文或渠道对应关系仍未可靠复核；不把这两项作为确定可买额度。管理人公告上限也不保证支付宝订单页实际额度。",
-    "counterpoint": "本次重新核读的四家观点原文日期保持不变：摩根强调分散，Vanguard认为合理费用下的优秀主动管理仍可能有价值，嘉实对中国资产更积极。主动基金去留仍取决于你的目标及实际持仓暴露，不由单一机构结论代替判断。",
+    "holdingsNote": "仍以10月28日已确认的支付宝62笔及用户确认未交易的直销10笔为依据。4笔共55,392.93元是尚未拆分剩余持仓与赎回在途的账面金额，不是赎回款或可用现金；截图中370元买入待确认、18,473.86元卖出将到账均已包含在原总额，不重复加总。网页本机未同步的修改不包含在本次核读中。",
+    "quotaNote": "额度快照采集正常，来源日期为10月27–28日；博时标普联接A（050025）和C（006075）公告正文或渠道对应仍未可靠复核，不作为确定可买额度。管理人公告上限不保证支付宝订单页额度，也不把直销和代销额度简单视为可叠加。",
+    "counterpoint": "今天重新核读的贝莱德、摩根、Vanguard及嘉实公司观点保留原发布日期。贝莱德认为AI投资等可能缓冲增长压力；Vanguard认为合理费用下的优秀主动管理仍可能有价值。嘉实基金经理在三季报中仍看好AI产业升级，这是管理人判断且有利益关联；应与集中风险一并看待，不将短期回撤等同于长期逻辑失效。",
     "basis": {
-      "repositoryCommit": "2cbd83c64975996d492ad682b871491de38a2398",
+      "repositoryCommit": "b5800b13bc7705c6ff3041c45c6476af3a0e8ba4",
       "holdingsVersion": "20261028-alipay-reviewed-v1",
       "holdingsCount": 72,
       "fundCodeCount": 64,
@@ -162,43 +174,43 @@ window.investmentResearch = {
         "direct": "2026-10-03"
       },
       "funds": {
-        "checkedAt": "2026-10-28T18:08:14.106Z",
-        "updatedAt": "2026-10-28T15:58:46.455Z",
+        "checkedAt": "2026-10-29T18:21:17.491Z",
+        "updatedAt": "2026-10-29T13:38:40.381Z",
         "checkStatus": "success",
         "successCount": 64,
         "failureCount": 0,
         "navDates": {
-          "2026-10-28": 13,
-          "2026-10-27": 51
+          "2026-10-29": 13,
+          "2026-10-28": 51
         }
       },
       "market": {
-        "checkedAt": "2026-10-29T00:01:57.296Z",
+        "checkedAt": "2026-10-30T00:33:35.535Z",
         "checkStatus": "success",
         "observations": {
           "NDX": {
-            "value": 29651.44,
-            "date": "2026-10-27",
+            "value": 29813.16,
+            "date": "2026-10-28",
             "refreshStatus": "success"
           },
           "SPX": {
-            "value": 7722.6,
-            "date": "2026-10-27",
+            "value": 7743.98,
+            "date": "2026-10-28",
             "refreshStatus": "success"
           },
           "VIX": {
-            "value": 17.52,
-            "date": "2026-10-27",
+            "value": 16.91,
+            "date": "2026-10-28",
             "refreshStatus": "success"
           },
           "VXN": {
-            "value": 24.91,
-            "date": "2026-10-27",
+            "value": 23.78,
+            "date": "2026-10-28",
             "refreshStatus": "success"
           },
           "US10Y": {
-            "value": 4.99,
-            "date": "2026-10-27",
+            "value": 5.05,
+            "date": "2026-10-28",
             "refreshStatus": "success"
           },
           "USDCNY": {
@@ -212,7 +224,7 @@ window.investmentResearch = {
         "observations": {
           "FEDFUNDS": {
             "value": 3.88,
-            "date": "2026-10-27",
+            "date": "2026-10-28",
             "refreshStatus": "success"
           },
           "CPI": {
@@ -221,8 +233,8 @@ window.investmentResearch = {
             "refreshStatus": "success"
           },
           "PCE": {
-            "value": 131.579,
-            "date": "2026-08-01",
+            "value": 132.257,
+            "date": "2026-09-01",
             "refreshStatus": "success"
           },
           "UNRATE": {
@@ -236,15 +248,15 @@ window.investmentResearch = {
             "refreshStatus": "success"
           },
           "US10Y": {
-            "value": 4.99,
-            "date": "2026-10-27",
+            "value": 5.05,
+            "date": "2026-10-28",
             "refreshStatus": "success"
           }
         }
       },
       "qdii": {
-        "collectedAt": "2026-10-28T23:57:23.545Z",
-        "noticeCheckedAt": "2026-10-28T23:58:09.002Z",
+        "collectedAt": "2026-10-30T00:13:05.561Z",
+        "noticeCheckedAt": "2026-10-30T00:14:00.361Z",
         "errors": [],
         "unresolved": [
           {
@@ -259,8 +271,8 @@ window.investmentResearch = {
           }
         ],
         "sourceDataDates": [
-          "2026-10-27",
-          "2026-10-26"
+          "2026-10-28",
+          "2026-10-27"
         ]
       },
       "events": [
@@ -273,30 +285,93 @@ window.investmentResearch = {
           "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
         },
         {
-          "name": "美国GDP初值及9月PCE",
-          "scheduledAt": "2026-10-29T20:30:00+08:00",
-          "statusAtReview": "not_yet_published",
-          "url": "https://www.bea.gov/news/schedule"
+          "name": "美国第三季度GDP初值",
+          "publishedAt": "2026-10-29T08:30:00-04:00",
+          "observationPeriod": "2026-Q3",
+          "statusAtReview": "published",
+          "realGdpAnnualizedQoqPct": 3.4,
+          "previousQuarterPct": 2.2,
+          "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026"
+        },
+        {
+          "name": "美国9月PCE",
+          "publishedAt": "2026-10-29T08:30:00-04:00",
+          "observationPeriod": "2026-09",
+          "statusAtReview": "published",
+          "headlineYoyPct": 3.6,
+          "coreYoyPct": 3.1,
+          "headlineMomPct": 0.5,
+          "coreMomPct": 0.3,
+          "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
         }
       ],
       "additionalObservation": {
         "label": "Nasdaq官网NDX",
-        "value": 29813.16,
-        "date": "2026-10-28",
+        "value": 29402.51,
+        "date": "2026-10-29",
         "url": "https://beta.indexes.nasdaq.com/Index/Overview/NDX",
         "use": "单独展示来源值，不混算涨跌或替换FRED规则"
       },
+      "fundReports": [
+        {
+          "name": "易方达全球成长精选",
+          "codes": [
+            "012920",
+            "012922"
+          ],
+          "observationDate": "2026-09-30",
+          "publishedDate": "2026-10-27",
+          "reviewedAt": "2026-10-30T00:55:47Z",
+          "sourceType": "基金管理人三季报原文，东方财富镜像",
+          "url": "https://pdf.dfcfw.com/pdf/H2_AN202610271830959154_1.pdf",
+          "pages": [
+            11,
+            12
+          ],
+          "denominator": "基金资产净值",
+          "mainlandMarketPct": 22.29,
+          "hongKongMarketPct": 4.72,
+          "usMarketPct": 57.07,
+          "informationTechnologyPct": 73.95,
+          "classification": "国家/地区按交易所；行业按GICS；不是公司营收地区"
+        },
+        {
+          "name": "嘉实全球产业升级",
+          "codes": [
+            "017730",
+            "017731"
+          ],
+          "observationDate": "2026-09-30",
+          "publishedDate": "2026-10-27",
+          "reviewedAt": "2026-10-30T00:55:47Z",
+          "sourceType": "基金管理人三季报原文，汇丰链接的晨星镜像",
+          "url": "https://doc.morningstar.com/Document/686603792.msdoc/?clientid=chinateam&key=4ceb1f0a7331680c",
+          "pages": [
+            9
+          ],
+          "denominator": "基金资产净值",
+          "chinaMarketLabel": "中国（中国香港另列）",
+          "chinaMarketPct": 40.43,
+          "hongKongMarketPct": 7.39,
+          "usMarketPct": 39.35,
+          "informationTechnologyPct": 86.69,
+          "classification": "报告国家/地区证券市场表；彭博行业分类"
+        }
+      ],
       "limits": [
-        "未取得完整最新底层地区持仓，不计算实时A股比例",
+        "季度末底层配置存在披露时滞，不据此计算今日实时A股比例",
+        "A/C份额共享投资组合，地区与行业比例重叠，不能相加",
+        "仅核读两只重点主动基金季报，尚未完成全部组合穿透",
         "持仓待到账部分未确认为现金",
-        "数据源日期不同，不将早间检查时间当观察日期"
+        "不同源行情日期与字段未完全对齐，不混算最新回撤",
+        "本次机构观点核读完成，原文发布日期保持不变"
       ],
       "fileHashes": {
         "portfolio-data.js": "ff6b338f528a93715157ed03ff1987e87e15eff67e49592fc02ca7643707d1fb",
         "portfolio-status.json": "ebe068ba23c2b18a8c66bd2902e10c743853a80342620a4ec3a72f2f7c3dff30",
-        "fund-data.json": "252ea4e669e3e9c2fd0c48502a9a52b1a1c4171dcdab4b7bcdd86aa0b6347518",
-        "market-data.json": "c44206aa043e7ef37b5cac06b89ab4b8b28e462ac468867e8e1fac9510ce4ff3",
-        "qdii-limits.json": "f24a06b149636dc80c4f65409fa2a1558e63c5d5446b08b7cd3f06df649fffe4"
+        "fund-data.json": "dce2c519fca78937da7c6d1d5a9122169b22fa306b5f9e20d5a3ed8411727d96",
+        "market-data.json": "809324d5f5f164086108258c43666a491fe0d81670db5c5f28b5c06f6848ebf6",
+        "qdii-limits.json": "23463418659e00b795d3b6a37e189539cfb1b03c451974ec8d1e56af7a329daf"
       }
     }
   }
