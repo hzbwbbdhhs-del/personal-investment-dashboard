@@ -1,7 +1,7 @@
 // Daily reviewed source summaries. Observation, publication and review dates are distinct.
 window.investmentResearch = {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-30",
+  "reviewedAt": "2026-10-31",
   "schedule": {
     "time": "08:00",
     "timezone": "Asia/Shanghai",
@@ -24,8 +24,8 @@ window.investmentResearch = {
         "债券",
         "分散"
       ],
-      "reviewedAt": "2026-10-30",
-      "reviewedAtTime": "2026-10-30T00:55:47Z",
+      "reviewedAt": "2026-10-31",
+      "reviewedAtTime": "2026-10-31T03:15:32Z",
       "checkStatus": "success"
     },
     {
@@ -44,8 +44,8 @@ window.investmentResearch = {
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-10-30",
-      "reviewedAtTime": "2026-10-30T00:55:47Z",
+      "reviewedAt": "2026-10-31",
+      "reviewedAtTime": "2026-10-31T03:15:32Z",
       "checkStatus": "success"
     },
     {
@@ -64,8 +64,8 @@ window.investmentResearch = {
         "科技",
         "主动基金"
       ],
-      "reviewedAt": "2026-10-30",
-      "reviewedAtTime": "2026-10-30T00:55:47Z",
+      "reviewedAt": "2026-10-31",
+      "reviewedAtTime": "2026-10-31T03:15:32Z",
       "checkStatus": "success"
     },
     {
@@ -84,8 +84,48 @@ window.investmentResearch = {
         "A股",
         "主动基金"
       ],
-      "reviewedAt": "2026-10-30",
-      "reviewedAtTime": "2026-10-30T00:55:47Z",
+      "reviewedAt": "2026-10-31",
+      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "checkStatus": "success"
+    },
+    {
+      "id": "troweprice",
+      "organization": "普信 T. Rowe Price",
+      "author": "全球市场周报团队 · 未署名单一作者",
+      "date": "2026-10-30",
+      "reviewAfter": "2026-11-07",
+      "horizon": "截至10月30日的一周回顾",
+      "title": "AI投入回报受到审视，科技与价值表现分化",
+      "view": "周报将科技股后半周转弱与投资者重新审视大型科技公司资本开支的可持续性、投资回报联系起来，同时指出小盘和价值风格相对占优。",
+      "relevance": "你的主动QDII与纳指都可能受同一科技主题影响；仅增加基金数量，无法保证分散风险。",
+      "limit": "这是机构对一周市场的归因，不能视为单一确定因果或下一周预测；原文Nasdaq Composite并非纳斯达克100。",
+      "url": "https://www.troweprice.com/en/us/insights/global-markets-weekly-update",
+      "themes": [
+        "科技",
+        "分散"
+      ],
+      "reviewedAt": "2026-10-31",
+      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "checkStatus": "success"
+    },
+    {
+      "id": "jpm-private-bank",
+      "organization": "摩根大通私人银行",
+      "author": "Kriti Gupta · 全球投资策略师；Nick Roberts · 投资组合经理",
+      "date": "2026-10-30",
+      "reviewAfter": "2026-11-07",
+      "horizon": "2026年末前景 · 观点不是收益保证",
+      "title": "对年末较积极，但承认政策与AI投入风险",
+      "view": "认为市场韧性、参与范围及历史季节性可能支持年末表现；同时承认选举、地缘局势、AI融资和回报兑现等风险。",
+      "relevance": "为短期下跌必然意味着长期失效的判断提供另一种视角；适合对照原定长期预算，而非据此一次性加仓。",
+      "limit": "广度图截至10月28日，文章描述不能当作10月30日收盘事实；历史平均表现不是未来收益承诺。",
+      "url": "https://privatebank.jpmorgan.com/nam/en/insights/markets-and-investing/tmt/jumping-hurdles-the-race-to-year-end",
+      "themes": [
+        "科技",
+        "分散"
+      ],
+      "reviewedAt": "2026-10-31",
+      "reviewedAtTime": "2026-10-31T03:15:32Z",
       "checkStatus": "success"
     }
   ],
@@ -96,55 +136,19 @@ window.investmentResearch = {
       "note": "SEC投资者教育资料；不提供中国QDII购买排行榜。"
     }
   ],
-  "reviewedAtTime": "2026-10-30T00:55:47Z",
+  "reviewedAtTime": "2026-10-31T03:15:32Z",
   "reviewStatus": "complete",
   "dailyBrief": {
-    "date": "2026-10-30",
-    "reviewedAt": "2026-10-30T00:55:47Z",
-    "title": "新季报：降低A股暴露，也要看科技集中度",
-    "summary": "两只重点主动基金的三季报已核读。地区配置与科技行业集中是两项不同的风险；先核对赎回后的剩余持仓，再决定是否调整，不能只因下跌就卖出或加仓。",
+    "date": "2026-10-31",
+    "reviewedAt": "2026-10-31T03:15:32Z",
+    "title": "周末复核：科技波动加大，先守住总预算",
+    "summary": "维持已经安排的指数定投纪律；额外加仓前，先确认剩余持仓、可用现金与科技重叠。最新机构观点并不一致，短期下跌和额度开放都不能单独决定买卖。",
     "points": [
       {
-        "title": "易方达与嘉实：季报给出了不同的地区暴露",
-        "fact": "截至9月30日，易方达全球成长精选的中国内地股票及存托凭证占基金净值22.29%，信息技术行业占73.95%；嘉实全球产业升级的“中国”市场占40.43%（中国香港另列7.39%），信息技术占86.69%。两份报告均于10月27日发布。",
-        "inference": "在该季度末，嘉实的中国市场占比与信息技术集中度更高；减少A股暴露并不等于消除科技波动。地区与行业比例会重叠，不能相加；这些也不是今天的实时仓位。",
-        "action": "按“地区暴露是否符合你意愿”和“科技集中度能否承受”分别判断。先核对4笔赎回的剩余持仓与到账，不重复减仓；普通纳指也含大量科技，不能把换成纳指当作完全分散。",
-        "sources": [
-          {
-            "title": "易方达三季报，第11–12页",
-            "url": "https://pdf.dfcfw.com/pdf/H2_AN202610271830959154_1.pdf"
-          },
-          {
-            "title": "嘉实三季报，第9页",
-            "url": "https://doc.morningstar.com/Document/686603792.msdoc/?clientid=chinateam&key=4ceb1f0a7331680c"
-          }
-        ]
-      },
-      {
-        "title": "美国增长仍有韧性，通胀约束没有消失",
-        "fact": "BEA于美国10月29日公布：第三季度实际GDP环比折年增长3.4%（第二季度2.2%）；9月PCE物价同比3.6%、核心PCE同比3.1%，环比分别0.5%和0.3%。美联储10月28日维持目标利率3.75%–4.00%。",
-        "inference": "增长能支持企业需求，但物价仍会约束宽松空间；一次数据不能确定后续利率或科技股方向。GDP折年环比与PCE同比口径不同，不直接比较大小。",
-        "action": "已定的纳指100／普通标普500长期预算先保持纪律，额外投入需以可用现金和承受度为前提。债券仍按中国利率、久期与用款时间检查，不能把美债利率直接套到国内债基。",
-        "sources": [
-          {
-            "title": "BEA第三季度GDP初值",
-            "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026"
-          },
-          {
-            "title": "BEA 9月PCE",
-            "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
-          },
-          {
-            "title": "美联储10月28日声明",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
-          }
-        ]
-      },
-      {
-        "title": "最新可得，不等于所有数据都到昨晚",
-        "fact": "本次纳指、标普、VIX/VXN及10年美债的FRED快照截至10月28日，USD/CNY截至10月23日；纳斯达克官网另显示10月29日NDX为29,402.51。64个基金净值抓取成功：13个净值日为10月29日，51个为10月28日。",
-        "inference": "FRED旧日期的回撤档位不能当作昨晚结论；官网涨跌字段尚未交叉核对，本页只引用其明确标日期的指数值。净值发布滞后与抓取失败是两回事。",
-        "action": "等同源行情补齐后再判断回撤加仓档位。额度开放只解决购买渠道；即使单渠道达到1,000元/日，也不因此提高预算。支付宝实际额度仍以买入页为准。",
+        "title": "纳指观察值更新，但回撤卡片仍滞后一日",
+        "fact": "纳斯达克官网标注10月30日NDX为28,384.85；本站FRED快照仍为10月29日29,402.51，对应原序列高点回撤5.84%。同一快照的标普、VIX/VXN及10年美债截至10月29日，美元/人民币截至10月23日。",
+        "inference": "官网的最新指数值更低，旧回撤档位不足以描述10月30日行情。官网涨跌额、涨跌幅及前收盘字段尚未对齐，本页不混用两源计算最新回撤或倍数。",
+        "action": "先保留原定投预算；待同源完整行情更新，再核对原来的回撤分档。不要因为看到5%或10%的分界，就直接增加投入。",
         "sources": [
           {
             "title": "纳斯达克指数官网",
@@ -159,13 +163,49 @@ window.investmentResearch = {
             "url": "https://fred.stlouisfed.org/series/SP500"
           }
         ]
+      },
+      {
+        "title": "工资成本增速稍缓，不等于宽松已确定",
+        "fact": "BLS于10月30日发布：截至9月的三个月，民用部门雇佣总成本季调增长0.8%（前季0.9%）；12个月未季调增长3.4%。BEA于10月29日公布的第三季度实际GDP环比折年增速为3.4%，9月PCE同比3.6%、核心同比3.1%。",
+        "inference": "劳动成本季度增速稍缓与增长、物价仍较强可以同时存在；不能用一个工资指标推定降息。季度环比、同比和折年率各有口径，不直接比较大小。",
+        "action": "债券部分继续看中国利率、久期及用款时间；7–10年国开债不能按现金理解，也不能把美债收益率当人民币收益承诺。",
+        "sources": [
+          {
+            "title": "BLS第三季度雇佣成本",
+            "url": "https://www.bls.gov/news.release/archives/eci_10302026.htm"
+          },
+          {
+            "title": "BEA第三季度GDP初值",
+            "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026"
+          },
+          {
+            "title": "BEA 9月PCE",
+            "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+          }
+        ]
+      },
+      {
+        "title": "减少A股暴露，还要单独检查科技集中",
+        "fact": "沿用10月30日核读的三季报：截至9月30日，易方达全球成长精选中国内地市场占净值22.29%、信息技术占73.95%；嘉实全球产业升级“中国”市场40.43%（香港另列7.39%）、信息技术86.69%。当前账户仍有4笔赎回未拆分。",
+        "inference": "地区风险与行业风险重叠，不能相加；换成纳指也未必减少科技风险。这些季度末仓位无法推算你今天的实时A股金额，更不能把在途款提前当现金。",
+        "action": "先核对剩余份额与到账记录，再决定主动基金保留多少。纳指100和普通标普500按各自总预算选渠道，比较持续费率、申购费及跟踪差异；有大额度也不改变预算。",
+        "sources": [
+          {
+            "title": "易方达三季报，第11–12页",
+            "url": "https://pdf.dfcfw.com/pdf/H2_AN202610271830959154_1.pdf"
+          },
+          {
+            "title": "嘉实三季报，第9页",
+            "url": "https://doc.morningstar.com/Document/686603792.msdoc/?clientid=chinateam&key=4ceb1f0a7331680c"
+          }
+        ]
       }
     ],
     "holdingsNote": "仍以10月28日已确认的支付宝62笔及用户确认未交易的直销10笔为依据。4笔共55,392.93元是尚未拆分剩余持仓与赎回在途的账面金额，不是赎回款或可用现金；截图中370元买入待确认、18,473.86元卖出将到账均已包含在原总额，不重复加总。网页本机未同步的修改不包含在本次核读中。",
-    "quotaNote": "额度快照采集正常，来源日期为10月27–28日；博时标普联接A（050025）和C（006075）公告正文或渠道对应仍未可靠复核，不作为确定可买额度。管理人公告上限不保证支付宝订单页额度，也不把直销和代销额度简单视为可叠加。",
-    "counterpoint": "今天重新核读的贝莱德、摩根、Vanguard及嘉实公司观点保留原发布日期。贝莱德认为AI投资等可能缓冲增长压力；Vanguard认为合理费用下的优秀主动管理仍可能有价值。嘉实基金经理在三季报中仍看好AI产业升级，这是管理人判断且有利益关联；应与集中风险一并看待，不将短期回撤等同于长期逻辑失效。",
+    "quotaNote": "额度采集正常，汇总源日期为10月28–29日；博时标普联接A（050025）和C（006075）的公告正文或渠道对应仍未可靠复核，不作为确定可买额度。管理人公告上限不保证支付宝买入页额度，直销与代销也不当然可叠加。",
+    "counterpoint": "本次新读普信10月30日周报，将科技震荡与市场对AI资本开支回报的担忧联系起来；摩根私人银行同日文章则对年末前景较积极，强调更广泛的股票参与和历史季节性。后者广度图仅截至10月28日，乐观判断不是10月30日收盘结论，也不保证未来上涨。原有四篇观点本次重新核读，保留原发布日期；不因单一机构意见或下跌自动要求卖出。",
     "basis": {
-      "repositoryCommit": "b5800b13bc7705c6ff3041c45c6476af3a0e8ba4",
+      "repositoryCommit": "47f452ca627796b563a7e1049a439bfea044a566",
       "holdingsVersion": "20261028-alipay-reviewed-v1",
       "holdingsCount": 72,
       "fundCodeCount": 64,
@@ -174,43 +214,43 @@ window.investmentResearch = {
         "direct": "2026-10-03"
       },
       "funds": {
-        "checkedAt": "2026-10-29T18:21:17.491Z",
-        "updatedAt": "2026-10-29T13:38:40.381Z",
+        "checkedAt": "2026-10-31T02:44:25.895Z",
+        "updatedAt": "2026-10-30T13:25:16.175Z",
         "checkStatus": "success",
         "successCount": 64,
         "failureCount": 0,
         "navDates": {
-          "2026-10-29": 13,
-          "2026-10-28": 51
+          "2026-10-30": 13,
+          "2026-10-29": 51
         }
       },
       "market": {
-        "checkedAt": "2026-10-30T00:33:35.535Z",
+        "checkedAt": "2026-10-31T02:33:26.010Z",
         "checkStatus": "success",
         "observations": {
           "NDX": {
-            "value": 29813.16,
-            "date": "2026-10-28",
+            "value": 29402.51,
+            "date": "2026-10-29",
             "refreshStatus": "success"
           },
           "SPX": {
-            "value": 7743.98,
-            "date": "2026-10-28",
+            "value": 7720.39,
+            "date": "2026-10-29",
             "refreshStatus": "success"
           },
           "VIX": {
-            "value": 16.91,
-            "date": "2026-10-28",
+            "value": 17.2,
+            "date": "2026-10-29",
             "refreshStatus": "success"
           },
           "VXN": {
-            "value": 23.78,
-            "date": "2026-10-28",
+            "value": 25.18,
+            "date": "2026-10-29",
             "refreshStatus": "success"
           },
           "US10Y": {
-            "value": 5.05,
-            "date": "2026-10-28",
+            "value": 4.98,
+            "date": "2026-10-29",
             "refreshStatus": "success"
           },
           "USDCNY": {
@@ -224,7 +264,7 @@ window.investmentResearch = {
         "observations": {
           "FEDFUNDS": {
             "value": 3.88,
-            "date": "2026-10-28",
+            "date": "2026-10-29",
             "refreshStatus": "success"
           },
           "CPI": {
@@ -248,15 +288,15 @@ window.investmentResearch = {
             "refreshStatus": "success"
           },
           "US10Y": {
-            "value": 5.05,
-            "date": "2026-10-28",
+            "value": 4.98,
+            "date": "2026-10-29",
             "refreshStatus": "success"
           }
         }
       },
       "qdii": {
-        "collectedAt": "2026-10-30T00:13:05.561Z",
-        "noticeCheckedAt": "2026-10-30T00:14:00.361Z",
+        "collectedAt": "2026-10-31T03:10:13.497Z",
+        "noticeCheckedAt": "2026-10-31T03:11:11.890Z",
         "errors": [],
         "unresolved": [
           {
@@ -271,8 +311,8 @@ window.investmentResearch = {
           }
         ],
         "sourceDataDates": [
-          "2026-10-28",
-          "2026-10-27"
+          "2026-10-29",
+          "2026-10-28"
         ]
       },
       "events": [
@@ -303,14 +343,25 @@ window.investmentResearch = {
           "headlineMomPct": 0.5,
           "coreMomPct": 0.3,
           "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+        },
+        {
+          "name": "美国第三季度雇佣成本",
+          "publishedAt": "2026-10-30T08:30:00-04:00",
+          "observationPeriod": "2026-Q3",
+          "statusAtReview": "published",
+          "civilianCompensationQoqSaPct": 0.8,
+          "previousQuarterQoqSaPct": 0.9,
+          "civilianCompensationYoyNsaPct": 3.4,
+          "url": "https://www.bls.gov/news.release/archives/eci_10302026.htm"
         }
       ],
       "additionalObservation": {
         "label": "Nasdaq官网NDX",
-        "value": 29402.51,
-        "date": "2026-10-29",
+        "value": 28384.85,
+        "date": "2026-10-30",
         "url": "https://beta.indexes.nasdaq.com/Index/Overview/NDX",
-        "use": "单独展示来源值，不混算涨跌或替换FRED规则"
+        "reviewedAt": "2026-10-31T03:15:32Z",
+        "use": "单独展示标注日期的指数值；涨跌额、涨跌幅及前收盘字段不一致，不混算最新回撤"
       },
       "fundReports": [
         {
@@ -359,19 +410,19 @@ window.investmentResearch = {
         }
       ],
       "limits": [
-        "季度末底层配置存在披露时滞，不据此计算今日实时A股比例",
-        "A/C份额共享投资组合，地区与行业比例重叠，不能相加",
-        "仅核读两只重点主动基金季报，尚未完成全部组合穿透",
-        "持仓待到账部分未确认为现金",
-        "不同源行情日期与字段未完全对齐，不混算最新回撤",
-        "本次机构观点核读完成，原文发布日期保持不变"
+        "两只重点基金的季度末配置沿用10月30日核读结果，报告观察日9月30日，不是实时仓位",
+        "未收到新的成交或到账确认，4笔在途不改为现金",
+        "FRED行情截至10月29日，汇率截至10月23日，不把检查时间当观察日",
+        "Nasdaq官网涨跌字段不一致，只单列10月30日指数值，不替换同源回撤规则",
+        "两项博时额度仍未可靠复核，不作为确定购买能力",
+        "本次六篇机构原文已核读，发布日期不改成核读日；本机未同步账户修改不在本次依据中"
       ],
       "fileHashes": {
         "portfolio-data.js": "ff6b338f528a93715157ed03ff1987e87e15eff67e49592fc02ca7643707d1fb",
         "portfolio-status.json": "ebe068ba23c2b18a8c66bd2902e10c743853a80342620a4ec3a72f2f7c3dff30",
-        "fund-data.json": "dce2c519fca78937da7c6d1d5a9122169b22fa306b5f9e20d5a3ed8411727d96",
-        "market-data.json": "809324d5f5f164086108258c43666a491fe0d81670db5c5f28b5c06f6848ebf6",
-        "qdii-limits.json": "23463418659e00b795d3b6a37e189539cfb1b03c451974ec8d1e56af7a329daf"
+        "fund-data.json": "676f4a3a192b6d24197c7b0ac1517a94012a87e45dcad284e44eafba7ecfa21e",
+        "market-data.json": "7f627c63a01bbfede65d6e49e1792505be8eef8a6bd52c20e021e71438533053",
+        "qdii-limits.json": "e92e550fd4565b15ca00c944e2885e066e847b1b580b1465a416fa572fb8b11d"
       }
     }
   }
