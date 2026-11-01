@@ -1,7 +1,7 @@
 // Daily reviewed source summaries. Observation, publication and review dates are distinct.
 window.investmentResearch = {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-31",
+  "reviewedAt": "2026-11-01",
   "schedule": {
     "time": "08:00",
     "timezone": "Asia/Shanghai",
@@ -24,8 +24,8 @@ window.investmentResearch = {
         "债券",
         "分散"
       ],
-      "reviewedAt": "2026-10-31",
-      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "reviewedAt": "2026-11-01",
+      "reviewedAtTime": "2026-11-01T00:06:54.371Z",
       "checkStatus": "success"
     },
     {
@@ -33,19 +33,19 @@ window.investmentResearch = {
       "organization": "摩根资产管理",
       "author": "Tai Hui（许长泰）· 亚太区首席市场策略师",
       "date": "2026-10-01",
-      "reviewAfter": "2026-11-01",
+      "reviewAfter": "2026-11-02",
       "horizon": "2026年第四季度",
       "title": "利率上行未必终结上涨，但要扩大分散范围",
       "view": "若收益率上升源于增长与盈利，股市仍可能有支撑；若融资成本损害增长，影响会转负。主张分散至美国科技之外的行业和地区。",
       "relevance": "把部分主动科技QDII换成纳指，仍可能重叠于科技主题；应比较组合暴露，而非只比较基金名称。",
-      "limit": "当月观点，不是盘中判断；海外配置建议还需考虑人民币汇率、QDII费用与额度。",
+      "limit": "10月1日月报，11月1日已重读，仍作为第四季度背景；本次未检得新版月报，不将其称为11月新观点。海外建议还需考虑人民币汇率、QDII费用与额度。",
       "url": "https://am.jpmorgan.com/au/en/asset-management/adv/insights/market-insights/market-updates/on-the-minds-of-investors/monthly-views-and-perspectives-higher-rates-and-ai-scrutiny-calls-for-portfolio-diversification/",
       "themes": [
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-10-31",
-      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "reviewedAt": "2026-11-01",
+      "reviewedAtTime": "2026-11-01T00:06:54.371Z",
       "checkStatus": "success"
     },
     {
@@ -64,8 +64,8 @@ window.investmentResearch = {
         "科技",
         "主动基金"
       ],
-      "reviewedAt": "2026-10-31",
-      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "reviewedAt": "2026-11-01",
+      "reviewedAtTime": "2026-11-01T00:06:54.371Z",
       "checkStatus": "success"
     },
     {
@@ -84,8 +84,8 @@ window.investmentResearch = {
         "A股",
         "主动基金"
       ],
-      "reviewedAt": "2026-10-31",
-      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "reviewedAt": "2026-11-01",
+      "reviewedAtTime": "2026-11-01T00:06:54.371Z",
       "checkStatus": "success"
     },
     {
@@ -104,8 +104,8 @@ window.investmentResearch = {
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-10-31",
-      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "reviewedAt": "2026-11-01",
+      "reviewedAtTime": "2026-11-01T00:06:54.371Z",
       "checkStatus": "success"
     },
     {
@@ -124,8 +124,8 @@ window.investmentResearch = {
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-10-31",
-      "reviewedAtTime": "2026-10-31T03:15:32Z",
+      "reviewedAt": "2026-11-01",
+      "reviewedAtTime": "2026-11-01T00:06:54.371Z",
       "checkStatus": "success"
     }
   ],
@@ -136,46 +136,46 @@ window.investmentResearch = {
       "note": "SEC投资者教育资料；不提供中国QDII购买排行榜。"
     }
   ],
-  "reviewedAtTime": "2026-10-31T03:15:32Z",
+  "reviewedAtTime": "2026-11-01T00:06:54.371Z",
   "reviewStatus": "complete",
   "dailyBrief": {
-    "date": "2026-10-31",
-    "reviewedAt": "2026-10-31T03:15:32Z",
-    "title": "周末复核：科技波动加大，先守住总预算",
-    "summary": "维持已经安排的指数定投纪律；额外加仓前，先确认剩余持仓、可用现金与科技重叠。最新机构观点并不一致，短期下跌和额度开放都不能单独决定买卖。",
+    "date": "2026-11-01",
+    "reviewedAt": "2026-11-01T00:06:54.371Z",
+    "title": "11月预算复核：先分清可用资金与科技重叠",
+    "summary": "本次核对的持仓与净值观察日没有变化。新月份先沿用已安排的纳指100、标普500总预算；额外投入应以确认到账的现金和可承受波动为前提，不因额度开放或短期涨跌临时加码。",
     "points": [
       {
-        "title": "纳指观察值更新，但回撤卡片仍滞后一日",
-        "fact": "纳斯达克官网标注10月30日NDX为28,384.85；本站FRED快照仍为10月29日29,402.51，对应原序列高点回撤5.84%。同一快照的标普、VIX/VXN及10年美债截至10月29日，美元/人民币截至10月23日。",
-        "inference": "官网的最新指数值更低，旧回撤档位不足以描述10月30日行情。官网涨跌额、涨跌幅及前收盘字段尚未对齐，本页不混用两源计算最新回撤或倍数。",
-        "action": "先保留原定投预算；待同源完整行情更新，再核对原来的回撤分档。不要因为看到5%或10%的分界，就直接增加投入。",
+        "title": "周日核读更新，行情日期没有自动前移",
+        "fact": "本次64个基金代码净值检查成功：13个净值日为10月30日、51个为10月29日。FRED纳指、标普、VIX/VXN和10年美债仍截至10月29日，汇率截至10月23日；纳斯达克官网单独标注10月30日NDX为28,384.85。",
+        "inference": "采集成功不等于获得新交易日数据。回撤卡片的5.84%属于10月29日旧序列；官网前收盘字段与涨跌字段仍不一致，不能把不同来源拼成精确的最新回撤。",
+        "action": "保留原来的定投总预算，等同源完整行情后再对照回撤分档。基金净值、海外指数和人民币汇率日期不同，不能用指数当晚跌幅直接认定你的已实现亏损。",
         "sources": [
-          {
-            "title": "纳斯达克指数官网",
-            "url": "https://beta.indexes.nasdaq.com/Index/Overview/NDX"
-          },
           {
             "title": "FRED纳指日线",
             "url": "https://fred.stlouisfed.org/series/NASDAQ100"
           },
           {
-            "title": "FRED标普日线",
-            "url": "https://fred.stlouisfed.org/series/SP500"
+            "title": "纳斯达克指数官网",
+            "url": "https://beta.indexes.nasdaq.com/Index/Overview/NDX"
+          },
+          {
+            "title": "本站本次净值快照",
+            "url": "https://github.com/hzbwbbdhhs-del/personal-investment-dashboard/blob/f283be436afeba66505d40f1ecd57677839de70e/fund-data.json"
           }
         ]
       },
       {
-        "title": "工资成本增速稍缓，不等于宽松已确定",
-        "fact": "BLS于10月30日发布：截至9月的三个月，民用部门雇佣总成本季调增长0.8%（前季0.9%）；12个月未季调增长3.4%。BEA于10月29日公布的第三季度实际GDP环比折年增速为3.4%，9月PCE同比3.6%、核心同比3.1%。",
-        "inference": "劳动成本季度增速稍缓与增长、物价仍较强可以同时存在；不能用一个工资指标推定降息。季度环比、同比和折年率各有口径，不直接比较大小。",
-        "action": "债券部分继续看中国利率、久期及用款时间；7–10年国开债不能按现金理解，也不能把美债收益率当人民币收益承诺。",
+        "title": "下周看就业数据，不提前下注宽松或衰退",
+        "fact": "BLS日历安排：9月职位空缺报告11月3日美东10:00（北京23:00），10月就业报告11月6日美东08:30（北京21:30）。结果尚未公布。已公布的三季度实际GDP环比折年增速3.4%，9月PCE同比3.6%、核心同比3.1%。",
+        "inference": "增长有支撑与通胀仍偏高可以并存。下周需同时看就业、工资及历史修订；单个指标变弱不能直接等同降息，也不能单凭GDP增长断言股票会涨。日历可能调整。",
+        "action": "观察发布后的真实数据，不按预想结果临时改变定投金额。债券部分继续核对久期与用款时间；7–10年国开债不是现金，美债利率也不等于人民币债基收益。",
         "sources": [
           {
-            "title": "BLS第三季度雇佣成本",
-            "url": "https://www.bls.gov/news.release/archives/eci_10302026.htm"
+            "title": "BLS 11月发布日历",
+            "url": "https://www.bls.gov/schedule/2026/11_sched.htm"
           },
           {
-            "title": "BEA第三季度GDP初值",
+            "title": "BEA三季度GDP初值",
             "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026"
           },
           {
@@ -202,10 +202,10 @@ window.investmentResearch = {
       }
     ],
     "holdingsNote": "仍以10月28日已确认的支付宝62笔及用户确认未交易的直销10笔为依据。4笔共55,392.93元是尚未拆分剩余持仓与赎回在途的账面金额，不是赎回款或可用现金；截图中370元买入待确认、18,473.86元卖出将到账均已包含在原总额，不重复加总。网页本机未同步的修改不包含在本次核读中。",
-    "quotaNote": "额度采集正常，汇总源日期为10月28–29日；博时标普联接A（050025）和C（006075）的公告正文或渠道对应仍未可靠复核，不作为确定可买额度。管理人公告上限不保证支付宝买入页额度，直销与代销也不当然可叠加。",
-    "counterpoint": "本次新读普信10月30日周报，将科技震荡与市场对AI资本开支回报的担忧联系起来；摩根私人银行同日文章则对年末前景较积极，强调更广泛的股票参与和历史季节性。后者广度图仅截至10月28日，乐观判断不是10月30日收盘结论，也不保证未来上涨。原有四篇观点本次重新核读，保留原发布日期；不因单一机构意见或下跌自动要求卖出。",
+    "quotaNote": "额度汇总采集成功，汇总源日期10月29–30日；但底层仍有120次公告解析失败、主动基金4条错误及正文复核1项失败，部分规则来自共享公告或缓存，不能称为全部渠道已核实。博时标普联接A（050025）及C（006075）仍未可靠对应公告与渠道。直销、支付宝分别看来源与核实时间，不把管理人上限当订单页保证，也不默认额度可相加。",
+    "counterpoint": "本次重新阅读六篇原文，保留原发布日期。普信10月30日周报强调AI资本开支回报的疑虑；摩根私人银行同日文章对年末较积极，但其广度图截至10月28日，历史季节性不保证未来收益。Vanguard强调主动管理仍需能力和合理费用，嘉实对中国资产更积极且与产品有利益关联。摩根资管10月1日月报本次仍作背景，未检得新版；这些分歧不支持因一次下跌全卖，也不支持为回本无预算补仓。",
     "basis": {
-      "repositoryCommit": "47f452ca627796b563a7e1049a439bfea044a566",
+      "repositoryCommit": "f283be436afeba66505d40f1ecd57677839de70e",
       "holdingsVersion": "20261028-alipay-reviewed-v1",
       "holdingsCount": 72,
       "fundCodeCount": 64,
@@ -214,7 +214,7 @@ window.investmentResearch = {
         "direct": "2026-10-03"
       },
       "funds": {
-        "checkedAt": "2026-10-31T02:44:25.895Z",
+        "checkedAt": "2026-10-31T18:17:40.262Z",
         "updatedAt": "2026-10-30T13:25:16.175Z",
         "checkStatus": "success",
         "successCount": 64,
@@ -225,7 +225,8 @@ window.investmentResearch = {
         }
       },
       "market": {
-        "checkedAt": "2026-10-31T02:33:26.010Z",
+        "checkedAt": "2026-10-31T23:55:45.742Z",
+        "updatedAt": "2026-10-31T23:55:46.649Z",
         "checkStatus": "success",
         "observations": {
           "NDX": {
@@ -295,8 +296,8 @@ window.investmentResearch = {
         }
       },
       "qdii": {
-        "collectedAt": "2026-10-31T03:10:13.497Z",
-        "noticeCheckedAt": "2026-10-31T03:11:11.890Z",
+        "collectedAt": "2026-10-31T23:43:15.112Z",
+        "noticeCheckedAt": "2026-10-31T23:44:11.740Z",
         "errors": [],
         "unresolved": [
           {
@@ -311,9 +312,104 @@ window.investmentResearch = {
           }
         ],
         "sourceDataDates": [
-          "2026-10-29",
-          "2026-10-28"
-        ]
+          "2026-10-30",
+          "2026-10-29"
+        ],
+        "parserHealth": {
+          "status": "ok",
+          "checked": 57,
+          "expected": 57,
+          "coverage": 1
+        },
+        "officialNotices": {
+          "enabled": true,
+          "checked": 57,
+          "found": 57,
+          "parsed": 57,
+          "unparsed": 0,
+          "errors": 0,
+          "sourceFailureCount": 0,
+          "parseFailureCount": 120,
+          "unresolvedFundCount": 0,
+          "resolvedBySharedNoticeOrCache": 57,
+          "cacheHitNoticeCount": 566,
+          "downloadedNoticeCount": 120,
+          "sources": {
+            "announcementIndex": {
+              "eligible": 57,
+              "checked": 57,
+              "found": 57,
+              "errors": 0
+            },
+            "managerWebsites": {
+              "supported": 4,
+              "checked": 0,
+              "found": 0,
+              "errors": 0
+            }
+          }
+        },
+        "heldActive": {
+          "checkedAt": "2026-10-31T23:43:52.228Z",
+          "count": 15,
+          "errors": [
+            {
+              "code": "002891",
+              "source": "announcement-index",
+              "noticeId": "AN202609021828902436",
+              "noticeDate": "2026-09-02",
+              "noticeTitle": "关于调整华夏移动互联灵活配置混合型证券投资基金(QDII)人民币销售申购、定期定额申购业务上限的公告",
+              "stage": "parse",
+              "message": "公告正文未能可靠解析",
+              "shareCodes": [
+                "002891"
+              ]
+            },
+            {
+              "code": "006555",
+              "source": "announcement-index",
+              "noticeId": "AN202609181829580901",
+              "noticeDate": "2026-09-18",
+              "noticeTitle": "关于浦银全球智能科技股票型证券投资基金(QDII)恢复申购、定期定额投资并暂停大额申购、定期定额投资的公告",
+              "stage": "parse",
+              "message": "公告正文未能可靠解析",
+              "shareCodes": [
+                "006555",
+                "014002"
+              ]
+            },
+            {
+              "code": "014002",
+              "source": "announcement-index",
+              "noticeId": "AN202609181829580901",
+              "noticeDate": "2026-09-18",
+              "noticeTitle": "关于浦银全球智能科技股票型证券投资基金(QDII)恢复申购、定期定额投资并暂停大额申购、定期定额投资的公告",
+              "stage": "parse",
+              "message": "公告正文未能可靠解析",
+              "shareCodes": [
+                "006555",
+                "014002"
+              ]
+            },
+            {
+              "code": "002891",
+              "source": "manager-website",
+              "message": "公开数据源域名不在允许范围"
+            }
+          ]
+        },
+        "bodyReview": {
+          "count": 97,
+          "failed": 1,
+          "checkedAt": "2026-10-31T23:44:11.686Z"
+        },
+        "comparison": {
+          "repository": "https://github.com/promise96319/qdii",
+          "sourceUpdatedAt": "2026-10-31T15:19:45+08:00",
+          "fetchedAt": "2026-10-31T23:43:52.221Z",
+          "count": 57,
+          "error": null
+        }
       },
       "events": [
         {
@@ -322,7 +418,9 @@ window.investmentResearch = {
           "low": 3.75,
           "high": 4,
           "vote": "10-2",
-          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+          "reviewedAt": "2026-10-30T00:55:47Z",
+          "reviewNote": "沿用此前核读，不因今日检查改写原文核读日期"
         },
         {
           "name": "美国第三季度GDP初值",
@@ -331,7 +429,8 @@ window.investmentResearch = {
           "statusAtReview": "published",
           "realGdpAnnualizedQoqPct": 3.4,
           "previousQuarterPct": 2.2,
-          "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026"
+          "url": "https://www.bea.gov/index.php/news/2026/gdp-advance-estimate-3rd-quarter-2026",
+          "reviewedAt": "2026-11-01T00:06:54.371Z"
         },
         {
           "name": "美国9月PCE",
@@ -342,7 +441,8 @@ window.investmentResearch = {
           "coreYoyPct": 3.1,
           "headlineMomPct": 0.5,
           "coreMomPct": 0.3,
-          "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+          "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026",
+          "reviewedAt": "2026-11-01T00:06:54.371Z"
         },
         {
           "name": "美国第三季度雇佣成本",
@@ -352,7 +452,26 @@ window.investmentResearch = {
           "civilianCompensationQoqSaPct": 0.8,
           "previousQuarterQoqSaPct": 0.9,
           "civilianCompensationYoyNsaPct": 3.4,
-          "url": "https://www.bls.gov/news.release/archives/eci_10302026.htm"
+          "url": "https://www.bls.gov/news.release/archives/eci_10302026.htm",
+          "reviewedAt": "2026-11-01T00:06:54.371Z"
+        },
+        {
+          "name": "美国9月职位空缺",
+          "observationPeriod": "2026-09",
+          "scheduledAt": "2026-11-03T10:00:00-05:00",
+          "beijingScheduledAt": "2026-11-03T23:00:00+08:00",
+          "statusAtReview": "not_yet_published",
+          "reviewedAt": "2026-11-01T00:06:54.371Z",
+          "url": "https://www.bls.gov/schedule/2026/11_sched.htm"
+        },
+        {
+          "name": "美国10月就业报告",
+          "observationPeriod": "2026-10",
+          "scheduledAt": "2026-11-06T08:30:00-05:00",
+          "beijingScheduledAt": "2026-11-06T21:30:00+08:00",
+          "statusAtReview": "not_yet_published",
+          "reviewedAt": "2026-11-01T00:06:54.371Z",
+          "url": "https://www.bls.gov/schedule/2026/11_sched.htm"
         }
       ],
       "additionalObservation": {
@@ -360,8 +479,8 @@ window.investmentResearch = {
         "value": 28384.85,
         "date": "2026-10-30",
         "url": "https://beta.indexes.nasdaq.com/Index/Overview/NDX",
-        "reviewedAt": "2026-10-31T03:15:32Z",
-        "use": "单独展示标注日期的指数值；涨跌额、涨跌幅及前收盘字段不一致，不混算最新回撤"
+        "reviewedAt": "2026-11-01T00:06:54.371Z",
+        "use": "单列官网日期和指数值；前收盘字段与涨跌仍不一致，不替换同源回撤规则"
       },
       "fundReports": [
         {
@@ -410,19 +529,34 @@ window.investmentResearch = {
         }
       ],
       "limits": [
-        "两只重点基金的季度末配置沿用10月30日核读结果，报告观察日9月30日，不是实时仓位",
-        "未收到新的成交或到账确认，4笔在途不改为现金",
-        "FRED行情截至10月29日，汇率截至10月23日，不把检查时间当观察日",
-        "Nasdaq官网涨跌字段不一致，只单列10月30日指数值，不替换同源回撤规则",
-        "两项博时额度仍未可靠复核，不作为确定购买能力",
-        "本次六篇机构原文已核读，发布日期不改成核读日；本机未同步账户修改不在本次依据中"
+        "两只重点基金三季报沿用10月30日核读，观察日9月30日，未冒充实时底层仓位",
+        "未收到新的成交或到账确认，4笔在途不改持仓或现金；浏览器本机未同步修改不可见",
+        "行情序列截至10月29日，汇率截至10月23日；周日核读时间不是观察日",
+        "Nasdaq官网10月30日指数值单列，前收盘字段尚不一致，不混算最新回撤",
+        "额度顶层errors为空，但嵌套解析存在失败与缓存回退；两项博时渠道仍未核实",
+        "六篇机构原文已重新阅读，发布日期不变；摩根资管月报为10月旧文",
+        "下周就业数据仅列公布计划，未填写实际结果或伪造市场预期"
       ],
       "fileHashes": {
         "portfolio-data.js": "ff6b338f528a93715157ed03ff1987e87e15eff67e49592fc02ca7643707d1fb",
         "portfolio-status.json": "ebe068ba23c2b18a8c66bd2902e10c743853a80342620a4ec3a72f2f7c3dff30",
-        "fund-data.json": "676f4a3a192b6d24197c7b0ac1517a94012a87e45dcad284e44eafba7ecfa21e",
-        "market-data.json": "7f627c63a01bbfede65d6e49e1792505be8eef8a6bd52c20e021e71438533053",
-        "qdii-limits.json": "e92e550fd4565b15ca00c944e2885e066e847b1b580b1465a416fa572fb8b11d"
+        "fund-data.json": "7f1c6fb6aa085b824a0946aeb3ee532ceff610afdc7f9387fecc06c22400cc32",
+        "market-data.json": "0664dd01c297ef45d2464b449d5afdf7479f63e7b8dcfe412498c0f96aad38da",
+        "qdii-limits.json": "78975941f502c41c1efac232552bde75358f8930517343e87ed101e97d388322"
+      },
+      "settlementStatus": {
+        "schemaVersion": 1,
+        "reportedOn": "2026-10-28",
+        "reconciliationRequired": false,
+        "settlementDetailsRequired": true,
+        "reason": "支付宝62笔已按2026-10-28录屏核对；直销10笔用户确认无交易。4笔赎回尚未拆分在途金额与剩余持仓。",
+        "snapshotDates": {
+          "alipay": "2026-10-28",
+          "direct": "2026-10-03"
+        },
+        "pendingRecordedRequests": 4,
+        "pendingRequestDate": "2026-10-22",
+        "note": "支付宝总金额463674.68元，与62笔明细一致；370元买入待确认、18473.86元卖出将到账不重复加总，也不记为可用现金。"
       }
     }
   }
