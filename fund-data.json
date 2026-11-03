@@ -1,10 +1,10 @@
 {
   "status": "daily",
-  "checkedAt": "2026-11-03T11:33:49.318Z",
-  "updatedAt": "2026-11-03T11:33:49.318Z",
+  "checkedAt": "2026-11-03T12:22:19.298Z",
+  "updatedAt": "2026-11-03T12:22:19.298Z",
   "checkStatus": "partial",
-  "successCount": 55,
-  "failureCount": 9,
+  "successCount": 23,
+  "failureCount": 41,
   "source": "东方财富公开基金历史净值接口",
   "note": "日收益率为基金单位净值日变化；未提供份额时，仪表盘按记录持仓市值估算金额。QDII净值可能晚于海外市场交易日公布。",
   "count": 64,
@@ -14,8 +14,8 @@
       "name": "易方达增强回报债券A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-03",
       "nav": 1.4048,
@@ -44,8 +44,8 @@
       "name": "国泰纳斯达克100指数(QDII)",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 4.197,
@@ -74,8 +74,8 @@
       "name": "广发纳斯达克100ETF联接(QDII)A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 7.6462,
@@ -104,8 +104,8 @@
       "name": "建信纳斯达克100指数(QDII)A人民币",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 3.2581,
@@ -134,7 +134,7 @@
       "name": "建信新兴市场优选混合(QDII)A",
       "status": "available",
       "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T10:39:01.727Z",
       "firstSeenAt": "2026-11-02T11:37:10.744Z",
       "latestDate": "2026-10-30",
@@ -164,8 +164,8 @@
       "code": "539003",
       "name": "建信富时100指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -188,14 +188,15 @@
           "nav": 1.4943
         }
       },
-      "source": "https://fund.eastmoney.com/539003.html"
+      "source": "https://fund.eastmoney.com/539003.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "003949": {
       "code": "003949",
       "name": "兴全稳泰债券A",
       "status": "available",
       "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T10:39:01.727Z",
       "firstSeenAt": "2026-11-02T12:28:36.706Z",
       "latestDate": "2026-11-02",
@@ -225,8 +226,8 @@
       "code": "003376",
       "name": "广发中债7-10年期国开行债券指数A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T12:28:36.706Z",
       "latestDate": "2026-11-02",
@@ -249,14 +250,15 @@
           "nav": 1.3991
         }
       },
-      "source": "https://fund.eastmoney.com/003376.html"
+      "source": "https://fund.eastmoney.com/003376.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "012922": {
       "code": "012922",
       "name": "易方达全球成长精选混合(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T09:40:31.656Z",
       "latestDate": "2026-11-02",
@@ -279,22 +281,23 @@
           "nav": 3.2187
         }
       },
-      "source": "https://fund.eastmoney.com/012922.html"
+      "source": "https://fund.eastmoney.com/012922.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "001235": {
       "code": "001235",
       "name": "中银国有企业债债券A",
       "status": "available",
-      "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T10:45:29.903Z",
-      "firstSeenAt": "2026-11-02T11:37:10.744Z",
-      "latestDate": "2026-11-02",
-      "nav": 1.2959,
-      "previousDate": "2026-10-30",
-      "previousNav": 1.2955,
-      "dailyChange": 0.0004,
-      "dailyChangePct": 0.03,
+      "refreshStatus": "success",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
+      "firstSeenAt": "2026-11-03T12:22:19.298Z",
+      "latestDate": "2026-11-03",
+      "nav": 1.2971,
+      "previousDate": "2026-11-02",
+      "previousNav": 1.2959,
+      "dailyChange": 0.0012,
+      "dailyChangePct": 0.09,
       "referenceNavs": {
         "2026-10-07": {
           "date": "2026-09-30",
@@ -309,15 +312,14 @@
           "nav": 1.2989
         }
       },
-      "source": "https://fund.eastmoney.com/001235.html",
-      "error": "公开净值接口本次检查失败，保留上次成功数据"
+      "source": "https://fund.eastmoney.com/001235.html"
     },
     "006670": {
       "code": "006670",
       "name": "广发景秀纯债债券A",
       "status": "available",
       "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T10:39:01.727Z",
       "firstSeenAt": "2026-11-02T12:28:36.706Z",
       "latestDate": "2026-11-02",
@@ -348,8 +350,8 @@
       "name": "易方达全球成长精选混合(QDII)A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T09:40:31.656Z",
       "latestDate": "2026-11-02",
       "nav": 3.1913,
@@ -377,8 +379,8 @@
       "code": "004400",
       "name": "金信民兴债券A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T12:28:36.706Z",
       "latestDate": "2026-11-02",
@@ -401,15 +403,16 @@
           "nav": 1.0809
         }
       },
-      "source": "https://fund.eastmoney.com/004400.html"
+      "source": "https://fund.eastmoney.com/004400.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "017731": {
       "code": "017731",
       "name": "嘉实全球产业升级股票(QDII)C",
       "status": "available",
-      "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T10:39:01.727Z",
+      "refreshStatus": "success",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T09:40:31.656Z",
       "latestDate": "2026-11-02",
       "nav": 3.0436,
@@ -431,15 +434,14 @@
           "nav": 3.3223
         }
       },
-      "source": "https://fund.eastmoney.com/017731.html",
-      "error": "公开净值接口本次检查失败，保留上次成功数据"
+      "source": "https://fund.eastmoney.com/017731.html"
     },
     "002891": {
       "code": "002891",
       "name": "华夏移动互联灵活配置混合(QDII)",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T10:39:01.727Z",
       "latestDate": "2026-11-02",
@@ -462,15 +464,16 @@
           "nav": 2.33
         }
       },
-      "source": "https://fund.eastmoney.com/002891.html"
+      "source": "https://fund.eastmoney.com/002891.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "017730": {
       "code": "017730",
       "name": "嘉实全球产业升级股票(QDII)A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T09:40:31.656Z",
       "latestDate": "2026-11-02",
       "nav": 3.112,
@@ -499,15 +502,15 @@
       "name": "国富全球科技互联混合(QDII)人民币C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
-      "firstSeenAt": "2026-11-02T12:28:36.706Z",
-      "latestDate": "2026-10-30",
-      "nav": 6.0144,
-      "previousDate": "2026-10-29",
-      "previousNav": 6.3207,
-      "dailyChange": -0.3063,
-      "dailyChangePct": -4.85,
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
+      "firstSeenAt": "2026-11-03T12:22:19.298Z",
+      "latestDate": "2026-11-02",
+      "nav": 5.877,
+      "previousDate": "2026-10-30",
+      "previousNav": 6.0144,
+      "dailyChange": -0.1374,
+      "dailyChangePct": -2.28,
       "referenceNavs": {
         "2026-10-07": {
           "date": "2026-09-30",
@@ -529,15 +532,15 @@
       "name": "国富全球科技互联混合(QDII)人民币A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
-      "firstSeenAt": "2026-11-02T11:37:10.744Z",
-      "latestDate": "2026-10-30",
-      "nav": 6.0676,
-      "previousDate": "2026-10-29",
-      "previousNav": 6.3765,
-      "dailyChange": -0.3089,
-      "dailyChangePct": -4.84,
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
+      "firstSeenAt": "2026-11-03T12:22:19.298Z",
+      "latestDate": "2026-11-02",
+      "nav": 5.9292,
+      "previousDate": "2026-10-30",
+      "previousNav": 6.0676,
+      "dailyChange": -0.1384,
+      "dailyChangePct": -2.28,
       "referenceNavs": {
         "2026-10-07": {
           "date": "2026-09-30",
@@ -559,8 +562,8 @@
       "name": "建信新兴市场优选混合(QDII)C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 1.998,
@@ -588,8 +591,8 @@
       "code": "019155",
       "name": "易方达全球配置混合(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T09:40:31.656Z",
       "latestDate": "2026-11-02",
@@ -612,22 +615,23 @@
           "nav": 1.406
         }
       },
-      "source": "https://fund.eastmoney.com/019155.html"
+      "source": "https://fund.eastmoney.com/019155.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "007280": {
       "code": "007280",
       "name": "摩根日本精选股票(QDII)A",
       "status": "available",
-      "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T10:39:01.727Z",
-      "firstSeenAt": "2026-11-02T13:39:57.486Z",
-      "latestDate": "2026-11-02",
-      "nav": 2.152,
-      "previousDate": "2026-10-30",
-      "previousNav": 2.178,
-      "dailyChange": -0.026,
-      "dailyChangePct": -1.19,
+      "refreshStatus": "success",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
+      "firstSeenAt": "2026-11-03T12:22:19.298Z",
+      "latestDate": "2026-11-03",
+      "nav": 2.1489,
+      "previousDate": "2026-11-02",
+      "previousNav": 2.152,
+      "dailyChange": -0.0031,
+      "dailyChangePct": -0.14,
       "referenceNavs": {
         "2026-10-07": {
           "date": "2026-09-30",
@@ -642,15 +646,14 @@
           "nav": 2.2007
         }
       },
-      "source": "https://fund.eastmoney.com/007280.html",
-      "error": "公开净值接口本次检查失败，保留上次成功数据"
+      "source": "https://fund.eastmoney.com/007280.html"
     },
     "002910": {
       "code": "002910",
       "name": "易方达供给改革灵活配置混合",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-03",
@@ -673,14 +676,15 @@
           "nav": 7.2768
         }
       },
-      "source": "https://fund.eastmoney.com/002910.html"
+      "source": "https://fund.eastmoney.com/002910.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "006431": {
       "code": "006431",
       "name": "汇安鼎利纯债债券A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T12:28:36.706Z",
       "latestDate": "2026-11-02",
@@ -703,15 +707,16 @@
           "nav": 1.1124
         }
       },
-      "source": "https://fund.eastmoney.com/006431.html"
+      "source": "https://fund.eastmoney.com/006431.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "014002": {
       "code": "014002",
       "name": "浦银全球智能科技股票(QDII)C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 3.0333,
@@ -740,7 +745,7 @@
       "name": "浦银全球智能科技股票(QDII)A",
       "status": "available",
       "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T10:45:29.903Z",
       "firstSeenAt": "2026-11-02T11:37:10.744Z",
       "latestDate": "2026-10-30",
@@ -770,8 +775,8 @@
       "code": "019736",
       "name": "宝盈纳斯达克100指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T13:39:57.486Z",
       "latestDate": "2026-10-30",
@@ -794,14 +799,15 @@
           "nav": 1.4663
         }
       },
-      "source": "https://fund.eastmoney.com/019736.html"
+      "source": "https://fund.eastmoney.com/019736.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "016664": {
       "code": "016664",
       "name": "天弘全球高端制造混合(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -824,14 +830,15 @@
           "nav": 2.1389
         }
       },
-      "source": "https://fund.eastmoney.com/016664.html"
+      "source": "https://fund.eastmoney.com/016664.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "016665": {
       "code": "016665",
       "name": "天弘全球高端制造混合(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -854,14 +861,15 @@
           "nav": 2.1166
         }
       },
-      "source": "https://fund.eastmoney.com/016665.html"
+      "source": "https://fund.eastmoney.com/016665.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "017091": {
       "code": "017091",
       "name": "景顺长城纳斯达克科技市值加权ETF联接(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -884,22 +892,23 @@
           "nav": 2.7467
         }
       },
-      "source": "https://fund.eastmoney.com/017091.html"
+      "source": "https://fund.eastmoney.com/017091.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "026998": {
       "code": "026998",
       "name": "易方达成长景明混合C",
       "status": "available",
-      "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T10:39:01.727Z",
-      "firstSeenAt": "2026-11-02T12:28:36.706Z",
-      "latestDate": "2026-11-02",
-      "nav": 0.9436,
-      "previousDate": "2026-10-30",
-      "previousNav": 0.9175,
-      "dailyChange": 0.0261,
-      "dailyChangePct": 2.84,
+      "refreshStatus": "success",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
+      "firstSeenAt": "2026-11-03T12:22:19.298Z",
+      "latestDate": "2026-11-03",
+      "nav": 0.8954,
+      "previousDate": "2026-11-02",
+      "previousNav": 0.9436,
+      "dailyChange": -0.0482,
+      "dailyChangePct": -5.11,
       "referenceNavs": {
         "2026-10-28": {
           "date": "2026-10-27",
@@ -910,15 +919,14 @@
           "nav": 1.2282
         }
       },
-      "source": "https://fund.eastmoney.com/026998.html",
-      "error": "公开净值接口本次检查失败，保留上次成功数据"
+      "source": "https://fund.eastmoney.com/026998.html"
     },
     "008401": {
       "code": "008401",
       "name": "大成标普500等权重指数(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -941,14 +949,15 @@
           "nav": 2.7925
         }
       },
-      "source": "https://fund.eastmoney.com/008401.html"
+      "source": "https://fund.eastmoney.com/008401.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "096001": {
       "code": "096001",
       "name": "大成标普500等权重指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -971,14 +980,15 @@
           "nav": 2.8098
         }
       },
-      "source": "https://fund.eastmoney.com/096001.html"
+      "source": "https://fund.eastmoney.com/096001.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019737": {
       "code": "019737",
       "name": "宝盈纳斯达克100指数(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T13:39:57.486Z",
       "latestDate": "2026-10-30",
@@ -1001,15 +1011,16 @@
           "nav": 1.4555
         }
       },
-      "source": "https://fund.eastmoney.com/019737.html"
+      "source": "https://fund.eastmoney.com/019737.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "007722": {
       "code": "007722",
       "name": "天弘标普500(QDII-FOF)C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 2.1632,
@@ -1038,7 +1049,7 @@
       "name": "天弘标普500(QDII-FOF)A",
       "status": "available",
       "refreshStatus": "failed",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T10:45:29.903Z",
       "firstSeenAt": "2026-11-02T11:37:10.744Z",
       "latestDate": "2026-10-30",
@@ -1068,8 +1079,8 @@
       "code": "019118",
       "name": "景顺长城纳斯达克科技市值加权ETF联接(QDII)E",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1092,15 +1103,16 @@
           "nav": 2.7268
         }
       },
-      "source": "https://fund.eastmoney.com/019118.html"
+      "source": "https://fund.eastmoney.com/019118.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "017093": {
       "code": "017093",
       "name": "景顺长城纳斯达克科技市值加权ETF联接(QDII)C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 2.5358,
@@ -1128,8 +1140,8 @@
       "code": "018044",
       "name": "天弘纳斯达克100指数(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1152,14 +1164,15 @@
           "nav": 1.984
         }
       },
-      "source": "https://fund.eastmoney.com/018044.html"
+      "source": "https://fund.eastmoney.com/018044.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "018043": {
       "code": "018043",
       "name": "天弘纳斯达克100指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1182,14 +1195,15 @@
           "nav": 2.0015
         }
       },
-      "source": "https://fund.eastmoney.com/018043.html"
+      "source": "https://fund.eastmoney.com/018043.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "017641": {
       "code": "017641",
       "name": "摩根标普500指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T11:37:10.744Z",
       "latestDate": "2026-10-30",
@@ -1212,15 +1226,16 @@
           "nav": 1.6913
         }
       },
-      "source": "https://fund.eastmoney.com/017641.html"
+      "source": "https://fund.eastmoney.com/017641.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "012752": {
       "code": "012752",
       "name": "建信纳斯达克100指数C(QDII)",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 3.151,
@@ -1248,8 +1263,8 @@
       "code": "019173",
       "name": "摩根纳斯达克100指数(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1272,14 +1287,15 @@
           "nav": 1.7077
         }
       },
-      "source": "https://fund.eastmoney.com/019173.html"
+      "source": "https://fund.eastmoney.com/019173.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019172": {
       "code": "019172",
       "name": "摩根纳斯达克100指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1302,14 +1318,15 @@
           "nav": 1.7243
         }
       },
-      "source": "https://fund.eastmoney.com/019172.html"
+      "source": "https://fund.eastmoney.com/019172.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "000834": {
       "code": "000834",
       "name": "大成纳斯达克100ETF联接(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1332,22 +1349,23 @@
           "nav": 6.1686
         }
       },
-      "source": "https://fund.eastmoney.com/000834.html"
+      "source": "https://fund.eastmoney.com/000834.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019305": {
       "code": "019305",
       "name": "摩根标普500指数(QDII)C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
-      "firstSeenAt": "2026-11-02T11:37:10.744Z",
-      "latestDate": "2026-10-30",
-      "nav": 1.6541,
-      "previousDate": "2026-10-29",
-      "previousNav": 1.6829,
-      "dailyChange": -0.0288,
-      "dailyChangePct": -1.71,
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
+      "firstSeenAt": "2026-11-03T12:22:19.298Z",
+      "latestDate": "2026-11-02",
+      "nav": 1.6458,
+      "previousDate": "2026-10-30",
+      "previousNav": 1.6541,
+      "dailyChange": -0.0083,
+      "dailyChangePct": -0.5,
       "referenceNavs": {
         "2026-10-07": {
           "date": "2026-09-30",
@@ -1369,8 +1387,8 @@
       "name": "南方纳斯达克100指数(QDII)C",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 2.1467,
@@ -1398,8 +1416,8 @@
       "code": "016452",
       "name": "南方纳斯达克100指数发起(QDII)",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1422,14 +1440,15 @@
           "nav": 2.2516
         }
       },
-      "source": "https://fund.eastmoney.com/016452.html"
+      "source": "https://fund.eastmoney.com/016452.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "008971": {
       "code": "008971",
       "name": "大成纳斯达克100ETF联接(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1452,14 +1471,15 @@
           "nav": 6.1084
         }
       },
-      "source": "https://fund.eastmoney.com/008971.html"
+      "source": "https://fund.eastmoney.com/008971.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019441": {
       "code": "019441",
       "name": "万家纳斯达克100指数(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T13:39:57.486Z",
       "latestDate": "2026-10-30",
@@ -1482,14 +1502,15 @@
           "nav": 1.6615
         }
       },
-      "source": "https://fund.eastmoney.com/019441.html"
+      "source": "https://fund.eastmoney.com/019441.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019548": {
       "code": "019548",
       "name": "招商纳斯达克100ETF发起式联接(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T10:39:01.727Z",
       "latestDate": "2026-11-02",
@@ -1512,14 +1533,15 @@
           "nav": 1.5325
         }
       },
-      "source": "https://fund.eastmoney.com/019548.html"
+      "source": "https://fund.eastmoney.com/019548.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "018967": {
       "code": "018967",
       "name": "汇添富纳斯达克100ETF联接(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T10:39:01.727Z",
       "latestDate": "2026-11-02",
@@ -1542,15 +1564,16 @@
           "nav": 1.5745
         }
       },
-      "source": "https://fund.eastmoney.com/018967.html"
+      "source": "https://fund.eastmoney.com/018967.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "018966": {
       "code": "018966",
       "name": "汇添富纳斯达克100ETF联接(QDII)A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T10:39:01.727Z",
       "latestDate": "2026-11-02",
       "nav": 1.5283,
@@ -1578,8 +1601,8 @@
       "code": "019442",
       "name": "万家纳斯达克100指数(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T13:39:57.486Z",
       "latestDate": "2026-10-30",
@@ -1602,14 +1625,15 @@
           "nav": 1.6503
         }
       },
-      "source": "https://fund.eastmoney.com/019442.html"
+      "source": "https://fund.eastmoney.com/019442.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "020713": {
       "code": "020713",
       "name": "华安三菱日联日经225ETF联接(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-03",
@@ -1632,15 +1656,16 @@
           "nav": 1.3381
         }
       },
-      "source": "https://fund.eastmoney.com/020713.html"
+      "source": "https://fund.eastmoney.com/020713.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "020712": {
       "code": "020712",
       "name": "华安三菱日联日经225ETF联接(QDII)A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-03",
       "nav": 1.3394,
@@ -1668,8 +1693,8 @@
       "code": "019525",
       "name": "华泰柏瑞纳斯达克100ETF联接(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1692,15 +1717,16 @@
           "nav": 1.6084
         }
       },
-      "source": "https://fund.eastmoney.com/019525.html"
+      "source": "https://fund.eastmoney.com/019525.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019524": {
       "code": "019524",
       "name": "华泰柏瑞纳斯达克100ETF联接(QDII)A",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
       "nav": 1.5544,
@@ -1728,8 +1754,8 @@
       "code": "006479",
       "name": "广发纳斯达克100ETF联接(QDII)C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1752,14 +1778,15 @@
           "nav": 7.861
         }
       },
-      "source": "https://fund.eastmoney.com/006479.html"
+      "source": "https://fund.eastmoney.com/006479.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "019547": {
       "code": "019547",
       "name": "招商纳斯达克100ETF发起式联接(QDII)A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T10:39:01.727Z",
       "latestDate": "2026-11-02",
@@ -1782,14 +1809,15 @@
           "nav": 1.5502
         }
       },
-      "source": "https://fund.eastmoney.com/019547.html"
+      "source": "https://fund.eastmoney.com/019547.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "014978": {
       "code": "014978",
       "name": "华安纳斯达克100联接C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T10:30:04.166Z",
       "latestDate": "2026-10-30",
@@ -1812,14 +1840,15 @@
           "nav": 7.8773
         }
       },
-      "source": "https://fund.eastmoney.com/014978.html"
+      "source": "https://fund.eastmoney.com/014978.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "040046": {
       "code": "040046",
       "name": "华安纳斯达克100联接A",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-02T10:30:04.166Z",
       "latestDate": "2026-10-30",
@@ -1842,14 +1871,15 @@
           "nav": 8.0454
         }
       },
-      "source": "https://fund.eastmoney.com/040046.html"
+      "source": "https://fund.eastmoney.com/040046.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "000217": {
       "code": "000217",
       "name": "华安黄金ETF联接C",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-03",
@@ -1868,14 +1898,15 @@
           "nav": 3.0478
         }
       },
-      "source": "https://fund.eastmoney.com/000217.html"
+      "source": "https://fund.eastmoney.com/000217.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "021778": {
       "code": "021778",
       "name": "广发纳指100ETF联接(QDII)人民币F",
       "status": "available",
-      "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
+      "refreshStatus": "failed",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
       "lastSuccessAt": "2026-11-03T11:33:49.318Z",
       "firstSeenAt": "2026-11-03T11:33:49.318Z",
       "latestDate": "2026-11-02",
@@ -1898,15 +1929,16 @@
           "nav": 7.9724
         }
       },
-      "source": "https://fund.eastmoney.com/021778.html"
+      "source": "https://fund.eastmoney.com/021778.html",
+      "error": "公开净值接口本次检查失败，保留上次成功数据"
     },
     "018738": {
       "code": "018738",
       "name": "博时标普500联接E",
       "status": "available",
       "refreshStatus": "success",
-      "checkedAt": "2026-11-03T11:33:49.318Z",
-      "lastSuccessAt": "2026-11-03T11:33:49.318Z",
+      "checkedAt": "2026-11-03T12:22:19.298Z",
+      "lastSuccessAt": "2026-11-03T12:22:19.298Z",
       "firstSeenAt": "2026-11-03T09:40:31.656Z",
       "latestDate": "2026-11-02",
       "nav": 5.451,
