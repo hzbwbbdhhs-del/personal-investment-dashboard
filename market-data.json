@@ -1,23 +1,19 @@
 {
   "status": "daily",
-  "updatedAt": "2026-11-11T00:07:24.817Z",
-  "checkedAt": "2026-11-11T00:07:24.354Z",
+  "updatedAt": "2026-11-11T06:51:37.452Z",
+  "checkedAt": "2026-11-11T06:51:36.939Z",
   "checkStatus": "success",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
-      "value": 27907.63,
-      "changePct": 3.3999271581797523,
-      "drawdownPct": -10.62319593885479,
+      "value": 27740.8,
+      "changePct": -0.597793506650338,
+      "drawdownPct": -11.157484669983909,
       "peak": 31224.69,
-      "updatedAt": "2026-11-09",
+      "updatedAt": "2026-11-10",
       "source": "FRED公开CSV:NASDAQ100",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-17",
-          "value": 29995.38
-        },
         {
           "date": "2026-08-18",
           "value": 29490.96
@@ -253,26 +249,26 @@
         {
           "date": "2026-11-09",
           "value": 27907.63
+        },
+        {
+          "date": "2026-11-10",
+          "value": 27740.8
         }
       ],
       "historyStart": "1986-01-02",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "SPX": {
       "label": "标普500",
-      "value": 7549.94,
-      "changePct": 2.346255723980121,
-      "drawdownPct": -3.440240544422324,
+      "value": 7520.93,
+      "changePct": -0.38424146417056704,
+      "drawdownPct": -3.8112631779540163,
       "peak": 7818.93,
-      "updatedAt": "2026-11-09",
+      "updatedAt": "2026-11-10",
       "source": "FRED公开CSV:SP500",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-17",
-          "value": 7745.06
-        },
         {
           "date": "2026-08-18",
           "value": 7691.76
@@ -508,10 +504,14 @@
         {
           "date": "2026-11-09",
           "value": 7549.94
+        },
+        {
+          "date": "2026-11-10",
+          "value": 7520.93
         }
       ],
       "historyStart": "2016-11-11",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "VIX": {
@@ -766,7 +766,7 @@
         }
       ],
       "historyStart": "1990-01-02",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "VXN": {
@@ -1021,7 +1021,7 @@
         }
       ],
       "historyStart": "2001-02-02",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "US10Y": {
@@ -1276,7 +1276,7 @@
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "USDCNY": {
@@ -1531,7 +1531,7 @@
         }
       ],
       "historyStart": "1981-01-02",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     }
   },
@@ -1788,7 +1788,7 @@
         }
       ],
       "historyStart": "1954-07-01",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "CPI": {
@@ -2043,7 +2043,7 @@
         }
       ],
       "historyStart": "1947-01-01",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "PCE": {
@@ -2298,7 +2298,7 @@
         }
       ],
       "historyStart": "1959-01-01",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "UNRATE": {
@@ -2553,7 +2553,7 @@
         }
       ],
       "historyStart": "1948-01-01",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "PAYEMS": {
@@ -2808,7 +2808,7 @@
         }
       ],
       "historyStart": "1939-01-01",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     },
     "US10Y": {
@@ -3063,7 +3063,7 @@
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-11-11T00:07:24.354Z",
+      "lastSuccessAt": "2026-11-11T06:51:36.939Z",
       "refreshStatus": "success"
     }
   },
@@ -3073,11 +3073,11 @@
     "label": "提高",
     "action": "提高投入，但分批执行",
     "color": "orange",
-    "drawdownPct": -10.62319593885479,
+    "drawdownPct": -11.157484669983909,
     "reasons": [
-      "NDX 从数据区间高点回撤 10.62%"
+      "NDX 从数据区间高点回撤 11.16%"
     ],
-    "updatedAt": "2026-11-09"
+    "updatedAt": "2026-11-10"
   },
   "refreshSeconds": 1800,
   "source": "FRED公开CSV（无API Key）"
