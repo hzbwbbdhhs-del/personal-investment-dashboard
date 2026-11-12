@@ -1,23 +1,19 @@
 {
   "status": "daily",
-  "updatedAt": "2026-11-12T02:36:24.070Z",
-  "checkedAt": "2026-11-12T02:36:23.405Z",
+  "updatedAt": "2026-11-12T10:28:41.965Z",
+  "checkedAt": "2026-11-12T10:28:40.716Z",
   "checkStatus": "success",
   "market": {
     "NDX": {
       "label": "纳斯达克100",
-      "value": 27740.8,
-      "changePct": -0.597793506650338,
-      "drawdownPct": -11.157484669983909,
+      "value": 28374.25,
+      "changePct": 2.2834597416080316,
+      "drawdownPct": -9.128801598991053,
       "peak": 31224.69,
-      "updatedAt": "2026-11-10",
+      "updatedAt": "2026-11-11",
       "source": "FRED公开CSV:NASDAQ100",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-18",
-          "value": 29490.96
-        },
         {
           "date": "2026-08-19",
           "value": 29426.02
@@ -253,10 +249,14 @@
         {
           "date": "2026-11-10",
           "value": 27740.8
+        },
+        {
+          "date": "2026-11-11",
+          "value": 28374.25
         }
       ],
       "historyStart": "1986-01-02",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "SPX": {
@@ -511,7 +511,7 @@
         }
       ],
       "historyStart": "2016-11-11",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "VIX": {
@@ -766,7 +766,7 @@
         }
       ],
       "historyStart": "1990-01-02",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "VXN": {
@@ -1021,7 +1021,7 @@
         }
       ],
       "historyStart": "2001-02-02",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "US10Y": {
@@ -1276,7 +1276,7 @@
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "USDCNY": {
@@ -1531,7 +1531,7 @@
         }
       ],
       "historyStart": "1981-01-02",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     }
   },
@@ -1788,7 +1788,7 @@
         }
       ],
       "historyStart": "1954-07-01",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "CPI": {
@@ -2043,7 +2043,7 @@
         }
       ],
       "historyStart": "1947-01-01",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "PCE": {
@@ -2298,7 +2298,7 @@
         }
       ],
       "historyStart": "1959-01-01",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "UNRATE": {
@@ -2553,7 +2553,7 @@
         }
       ],
       "historyStart": "1948-01-01",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "PAYEMS": {
@@ -2808,7 +2808,7 @@
         }
       ],
       "historyStart": "1939-01-01",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     },
     "US10Y": {
@@ -3063,21 +3063,21 @@
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-11-12T02:36:23.405Z",
+      "lastSuccessAt": "2026-11-12T10:28:40.716Z",
       "refreshStatus": "success"
     }
   },
   "temperature": {
     "status": "daily",
-    "band": 2,
-    "label": "提高",
-    "action": "提高投入，但分批执行",
-    "color": "orange",
-    "drawdownPct": -11.157484669983909,
+    "band": 1,
+    "label": "略加",
+    "action": "在原计划上小幅加码",
+    "color": "yellow",
+    "drawdownPct": -9.128801598991053,
     "reasons": [
-      "NDX 从数据区间高点回撤 11.16%"
+      "NDX 从数据区间高点回撤 9.13%"
     ],
-    "updatedAt": "2026-11-10"
+    "updatedAt": "2026-11-11"
   },
   "refreshSeconds": 1800,
   "source": "FRED公开CSV（无API Key）"
