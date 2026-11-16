@@ -1,7 +1,7 @@
 // Daily reviewed source summaries. Observation, publication and review dates are distinct.
 window.investmentResearch = {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-14",
+  "reviewedAt": "2026-11-16",
   "schedule": {
     "time": "08:00",
     "timezone": "Asia/Shanghai",
@@ -25,11 +25,11 @@ window.investmentResearch = {
         "分散",
         "债券"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "success",
       "reviewedUrl": "https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary",
-      "reviewNote": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     },
     {
       "id": "jpm",
@@ -48,10 +48,10 @@ window.investmentResearch = {
         "分散",
         "债券"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "success",
-      "reviewNote": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     },
     {
       "id": "vanguard",
@@ -69,10 +69,10 @@ window.investmentResearch = {
         "科技",
         "主动基金"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "success",
-      "reviewNote": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     },
     {
       "id": "harvest",
@@ -91,10 +91,10 @@ window.investmentResearch = {
         "科技",
         "主动基金"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "success",
-      "reviewNote": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     },
     {
       "id": "troweprice",
@@ -102,9 +102,9 @@ window.investmentResearch = {
       "author": "全球市场周报团队 · 未署名单一作者",
       "date": "2026-11-06",
       "reviewAfter": "2026-11-14",
-      "horizon": "原卡片发布日期11月6日；当前滚动页版本待核实",
+      "horizon": "原归档卡片发布日期11月6日；当前滚动页日期冲突，暂停使用",
       "title": "来源日期冲突，暂停用于当日判断",
-      "view": "本次打开的官方周报仍标注11月6日，正文却涉及11月10日CPI和11月13日PPI，收盘表也与正文周度描述不一致。因此不把它标成11月13日新周报，不采用当前表格行情或归因。",
+      "view": "本次官方滚动周报页头显示10月23日，正文却涉及11月10日CPI和11月13日PPI，表格的标普收盘值也与11月13日核对值不符。版本仍有冲突，不据此生成新周报或采用其当期行情与归因。",
       "relevance": "避免把不同周的数据拼成你的持仓建议。今日方向分析采用其他日期可核实的原文；旧周报观点已保留归档。",
       "limit": "已实际检查，但版本日期不能确认；原发布日期保留，核读成功不等于内容已通过一致性校验。",
       "url": "https://www.troweprice.com/en/us/insights/global-markets-weekly-update",
@@ -112,10 +112,10 @@ window.investmentResearch = {
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "partial",
-      "reviewNote": "发现标题日期、正文事件和行情表版本不一致；停止用于本日方向判断。"
+      "reviewNote": "本次页头回退至10月23日，与正文事件和表格不一致；保留原归档发表日11月6日，不刷新有效期限。"
     },
     {
       "id": "barclays",
@@ -134,10 +134,10 @@ window.investmentResearch = {
         "债券",
         "分散"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "success",
-      "reviewNote": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     },
     {
       "id": "schwab",
@@ -156,9 +156,10 @@ window.investmentResearch = {
         "分散",
         "债券"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
-      "checkStatus": "success"
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
+      "checkStatus": "success",
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     },
     {
       "id": "jpm-private-bank",
@@ -176,10 +177,10 @@ window.investmentResearch = {
         "科技",
         "分散"
       ],
-      "reviewedAt": "2026-11-14",
-      "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+      "reviewedAt": "2026-11-16",
+      "reviewedAtTime": "2026-11-16T04:30:54.146Z",
       "checkStatus": "success",
-      "reviewNote": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+      "reviewNote": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
     }
   ],
   "methods": [
@@ -189,79 +190,71 @@ window.investmentResearch = {
       "note": "SEC投资者教育资料；不提供中国QDII购买排行榜。"
     }
   ],
-  "reviewedAtTime": "2026-11-14T05:08:54.674Z",
+  "reviewedAtTime": "2026-11-16T04:30:54.146Z",
   "reviewStatus": "partial",
   "dailyBrief": {
-    "date": "2026-11-14",
-    "reviewedAt": "2026-11-14T05:08:54.674Z",
-    "title": "纳指回撤约10.51%，先核对风险预算",
-    "summary": "本次触发记录为08:07，北京时间13:08完成资料核读，不回填08:00。线上上一版为11月12日，本次更新11月14日，不补造11月13日发布记录。11月13日收盘后纳指重新进入10–15%回撤区间；PPI已公布。7篇机构原文可用于背景分析，1篇存在版本冲突；额度仍有2项待核实，保留“部分更新”。",
+    "date": "2026-11-16",
+    "reviewedAt": "2026-11-16T04:30:54.146Z",
+    "title": "国富科技直销新上限生效，仍按原计划控制投入",
+    "summary": "北京时间12:30完成本次核读；本次任务12:23触发，不回填08:00。你持有的国富全球科技互联A/C，11月13日公告中的直销20万元/日上限于今天生效，仍可能比例确认。美股收盘数据仍截至11月13日，并未产生新的回撤档位。7篇机构原文可用、1篇版本冲突，额度2项待核实，保留“部分更新”。",
     "points": [
       {
-        "title": "回撤跨过10%，提醒不等于自动加仓",
-        "fact": "11月13日收盘：纳指100为27,943.74，日跌1.22%；标普500为7,561.67，日跌0.40%；VIX为19.30，VXN为29.38。指数末值与FRED原页吻合；纳指按31,224.69固定参考高点计算回撤约10.51%。",
-        "inference": "从上一版约9.13%进入你原设的10–15%观察区间。但你近期表达的风险承受压力也要纳入，机械执行“提高定投”可能与控制波动的目标冲突。自动行情快照仍截至11月12日，与本段11月13日收盘分列。",
-        "action": "维持长期定投纪律时，先核对可用现金、总投入上限和科技集中程度。尚未确认预算前只提示档位变化，不自动增加金额，也不因一天跌幅要求卖出或追补全部额度。",
+        "title": "国富科技A/C新规则今天生效，公告上限不等于保证成交",
+        "fact": "已核读基金管理人11月13日公告：从11月16日起，国富全球科技互联人民币A（006373）、C（021842）直销每个基金账户单日申购与定投合计上限为20万元，非直销上限100元；A、C分开限制。公告同时保留限额以内整体比例确认的权利。",
+        "inference": "这是此前已公告规则到达生效日，并不是今天才发布，也不是纳指100或标普500指数基金开放额度。公告没有承诺你在支付宝买入页一定可提交100元，或直销申请一定全额确认。",
+        "action": "把它作为持有基金渠道变化提醒即可；先看原定投入预算与科技合计暴露，不因额度变大追加资金。下单前仍核对对应平台当天提示，申购与定投按同一渠道规则累计，不默认直销与代销额度可以相加。",
         "sources": [
           {
-            "title": "FRED纳指收盘与日期",
+            "title": "基金管理人公告原文（公开披露PDF镜像）",
+            "url": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf"
+          },
+          {
+            "title": "本次两渠道规则快照",
+            "url": "https://github.com/hzbwbbdhhs-del/personal-investment-dashboard/blob/4de4bc16ca3a225f10ff1b1955e0a41a34947064/qdii-limits.json"
+          }
+        ]
+      },
+      {
+        "title": "美股仍是周五收盘，回撤提醒维持原档位",
+        "fact": "本次重查的11月13日收盘：纳指100为27,943.74、当日跌1.22%；标普500为7,561.67、跌0.40%；VIX为19.30、VXN为29.38。按31,224.69固定参考高点，纳指回撤约10.51%，与上一版相同。",
+        "inference": "北京时间周一中午，美国周一常规交易尚未开始，不能把这些数值改标11月16日。仍处于你设定的10–15%观察区间；不重复当成一次新的加仓触发。纳指、主动科技与半导体基金可能共享风险。",
+        "action": "继续按可承受的总投入与波动预算执行长期定投；预算未确认时不自动提高金额。比较可买的纳指100和普通标普500基金时，结合总费用和跟踪差异；标普等权重单列，不仅按最近涨跌排序。",
+        "sources": [
+          {
+            "title": "FRED纳指日线日期",
             "url": "https://fred.stlouisfed.org/series/NASDAQ100"
           },
           {
-            "title": "FRED标普收盘与日期",
+            "title": "FRED标普日线日期",
             "url": "https://fred.stlouisfed.org/series/SP500"
           },
           {
-            "title": "VIX日线",
+            "title": "VIX收盘日线",
             "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=5d&interval=1d"
           },
           {
-            "title": "VXN日线",
+            "title": "VXN收盘日线",
             "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVXN?range=5d&interval=1d"
           }
         ]
       },
       {
-        "title": "PPI环比放缓，收益率仍约束长久期资产",
-        "fact": "BLS于11月13日公布10月PPI：最终需求季调环比+0.3%，前月+1.4%；同比+6.5%。剔除食品、能源和贸易服务后环比+0.5%、同比+4.9%。FRED十年期美债为11月12日5.10%，较上一版11月9日4.88%高22个基点。",
-        "inference": "总体月度涨幅放缓与部分底层价格压力并存。收益率上行会压低既有固定利率债券价格，也可能约束成长股估值；但这些数据不能单独证明未来会加息。5.10%观察日早于PPI公布，不能解释成PPI后的反应。",
-        "action": "债券部分优先匹配用款时间、久期及赎回流动性。若一笔资金近期可能使用，不仅按票息选择长债；美元收益率也不等于人民币对冲后收益。保留票息提供缓冲的相反证据，同时接受债基净值会波动。",
-        "sources": [
-          {
-            "title": "BLS 10月PPI原文",
-            "url": "https://www.bls.gov/news.release/ppi.nr0.htm"
-          },
-          {
-            "title": "FRED十年美债",
-            "url": "https://fred.stlouisfed.org/series/DGS10"
-          },
-          {
-            "title": "嘉信理财 Charles Schwab原文",
-            "url": "https://www.schwab.com/learn/story/stock-market-outlook"
-          },
-          {
-            "title": "巴克莱私人银行原文",
-            "url": "https://privatebank.barclays.com/insights/us-midterms-riding-the-blue-wave-11-2026/"
-          }
-        ]
-      },
-      {
-        "title": "减少A股风险和减少科技重叠要分别处理",
-        "fact": "机构观点：嘉信11月13日用四种AI情景评估资本开支、融资和变现；贝莱德关注AI应用与资金竞争；摩根资管强调建设支出和收入时间错配。嘉实陈俊杰10月29日关注订单、现金流及商业化兑现。这些不是实时基金仓位披露。",
-        "inference": "不同基金名称和不同市场并不保证分散：纳指、主动科技及半导体基金可能共享盈利和利率风险。三季报只能说明9月30日配置，不能断言你今天的A股占比。",
-        "action": "按已确认持仓检查合计科技暴露和长期核心定投，而不是以“跌了多少”或旧盈利高点决定全部去留。被动基金仍比较总费用、跟踪差异及可买渠道；标普等权重与普通标普500分开评价。未确认赎回不重复扣减持仓。",
+        "title": "机构分歧保留：AI兑现有风险，也有继续增长的可能",
+        "fact": "机构观点：嘉信11月13日提出AI生产率繁荣、回报延迟、通胀繁荣及通缩破灭四种情景；摩根资管关注融资和收入的期限错配；贝莱德关注AI应用与资金竞争。嘉实陈俊杰10月29日强调订单、盈利及现金流兑现。原发表日期均保留。",
+        "inference": "这些观点有助于检查科技集中风险，不能证明你的基金已实时调整A股仓位，也不能确定反弹或继续下跌。减少不合意的A股和减少科技重叠，是两个需要分别观察的问题。",
+        "action": "以已确认持仓和基金披露检查风险是否符合自己的意愿，避免仅凭前期盈利高点或一天跌幅决定全部去留。4笔赎回仍未完成台账拆分，在获得确认明细前不再次扣减份额或增加现金。",
         "sources": [
           {
             "title": "嘉信理财 Charles Schwab原文",
             "url": "https://www.schwab.com/learn/story/stock-market-outlook"
-          },
-          {
-            "title": "贝莱德投资研究院原文",
-            "url": "https://www.blackrock.com/us/individual/literature/market-commentary/weekly-investment-commentary-en-us-20261109-midterms-and-ai-in-focus-at-2027-forum.pdf"
           },
           {
             "title": "摩根资产管理原文",
             "url": "https://am.jpmorgan.com/wr/en/asset-management/liq/insights/market-insights/market-updates/on-the-minds-of-investors/monthly-views-and-perspectives-reality-bites-for-governments-and-ai-investors/"
+          },
+          {
+            "title": "贝莱德投资研究院原文",
+            "url": "https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary"
           },
           {
             "title": "嘉实基金原文",
@@ -278,35 +271,39 @@ window.investmentResearch = {
         ]
       },
       {
-        "title": "额度7项恢复核验，不是新开放额度",
-        "fact": "净值64代码检查成功、0失败；13个净值日为11月13日，51个为11月12日。额度10:22采集、10:23复核：72项中70项有规则、2项未可靠核实（博时006075、050025）。较上一版恢复的7项沿用原生效日，没有证实新的放开。",
-        "inference": "采集成功不等于支付宝或直销账户当下保证可买；顶层无错误，仍有120次底层解析失败、主动基金2条错误和正文1项失败。普信周评日期与正文冲突，也不用于当日判断。",
-        "action": "只把已核实的单渠道≥1,000元/日作为额度提醒条件，不把两个渠道默认相加，不把恢复抓取当买入信号。4笔赎回继续区分申请、成交与到账；370元待确认和18,473.86元预计到账已含在记录里，不再增加现金。",
+        "title": "债券看期限与流动性，数据日期仍要逐项区分",
+        "fact": "本次重读BLS：10月PPI于11月13日发布，季调环比+0.3%（前月+1.4%）、同比+6.5%；剔除食品、能源和贸易服务后为+0.5%和+4.9%。十年美债5.10%仍是11月12日观察值。净值64代码检查成功：13个截至11月13日、51个截至11月12日。",
+        "inference": "PPI总体月度涨幅放缓与部分底层压力并存。收益率较高提供票息缓冲，但不消除长久期价格波动；11月12日的债券数据也不能解释为11月13日PPI发布后的反应。净值检查成功不等于所有基金已反映最近一晚海外市场。",
+        "action": "可能近期使用的资金优先匹配流动性和可承受的本金波动；不把美元收益率当人民币锁汇后收益。继续展示净值日、行情日和核查时间；博时006075/050025、普信周报版本冲突等限制保持可见。",
         "sources": [
           {
-            "title": "净值日期与状态",
-            "url": "https://github.com/hzbwbbdhhs-del/personal-investment-dashboard/blob/f36de4802a082e4cef8e495181d7a947797a2acc/fund-data.json"
+            "title": "BLS 10月PPI",
+            "url": "https://www.bls.gov/news.release/ppi.nr0.htm"
           },
           {
-            "title": "渠道额度及失败记录",
-            "url": "https://github.com/hzbwbbdhhs-del/personal-investment-dashboard/blob/f36de4802a082e4cef8e495181d7a947797a2acc/qdii-limits.json"
+            "title": "FRED十年美债日期",
+            "url": "https://fred.stlouisfed.org/series/DGS10"
           },
           {
-            "title": "持仓结算边界",
-            "url": "https://github.com/hzbwbbdhhs-del/personal-investment-dashboard/blob/f36de4802a082e4cef8e495181d7a947797a2acc/portfolio-status.json"
+            "title": "净值检查及日期",
+            "url": "https://github.com/hzbwbbdhhs-del/personal-investment-dashboard/blob/4de4bc16ca3a225f10ff1b1955e0a41a34947064/fund-data.json"
           },
           {
-            "title": "普信 T. Rowe Price原文",
-            "url": "https://www.troweprice.com/en/us/insights/global-markets-weekly-update"
+            "title": "嘉信理财 Charles Schwab原文",
+            "url": "https://www.schwab.com/learn/story/stock-market-outlook"
+          },
+          {
+            "title": "巴克莱私人银行原文",
+            "url": "https://privatebank.barclays.com/insights/us-midterms-riding-the-blue-wave-11-2026/"
           }
         ]
       }
     ],
     "holdingsNote": "仍以10月28日已确认的支付宝62笔及用户确认未交易的直销10笔为依据。4笔共55,392.93元是尚未拆分剩余持仓与赎回在途的账面金额，不是赎回款或可用现金；截图中370元买入待确认、18,473.86元卖出将到账均已包含在原总额，不重复加总。网页本机未同步的修改不包含在本次核读中。",
-    "quotaNote": "11月14日10:22采集、10:23复核，源数据日为11月13日/12日，第三方源更新为11月13日16:28。70/72项规则有结果，博时006075/050025仍未可靠核实。7项由未知恢复为旧规则，不提示新额度。底层120次解析失败、主动基金2条错误和正文1项失败继续保留；旧公告、缓存和检查时间分别记录。支付宝与直销订单额度未保证可用，不默认叠加。",
-    "counterpoint": "相反证据同时保留：PPI月度总体涨幅放缓；摩根资管不认为融资压力必然演变为AI全面崩塌，贝莱德认为建设放缓可能缓解资金竞争。嘉信保留生产率繁荣等不同情景，巴克莱仍看到债券票息价值，Vanguard认为合理费用下优秀主动管理可能有价值。这些都不是对你的具体基金收益或反弹时间的保证。",
+    "quotaNote": "11月16日10:10采集、10:11复核，源数据日为11月13日/12日，第三方源更新为11月15日16:10。72项中70项有规则，博时006075/050025仍未可靠核实。本次原文确认国富006373/021842直销20万元、非直销100元今天生效，A/C分开、申购与定投合计，且可能比例确认；支付宝买入页额度尚未核实。纳指100/标普500未发现新的实质规则变化。底层解析及正文失败仍记录，不默认跨渠道叠加。",
+    "counterpoint": "相反证据继续保留：摩根资管不认为融资压力必然演变为AI全面崩塌；贝莱德认为建设放缓也可能缓解资金竞争。嘉信列出生产率繁荣等多种可能，巴克莱仍看重债券票息，Vanguard认为合理费用下优秀主动管理可能创造价值。它们都未为你的具体基金或反弹时间作保证；额度变化也没有改变资产本身的风险。",
     "basis": {
-      "repositoryCommit": "f36de4802a082e4cef8e495181d7a947797a2acc",
+      "repositoryCommit": "4de4bc16ca3a225f10ff1b1955e0a41a34947064",
       "holdingsVersion": "20261028-alipay-reviewed-v1",
       "holdingsCount": 72,
       "fundCodeCount": 64,
@@ -315,7 +312,7 @@ window.investmentResearch = {
         "direct": "2026-10-03"
       },
       "funds": {
-        "checkedAt": "2026-11-13T22:44:59.068Z",
+        "checkedAt": "2026-11-15T21:18:55.591Z",
         "updatedAt": "2026-11-13T15:42:59.915Z",
         "checkStatus": "success",
         "successCount": 64,
@@ -326,51 +323,51 @@ window.investmentResearch = {
         }
       },
       "market": {
-        "checkedAt": "2026-11-14T00:35:09.054Z",
-        "updatedAt": "2026-11-14T00:35:09.473Z",
+        "checkedAt": "2026-11-16T01:29:58.505Z",
+        "updatedAt": "2026-11-16T01:29:59.174Z",
         "checkStatus": "success",
         "observations": {
           "NDX": {
-            "value": 28289.19,
-            "date": "2026-11-12",
+            "value": 27943.74,
+            "date": "2026-11-13",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z",
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z",
             "peak": 31224.69,
-            "changePct": -0.2997788487801486,
-            "drawdownPct": -9.401214231430322
+            "changePct": -1.2211378268518722,
+            "drawdownPct": -10.507550275118815
           },
           "SPX": {
-            "value": 7592.4,
-            "date": "2026-11-12",
+            "value": 7561.67,
+            "date": "2026-11-13",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z",
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z",
             "peak": 7818.93,
-            "changePct": -0.3540970525160902,
-            "drawdownPct": -2.8971994889326336
+            "changePct": -0.4047468521152674,
+            "drawdownPct": -3.290220017316947
           },
           "VIX": {
             "value": 18.7,
             "date": "2026-11-12",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "VXN": {
             "value": 28.55,
             "date": "2026-11-12",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "US10Y": {
             "value": 5.1,
             "date": "2026-11-12",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "USDCNY": {
             "value": 6.676,
             "date": "2026-11-06",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           }
         }
       },
@@ -380,43 +377,43 @@ window.investmentResearch = {
             "value": 3.88,
             "date": "2026-11-12",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "CPI": {
             "value": 337.476,
             "date": "2026-10-01",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "PCE": {
             "value": 132.257,
             "date": "2026-09-01",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "UNRATE": {
             "value": 4.1,
             "date": "2026-10-01",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "PAYEMS": {
             "value": 159293,
             "date": "2026-10-01",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           },
           "US10Y": {
             "value": 5.1,
             "date": "2026-11-12",
             "refreshStatus": "success",
-            "lastSuccessAt": "2026-11-14T00:35:09.054Z"
+            "lastSuccessAt": "2026-11-16T01:29:58.505Z"
           }
         }
       },
       "qdii": {
-        "collectedAt": "2026-11-14T02:22:32.606Z",
-        "noticeCheckedAt": "2026-11-14T02:23:11.074Z",
+        "collectedAt": "2026-11-16T02:10:29.975Z",
+        "noticeCheckedAt": "2026-11-16T02:11:12.205Z",
         "scopeCount": 72,
         "fullyResolved": 70,
         "errors": [],
@@ -432,7 +429,7 @@ window.investmentResearch = {
             "reason": "公告正文或渠道对应关系未能可靠复核"
           }
         ],
-        "pendingCount": 2,
+        "pendingCount": 0,
         "sourceDataDates": [
           "2026-11-13",
           "2026-11-12"
@@ -472,7 +469,7 @@ window.investmentResearch = {
           }
         },
         "heldActive": {
-          "checkedAt": "2026-11-14T02:22:50.160Z",
+          "checkedAt": "2026-11-16T02:10:51.439Z",
           "count": 15,
           "errors": [
             {
@@ -497,380 +494,160 @@ window.investmentResearch = {
         "bodyReview": {
           "count": 99,
           "failed": 1,
-          "checkedAt": "2026-11-14T02:23:11.029Z"
+          "checkedAt": "2026-11-16T02:11:12.163Z"
         },
         "comparison": {
           "repository": "https://github.com/promise96319/qdii",
-          "sourceUpdatedAt": "2026-11-13T16:28:16+08:00",
-          "fetchedAt": "2026-11-14T02:22:50.154Z",
+          "sourceUpdatedAt": "2026-11-15T16:10:48+08:00",
+          "fetchedAt": "2026-11-16T02:10:51.433Z",
           "count": 57,
           "error": null
         },
         "substantiveDiff": [
           {
-            "code": "000834",
-            "name": "大成纳斯达克100ETF联接(QDII)A",
-            "changes": {
-              "agency.status": [
-                "unknown",
-                "limited"
-              ],
-              "agency.amount": [
-                null,
-                10
-              ],
-              "agency.effectiveDate": [
-                null,
-                "2026-06-04"
-              ],
-              "agency.noticeDate": [
-                null,
-                "2026-06-03"
-              ],
-              "agency.noticeId": [
-                null,
-                "AN202606031823188725"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "limited"
-              ],
-              "direct.amount": [
-                null,
-                100
-              ],
-              "direct.effectiveDate": [
-                null,
-                "2026-06-04"
-              ],
-              "direct.noticeDate": [
-                null,
-                "2026-06-03"
-              ],
-              "direct.noticeId": [
-                null,
-                "AN202606031823188725"
-              ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
-              ]
-            }
-          },
-          {
             "code": "006373",
             "name": "国富全球科技互联混合(QDII)人民币A",
             "changes": {
-              "agency.status": [
-                "unknown",
-                "limited"
-              ],
-              "agency.amount": [
-                null,
-                100
-              ],
               "agency.effectiveDate": [
-                null,
-                "2026-09-30"
+                "2026-09-30",
+                "2026-11-16"
               ],
               "agency.noticeDate": [
-                null,
-                "2026-09-29"
+                "2026-09-29",
+                "2026-11-13"
               ],
               "agency.noticeId": [
-                null,
-                "AN202609291829979673"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "limited"
+                "AN202609291829979673",
+                "AN202611131831677851"
               ],
               "direct.amount": [
-                null,
-                100
+                100,
+                200000
               ],
               "direct.effectiveDate": [
-                null,
-                "2026-09-30"
+                "2026-09-30",
+                "2026-11-16"
               ],
               "direct.noticeDate": [
-                null,
-                "2026-09-29"
+                "2026-09-29",
+                "2026-11-13"
               ],
               "direct.noticeId": [
-                null,
-                "AN202609291829979673"
+                "AN202609291829979673",
+                "AN202611131831677851"
               ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
+              "pending": [
+                [
+                  {
+                    "status": "limited",
+                    "amount": 100,
+                    "currency": "CNY",
+                    "accountBasis": "single-fund-account-daily-cumulative",
+                    "scope": "sales-agency",
+                    "effectiveDate": "2026-11-16",
+                    "noticeDate": "2026-11-13",
+                    "noticeId": "AN202611131831677851",
+                    "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf",
+                    "checkedAt": "2026-11-14T02:23:11.021Z",
+                    "currentAvailability": "unverified",
+                    "parserStatus": "channel-no-limit-shown",
+                    "channel": "agency",
+                    "pending": true
+                  },
+                  {
+                    "status": "limited",
+                    "amount": 200000,
+                    "currency": "CNY",
+                    "accountBasis": "single-fund-account-daily-cumulative",
+                    "scope": "specific-channel",
+                    "effectiveDate": "2026-11-16",
+                    "noticeDate": "2026-11-13",
+                    "noticeId": "AN202611131831677851",
+                    "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf",
+                    "checkedAt": "2026-11-14T02:23:11.021Z",
+                    "currentAvailability": "unverified",
+                    "parserStatus": "channel-no-limit-shown",
+                    "channel": "direct",
+                    "pending": true
+                  }
+                ],
+                []
               ]
             }
           },
           {
-            "code": "006479",
-            "name": "广发纳斯达克100ETF联接人民币(QDII)C",
+            "code": "021842",
+            "name": "国富全球科技互联混合(QDII)人民币C",
             "changes": {
-              "agency.status": [
-                "unknown",
-                "suspended"
-              ],
               "agency.effectiveDate": [
-                null,
-                "2026-10-15"
+                "2026-09-30",
+                "2026-11-16"
               ],
               "agency.noticeDate": [
-                null,
-                "2026-10-14"
+                "2026-09-29",
+                "2026-11-13"
               ],
               "agency.noticeId": [
-                null,
-                "AN202610141830429076"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "suspended"
-              ],
-              "direct.effectiveDate": [
-                null,
-                "2026-10-15"
-              ],
-              "direct.noticeDate": [
-                null,
-                "2026-10-14"
-              ],
-              "direct.noticeId": [
-                null,
-                "AN202610141830429076"
-              ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
-              ]
-            }
-          },
-          {
-            "code": "007280",
-            "name": "摩根日本精选股票(QDII)A",
-            "changes": {
-              "agency.status": [
-                "unknown",
-                "limited"
-              ],
-              "agency.amount": [
-                null,
-                2000
-              ],
-              "agency.effectiveDate": [
-                null,
-                "2026-09-09"
-              ],
-              "agency.noticeDate": [
-                null,
-                "2026-09-09"
-              ],
-              "agency.noticeId": [
-                null,
-                "AN202609081829127885"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "limited"
+                "AN202609291829979673",
+                "AN202611131831677851"
               ],
               "direct.amount": [
-                null,
-                10000
+                100,
+                200000
               ],
               "direct.effectiveDate": [
-                null,
-                "2026-05-22"
+                "2026-09-30",
+                "2026-11-16"
               ],
               "direct.noticeDate": [
-                null,
-                "2026-05-22"
+                "2026-09-29",
+                "2026-11-13"
               ],
               "direct.noticeId": [
-                null,
-                "AN202605221822662094"
+                "AN202609291829979673",
+                "AN202611131831677851"
               ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
-              ]
-            }
-          },
-          {
-            "code": "007721",
-            "name": "天弘标普500发起(QDII-FOF)A",
-            "changes": {
-              "agency.status": [
-                "unknown",
-                "suspended"
-              ],
-              "agency.effectiveDate": [
-                null,
-                "2026-09-21"
-              ],
-              "agency.noticeDate": [
-                null,
-                "2026-09-18"
-              ],
-              "agency.noticeId": [
-                null,
-                "AN202609181829580336"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "suspended"
-              ],
-              "direct.effectiveDate": [
-                null,
-                "2026-09-21"
-              ],
-              "direct.noticeDate": [
-                null,
-                "2026-09-18"
-              ],
-              "direct.noticeId": [
-                null,
-                "AN202609181829580336"
-              ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
-              ]
-            }
-          },
-          {
-            "code": "007722",
-            "name": "天弘标普500发起(QDII-FOF)C",
-            "changes": {
-              "agency.status": [
-                "unknown",
-                "limited"
-              ],
-              "agency.amount": [
-                null,
-                100
-              ],
-              "agency.effectiveDate": [
-                null,
-                "2026-09-02"
-              ],
-              "agency.noticeDate": [
-                null,
-                "2026-09-01"
-              ],
-              "agency.noticeId": [
-                null,
-                "AN202609011828844257"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "limited"
-              ],
-              "direct.amount": [
-                null,
-                100
-              ],
-              "direct.effectiveDate": [
-                null,
-                "2026-09-02"
-              ],
-              "direct.noticeDate": [
-                null,
-                "2026-09-01"
-              ],
-              "direct.noticeId": [
-                null,
-                "AN202609011828844257"
-              ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
-              ]
-            }
-          },
-          {
-            "code": "008971",
-            "name": "大成纳斯达克100ETF联接(QDII)C",
-            "changes": {
-              "agency.status": [
-                "unknown",
-                "limited"
-              ],
-              "agency.amount": [
-                null,
-                10
-              ],
-              "agency.effectiveDate": [
-                null,
-                "2026-06-04"
-              ],
-              "agency.noticeDate": [
-                null,
-                "2026-06-03"
-              ],
-              "agency.noticeId": [
-                null,
-                "AN202606031823188725"
-              ],
-              "agency.currentAvailability": [
-                null,
-                "unverified"
-              ],
-              "direct.status": [
-                "unknown",
-                "limited"
-              ],
-              "direct.amount": [
-                null,
-                100
-              ],
-              "direct.effectiveDate": [
-                null,
-                "2026-06-04"
-              ],
-              "direct.noticeDate": [
-                null,
-                "2026-06-03"
-              ],
-              "direct.noticeId": [
-                null,
-                "AN202606031823188725"
-              ],
-              "direct.currentAvailability": [
-                null,
-                "unverified"
+              "pending": [
+                [
+                  {
+                    "status": "limited",
+                    "amount": 100,
+                    "currency": "CNY",
+                    "accountBasis": "single-fund-account-daily-cumulative",
+                    "scope": "sales-agency",
+                    "effectiveDate": "2026-11-16",
+                    "noticeDate": "2026-11-13",
+                    "noticeId": "AN202611131831677851",
+                    "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf",
+                    "checkedAt": "2026-11-14T02:23:11.027Z",
+                    "currentAvailability": "unverified",
+                    "parserStatus": "channel-no-limit-shown",
+                    "channel": "agency",
+                    "pending": true
+                  },
+                  {
+                    "status": "limited",
+                    "amount": 200000,
+                    "currency": "CNY",
+                    "accountBasis": "single-fund-account-daily-cumulative",
+                    "scope": "specific-channel",
+                    "effectiveDate": "2026-11-16",
+                    "noticeDate": "2026-11-13",
+                    "noticeId": "AN202611131831677851",
+                    "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf",
+                    "checkedAt": "2026-11-14T02:23:11.027Z",
+                    "currentAvailability": "unverified",
+                    "parserStatus": "channel-no-limit-shown",
+                    "channel": "direct",
+                    "pending": true
+                  }
+                ],
+                []
               ]
             }
           }
         ],
-        "diffInterpretation": "七项由未知恢复历史规则；不认为新开放"
+        "diffInterpretation": "仅国富006373/021842已公告规则到期生效；直销100升至200000，非直销100不变；不是指数基金新增额度"
       },
       "events": [
         {
@@ -997,9 +774,9 @@ window.investmentResearch = {
           "scheduledAt": "2026-11-13T08:30:00-05:00",
           "beijingScheduledAt": "2026-11-13T21:30:00+08:00",
           "statusAtReview": "published",
-          "reviewedAt": "2026-11-14T05:08:54.674Z",
+          "reviewedAt": "2026-11-16T04:30:54.146Z",
           "url": "https://www.bls.gov/news.release/ppi.nr0.htm",
-          "reviewNote": "实际核读BLS正文；剔除食品、能源及贸易服务与仅剔除食品能源的核心口径不同，不能混称。",
+          "reviewNote": "本次实际重读BLS正文；原观察月10月、发布日11月13日不变。剔除食品、能源及贸易服务与仅剔除食品能源的核心口径不同。",
           "publishedAt": "2026-11-13T08:30:00-05:00",
           "headlineMomPct": 0.3,
           "headlineYoyPct": 6.5,
@@ -1013,8 +790,8 @@ window.investmentResearch = {
         "value": 27943.74,
         "date": "2026-11-13",
         "url": "https://fred.stlouisfed.org/series/NASDAQ100",
-        "reviewedAt": "2026-11-14T05:08:54.674Z",
-        "use": "FRED原页已更新至11月13日；自动快照仍为11月12日，不混写观察日期"
+        "reviewedAt": "2026-11-16T04:30:54.146Z",
+        "use": "11月13日收盘；本次FRED原页、自动快照和补充日线一致，检查日不替代观察日"
       },
       "fundReports": [
         {
@@ -1063,24 +840,23 @@ window.investmentResearch = {
         }
       ],
       "limits": [
-        "沿用20261028-alipay-reviewed-v1：72笔/64代码；直销用户确认未交易，未改变持仓、成本或现金",
-        "4笔赎回未拆分，预计到账不能算可用现金；网页本机独有修改未同步时本任务不可见",
-        "净值13个为11月13日、51个为11月12日；抓取成功不等于都已反映最新一晚美股",
-        "11月13日收盘补充与自动快照分列；纳指回撤10.51%使用31,224.69固定参考高点",
-        "十年美债5.10%观察日为11月12日；USD/CNY 6.676仍为11月6日，不把检查时间当观察日",
-        "PPI观察月10月、发布11月13日；剔除食品能源贸易服务口径单独列示，不与核心口径混用",
-        "除PPI外其他宏观原文未重读，保留原核读日期；CPI总体与核心同比仍保留原文缺失标记",
-        "基金三季报观察9月30日、核读10月30日不变，不能用机构评论猜测当前A股占比",
-        "额度70/72有规则，不保证支付宝/直销订单可买；7项恢复旧规则不算新放开，不能默认跨渠道叠加",
-        "八个机构页实际检查：七篇可用于背景分析；普信滚动页存在版本冲突，旧文已归档，原发布日期不改",
-        "触发记录08:07、实际核验12:59开始、13:08核读完成；线上前版11月12日，不补造11月13日发布记录；仍为部分更新"
+        "沿用20261028-alipay-reviewed-v1：72笔/64代码，支付宝10月28日、直销10月3日用户确认无交易；本次未改变持仓、成本或现金",
+        "4笔赎回未拆分；370元待确认和18,473.86元预计到账已含在记录内，不重复加总，不记为可用现金；本机未同步修改不可见",
+        "净值检查日11月16日，观察日13个为11月13日、51个为11月12日；未把检查成功改成所有净值今日更新",
+        "纳指和标普均为11月13日收盘，纳指回撤10.51%使用31,224.69固定参考高点；不重复触发同一档位",
+        "自动VIX/VXN仍为11月12日，补充日线为11月13日；十年美债5.10%为11月12日；USD/CNY 6.676为11月6日",
+        "PPI实际重读，观察月10月、发布11月13日不变；其他宏观原文未重读，保留原核读日期及缺失标记；DFF为有效利率，不等于目标区间",
+        "基金三季报观察9月30日、核读10月30日不变，不能用机构评论推测当前A股比例",
+        "额度70/72有规则，非70项下单保证；国富A/C新规则11月16日生效但可能比例确认，支付宝下单页未核实；不默认跨渠道相加",
+        "8篇机构原文实际检查，7篇可作背景；普信页头10月23日与正文冲突，原归档日11月6日及失效期限保留；未读取成功的新PDF不采用",
+        "本次12:23实际触发，12:30核读完成；线上前版11月14日，不补造11月15日发布记录；仍为部分更新"
       ],
       "fileHashes": {
         "portfolio-data.js": "0bfa31f8a779fa1b01bdc8f6bf7fa98768b68b7b74da17f907a53b1c0dc2566e",
         "portfolio-status.json": "f30b5af72a048bc6bb8ee12c1c2e8ea122b7fafe55dcb8cdbe04544ec9cb03a5",
-        "fund-data.json": "d1ce73b29fefcb459e8782213246939815e83628fb3ab75d05ebe084cbbd5294",
-        "market-data.json": "8f0b3ae0345413836a055668920a59f77b8efe1e2f242588a53296cbc716a1a9",
-        "qdii-limits.json": "9375de3853cd40c70a65d41f8f0102262c14dfc6764fd6dc19963c41bbf387b2"
+        "fund-data.json": "17d8850188f6c8e07e74cbc9ef7dec9166a73b145708f16dea1376b468b51405",
+        "market-data.json": "7b922c3b67fbc19eee1d90351aa7e2f30521cbbff5ce37ec1c7094da2becb723",
+        "qdii-limits.json": "e71292a75336195d1c8fcf1cd3129f23ee2024407fb188a00ada3476f3a5f95b"
       },
       "settlementStatus": {
         "schemaVersion": 1,
@@ -1098,10 +874,10 @@ window.investmentResearch = {
       },
       "diagnostics": {
         "remainingLimits": [
-          "两项博时额度仍未核实；底层解析与正文失败未清零",
-          "普信滚动周报日期、正文、表格不一致，不采用其当期行情或归因",
-          "自动快照与独立收盘补充日期不同；汇率仍为11月6日",
-          "4笔赎回未拆分，本机未同步修改不可见"
+          "博时两项额度、底层解析/正文失败和普信滚动页版本冲突未解决",
+          "国富公告上限已核读；支付宝和直销用户买入页未核实，公告允许比例确认",
+          "指数为11月13日收盘；自动波动率/十年债为11月12日，汇率仍为11月6日",
+          "4笔赎回未拆分，本机未同步修改不可见；不改变用户持仓或现金"
         ],
         "sourceRecovery": [
           {
@@ -1137,95 +913,96 @@ window.investmentResearch = {
             "source": "贝莱德投资研究院",
             "url": "https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary",
             "publicationDate": "2026-11-09",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "摩根资产管理",
             "url": "https://am.jpmorgan.com/wr/en/asset-management/liq/insights/market-insights/market-updates/on-the-minds-of-investors/monthly-views-and-perspectives-reality-bites-for-governments-and-ai-investors/",
             "publicationDate": "2026-11-01",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "先锋领航 Vanguard",
             "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/vemo/navigating-the-ai-hype-cycle-a-case-for-active.html",
             "publicationDate": "2026-10-21",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "嘉实基金",
             "url": "https://e.chinaharvest.com/main/a/20261029/484264.shtml",
             "publicationDate": "2026-10-29",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "普信 T. Rowe Price",
             "url": "https://www.troweprice.com/en/us/insights/global-markets-weekly-update",
             "publicationDate": "2026-11-06",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "partial",
-            "note": "发现标题日期、正文事件和行情表版本不一致；停止用于本日方向判断。"
+            "note": "本次页头回退至10月23日，与正文事件和表格不一致；保留原归档发表日11月6日，不刷新有效期限。"
           },
           {
             "source": "巴克莱私人银行",
             "url": "https://privatebank.barclays.com/insights/us-midterms-riding-the-blue-wave-11-2026/",
             "publicationDate": "2026-11-05",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "嘉信理财 Charles Schwab",
             "url": "https://www.schwab.com/learn/story/stock-market-outlook",
             "publicationDate": "2026-11-13",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "实际核读正文，发表日期独立保留"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "摩根大通私人银行",
             "url": "https://privatebank.jpmorgan.com/nam/en/insights/markets-and-investing/tmt/the-blue-wave-is-changing-the-ai-trade",
             "publicationDate": "2026-11-06",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success",
-            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+            "note": "本次实际重读原文；沿用原发表日期和适用期限，旧行情及政策概率不当作当前数据。"
           },
           {
             "source": "BLS PPI",
             "url": "https://www.bls.gov/news.release/ppi.nr0.htm",
             "publicationDate": "2026-11-13",
             "observationMonth": "2026-10",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "status": "success"
           },
           {
-            "source": "Nasdaq指数页",
-            "url": "https://indexes.nasdaq.com/Index/Overview/NDX",
-            "checkedAt": "2026-11-14T05:08:54.674Z",
-            "status": "partial",
-            "date": "2026-11-13",
-            "last": 27943.74,
-            "rejectedFields": {
-              "previousClose": 27943.74,
-              "netChange": -342.91,
-              "changePct": 0
-            },
-            "note": "末值匹配FRED；昨收等矛盾字段不采用"
+            "source": "国海富兰克林基金公告PDF",
+            "url": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf",
+            "publicationDate": "2026-11-13",
+            "effectiveDate": "2026-11-16",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
+            "status": "success",
+            "note": "公开披露镜像全文核读；直销20万元、非直销100元，A/C分开，限额内仍可比例确认"
           },
           {
-            "source": "嘉信11月13日早评",
-            "url": "https://www.schwab.com/learn/story/stock-market-update-open",
-            "publicationDate": "2026-11-13",
-            "checkedAt": "2026-11-14T05:08:54.674Z",
-            "status": "success",
-            "note": "早盘观点已读，不用作最终收盘结论；卡片选用同日更适合长期持仓的Market Perspective"
+            "source": "国海富兰克林官网首页",
+            "url": "https://www.ftsfund.com/",
+            "checkedAt": "2026-11-16T04:30:54.146Z",
+            "status": "failed",
+            "note": "本次访问超时；不宣称官网实时下单额度已核验"
+          },
+          {
+            "source": "摩根私人银行11月View PDF补充检索",
+            "url": "https://privatebank.jpmorgan.com/content/dam/jpm-pb-aem/global/en/documents/the-november-view.pdf",
+            "checkedAt": "2026-11-16T04:30:54.146Z",
+            "status": "failed",
+            "note": "工具无法读取；未采用检索摘要的目标值，未替换已实际重读的11月6日原文"
           }
         ],
         "priorSourceChecks": [
@@ -1388,6 +1165,100 @@ window.investmentResearch = {
             "publicationDate": "2026-11-10",
             "observationMonth": "2026-10",
             "note": "总体/核心同比官方缺失属于数据限制，不是抓取值为0"
+          },
+          {
+            "source": "贝莱德投资研究院",
+            "url": "https://www.blackrock.com/corporate/insights/blackrock-investment-institute/global-weekly-commentary",
+            "publicationDate": "2026-11-09",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+          },
+          {
+            "source": "摩根资产管理",
+            "url": "https://am.jpmorgan.com/wr/en/asset-management/liq/insights/market-insights/market-updates/on-the-minds-of-investors/monthly-views-and-perspectives-reality-bites-for-governments-and-ai-investors/",
+            "publicationDate": "2026-11-01",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+          },
+          {
+            "source": "先锋领航 Vanguard",
+            "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/vemo/navigating-the-ai-hype-cycle-a-case-for-active.html",
+            "publicationDate": "2026-10-21",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+          },
+          {
+            "source": "嘉实基金",
+            "url": "https://e.chinaharvest.com/main/a/20261029/484264.shtml",
+            "publicationDate": "2026-10-29",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+          },
+          {
+            "source": "普信 T. Rowe Price",
+            "url": "https://www.troweprice.com/en/us/insights/global-markets-weekly-update",
+            "publicationDate": "2026-11-06",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "partial",
+            "note": "发现标题日期、正文事件和行情表版本不一致；停止用于本日方向判断。"
+          },
+          {
+            "source": "巴克莱私人银行",
+            "url": "https://privatebank.barclays.com/insights/us-midterms-riding-the-blue-wave-11-2026/",
+            "publicationDate": "2026-11-05",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+          },
+          {
+            "source": "嘉信理财 Charles Schwab",
+            "url": "https://www.schwab.com/learn/story/stock-market-outlook",
+            "publicationDate": "2026-11-13",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "实际核读正文，发表日期独立保留"
+          },
+          {
+            "source": "摩根大通私人银行",
+            "url": "https://privatebank.jpmorgan.com/nam/en/insights/markets-and-investing/tmt/the-blue-wave-is-changing-the-ai-trade",
+            "publicationDate": "2026-11-06",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "本次实际重读原文，作为中期背景延续；原发表日期不变，旧行情及政策概率不当作当前数据。"
+          },
+          {
+            "source": "BLS PPI",
+            "url": "https://www.bls.gov/news.release/ppi.nr0.htm",
+            "publicationDate": "2026-11-13",
+            "observationMonth": "2026-10",
+            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success"
+          },
+          {
+            "source": "Nasdaq指数页",
+            "url": "https://indexes.nasdaq.com/Index/Overview/NDX",
+            "checkedAt": "2026-11-14T05:08:54.674Z",
+            "status": "partial",
+            "date": "2026-11-13",
+            "last": 27943.74,
+            "rejectedFields": {
+              "previousClose": 27943.74,
+              "netChange": -342.91,
+              "changePct": 0
+            },
+            "note": "末值匹配FRED；昨收等矛盾字段不采用"
+          },
+          {
+            "source": "嘉信11月13日早评",
+            "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+            "publicationDate": "2026-11-13",
+            "checkedAt": "2026-11-14T05:08:54.674Z",
+            "status": "success",
+            "note": "早盘观点已读，不用作最终收盘结论；卡片选用同日更适合长期持仓的Market Perspective"
           }
         ]
       },
@@ -1612,12 +1483,12 @@ window.investmentResearch = {
       "execution": {
         "scheduledLocalTime": "08:00",
         "timezone": "Asia/Shanghai",
-        "triggeredAt": "2026-11-14T00:07:47.433Z",
-        "actualAuditStartedAt": "2026-11-14T04:59:10Z",
-        "completedReviewAt": "2026-11-14T05:08:54.674Z",
+        "triggeredAt": "2026-11-16T04:23:10.082Z",
+        "actualAuditStartedAt": "2026-11-16T04:23:28Z",
+        "completedReviewAt": "2026-11-16T04:30:54.146Z",
         "lateRun": true,
-        "previousDeployedReviewDate": "2026-11-12",
-        "note": "08:07触发记录，12:59开始实际可核验工作，13:08完成核读；不回填08:00，不补造11月13日发布记录"
+        "previousDeployedReviewDate": "2026-11-14",
+        "note": "本次12:23触发并开始可核验工作，12:30完成核读；不回填08:00；线上上一版11月14日，不补造11月15日发布记录"
       },
       "crossChecks": [
         {
@@ -1625,14 +1496,14 @@ window.investmentResearch = {
           "value": 7561.67,
           "date": "2026-11-13",
           "url": "https://fred.stlouisfed.org/series/SP500",
-          "reviewedAt": "2026-11-14T05:08:54.674Z"
+          "reviewedAt": "2026-11-16T04:30:54.146Z"
         },
         {
           "series": "DGS10",
           "value": 5.1,
           "date": "2026-11-12",
           "url": "https://fred.stlouisfed.org/series/DGS10",
-          "reviewedAt": "2026-11-14T05:08:54.674Z",
+          "reviewedAt": "2026-11-16T04:30:54.146Z",
           "use": "原页与快照一致；观察日早于11月13日PPI，不能作为其后的利率反应"
         }
       ],
@@ -1668,11 +1539,33 @@ window.investmentResearch = {
           "method": "重新下载公开披露PDF镜像并用PDFKit核读全文；官网首页412；对照今日额度快照的公告及支付宝公开状态",
           "previousReviewedAt": "2026-11-08T10:16:50.847Z",
           "latestNoticeIndexAt": "2026-11-09T02:12:17.979Z"
+        },
+        {
+          "codes": [
+            "006373",
+            "021842"
+          ],
+          "publishedDate": "2026-11-13",
+          "effectiveDate": "2026-11-16",
+          "statusAtReview": "effective",
+          "noticeId": "AN202611131831677851",
+          "url": "https://pdf.dfcfw.com/pdf/H2_AN202611131831677851_1.pdf",
+          "reviewedAt": "2026-11-16T04:30:54.146Z",
+          "directLimitCny": 200000,
+          "nonDirectLimitCny": 100,
+          "accountBasis": "每个基金账户单日申购与定投累计",
+          "shareClassesCountSeparately": true,
+          "possibleProportionalConfirmation": true,
+          "alipayOrderPageVerified": false,
+          "crossChannelAggregationConfirmed": false,
+          "method": "下载基金管理人公开披露PDF镜像并核读全文，提取文本与今日额度快照比对；官网首页超时，未核实用户下单页面",
+          "scopeLimit": "公告写直销机构，未承诺特定App当日订单全额确认；A/C分开限制；限额内仍可能按比例确认",
+          "pdfSha256": "c123d910da6550fa114959f891e02c4a36f365e0dcf9618cc5e94cbc610fde4c"
         }
       ],
       "supplementalMarket": {
-        "provider": "Yahoo Finance收盘日线；FRED和Nasdaq原页交叉核对",
-        "checkedAt": "2026-11-14T05:08:54.674Z",
+        "provider": "Yahoo Finance收盘日线；FRED原页交叉核对指数",
+        "checkedAt": "2026-11-16T04:30:54.146Z",
         "observations": {
           "ndx": {
             "symbol": "^NDX",
@@ -1682,17 +1575,17 @@ window.investmentResearch = {
             "previousDate": "2026-11-12",
             "changePct": -1.2211350888027606,
             "quoteTimestamp": "2026-11-13T22:15:59Z",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX?range=5d&interval=1d",
-            "use": "11月13日收盘日线，非盘中实时报价；独立研究补充，不覆盖自动行情快照",
+            "use": "11月13日收盘日线；本次重查，未产生新的美股交易日。不是11月16日盘中报价。",
             "referencePeak": 31224.69,
             "drawdownPct": -10.507549524510884,
             "crossCheck": {
               "date": "2026-11-13",
               "value": 27943.74,
               "url": "https://fred.stlouisfed.org/series/NASDAQ100",
-              "additionalUrl": "https://indexes.nasdaq.com/Index/Overview/NDX",
-              "use": "FRED日线及Nasdaq末值吻合；Nasdaq页矛盾的昨收和涨跌字段不采用"
+              "reviewedAt": "2026-11-16T04:30:54.146Z",
+              "use": "本次重读FRED原页，与自动快照及Yahoo日线末值吻合"
             }
           },
           "spx": {
@@ -1703,13 +1596,14 @@ window.investmentResearch = {
             "previousDate": "2026-11-12",
             "changePct": -0.40474660007389085,
             "quoteTimestamp": "2026-11-13T21:43:19Z",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=1d",
-            "use": "11月13日收盘日线，非盘中实时报价；独立研究补充，不覆盖自动行情快照",
+            "use": "11月13日收盘日线；本次重查，未产生新的美股交易日。不是11月16日盘中报价。",
             "crossCheck": {
               "date": "2026-11-13",
               "value": 7561.67,
-              "url": "https://fred.stlouisfed.org/series/SP500"
+              "url": "https://fred.stlouisfed.org/series/SP500",
+              "reviewedAt": "2026-11-16T04:30:54.146Z"
             }
           },
           "vix": {
@@ -1720,9 +1614,9 @@ window.investmentResearch = {
             "previousDate": "2026-11-12",
             "changePct": 3.2085478590471395,
             "quoteTimestamp": "2026-11-13T21:15:01Z",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=5d&interval=1d",
-            "use": "11月13日收盘日线，非盘中实时报价；独立研究补充，不覆盖自动行情快照"
+            "use": "11月13日收盘日线；本次重查，未产生新的美股交易日。不是11月16日盘中报价。"
           },
           "vxn": {
             "symbol": "^VXN",
@@ -1732,12 +1626,12 @@ window.investmentResearch = {
             "previousDate": "2026-11-12",
             "changePct": 2.9071801957480936,
             "quoteTimestamp": "2026-11-13T21:15:01Z",
-            "reviewedAt": "2026-11-14T05:08:54.674Z",
+            "reviewedAt": "2026-11-16T04:30:54.146Z",
             "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EVXN?range=5d&interval=1d",
-            "use": "11月13日收盘日线，非盘中实时报价；独立研究补充，不覆盖自动行情快照"
+            "use": "11月13日收盘日线；本次重查，未产生新的美股交易日。不是11月16日盘中报价。"
           }
         },
-        "limit": "11月13日收盘补充，与自动行情截至11月12日分列；参考高点固定，非实时交易指令"
+        "limit": "本次重查11月13日收盘；自动快照指数也为11月13日，VIX/VXN仍为11月12日，独立补充分列；不是11月16日实时报价"
       }
     }
   }
