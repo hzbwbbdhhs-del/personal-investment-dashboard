@@ -1,7 +1,7 @@
 {
   "status": "daily",
-  "updatedAt": "2026-11-23T15:31:54.502Z",
-  "checkedAt": "2026-11-23T15:31:54.037Z",
+  "updatedAt": "2026-11-24T02:41:11.503Z",
+  "checkedAt": "2026-11-24T02:41:11.087Z",
   "checkStatus": "success",
   "market": {
     "NDX": {
@@ -256,23 +256,19 @@
         }
       ],
       "historyStart": "1986-01-02",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "SPX": {
       "label": "标普500",
-      "value": 7175.83,
-      "changePct": -2.018124891617957,
-      "drawdownPct": -8.224910569604793,
+      "value": 6910.39,
+      "changePct": -3.69908428711382,
+      "drawdownPct": -11.619748482209202,
       "peak": 7818.93,
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "source": "FRED公开CSV:SP500",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-27",
-          "value": 7730.99
-        },
         {
           "date": "2026-08-28",
           "value": 7711.76
@@ -508,10 +504,14 @@
         {
           "date": "2026-11-19",
           "value": 7175.83
+        },
+        {
+          "date": "2026-11-20",
+          "value": 6910.39
         }
       ],
-      "historyStart": "2016-11-21",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "historyStart": "2016-11-25",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "VIX": {
@@ -766,7 +766,7 @@
         }
       ],
       "historyStart": "1990-01-02",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "VXN": {
@@ -1021,23 +1021,19 @@
         }
       ],
       "historyStart": "2001-02-02",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 5.04,
-      "changePct": -0.5917159763313657,
-      "drawdownPct": -68.18181818181819,
+      "value": 4.92,
+      "changePct": -2.3809523809523827,
+      "drawdownPct": -68.93939393939394,
       "peak": 15.84,
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "source": "FRED公开CSV:DGS10",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-25",
-          "value": 4.64
-        },
         {
           "date": "2026-08-26",
           "value": 4.66
@@ -1273,42 +1269,26 @@
         {
           "date": "2026-11-19",
           "value": 5.04
+        },
+        {
+          "date": "2026-11-20",
+          "value": 4.92
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "USDCNY": {
       "label": "USD/CNY",
-      "value": 6.671,
-      "changePct": 0.008994962820826007,
-      "drawdownPct": -23.680627852967085,
+      "value": 6.677,
+      "changePct": 0.1575039375984326,
+      "drawdownPct": -23.611985035865878,
       "peak": 8.7409,
-      "updatedAt": "2026-11-13",
+      "updatedAt": "2026-11-20",
       "source": "FRED公开CSV:DEXCHUS",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-19",
-          "value": 6.7295
-        },
-        {
-          "date": "2026-08-20",
-          "value": 6.7225
-        },
-        {
-          "date": "2026-08-21",
-          "value": 6.721
-        },
-        {
-          "date": "2026-08-24",
-          "value": 6.7219
-        },
-        {
-          "date": "2026-08-25",
-          "value": 6.7203
-        },
         {
           "date": "2026-08-26",
           "value": 6.7225
@@ -1528,10 +1508,30 @@
         {
           "date": "2026-11-13",
           "value": 6.671
+        },
+        {
+          "date": "2026-11-16",
+          "value": 6.6642
+        },
+        {
+          "date": "2026-11-17",
+          "value": 6.6659
+        },
+        {
+          "date": "2026-11-18",
+          "value": 6.6676
+        },
+        {
+          "date": "2026-11-19",
+          "value": 6.6665
+        },
+        {
+          "date": "2026-11-20",
+          "value": 6.677
         }
       ],
       "historyStart": "1981-01-02",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     }
   },
@@ -1542,14 +1542,10 @@
       "changePct": 0,
       "drawdownPct": -82.64758497316636,
       "peak": 22.36,
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "source": "FRED公开CSV:DFF",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-09-21",
-          "value": 3.88
-        },
         {
           "date": "2026-09-22",
           "value": 3.88
@@ -1785,10 +1781,14 @@
         {
           "date": "2026-11-19",
           "value": 3.88
+        },
+        {
+          "date": "2026-11-20",
+          "value": 3.88
         }
       ],
       "historyStart": "1954-07-01",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "CPI": {
@@ -2043,7 +2043,7 @@
         }
       ],
       "historyStart": "1947-01-01",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "PCE": {
@@ -2298,7 +2298,7 @@
         }
       ],
       "historyStart": "1959-01-01",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "UNRATE": {
@@ -2553,7 +2553,7 @@
         }
       ],
       "historyStart": "1948-01-01",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "PAYEMS": {
@@ -2808,23 +2808,19 @@
         }
       ],
       "historyStart": "1939-01-01",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     },
     "US10Y": {
       "label": "美国10年期国债收益率",
-      "value": 5.04,
-      "changePct": -0.5917159763313657,
-      "drawdownPct": -68.18181818181819,
+      "value": 4.92,
+      "changePct": -2.3809523809523827,
+      "drawdownPct": -68.93939393939394,
       "peak": 15.84,
-      "updatedAt": "2026-11-19",
+      "updatedAt": "2026-11-20",
       "source": "FRED公开CSV:DGS10",
       "status": "daily",
       "history": [
-        {
-          "date": "2026-08-25",
-          "value": 4.64
-        },
         {
           "date": "2026-08-26",
           "value": 4.66
@@ -3060,10 +3056,14 @@
         {
           "date": "2026-11-19",
           "value": 5.04
+        },
+        {
+          "date": "2026-11-20",
+          "value": 4.92
         }
       ],
       "historyStart": "1962-01-02",
-      "lastSuccessAt": "2026-11-23T15:31:54.037Z",
+      "lastSuccessAt": "2026-11-24T02:41:11.087Z",
       "refreshStatus": "success"
     }
   },
